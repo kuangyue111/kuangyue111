@@ -1,0 +1,25 @@
+Sources/BSPSys/Device/DEVCAN.o: ../Sources/BSPSys/Device/DEVCAN.c \
+ D:/NXP/S32DS_ARM_v2018.R1/S32DS/arm32_ewl2/EWL_C/include/lib_c99.prefix \
+ D:/NXP/S32DS_ARM_v2018.R1/S32DS/arm32_ewl2/EWL_C/include/common.prefix \
+ D:/NXP/S32DS_ARM_v2018.R1/S32DS/arm32_ewl2/EWL_C/include/ewl_c_version.h \
+ E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/BSPSys/Util/BSPTypeDef.h \
+ E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/BSPSys/BSPCfg/BSPConfig.h \
+ E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/Funtion/Parameter/PublicPara.h \
+ E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/BSPSys/Driver/BSPCAN.h \
+ ../Sources/BSPSys/Device/DEVCAN.h
+
+D:/NXP/S32DS_ARM_v2018.R1/S32DS/arm32_ewl2/EWL_C/include/lib_c99.prefix:
+
+D:/NXP/S32DS_ARM_v2018.R1/S32DS/arm32_ewl2/EWL_C/include/common.prefix:
+
+D:/NXP/S32DS_ARM_v2018.R1/S32DS/arm32_ewl2/EWL_C/include/ewl_c_version.h:
+
+E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/BSPSys/Util/BSPTypeDef.h:
+
+E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/BSPSys/BSPCfg/BSPConfig.h:
+
+E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/Funtion/Parameter/PublicPara.h:
+
+E:/S32K144_Development/S32K144OFBMU/code/20220621(SCST)/S32K146OFBMU_B/Sources/BSPSys/Driver/BSPCAN.h:
+
+../Sources/BSPSys/Device/DEVCAN.h:
