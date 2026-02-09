@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.freescale.s32ds.cross.gnu.e200.exe.debug.1348909543">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.freescale.s32ds.cross.gnu.e200.exe.debug.1348909543" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MwErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MPWErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.freescale.s32ds.cross.gnu.e200.buildArtefact.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.freescale.s32ds.cross.gnu.e200.buildArtefact.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="${cross_rm}" description="" errorParsers="com.freescale.s32ds.cdt.core.errorParsers.GmakeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.LnkErrorParser;com.freescale.s32ds.cdt.core.errorParsers.AsmErrorParser;com.freescale.s32ds.cdt.core.errorParsers.CobjErrorParser;com.freescale.s32ds.cdt.core.errorParsers.IcodeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.LltErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MwfeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MwErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MPWErrorParser" id="com.freescale.s32ds.cross.gnu.e200.exe.debug.1348909543" name="Debug" parent="com.freescale.s32ds.cross.gnu.e200.exe.debug">
+					<folderInfo id="com.freescale.s32ds.cross.gnu.e200.exe.debug.1348909543." name="/" resourcePath="">
+						<toolChain id="com.freescale.s32ds.cross.gnu.e200.toolChain.debug.1033897712" name="Standard S32DS toolchain for E200" superClass="com.freescale.s32ds.cross.gnu.e200.toolChain.debug">
+							<option defaultValue="true" id="com.freescale.s32ds.cross.gnu.e200.option.addtools.printsize.171253444" name="Print size" superClass="com.freescale.s32ds.cross.gnu.e200.option.addtools.printsize" valueType="boolean"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.family.32267887" name="Target processor" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.option.target.family.e200z4" valueType="enumerated"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.sysroot.392574491" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.libraries.1167741929" name="Libraries support" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1592126944" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/FS65_Panther_Example}/Debug" id="com.freescale.s32ds.cross.gnu.builder.1079487784" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="FSL Make Builder" superClass="com.freescale.s32ds.cross.gnu.builder"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.24338010" name="Standard S32DS C Compiler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.959599138" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1527661945" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections.539789945" name="Function sections (-ffunction-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections.1798366508" name="Data sections (-fdata-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.debugging.format.1660321558" name="Debug format" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.debugging.format" useByScannerDiscovery="true"/>
+								<option id="gnu.c.compiler.option.misc.other.663562861" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fstrict-volatile-bitfields" valueType="string"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.463344573" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CPU_MPC5744P"/>
+									<listOptionValue builtIn="false" value="START_FROM_FLASH"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family.317184065" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family" useByScannerDiscovery="true" value="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.sysroot.379372609" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.sysroot" useByScannerDiscovery="false" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries.2040299562" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1438008934" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/src/clock/MPC57xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/rtos/osif/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/pal/inc&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.472751659" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.277087968" name="Standard S32DS C++ Compiler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.900654065" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.753883795" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.functionsections.900650954" name="Function sections (-ffunction-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.functionsections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.datasections.2044132530" name="Data sections (-fdata-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.debugging.format.301502941" name="Debug format" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.debugging.format" useByScannerDiscovery="true"/>
+								<option id="gnu.cpp.compiler.option.other.other.1925051497" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fstrict-volatile-bitfields" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1167837248" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="START_FROM_FLASH"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family.1259517348" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family" useByScannerDiscovery="true" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.sysroot.700785537" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.sysroot" useByScannerDiscovery="false" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries.2008623220" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.516947287" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+								</option>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.60711871" name="Standard S32DS C Linker" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker">
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.linker.option.gcsections.1797164210" name="Remove unused sections (-Xlinker --gc-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.option.gcsections" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.linker.option.scriptfile.910816044" name="Script files (-T)" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.option.scriptfile" valueType="stringList">
+									<listOptionValue builtIn="false" value=""/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/MPC5744P_flash.ld&quot;"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family.1813499185" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.sysroot.1544735562" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries.79098541" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<inputType id="com.freescale.s32ds.cross.gnu.tool.c.linker.inputType.scriptfile.649810675" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.inputType.scriptfile"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.875759008" name="Standard S32DS C++ Linker" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker">
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.gcsections.551267018" name="Remove unused sections (-Xlinker --gc-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.gcsections" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.scriptfile.2117355004" name="Script files (-T)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.scriptfile" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/57xx_flash.ld&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/libs.ld&quot;"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family.628544084" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.sysroot.1768933828" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries.1876222781" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.archiver.1247725759" name="Standard S32DS Archiver" superClass="com.freescale.s32ds.cross.gnu.e200.tool.archiver"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.1287872885" name="Standard S32DS Assembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler">
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.usepreprocessor.130079637" name="Use preprocessor" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.usepreprocessor" value="true" valueType="boolean"/>
+								<option defaultValue="gnu.c.optimization.level.none" id="com.freescale.s32ds.cross.gnu.tool.assembler.option.optimization.level.1206144014" name="Optimization Level" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.optimization.level" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.option.debugging.level.1126574757" name="Debug Level" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.option.defs.1204300217" name="Defined symbols (-D)" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.defs" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CPU_MPC5744P"/>
+									<listOptionValue builtIn="false" value="TURN_ON_CPU0"/>
+									<listOptionValue builtIn="false" value="SEMIHOSTING"/>
+									<listOptionValue builtIn="false" value="START_FROM_FLASH"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family.842121151" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.sysroot.753532671" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries.1008030542" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.both.asm.option.include.paths.80455640" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.839303771" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile.884692395" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.createflash.105598046" name="Standard S32DS Create Flash Image" superClass="com.freescale.s32ds.cross.gnu.e200.tool.createflash"/>
+							<tool id="com.freescale.s32ds.cross.gnu.tool.createlisting.1047864802" name="Standard S32DS Create Listing" superClass="com.freescale.s32ds.cross.gnu.tool.createlisting">
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.source.600406668" name="Display source (--source|-S)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.source" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.allheaders.1476369871" name="Display all headers (--all-headers|-x)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.allheaders" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.demangle.2129001872" name="Demangle names (--demangle|-C)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.demangle" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.linenumbers.1117739644" name="Display line numbers (--line-numbers|-l)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.linenumbers" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.wide.1138644867" name="Wide lines (--wide|-w)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.wide" value="true" valueType="boolean"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.tool.printsize.436954300" name="Standard S32DS Print Size" superClass="com.freescale.s32ds.cross.gnu.tool.printsize">
+								<option id="com.freescale.s32ds.cross.gnu.option.printsize.format.39787366" name="Size format" superClass="com.freescale.s32ds.cross.gnu.option.printsize.format"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.c.preprocessor.66256352" name="Standard S32DS C Preprocessor" superClass="com.freescale.s32ds.cross.gnu.c.preprocessor"/>
+							<tool id="com.freescale.s32ds.cross.gnu.cpp.preprocessor.1599569165" name="Standard S32DS C++ Preprocessor" superClass="com.freescale.s32ds.cross.gnu.cpp.preprocessor"/>
+							<tool id="com.freescale.s32ds.cross.gnu.disassembler.1156854244" name="Standard S32DS Disassembler" superClass="com.freescale.s32ds.cross.gnu.disassembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.assembler.1270331923" name="SPT Assembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.assembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.disassembler.1317667146" name="SPT Disassembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.disassembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.1750167279" name="SPT Preprocessor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor">
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.option.paths.429857896" name="Include paths (-I)" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.option.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/src/clock/MPC57xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/rtos/osif/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/pal/inc&quot;"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="com.freescale.s32ds.cross.gnu.e200.exe.debug.1348909543.Project_Settings/Debugger/FS65_Panther_Example_Debug_RAM.launch" name="FS65_Panther_Example_Debug_RAM.launch" rcbsApplicability="disable" resourcePath="Project_Settings/Debugger/FS65_Panther_Example_Debug_RAM.launch" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Generated_Code"/>
+						<entry excluding="Linker_Files/57xx_ram.ld|Debugger/FS65_Panther_Example_Debug_RAM.launch" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="SDK"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Sources"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="include"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.freescale.s32ds.cross.gnu.e200.exe.release.203065982">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.freescale.s32ds.cross.gnu.e200.exe.release.203065982" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MwErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MPWErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.freescale.s32ds.cross.gnu.e200.buildArtefact.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.freescale.s32ds.cross.gnu.e200.buildArtefact.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="${cross_rm}" description="" errorParsers="com.freescale.s32ds.cdt.core.errorParsers.GmakeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.LnkErrorParser;com.freescale.s32ds.cdt.core.errorParsers.AsmErrorParser;com.freescale.s32ds.cdt.core.errorParsers.CobjErrorParser;com.freescale.s32ds.cdt.core.errorParsers.IcodeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.LltErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MwfeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MwErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MPWErrorParser" id="com.freescale.s32ds.cross.gnu.e200.exe.release.203065982" name="Release" parent="com.freescale.s32ds.cross.gnu.e200.exe.release">
+					<folderInfo id="com.freescale.s32ds.cross.gnu.e200.exe.release.203065982." name="/" resourcePath="">
+						<toolChain id="com.freescale.s32ds.cross.gnu.e200.toolChain.release.1163361910" name="Standard S32DS toolchain for E200" superClass="com.freescale.s32ds.cross.gnu.e200.toolChain.release">
+							<option defaultValue="true" id="com.freescale.s32ds.cross.gnu.e200.option.addtools.printsize.743447491" name="Print size" superClass="com.freescale.s32ds.cross.gnu.e200.option.addtools.printsize" valueType="boolean"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.family.979895134" name="Target processor" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.option.target.family.e200z4" valueType="enumerated"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.sysroot.127764531" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.libraries.2014782482" name="Libraries support" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1020241038" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/FS65_Panther_Example}/Release" id="com.freescale.s32ds.cross.gnu.builder.2052686989" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="FSL Make Builder" superClass="com.freescale.s32ds.cross.gnu.builder"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.1570052854" name="Standard S32DS C Compiler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.545540474" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.97406224" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections.504848076" name="Function sections (-ffunction-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections.1824719139" name="Data sections (-fdata-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.debugging.format.2047198658" name="Debug format" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.debugging.format" useByScannerDiscovery="true"/>
+								<option id="gnu.c.compiler.option.misc.other.896981681" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fstrict-volatile-bitfields" valueType="string"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.241799608" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CPU_MPC5744P"/>
+									<listOptionValue builtIn="false" value="START_FROM_FLASH"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family.1999188901" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family" useByScannerDiscovery="true" value="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.sysroot.2055829621" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.sysroot" useByScannerDiscovery="false" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries.1111734781" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1486056764" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/src/clock/MPC57xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/rtos/osif/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/pal/inc&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1973165129" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.131045128" name="Standard S32DS C++ Compiler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1088825484" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1108887389" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.functionsections.2001743967" name="Function sections (-ffunction-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.functionsections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.datasections.697623500" name="Data sections (-fdata-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.debugging.format.1756355108" name="Debug format" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.debugging.format" useByScannerDiscovery="true"/>
+								<option id="gnu.cpp.compiler.option.other.other.211582285" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fstrict-volatile-bitfields" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.2039282179" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="START_FROM_FLASH"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family.1098819929" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family" useByScannerDiscovery="true" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.sysroot.1991536527" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.sysroot" useByScannerDiscovery="false" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries.507071950" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.996532649" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+								</option>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.1838731173" name="Standard S32DS C Linker" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker">
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.linker.option.gcsections.177802625" name="Remove unused sections (-Xlinker --gc-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.option.gcsections" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.linker.option.scriptfile.1377049919" name="Script files (-T)" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.option.scriptfile" valueType="stringList">
+									<listOptionValue builtIn="false" value=""/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/MPC5744P_flash.ld&quot;"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family.1935545826" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.sysroot.2091545394" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries.713887154" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<inputType id="com.freescale.s32ds.cross.gnu.tool.c.linker.inputType.scriptfile.208963032" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.inputType.scriptfile"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.1212488702" name="Standard S32DS C++ Linker" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker">
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.gcsections.1487767174" name="Remove unused sections (-Xlinker --gc-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.gcsections" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.scriptfile.197543757" name="Script files (-T)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.scriptfile" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/57xx_flash.ld&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/libs.ld&quot;"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family.1729726747" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.sysroot.1022301888" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries.221907929" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.archiver.2068414651" name="Standard S32DS Archiver" superClass="com.freescale.s32ds.cross.gnu.e200.tool.archiver"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.1118508428" name="Standard S32DS Assembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler">
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.usepreprocessor.322151378" name="Use preprocessor" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.usepreprocessor" value="true" valueType="boolean"/>
+								<option defaultValue="gnu.c.optimization.level.most" id="com.freescale.s32ds.cross.gnu.tool.assembler.option.optimization.level.554971577" name="Optimization Level" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.optimization.level" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.option.debugging.level.1077261096" name="Debug Level" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.option.defs.279306874" name="Defined symbols (-D)" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.defs" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CPU_MPC5744P"/>
+									<listOptionValue builtIn="false" value="TURN_ON_CPU0"/>
+									<listOptionValue builtIn="false" value="SEMIHOSTING"/>
+									<listOptionValue builtIn="false" value="START_FROM_FLASH"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family.1657510861" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.sysroot.141580897" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries.1740136923" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.both.asm.option.include.paths.1218623674" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.8967291" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile.1305904464" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.createflash.303667336" name="Standard S32DS Create Flash Image" superClass="com.freescale.s32ds.cross.gnu.e200.tool.createflash"/>
+							<tool id="com.freescale.s32ds.cross.gnu.tool.createlisting.600556652" name="Standard S32DS Create Listing" superClass="com.freescale.s32ds.cross.gnu.tool.createlisting">
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.source.1126185489" name="Display source (--source|-S)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.source" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.allheaders.2109642388" name="Display all headers (--all-headers|-x)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.allheaders" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.demangle.130671415" name="Demangle names (--demangle|-C)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.demangle" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.linenumbers.1732777018" name="Display line numbers (--line-numbers|-l)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.linenumbers" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.wide.1388252519" name="Wide lines (--wide|-w)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.wide" value="true" valueType="boolean"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.tool.printsize.759230021" name="Standard S32DS Print Size" superClass="com.freescale.s32ds.cross.gnu.tool.printsize">
+								<option id="com.freescale.s32ds.cross.gnu.option.printsize.format.943380924" name="Size format" superClass="com.freescale.s32ds.cross.gnu.option.printsize.format"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.c.preprocessor.2088913989" name="Standard S32DS C Preprocessor" superClass="com.freescale.s32ds.cross.gnu.c.preprocessor"/>
+							<tool id="com.freescale.s32ds.cross.gnu.cpp.preprocessor.955413096" name="Standard S32DS C++ Preprocessor" superClass="com.freescale.s32ds.cross.gnu.cpp.preprocessor"/>
+							<tool id="com.freescale.s32ds.cross.gnu.disassembler.1211998040" name="Standard S32DS Disassembler" superClass="com.freescale.s32ds.cross.gnu.disassembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.assembler.906345907" name="SPT Assembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.assembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.disassembler.2052463605" name="SPT Disassembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.disassembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.422407432" name="SPT Preprocessor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor">
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.option.paths.1009673713" name="Include paths (-I)" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.option.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/src/clock/MPC57xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/rtos/osif/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/pal/inc&quot;"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="com.freescale.s32ds.cross.gnu.e200.exe.release.203065982.Project_Settings/Debugger/FS65_Panther_Example_Debug_RAM.launch" name="FS65_Panther_Example_Debug_RAM.launch" rcbsApplicability="disable" resourcePath="Project_Settings/Debugger/FS65_Panther_Example_Debug_RAM.launch" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Generated_Code"/>
+						<entry excluding="Linker_Files/57xx_ram.ld|Debugger/FS65_Panther_Example_Debug_RAM.launch" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="SDK"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Sources"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="include"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.freescale.s32ds.cross.gnu.e200.exe.Debug_RAM">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.freescale.s32ds.cross.gnu.e200.exe.Debug_RAM" moduleId="org.eclipse.cdt.core.settings" name="Debug_RAM">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.IcodeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MwfeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MwErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.CobjErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.AsmErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.MPWErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.LnkErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.LltErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.freescale.s32ds.cross.gnu.e200.buildArtefact.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=com.freescale.s32ds.cross.gnu.e200.buildArtefact.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="${cross_rm}" description="" errorParsers="com.freescale.s32ds.cdt.core.errorParsers.GmakeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.LnkErrorParser;com.freescale.s32ds.cdt.core.errorParsers.AsmErrorParser;com.freescale.s32ds.cdt.core.errorParsers.CobjErrorParser;com.freescale.s32ds.cdt.core.errorParsers.IcodeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.LltErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MwfeErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MwErrorParser;com.freescale.s32ds.cdt.core.errorParsers.MPWErrorParser" id="com.freescale.s32ds.cross.gnu.e200.exe.Debug_RAM" name="Debug_RAM" parent="com.freescale.s32ds.cross.gnu.e200.exe.debug">
+					<folderInfo id="com.freescale.s32ds.cross.gnu.e200.exe.Debug_RAM." name="/" resourcePath="">
+						<toolChain id="com.freescale.s32ds.cross.gnu.e200.toolChain.debug.820091763" name="Standard S32DS toolchain for E200" superClass="com.freescale.s32ds.cross.gnu.e200.toolChain.debug">
+							<option defaultValue="true" id="com.freescale.s32ds.cross.gnu.e200.option.addtools.printsize.1087608431" name="Print size" superClass="com.freescale.s32ds.cross.gnu.e200.option.addtools.printsize" valueType="boolean"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.family.977593571" name="Target processor" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.option.target.family.e200z4" valueType="enumerated"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.sysroot.1849783722" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+							<option id="com.freescale.s32ds.cross.gnu.e200.option.target.libraries.292322108" name="Libraries support" superClass="com.freescale.s32ds.cross.gnu.e200.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1365761595" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/FS65_Panther_Example}/Debug" id="com.freescale.s32ds.cross.gnu.builder.21037435" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="FSL Make Builder" superClass="com.freescale.s32ds.cross.gnu.builder"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.470104478" name="Standard S32DS C Compiler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.75413204" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1817208936" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections.1580033716" name="Function sections (-ffunction-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.functionsections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections.1957689499" name="Data sections (-fdata-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.debugging.format.1900944702" name="Debug format" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.debugging.format" useByScannerDiscovery="true"/>
+								<option id="gnu.c.compiler.option.misc.other.150111241" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fstrict-volatile-bitfields" valueType="string"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.2018074071" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CPU_MPC5744P"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family.534913149" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family" useByScannerDiscovery="true" value="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.sysroot.628036448" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.sysroot" useByScannerDiscovery="false" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries.1698223545" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.92263296" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/src/clock/MPC57xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/rtos/osif/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/pal/inc&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.524269104" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.1765648697" name="Standard S32DS C++ Compiler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.428738238" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.27174835" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.functionsections.2119390123" name="Function sections (-ffunction-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.functionsections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.datasections.1150941859" name="Data sections (-fdata-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.optimization.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.debugging.format.1059742102" name="Debug format" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.compiler.option.debugging.format" useByScannerDiscovery="true"/>
+								<option id="gnu.cpp.compiler.option.other.other.1459701496" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fstrict-volatile-bitfields" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.240830007" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family.1742049743" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family" useByScannerDiscovery="true" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.sysroot.439685712" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.sysroot" useByScannerDiscovery="false" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries.428558383" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.compiler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.924467778" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+								</option>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.1659010392" name="Standard S32DS C Linker" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker">
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.linker.option.gcsections.132638714" name="Remove unused sections (-Xlinker --gc-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.option.gcsections" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.c.linker.option.scriptfile.1056545985" name="Script files (-T)" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.option.scriptfile" valueType="stringList">
+									<listOptionValue builtIn="false" value=""/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/MPC5744P_ram.ld&quot;"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family.684115092" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.sysroot.1814290052" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries.1302881255" superClass="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.c.linker.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<inputType id="com.freescale.s32ds.cross.gnu.tool.c.linker.inputType.scriptfile.115360271" superClass="com.freescale.s32ds.cross.gnu.tool.c.linker.inputType.scriptfile"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.1710401807" name="Standard S32DS C++ Linker" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker">
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.gcsections.121574142" name="Remove unused sections (-Xlinker --gc-sections)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.gcsections" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.scriptfile.1823431307" name="Script files (-T)" superClass="com.freescale.s32ds.cross.gnu.tool.cpp.linker.option.scriptfile" valueType="stringList">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/57xx_ram.ld&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Settings/Linker_Files/libs.ld&quot;"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family.616705365" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.sysroot.449871291" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries.435488177" superClass="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.cpp.linker.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.archiver.1071477734" name="Standard S32DS Archiver" superClass="com.freescale.s32ds.cross.gnu.e200.tool.archiver"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.1797857204" name="Standard S32DS Assembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler">
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.usepreprocessor.1356725183" name="Use preprocessor" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.usepreprocessor" value="true" valueType="boolean"/>
+								<option defaultValue="gnu.c.optimization.level.none" id="com.freescale.s32ds.cross.gnu.tool.assembler.option.optimization.level.950438699" name="Optimization Level" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.optimization.level" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.option.debugging.level.162352231" name="Debug Level" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.tool.assembler.option.defs.1836106642" name="Defined symbols (-D)" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.option.defs" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CPU_MPC5744P"/>
+									<listOptionValue builtIn="false" value="TURN_ON_CPU0"/>
+									<listOptionValue builtIn="false" value="SEMIHOSTING"/>
+									<listOptionValue builtIn="false" value="MPC574xP"/>
+								</option>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family.1657590882" name="Target Processor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family" value="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.family.e200z4" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.sysroot.1518562448" name="Sysroot" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.sysroot" value="--sysroot=&quot;${VLE_EWL_DIR}&quot;" valueType="string"/>
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries.970297644" superClass="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries" value="com.freescale.s32ds.cross.gnu.e200.tool.assembler.option.target.libraries.ewl_c9x_noio" valueType="enumerated"/>
+								<option id="gnu.both.asm.option.include.paths.780549274" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${VLE_EWL_DIR}/EWL_C/include/pa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5743P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5741P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R372/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5745B/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/S32R274/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5742P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5748G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5744C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5747C/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746C/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices/MPC5746G/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${MPC5744P_SDK_Z4_1.9.0_PATH}/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Generated_Code&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1952218352" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile.1526901001" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.createflash.1486396736" name="Standard S32DS Create Flash Image" superClass="com.freescale.s32ds.cross.gnu.e200.tool.createflash"/>
+							<tool id="com.freescale.s32ds.cross.gnu.tool.createlisting.360106695" name="Standard S32DS Create Listing" superClass="com.freescale.s32ds.cross.gnu.tool.createlisting">
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.source.760601008" name="Display source (--source|-S)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.source" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.allheaders.1451701915" name="Display all headers (--all-headers|-x)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.allheaders" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.demangle.778903752" name="Demangle names (--demangle|-C)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.demangle" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.linenumbers.1328372744" name="Display line numbers (--line-numbers|-l)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.linenumbers" value="true" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.wide.2021641939" name="Wide lines (--wide|-w)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.wide" value="true" valueType="boolean"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.tool.printsize.1750682453" name="Standard S32DS Print Size" superClass="com.freescale.s32ds.cross.gnu.tool.printsize">
+								<option id="com.freescale.s32ds.cross.gnu.option.printsize.format.1951646696" name="Size format" superClass="com.freescale.s32ds.cross.gnu.option.printsize.format"/>
+							</tool>
+							<tool id="com.freescale.s32ds.cross.gnu.c.preprocessor.81927988" name="Standard S32DS C Preprocessor" superClass="com.freescale.s32ds.cross.gnu.c.preprocessor"/>
+							<tool id="com.freescale.s32ds.cross.gnu.cpp.preprocessor.810128316" name="Standard S32DS C++ Preprocessor" superClass="com.freescale.s32ds.cross.gnu.cpp.preprocessor"/>
+							<tool id="com.freescale.s32ds.cross.gnu.disassembler.675536441" name="Standard S32DS Disassembler" superClass="com.freescale.s32ds.cross.gnu.disassembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.assembler.544750443" name="SPT Assembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.assembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.disassembler.822934739" name="SPT Disassembler" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.disassembler"/>
+							<tool id="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.1192525512" name="SPT Preprocessor" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor">
+								<option id="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.option.paths.625897096" name="Include paths (-I)" superClass="com.freescale.s32ds.cross.gnu.e200.tool.spt.preprocessor.option.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/src/clock/MPC57xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/devices/MPC5744P/startup&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/drivers/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/rtos/osif/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/SDK/platform/pal/inc&quot;"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="com.freescale.s32ds.cross.gnu.e200.exe.Debug_RAM.Project_Settings/Debugger/FS65_Panther_Example_Debug.launch" name="FS65_Panther_Example_Debug.launch" rcbsApplicability="disable" resourcePath="Project_Settings/Debugger/FS65_Panther_Example_Debug.launch" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Generated_Code"/>
+						<entry excluding="Linker_Files/57xx_flash.ld|Debugger/FS65_Panther_Example_Debug.launch" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="SDK"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Sources"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="include"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="FS65_Panther_Example.com.freescale.s32ds.cross.gnu.e200.exe.1873825316" name="E200 Executable" projectType="com.freescale.s32ds.cross.gnu.e200.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.freescale.s32ds.cross.gnu.e200.exe.debug.1348909543;com.freescale.s32ds.cross.gnu.e200.exe.debug.1348909543.;com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.24338010;cdt.managedbuild.tool.gnu.c.compiler.input.472751659">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.freescale.s32ds.cross.gnu.e200.exe.release.203065982;com.freescale.s32ds.cross.gnu.e200.exe.release.203065982.;com.freescale.s32ds.cross.gnu.e200.tool.c.compiler.1570052854;cdt.managedbuild.tool.gnu.c.compiler.input.1973165129">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="org.eclipse.embsys" parent_project="true" register_architecture="e200" register_board="---  none ---" register_chip="MPC5744P" register_core="e200z4251n3" register_vendor="Freescale"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+</cproject>

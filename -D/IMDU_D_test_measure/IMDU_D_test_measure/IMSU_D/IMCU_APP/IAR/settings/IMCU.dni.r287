@@ -1,0 +1,110 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=2079027014
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Interrupts]
+Enabled=1
+[MemConfig]
+Base=1
+Manual=0
+Ddf=1
+TypeViol=0
+Stop=1
+[Simulator]
+Freq=10000000
+MultiCoreRunAll=1
+[struct_types]
+Fmt0=CANTxData_TypeDef-ValueType	4	0
+Fmt1=struct uip_conn-timer	3	0
+[array_types]
+Fmt0=UINT16[230]	4	0
+Fmt1=UINT32[2]	4	0
+Fmt2=UINT8[1500]	4	0
+Fmt3=UINT8[16]	4	0
+Fmt4=UINT8[32]	4	0
+Fmt5=UINT8[50]	4	0
+Fmt6=UINT8[7]	4	0
+Fmt7=UINT8[800]	4	0
+Fmt8=UINT8[8]	4	0
+Fmt9=u16_t[2]	4	0
+Fmt10=u8_t[1520]	4	0
+Fmt11=u8_t[6]	4	0
+Fmt12=unsigned char[8]	4	0
+Fmt13=unsigned short[100]	4	0
+[watch_formats]
+Fmt0={W}0:*(PSendData + 60)	4	0
+Fmt1={W}0:CID1	4	0
+Fmt2={W}0:CanHandle->pRxMsg->ExtId	4	0
+Fmt3={W}0:TxCAN1Buffer.Data[0]	4	0
+Fmt4={W}0:fLimit	4	0
+Fmt5={W}0:gEvChargeInfo.iSetDayTIME	3	0
+Fmt6={W}0:gEvChargeInfo.iSetHourTIME	3	0
+Fmt7={W}0:gEvChargeInfo.iSetMinTIME	3	0
+Fmt8={W}0:gEvChargeInfo.u16RegistInterval	4	0
+Fmt9={W}0:gEvChargeInfo.u8CurrMenuNO	3	0
+Fmt10={W}0:gEvChargeInfo.u8WH_TYPE	4	0
+Fmt11={W}0:iDataLength	3	0
+Fmt12={W}0:pData	4	0
+Fmt13={W}0:stTP_CM_RTSVal_1Back.PkgMsgNoMID	4	0
+Fmt14={W}0:u16Number	3	0
+Fmt15={W}0:u8IP1	4	0
+Fmt16={W}0:u8IP2	4	0
+Fmt17={W}0:u8IP3	4	0
+Fmt18={W}0:u8IP4	4	0
+Fmt19={W}0:uCount	3	0
+Fmt20={W}0:uDebugUART5	3	0
+Fmt21={W}0:uEx1DIVal	4	0
+Fmt22={W}0:ucDuty	4	0
+Fmt23={W}0:ucdata	3	0
+Fmt24={W}0:uip_connr->tcpstateflags	4	0
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[Aliases]
+A0=_ "D:\NANJINGCESHI\NewBoardWithNet\stand\IMCU_APP\App\main.c" "D:\IMCUnew2\src\IMCU_APP\App\main.c"
+Count=1
+SuppressDialog=0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+Exclusions=
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""

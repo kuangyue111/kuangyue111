@@ -1,0 +1,594 @@
+##############################################################################
+#
+# Cortex M4 Structural Core Self Test (SCST) Library
+# Test Report generated on: 23. Feb 2020, 12:33:38
+#
+#
+##############################################################################
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Start executing tests M4_SCST_ATOMIC_STASK_USED with PSP:
+-------------------------------------------------------------------
+
+Request execution of m4_scst_exception_test_svc
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_test_pendsv
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_test_systick
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_hard_fault1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_hard_fault2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_usage_fault
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_mem_fault
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_bus_fault
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_test_nmihf
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB10
+Stack used: 48 bytes
+
+Request execution of m4_scst_exception_test_tail_chain
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_test_masking
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_exception_test_handler_thread
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB00
+Stack used: 64 bytes
+
+Request execution of m4_scst_regbank_test4
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_alu_test7
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_branch_test3
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_status_test3
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF39C
+Stack used: 36 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB20
+Stack used: 32 bytes
+
+Request execution of m4_scst_regbank_test6
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_fetch_test
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_loadstore_test6
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF380
+Stack used: 64 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_loadstore_test1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF374
+Stack used: 76 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_loadstore_test2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF384
+Stack used: 60 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_loadstore_test3
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF384
+Stack used: 60 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_loadstore_test4
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF364
+Stack used: 92 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_loadstore_test5
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF384
+Stack used: 60 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_regbank_test1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_regbank_test2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_regbank_test3
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_regbank_test5
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_mac_test1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_mac_test2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_alu_test1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_alu_test2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_alu_test3
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_alu_test4
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_alu_test5
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_alu_test6
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_simdsat_test1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_simdsat_test2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_simdsat_test3
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_simdsat_test4
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_branch_test1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF384
+Stack used: 60 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_branch_test2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_status_test1
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+Request execution of m4_scst_status_test2
+CSTs execution finished. Start measuring the amount of stack used
+---PSP Stack:
+Top of Stack: C:0x1FFFF3C0
+Bottom of Stack: C:0x1FFFF38C
+Stack used: 52 bytes
+---MSP Stack:
+Top of Stack: C:0x1FFFFB40
+Bottom of Stack: C:0x1FFFFB40
+Stack used: 0 bytes
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T01 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T02 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T03 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T05 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T06 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T07 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T09 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T10 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T11 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T12 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T13 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T14 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T15 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T16 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T17 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+All executed tests have successfully passed!
+-------------------------------------------------------------------

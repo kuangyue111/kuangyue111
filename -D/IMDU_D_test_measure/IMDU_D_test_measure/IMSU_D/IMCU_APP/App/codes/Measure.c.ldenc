@@ -1,0 +1,566 @@
+#include "main.h"
+#include "Measure.h"
+
+EepromRecordMng  gs_EepromRecordMng = {0};
+MeasureData_TypeDef gMeasureInfo;
+
+UINT8 u8IsDoorOpen(void)
+{
+	UINT8 uDIVal = 0;
+
+	uDIVal = BSP_u8GetDI7Status();
+	uDIVal &= 0x01;
+
+	if ((0x01 == uDIVal) && (FALSE == gEvChargeInfo.u8DoorAlmMask_1))
+	{
+		return TRUE;
+	}
+
+	return FALSE;
+}
+UINT8 u8IsEPOActive(void)
+{
+	UINT8 uDIVal = 0;
+
+	uDIVal = BSP_u8GetDI1Status();				// EPO 
+	uDIVal &= 0x01;
+
+	if ((gEvChargeInfo.u8EPOAlmVltLEVEL == uDIVal))
+	{
+		return TRUE;
+	}
+
+	return FALSE;
+}
+/************************************************/
+/*函数功能:是否一次测量完成*/
+/************************************************/
+static UCHAR is_measureoneloop(void)
+{
+	return  gMeasureInfo.ucIsMeasureOneLoop;
+}
+
+/************************************************/
+/*函数功能:清除一次测量完成标志*/
+/************************************************/
+static void clear_measureoneloop(void)
+{
+  gMeasureInfo.ucIsMeasureOneLoop = FALSE;
+}
+
+static UCHAR GetDIState(UCHAR DINum)
+{
+	UCHAR uctemp;
+	if(DINum<8)
+	{
+		if(((gMeasureInfo.ucDIState[0]>>DINum)&0x01)==0x01)
+                {
+                  uctemp = 0;
+                }
+                else
+                {
+                  uctemp = 1;
+                }  
+	}
+        
+	return uctemp;
+}
+
+
+static UCHAR Measure_GetChannelAdcValue(UCHAR ucChannel,UINT16* pData)
+{
+	UCHAR ucRTN = FALSE;
+	ucRTN= dv_Adc.fGetAdcValue(ucChannel,pData);
+	return ucRTN;
+}
+static UCHAR Measure_GetChannelCaptrueCount(UCHAR ucChannel,UINT16* pData)
+{
+	UCHAR ucRTN = FALSE;
+	ucRTN= dv_Capture_PWM.fGetCaptureValue(ucChannel,pData);
+	return ucRTN;
+}
+static void Measure_CC1Volt(void)
+{
+	UCHAR ucRTN;
+	UINT16 u16ADValueTemp;
+	float ftemp,fCoeffA,fCoeffB;
+	static float sfCC1_Volt_A;
+	static float sfCC1_Volt_B;
+	static float sfCC1_2_Volt_A;
+	static float sfCC1_2_Volt_B;
+
+	ucRTN = Measure_GetChannelAdcValue(ADC_CHANNEL_1_FAST,&u16ADValueTemp);
+	if(ucRTN == TRUE)
+	{
+             
+		ftemp = (((2.5*u16ADValueTemp)/4096) * 6.00)*2;
+		GetFloatSetData(SETDATA_GUN1_fCC2_Coeff_A_NUM,&fCoeffA);
+		GetFloatSetData(SETDATA_GUN1_fCC2_Coeff_B_NUM,&fCoeffB);
+		gMeasureInfo.fCC1Volt[GUN_NO_A]  = fCoeffA * ftemp+ fCoeffB;
+		if (gEvChargeInfo.u8CC1_CH_No == 0)
+		{
+			if (TRUE == gEvChargeInfo.u8CC1_1Set_A_Flag)
+			{
+				sfCC1_Volt_A = ftemp;
+				gEvChargeInfo.u8CC1_1Set_A_Flag = FALSE;
+			}
+			if (TRUE == gEvChargeInfo.u8CC1_1Set_B_Flag)
+			{
+				sfCC1_Volt_B = ftemp;
+				gEvChargeInfo.u8CC1_1Set_B_Flag = FALSE;
+				fCoeffA = (gEvChargeInfo.fCC1_Set_B_Volt - gEvChargeInfo.fCC1_Set_A_Volt)/(sfCC1_Volt_B  - sfCC1_Volt_A);
+				fCoeffB = gEvChargeInfo.fCC1_Set_B_Volt - (gEvChargeInfo.fCC1_1Coef_A * sfCC1_Volt_B);
+				SetFloatSetData(SETDATA_GUN1_fCC2_Coeff_A_NUM,&fCoeffA);
+				SetFloatSetData(SETDATA_GUN1_fCC2_Coeff_B_NUM,&fCoeffB);
+				gEvChargeInfo.u8FloatParamUpDataCount++;
+			}
+		}
+
+	}
+
+	if (gMeasureInfo.fCC1Volt[GUN_NO_A] > 9)
+	{
+		gMeasureInfo.ucGunState[GUN_NO_A] = GUN_DISCONNECT;	//0x00不在位
+	}
+	else
+	{
+		gMeasureInfo.ucGunState[GUN_NO_A] = GUN_CONNECT;		//0x01在位
+	}
+
+
+	ucRTN = Measure_GetChannelAdcValue(ADC_CHANNEL_2_FAST,&u16ADValueTemp);	
+	if(ucRTN == TRUE)
+	{
+		ftemp = ((2.5*(double)u16ADValueTemp)/(float)4096) * 6.00*2;
+		GetFloatSetData(SETDATA_GUN2_fCC2_Coeff_A_NUM,&fCoeffA);
+		GetFloatSetData(SETDATA_GUN2_fCC2_Coeff_B_NUM,&fCoeffB);
+		gMeasureInfo.fCC1Volt[GUN_NO_B]  = fCoeffA * ftemp+ fCoeffB;
+		if (gEvChargeInfo.u8CC1_CH_No == 1)
+		{
+			if (TRUE == gEvChargeInfo.u8CC1_2Set_A_Flag)
+			{
+				sfCC1_2_Volt_A = ftemp;
+				gEvChargeInfo.u8CC1_2Set_A_Flag = FALSE;
+			}
+			if (TRUE == gEvChargeInfo.u8CC1_2Set_B_Flag)
+			{
+				sfCC1_2_Volt_B = ftemp;
+				gEvChargeInfo.u8CC1_2Set_B_Flag = FALSE;
+				fCoeffA = (gEvChargeInfo.fCC1_Set_B_Volt - gEvChargeInfo.fCC1_Set_A_Volt)/(sfCC1_2_Volt_B  - sfCC1_2_Volt_A);
+				fCoeffB = gEvChargeInfo.fCC1_Set_B_Volt - (gEvChargeInfo.fCC1_2Coef_A * sfCC1_2_Volt_B);
+				SetFloatSetData(SETDATA_GUN2_fCC2_Coeff_A_NUM,&fCoeffA);
+				SetFloatSetData(SETDATA_GUN2_fCC2_Coeff_B_NUM,&fCoeffB);
+				gEvChargeInfo.u8FloatParamUpDataCount++;
+			}
+		}
+	}
+	if (gMeasureInfo.fCC1Volt[GUN_NO_B] > 9)
+	{
+		gMeasureInfo.ucGunState[GUN_NO_B] = GUN_DISCONNECT;	//0x00不在位
+	}
+	else
+	{
+		gMeasureInfo.ucGunState[GUN_NO_B] = GUN_CONNECT;		//0x01在位
+	}
+}
+static void Measure_Slow_StartMeasure(void)
+{
+	UCHAR RTN;
+	UINT16 u16temp;
+	float ftemp,fdata,f32adj1,f32adj2,fCoeffA,fCoeffB;
+	////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_3_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		gMeasureInfo.fSystemTemp = (2.5*((float)u16temp)/4096- 0.5)/0.01;
+	}
+
+	/////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_4_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp = 2.5*((float)u16temp)/4096;				//VO
+		fdata = 968.1207*ftemp-786.8823;
+		GetFloatSetData(SETDATA_GUN1_fVolt_Coeff_A_NUM,&fCoeffA);
+		GetFloatSetData(SETDATA_GUN1_fVolt_Coeff_B_NUM,&fCoeffB);
+		gMeasureInfo.fBattVolt[GUN_NO_A] = (fCoeffA * fdata) + fCoeffB;
+		if (gEvChargeInfo.u8Batt_1VoltSet_A_Flag == TRUE)
+		{
+			//取X1
+			gEvChargeInfo.fBattVoltRead_A_Volt = fdata;
+			gEvChargeInfo.u8Batt_1VoltSet_A_Flag = FALSE;
+		}
+
+		if (gEvChargeInfo.u8Batt_1VoltSet_B_Flag == TRUE)
+		{
+			gEvChargeInfo.u8Batt_1VoltSet_B_Flag  = FALSE;
+			//取X2
+			gEvChargeInfo.fBattVoltRead_B_Volt = fdata;
+			
+            //计算K数值
+            f32adj1 = (gEvChargeInfo.fBattSet_B_Volt - gEvChargeInfo.fBattSet_A_Volt)/(gEvChargeInfo.fBattVoltRead_B_Volt  - gEvChargeInfo.fBattVoltRead_A_Volt);
+            if (f32adj1 > 0.9 && f32adj1 < 1.3)
+            {
+				f32adj2 =  gEvChargeInfo.fBattSet_B_Volt - (gEvChargeInfo.fBattVolt_1CoefA * gEvChargeInfo.fBattVoltRead_B_Volt);
+				SetFloatSetData(SETDATA_GUN1_fVolt_Coeff_A_NUM,&f32adj1);
+				SetFloatSetData(SETDATA_GUN1_fVolt_Coeff_B_NUM,&f32adj2);
+				gEvChargeInfo.u8_AdjustResult[GUN_NO_A] = 1;
+            }
+            else
+            {
+                gEvChargeInfo.u8_AdjustResult[GUN_NO_A] = 2;
+            }
+			
+		}
+	}
+	/////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_5_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp = 2.5*((float)u16temp)/4096;				//VO
+		fdata = 968.1207*ftemp-786.8823;
+		GetFloatSetData(SETDATA_GUN2_fVolt_Coeff_A_NUM,&fCoeffA);
+		GetFloatSetData(SETDATA_GUN2_fVolt_Coeff_B_NUM,&fCoeffB);
+		gMeasureInfo.fBattVolt[GUN_NO_B] = (fCoeffA * fdata) + fCoeffB;
+		if (gEvChargeInfo.u8Batt_2VoltSet_A_Flag == TRUE)
+		{
+			//取X1
+			gEvChargeInfo.fBattVoltRead_A_Volt = fdata;
+			gEvChargeInfo.u8Batt_2VoltSet_A_Flag = FALSE;
+		}
+
+		if (gEvChargeInfo.u8Batt_2VoltSet_B_Flag == TRUE)
+		{
+			gEvChargeInfo.u8Batt_2VoltSet_B_Flag  = FALSE;
+			//取X2
+			gEvChargeInfo.fBattVoltRead_B_Volt = fdata;
+			
+                        //计算K数值
+                        f32adj1 = (gEvChargeInfo.fBattSet_B_Volt - gEvChargeInfo.fBattSet_A_Volt)/(gEvChargeInfo.fBattVoltRead_B_Volt - gEvChargeInfo.fBattVoltRead_A_Volt);
+                        if (f32adj1 > 0.9 && f32adj1 < 1.3)
+                        {
+                                f32adj2 =  gEvChargeInfo.fBattSet_B_Volt - (gEvChargeInfo.fBattVolt_2CoefA * gEvChargeInfo.fBattVoltRead_B_Volt);
+								SetFloatSetData(SETDATA_GUN2_fVolt_Coeff_A_NUM,&f32adj1);
+								SetFloatSetData(SETDATA_GUN2_fVolt_Coeff_B_NUM,&f32adj2);
+                                gEvChargeInfo.u8_AdjustResult[GUN_NO_B] = 1;
+                        }
+                        else
+                        {
+                                gEvChargeInfo.u8_AdjustResult[GUN_NO_B] = 2;
+                        }
+			
+		}
+	}
+	////////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_6_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp= 2.5*((float)(u16temp)/4096);				//VO
+		fdata = (14.26*ftemp-14.2)/2.84;
+		gMeasureInfo.fHallVolt = fdata;
+	}
+
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_7_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp= 2.5*((float)(u16temp)/4096);				//VO
+		fdata = (14.26*ftemp-14.2)/2.84;
+		gMeasureInfo.fAC_CC = fdata;
+	}
+}
+
+
+
+
+
+		
+#define MEASURE_DATA_FILTER_BUFF_NUM		30		// 不能小于6个
+NOINIT float fMeasure_Data_Filter_Arry[ALL_Data_Type_NUM][MEASURE_DATA_FILTER_BUFF_NUM];
+UCHAR u8DataType_Idx[ALL_Data_Type_NUM]={0,0,0,0};
+static float f_Value_Filter(float fValue,UCHAR ucDataType)
+{
+	float fTemp = 0;
+	if (u8DataType_Idx[ucDataType] < MEASURE_DATA_FILTER_BUFF_NUM)
+	{
+		fMeasure_Data_Filter_Arry[ucDataType][u8DataType_Idx[ucDataType]] = fValue;
+		u8DataType_Idx[ucDataType]++;
+	}
+	else if (u8DataType_Idx[ucDataType] >= MEASURE_DATA_FILTER_BUFF_NUM)
+	{
+		u8DataType_Idx[ucDataType] = 0;
+	}
+
+	int i, j;
+	for (i=0; i<MEASURE_DATA_FILTER_BUFF_NUM-1; i++) /* 外循环为排序趟数，len个数进行len-1趟 */
+	{
+		for (j=0; j<MEASURE_DATA_FILTER_BUFF_NUM-1-i; j++) /* 内循环为每趟比较的次数，第i趟比较len-i次 */
+		{ 
+			if (fMeasure_Data_Filter_Arry[ucDataType][j] > fMeasure_Data_Filter_Arry[ucDataType][j+1]) /* 相邻元素比较，若逆序则交换（升序为左大于右，降序反之） */
+			{ 
+				fTemp = fMeasure_Data_Filter_Arry[ucDataType][j];
+				fMeasure_Data_Filter_Arry[ucDataType][j] = fMeasure_Data_Filter_Arry[ucDataType][j+1];
+				fMeasure_Data_Filter_Arry[ucDataType][j+1] = fTemp;
+			}
+		}
+	}
+
+	j = 0;
+	fTemp = 0;
+	for (i = ((MEASURE_DATA_FILTER_BUFF_NUM/2)- 2); (i<(MEASURE_DATA_FILTER_BUFF_NUM)) && (i<(MEASURE_DATA_FILTER_BUFF_NUM/2+ 2)); i++)
+	{
+		fTemp += fMeasure_Data_Filter_Arry[ucDataType][i];
+		j++;
+	}
+	fTemp = fTemp/j;
+	return fTemp;
+}
+
+
+
+static void Measure_Slow_StartMeasure_1000V(void)
+{
+	UCHAR RTN;
+	UINT16 u16temp;
+	float ftemp,fdata;
+	////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_3_SLOW,&u16temp); //系统温度
+	if(RTN == TRUE)
+	{
+		gMeasureInfo.fSystemTemp = (2.5*((float)u16temp)/4096- 0.5)/0.01;
+	}
+
+	/////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_4_SLOW,&u16temp);//PT1000
+	if(RTN == TRUE)
+	{
+		ftemp = (2.5*((float)u16temp))/4096;
+		fdata = ((1500*ftemp)/(5-ftemp));
+		ftemp = f_Value_Filter(fdata,PT1000_1_VALUE);
+		gMeasureInfo.fPT1000Temp[PT1000_1_VALUE]   = (ftemp -1000)/3.822;
+	}
+	
+	/////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_5_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp = 2.5*((float)u16temp)/4096;				
+		gMeasureInfo.fPressureSensorVolt = ftemp*2;
+	}
+	////////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_6_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp = (2.5*((float)u16temp))/4096;
+		fdata = ((1500*ftemp)/(5-ftemp));
+		ftemp = f_Value_Filter(fdata,PT1000_2_VALUE);
+		gMeasureInfo.fPT1000Temp[PT1000_2_VALUE]   = (ftemp -1000)/3.822;
+	}
+
+	RTN = Measure_GetChannelAdcValue(ADC_CHANNEL_7_SLOW,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp = 2.5*((float)(u16temp)/4096);				//VO
+		gMeasureInfo.fAC_CC_Volt = ftemp;
+		gMeasureInfo.fAC_CC_Resistant = ((400000 * ftemp)/(1200000-(400000*ftemp) - ftemp))*1000;
+	}
+}
+static void Measure_BusVolt(void) 
+{
+	UCHAR RTN;
+	UINT16 u16temp;
+	float fdata,ftemp,f32adj1,f32adj2,fCoeffA,fCoeffB;
+
+	RTN = Measure_GetChannelCaptrueCount(BUS_VOLT_1_SQC_NO ,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp = ((float)u16temp)*(1000/(PER_CYCL_TIME * 10));
+		fdata = (((((double)ftemp)/1000.00) * 2.95675798))- 1694.18541997;
+		GetFloatSetData(SETDATA_GUN1_fVolt_Coeff_A_NUM,&fCoeffA);
+		GetFloatSetData(SETDATA_GUN1_fVolt_Coeff_B_NUM,&fCoeffB);
+		gMeasureInfo.fRawBattVolt[GUN_NO_A] = (fCoeffA * fdata) + fCoeffB;
+		if (gEvChargeInfo.u8Batt_1VoltSet_A_Flag == TRUE)
+		{
+			//取X1
+			gEvChargeInfo.fBattVoltRead_A_Volt = fdata;
+			gEvChargeInfo.u8Batt_1VoltSet_A_Flag = FALSE;
+		}
+
+		if (gEvChargeInfo.u8Batt_1VoltSet_B_Flag == TRUE)
+		{
+			gEvChargeInfo.u8Batt_1VoltSet_B_Flag  = FALSE;
+			//取X2
+			gEvChargeInfo.fBattVoltRead_B_Volt = fdata;
+
+			//计算K数值
+			f32adj1 = (gEvChargeInfo.fBattSet_B_Volt - gEvChargeInfo.fBattSet_A_Volt)/(gEvChargeInfo.fBattVoltRead_B_Volt  - gEvChargeInfo.fBattVoltRead_A_Volt);
+			if (f32adj1 > 0.9 && f32adj1 < 1.3)
+			{
+				f32adj2 =  gEvChargeInfo.fBattSet_B_Volt - (gEvChargeInfo.fBattVolt_1CoefA * gEvChargeInfo.fBattVoltRead_B_Volt);
+				SetFloatSetData(SETDATA_GUN1_fVolt_Coeff_A_NUM,&f32adj1);
+				SetFloatSetData(SETDATA_GUN1_fVolt_Coeff_B_NUM,&f32adj2);
+				gEvChargeInfo.u8_AdjustResult[GUN_NO_A] = 1;
+			}
+			else
+			{
+				gEvChargeInfo.u8_AdjustResult[GUN_NO_A] = 2;
+			}
+
+		}
+		gMeasureInfo.fBattVolt[GUN_NO_A] =  f_Value_Filter(gMeasureInfo.fRawBattVolt[GUN_NO_A],BUSVOLT_1_VALUE);
+	}
+
+	
+	/////////////////////////////////////////////////////////////////
+	RTN = Measure_GetChannelCaptrueCount(BUS_VOLT_2_SQC_NO ,&u16temp);
+	if(RTN == TRUE)
+	{
+		ftemp = ((float)u16temp)*(1000/(PER_CYCL_TIME * 10));
+		fdata = (((((double)ftemp)/1000.00) * 2.95675798))- 1694.18541997;
+		GetFloatSetData(SETDATA_GUN2_fVolt_Coeff_A_NUM,&fCoeffA);
+		GetFloatSetData(SETDATA_GUN2_fVolt_Coeff_B_NUM,&fCoeffB);
+		gMeasureInfo.fRawBattVolt[GUN_NO_B] = (fCoeffA * fdata) + fCoeffB;
+		if (gEvChargeInfo.u8Batt_2VoltSet_A_Flag == TRUE)
+		{
+			//取X1
+			gEvChargeInfo.fBattVoltRead_A_Volt = fdata;
+			gEvChargeInfo.u8Batt_2VoltSet_A_Flag = FALSE;
+		}
+
+		if (gEvChargeInfo.u8Batt_2VoltSet_B_Flag == TRUE)
+		{
+			gEvChargeInfo.u8Batt_2VoltSet_B_Flag  = FALSE;
+			//取X2
+			gEvChargeInfo.fBattVoltRead_B_Volt = fdata;
+
+			//计算K数值
+			f32adj1 = (gEvChargeInfo.fBattSet_B_Volt - gEvChargeInfo.fBattSet_A_Volt)/(gEvChargeInfo.fBattVoltRead_B_Volt - gEvChargeInfo.fBattVoltRead_A_Volt);
+			if (f32adj1 > 0.9 && f32adj1 < 1.3)
+			{
+				f32adj2 =  gEvChargeInfo.fBattSet_B_Volt - (gEvChargeInfo.fBattVolt_2CoefA * gEvChargeInfo.fBattVoltRead_B_Volt);
+				SetFloatSetData(SETDATA_GUN2_fVolt_Coeff_A_NUM,&f32adj1);
+				SetFloatSetData(SETDATA_GUN2_fVolt_Coeff_B_NUM,&f32adj2);
+				gEvChargeInfo.u8_AdjustResult[GUN_NO_B] = 1;
+			}
+			else
+			{
+				gEvChargeInfo.u8_AdjustResult[GUN_NO_B] = 2;
+			}
+
+		}
+		gMeasureInfo.fBattVolt[GUN_NO_B] =  f_Value_Filter(gMeasureInfo.fRawBattVolt[GUN_NO_B],BUSVOLT_2_VALUE);
+	}
+	
+}
+static void GetVFAnalog(void)
+{
+	
+	Measure_CC1Volt();
+	if(u8Is1000VHardwareA00())
+	{
+		Measure_BusVolt();
+	}
+	if(gMeasureInfo.ucSlowMeasureStep == 0)
+	{
+		dv_Adc.ucStartMeasureFlag = 1;
+		gMeasureInfo.ucSlowMeasureStep =1;
+	}
+	else if(gMeasureInfo.ucSlowMeasureStep == 1)
+	{
+		if(dv_Adc.ucStartMeasureFlag == 0)
+		{
+			if(u8Is1000VHardwareA00())
+			{
+				Measure_Slow_StartMeasure_1000V();
+			}
+			else
+			{
+				Measure_Slow_StartMeasure();
+			}
+			
+			gMeasureInfo.ucIsMeasureOneLoop = TRUE;
+			gMeasureInfo.ucSlowMeasureStep = 0;
+		}
+
+	}
+	
+}
+
+/***********************************************
+	函数名称:创建锁
+************************************************/
+static UCHAR init_mutex(void)
+{
+	gMeasureInfo.hMutexReadWriteMeasureData = MutexCreate(UPPER_PRIO_READ_WRITE_MEASURE_DATA);
+	if(gMeasureInfo.hMutexReadWriteMeasureData == NULL)
+	{
+		return FALSE;
+	}
+	return  TRUE;
+}
+
+
+
+static void RefreshDI(void)	//uDelayTimes MAX 255 MIN 0
+{
+	UINT8 uDIVal = 0;
+	uDIVal = BSP_u8GetDI1Status();				// EPO 
+	uDIVal |= (BSP_u8GetDI2Status() << 1);		//电子锁A 反馈
+	uDIVal |= (BSP_u8GetDI3Status() << 2);		//防雷DI3
+	uDIVal |= (BSP_u8GetDI4Status() << 3);		//DI4	  A枪BMS电源反馈   12V 反馈1
+	uDIVal |= (BSP_u8GetDI5Status() << 4);		//DI5  充电枪温度 
+	uDIVal |= (BSP_u8GetDI6Status() << 5);		//DI6 电子锁B 反馈
+	uDIVal |= (BSP_u8GetDI7Status() << 6);		//DI7 用于门禁
+	uDIVal |= (BSP_u8GetDI8Status() << 7);		//DI87 B 枪BMS 电源反馈  24V 反馈0
+	gMeasureInfo.ucDIState[0] = uDIVal; //低4位DI1-4    高四位
+	uDIVal = 0x0a;	// 低四位外扩DI 暂没测试过！
+	uDIVal |= (BSP_u8GetDI5Status() << 4);
+	uDIVal |= (BSP_u8GetDI6Status() << 5);
+	uDIVal |= (BSP_u8GetDI7Status() << 6);
+	uDIVal |= (BSP_u8GetDI8Status() << 7);
+	gMeasureInfo.ucDIState[1] = uDIVal;
+}
+
+/************************************************/
+/*函数功能:初始化				*/
+/************************************************/
+void init_gs_Measure(void)
+{
+	gMeasureInfo.hMutexReadWriteMeasureData = NULL;
+	gMeasureInfo.ucIsMeasureOneLoop = 0;
+	gMeasureInfo.ucSlowMeasureStep = 0;
+	gMeasureInfo.ucDIState[0] = 0;
+	gMeasureInfo.ucDIState[1] = 0;
+	gMeasureInfo.fCC1Volt[GUN_NO_A] = 0;
+	gMeasureInfo.fCC1Volt[GUN_NO_B] = 0;
+	gMeasureInfo.fBattVolt[GUN_NO_A] = 0;
+	gMeasureInfo.fBattVolt[GUN_NO_B] = 0;
+	gMeasureInfo.fHallVolt = 0;
+	gMeasureInfo.fSystemTemp = 0;
+	gMeasureInfo.fInitMutex = init_mutex;
+	gMeasureInfo.fIsMeasureOneLoop = is_measureoneloop;
+	gMeasureInfo.fClearMeasureOneLoop = clear_measureoneloop;
+	gMeasureInfo.fGetDIState = GetDIState;
+}
+
+/********软件功能:测量模拟量和开关量 ****/
+void TASK_MeasureProc (void* pdata)
+{
+	pdata = pdata;
+	gEvChargeInfo.fEV_BattVolt_1 = 0;
+	gEvChargeInfo.fEV_BattVolt_2 = 0;
+	dv_Adc.fInitAdc();
+    OSTimeDly(500);
+	for(;;)
+	{
+		gSelfTest.fSetTaskID(TASK_ID_MEASURE);
+         if(dv_Adc.ucSampleIntervalCount > 230)	
+        {
+          dv_Adc.fInitAdc();
+          OSTimeDly(20);
+        }
+		RefreshDI();
+		//测量AD
+		GetVFAnalog();
+		OSTimeDly(5);
+	}
+}

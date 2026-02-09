@@ -1,0 +1,418 @@
+##############################################################################
+#
+# Cortex M4 Structural Core Self Test (SCST) Library
+# Test Report generated on: 21. Feb 2020, 21:01:36
+# Tested compiler: IAR compiler v. 8.11.2
+#
+##############################################################################
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_STASK_USED skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T01 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T02 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T03 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T05 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T06 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T07 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T09 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T10 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T11 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T12 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T13 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T14 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Start executing tests M4_SCST_UT_T15 with MSP stack:
+-------------------------------------------------------------------
+Get address of each instruction of m4_scst_exception_test_svc
+Request exception of m4_scst_exception_test_svc with interruption at every instruction
+In total 167 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_test_svc with interruption at every instruction
+In total 167 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_test_pendsv
+Request exception of m4_scst_exception_test_pendsv with interruption at every instruction
+In total 153 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_test_pendsv with interruption at every instruction
+In total 153 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_test_systick
+Request exception of m4_scst_exception_test_systick with interruption at every instruction
+In total 153 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_test_systick with interruption at every instruction
+In total 153 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_hard_fault1
+Request exception of m4_scst_exception_hard_fault1 with interruption at every instruction
+In total 493 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_hard_fault1 with interruption at every instruction
+In total 493 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_hard_fault2
+Request exception of m4_scst_exception_hard_fault2 with interruption at every instruction
+In total 373 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_hard_fault2 with interruption at every instruction
+In total 373 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_usage_fault
+Request exception of m4_scst_exception_usage_fault with interruption at every instruction
+In total 343 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_usage_fault with interruption at every instruction
+In total 343 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_mem_fault
+Request exception of m4_scst_exception_mem_fault with interruption at every instruction
+In total 164 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_mem_fault with interruption at every instruction
+In total 164 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_bus_fault
+Request exception of m4_scst_exception_bus_fault with interruption at every instruction
+In total 218 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_bus_fault with interruption at every instruction
+In total 218 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_test_nmihf
+Request exception of m4_scst_exception_test_nmihf with interruption at every instruction
+In total 376 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_test_nmihf with interruption at every instruction
+In total 376 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_test_tail_chain
+Request exception of m4_scst_exception_test_tail_chain with interruption at every instruction
+In total 212 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_test_tail_chain with interruption at every instruction
+In total 212 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_test_masking
+Request exception of m4_scst_exception_test_masking with interruption at every instruction
+In total 342 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_test_masking with interruption at every instruction
+In total 342 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_exception_test_handler_thread
+Request exception of m4_scst_exception_test_handler_thread with interruption at every instruction
+In total 522 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_exception_test_handler_thread with interruption at every instruction
+In total 522 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_regbank_test4
+Request exception of m4_scst_regbank_test4 with interruption at every instruction
+In total 207 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_regbank_test4 with interruption at every instruction
+In total 207 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_alu_test7
+Request exception of m4_scst_alu_test7 with interruption at every instruction
+In total 186 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_alu_test7 with interruption at every instruction
+In total 186 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_branch_test3
+Request exception of m4_scst_branch_test3 with interruption at every instruction
+In total 402 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_branch_test3 with interruption at every instruction
+In total 402 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_status_test3
+Request exception of m4_scst_status_test3 with interruption at every instruction
+In total 201 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_status_test3 with interruption at every instruction
+In total 201 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_regbank_test6
+Request exception of m4_scst_regbank_test6 with interruption at every instruction
+In total 814 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_regbank_test6 with interruption at every instruction
+In total 814 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_fetch_test
+Request exception of m4_scst_fetch_test with interruption at every instruction
+In total 41 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_fetch_test with interruption at every instruction
+In total 41 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_loadstore_test6
+Request exception of m4_scst_loadstore_test6 with interruption at every instruction
+In total 1337 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_loadstore_test6 with interruption at every instruction
+In total 1337 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_loadstore_test1
+Request exception of m4_scst_loadstore_test1 with interruption at every instruction
+In total 936 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_loadstore_test1 with interruption at every instruction
+In total 936 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_loadstore_test2
+Request exception of m4_scst_loadstore_test2 with interruption at every instruction
+In total 1343 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_loadstore_test2 with interruption at every instruction
+In total 1343 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_loadstore_test3
+Request exception of m4_scst_loadstore_test3 with interruption at every instruction
+In total 847 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_loadstore_test3 with interruption at every instruction
+In total 847 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_loadstore_test4
+Request exception of m4_scst_loadstore_test4 with interruption at every instruction
+In total 1099 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_loadstore_test4 with interruption at every instruction
+In total 1099 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_loadstore_test5
+Request exception of m4_scst_loadstore_test5 with interruption at every instruction
+In total 2749 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_loadstore_test5 with interruption at every instruction
+In total 2749 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_regbank_test1
+Request exception of m4_scst_regbank_test1 with interruption at every instruction
+In total 2250 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_regbank_test1 with interruption at every instruction
+In total 2250 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_regbank_test2
+Request exception of m4_scst_regbank_test2 with interruption at every instruction
+In total 2250 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_regbank_test2 with interruption at every instruction
+In total 2250 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_regbank_test3
+Request exception of m4_scst_regbank_test3 with interruption at every instruction
+In total 2354 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_regbank_test3 with interruption at every instruction
+In total 2354 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_regbank_test5
+Request exception of m4_scst_regbank_test5 with interruption at every instruction
+In total 48 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_regbank_test5 with interruption at every instruction
+In total 48 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_mac_test1
+Request exception of m4_scst_mac_test1 with interruption at every instruction
+In total 385 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_mac_test1 with interruption at every instruction
+In total 385 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_mac_test2
+Request exception of m4_scst_mac_test2 with interruption at every instruction
+In total 363 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_mac_test2 with interruption at every instruction
+In total 363 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_alu_test1
+Request exception of m4_scst_alu_test1 with interruption at every instruction
+In total 217 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_alu_test1 with interruption at every instruction
+In total 217 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_alu_test2
+Request exception of m4_scst_alu_test2 with interruption at every instruction
+In total 1174 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_alu_test2 with interruption at every instruction
+In total 1174 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_alu_test3
+Request exception of m4_scst_alu_test3 with interruption at every instruction
+In total 289 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_alu_test3 with interruption at every instruction
+In total 289 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_alu_test4
+Request exception of m4_scst_alu_test4 with interruption at every instruction
+In total 3851 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_alu_test4 with interruption at every instruction
+In total 3851 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_alu_test5
+Request exception of m4_scst_alu_test5 with interruption at every instruction
+In total 175 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_alu_test5 with interruption at every instruction
+In total 175 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_alu_test6
+Request exception of m4_scst_alu_test6 with interruption at every instruction
+In total 246 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_alu_test6 with interruption at every instruction
+In total 246 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_simdsat_test1
+Request exception of m4_scst_simdsat_test1 with interruption at every instruction
+In total 910 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_simdsat_test1 with interruption at every instruction
+In total 910 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_simdsat_test2
+Request exception of m4_scst_simdsat_test2 with interruption at every instruction
+In total 671 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_simdsat_test2 with interruption at every instruction
+In total 671 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_simdsat_test3
+Request exception of m4_scst_simdsat_test3 with interruption at every instruction
+In total 854 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_simdsat_test3 with interruption at every instruction
+In total 854 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_simdsat_test4
+Request exception of m4_scst_simdsat_test4 with interruption at every instruction
+In total 664 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_simdsat_test4 with interruption at every instruction
+In total 664 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_branch_test1
+Request exception of m4_scst_branch_test1 with interruption at every instruction
+In total 367 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_branch_test1 with interruption at every instruction
+In total 367 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_branch_test2
+Request exception of m4_scst_branch_test2 with interruption at every instruction
+In total 476 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_branch_test2 with interruption at every instruction
+In total 476 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_status_test1
+Request exception of m4_scst_status_test1 with interruption at every instruction
+In total 959 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_status_test1 with interruption at every instruction
+In total 959 interruptions were done
+Registers checks passed for initial set2
+Get address of each instruction of m4_scst_status_test2
+Request exception of m4_scst_status_test2 with interruption at every instruction
+In total 234 interruptions were done
+Registers checks passed for initial set1
+Request exception of m4_scst_status_test2 with interruption at every instruction
+In total 234 interruptions were done
+Registers checks passed for initial set2
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T16 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T17 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+All executed tests have successfully passed!
+-------------------------------------------------------------------

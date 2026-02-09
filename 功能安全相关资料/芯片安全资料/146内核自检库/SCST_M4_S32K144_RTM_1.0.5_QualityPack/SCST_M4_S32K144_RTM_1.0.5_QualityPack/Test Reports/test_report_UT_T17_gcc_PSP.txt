@@ -1,0 +1,489 @@
+##############################################################################
+#
+# Cortex M4 Structural Core Self Test (SCST) Library
+# Test Report generated on: 27. Feb 2020, 14:57:01
+# Tested compiler: GCC compiler v. 6.3.1 20170509
+#
+##############################################################################
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_STASK_USED skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T01 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T02 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T03 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T05 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T06 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T07 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T09 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T10 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T11 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T12 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T13 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T14 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T15 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T16 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Start executing tests M4_SCST_UT_T17 with PSP stack:
+-------------------------------------------------------------------
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_svcinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_pendsvinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_systickinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_hard_fault1interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_usage_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_mem_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_bus_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_tail_chaininterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_maskinginterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_svc interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_pendsv interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_systick interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_hard_fault1 interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_usage_fault interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_mem_fault interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_bus_fault interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_tail_chain interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T17: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_masking interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_test_svcinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_test_pendsvinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_test_systickinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_hard_fault1interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_usage_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_mem_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_bus_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_test_tail_chaininterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK disabled
+Request execution of test: m4_scst_exception_test_maskinginterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_test_svcinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_test_pendsvinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_test_systickinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_hard_fault1interrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_usage_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_mem_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_bus_faultinterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_test_tail_chaininterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+M4_SCST_UT_T17: PRIMASK enabled
+Request execution of test: m4_scst_exception_test_maskinginterrupt is triggered every stick...
+Start execution SCST test in 10 seconds, interrupt is triggered every stick count...
+Execution stopped. Start verifying the global variables
+Check before_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check after_NMI_exception content. Expected/original: Non-zero, actual: 1
+Check NMI_exception content. Expected/original: Non-zero, actual: 1
+Check whether the three variables are equal to each other
+These three variables are equal to each other. Check passes
+Check interrupted_zero_erg content. Expected/original: 0, actual: 0
+Atomic SCST tests passes the nested interrupt test. Check passed
+
+-------------------------------------------------------------------
+All executed tests have successfully passed!
+-------------------------------------------------------------------

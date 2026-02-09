@@ -1,0 +1,219 @@
+##############################################################################
+#
+# Cortex M4 Structural Core Self Test (SCST) Library
+# Test Report generated on: 21. Feb 2020, 11:38:35
+# Tested compiler: GCC compiler v. 6.3.1 20170509
+#
+##############################################################################
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_STASK_USED skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T01 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T02 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T03 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T05 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T06 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T07 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T09 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T10 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T11 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T12 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T13 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T14 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T15 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Start executing tests M4_SCST_UT_T16 with PSP stack:
+-------------------------------------------------------------------
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_svc in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_pendsv in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_systick in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_hard_fault1 in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_usage_fault in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_mem_fault in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_bus_fault in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_tail_chain in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT enabled
+Request execution of test: m4_scst_exception_test_masking in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_svc in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_pendsv in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_systick in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_hard_fault1 in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_usage_fault in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 19
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_mem_fault in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 0A
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_bus_fault in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 0A
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_tail_chain in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 0A
+Check Core_exception content. Expected/original: 0, actual: 0
+
+M4_SCST_UT_T16: USGFAULT, BUSFAULT, MEMFAULT disabled
+Request execution of test: m4_scst_exception_test_masking in 10 seconds, interrupt is triggered every stick...
+Execution stopped. Start verifying execution result
+Check tail_chain_count content. Expected/original: Non-zero, actual: 5
+Check Core_exception content. Expected/original: 0, actual: 0
+Atomic SCST tests passes the periodically interrupt test. Check passed
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T17 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+All executed tests have successfully passed!
+-------------------------------------------------------------------

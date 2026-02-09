@@ -1,0 +1,304 @@
+------------------------------------------------------------
+-- Emerson Energy Systems (EES)
+-- Power MIB
+------------------------------------------------------------
+
+EES-POWER-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+	MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
+	Integer32, Counter32, enterprises
+		FROM SNMPv2-SMI
+	TEXTUAL-CONVENTION, DisplayString, DateAndTime
+		FROM SNMPv2-TC;
+		
+		
+------------------------------------------------------------
+-- Node definitions
+------------------------------------------------------------
+
+ees OBJECT IDENTIFIER ::= { enterprises 6302 }
+
+global OBJECT IDENTIFIER ::= { ees 2 }
+
+
+powerMIB MODULE-IDENTITY
+	LAST-UPDATED "200810152122Z"
+	ORGANIZATION "
+		Emerson Energy Systems (EES)"
+	CONTACT-INFO "
+		Emerson Energy Systems
+		141 82 Stockholm
+		Sweden"
+	DESCRIPTION "
+		Emerson Energy Systems (EES) Power MIB, revision B."
+	::= { global 1 }
+
+------------------------------------------------------------
+-- Textual conventions
+------------------------------------------------------------
+
+Status ::= TEXTUAL-CONVENTION
+	STATUS current
+	DESCRIPTION "
+		This integer value represents the operational or administrative
+		status of the system. Also used as alarm severity.
+		Depending on situation there may be limits on allowed values.
+		Operational values:
+		(1) unknown - status has not yet been defined
+		(2) normal - there are no activated alarms
+		(3) warning - OA, lowest level of 'abnormal' status
+		(4) minor - A3
+		(5) major - MA
+		(6) critical - CA, highest level of 'abnormal' status
+		Administrative values:
+		(7) unmanaged
+		(8) restricted
+		(9) testing
+		(10) disabled"
+	SYNTAX INTEGER {
+		unknown(1),
+		normal(2),
+		warning(3),
+		minor(4),
+		major(5),
+		critical(6),
+		unmanaged(7),
+		restricted(8),
+		testing(9),
+		disabled(10) }
+
+StatusChange ::= TEXTUAL-CONVENTION
+	STATUS current
+	DESCRIPTION "
+		Indicates 'activated' (1) or 'deactivated' (2) alarm events."
+	SYNTAX INTEGER {
+		activated(1),
+		deactivated(2) }
+
+
+------------------------------------------------------------
+-- 1.1 Identification of the plant { powerMIB 1 }
+------------------------------------------------------------
+
+ident OBJECT IDENTIFIER ::= { powerMIB 1 }
+
+identManufacturer OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The name of the equipment manufacturer."
+	::= { ident 1 }
+
+identModel OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The manufacturers model designation of the power system."
+	::= { ident 2 }
+
+identControllerFirmwareVersion OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The firmware (software) version of the controller."
+	::= { ident 3 }
+
+identName OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		The name of the power plant. This object should be set by
+		the administrator."
+	::= { ident 4 }
+
+------------------------------------------------------------
+-- 1.2 System values { powerMIB 2 }
+------------------------------------------------------------
+
+system OBJECT IDENTIFIER ::= { powerMIB 2 }
+
+systemStatus OBJECT-TYPE
+	SYNTAX Status
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		Status of the complete plant (highest alarm). One of
+		(1) unknown - status has not yet been defined
+		(2) normal - there are no activated alarms
+		(3) warning - OA, lowest level of 'abnormal' status
+		(4) minor - A3
+		(5) major - MA
+		(6) critical - CA, highest level of 'abnormal' status
+		(7) unmanaged
+		(8) restricted
+		(9) testing
+		(10) disabled"
+	::= { system 1 }
+
+systemVoltage OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		System voltage, stored as mV, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+	::= { system 2 }
+
+systemCurrent OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		System current, stored as mA, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+	::= { system 3 }
+
+systemUsedCapacity OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		Used capacity, stored as % of the total capacity.
+		The integer 2147483647 represents invalid value."
+	::= { system 4 }
+
+
+-- ------------------------------------------------------------------------ 
+-- 1.2.5. the psBattery group
+-- ------------------------------------------------------------------------ 
+
+psBattery OBJECT IDENTIFIER ::= { system 5 }
+
+    psBatteryVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "Battery voltage, stored as mV, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+        ::= { psBattery 1 }
+    
+    psBatteryCurrent OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "Battery current, stored as mA, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+        ::= { psBattery 2 }
+
+-- ------------------------------------------------------------------------ 
+-- 1.2.6. the psInput group
+-- ------------------------------------------------------------------------ 
+
+psInput OBJECT IDENTIFIER ::= { system 6 }
+
+    psInputLineAVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line A voltage, stored as mV. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 1 }
+
+    psInputLineBVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line B voltage, stored as mV. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 2 }
+
+    psInputLineCVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line C voltage, stored as mV. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 3 }
+
+-- ------------------------------------------------------------------------ 
+-- 1.2.7. the temperatures(two routes:maybe ambient temperature,
+--				      maybe battery temperature)
+-- ------------------------------------------------------------------------ 
+
+psTemperature OBJECT IDENTIFIER ::= { system 7 }
+
+    psTemperature1 OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The first route temperature, stored as 0.001 Celsius degree. 
+		The integer 2147483647 represents invalid value."
+        ::= { psTemperature 1 }
+
+    psTemperature2 OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The second route temperature, stored as 0.001 Celsius degree. 
+		The integer 2147483647 represents invalid value.."
+        ::= { psTemperature 2 }
+
+psStatusCommunication OBJECT-TYPE
+        SYNTAX INTEGER {
+            unknown(1),
+            normal(2),
+            interrupt(3)
+        }
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The status of communication with the Power System. interrupt(3) indicates
+             some errors occurred between Power System and agent."
+        ::= { system 8 }
+
+psStatusBatteryMode OBJECT-TYPE
+        SYNTAX INTEGER  {
+	    unknown(1),
+	    FloatCharging(2),
+	    ShortTest(3),
+	    BCForTest(4),
+	    ManualTesting(5),
+	    PlanTesting(6),
+	    ACFailTesting(7),
+	    ACFail(8),
+	    ManualBC(9),
+	    AutoBC(10),
+	    CyclicBC(11),
+	    MasterBC(12),
+	    MasterBT(13)
+	}
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The status of battery modes, 
+		FloatCharging(2),
+		ShortTest(3),
+		BoostChargingForTest(4),
+		ManualTesting(5),
+		PlanTesting(6),
+		ACFailTesting(7),
+		ACFail(8),
+		ManualBoostCharging(9),
+		AutoBoostCharging(10),
+		CyclicBoostCharging(11),
+		MasterBoostCharging(12),
+		MasterBateryTesting(13)."
+        ::= { system 9 }
+
+------------------------------------------------------------
+-- End of MIB definitions
+------------------------------------------------------------
+
+END

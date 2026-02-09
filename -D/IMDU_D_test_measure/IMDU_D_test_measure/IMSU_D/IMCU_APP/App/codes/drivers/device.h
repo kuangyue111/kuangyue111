@@ -1,0 +1,27 @@
+#include "includes.h"
+
+enum 
+{
+  CAPTURE_CHANNEL1 = 0,
+  AC_PWM_FREQUENCY = 1,
+  BUS_VOLT_1_SQC_NO = 2,
+  BUS_VOLT_2_SQC_NO = 3,
+  CAPTURE_CHANNEL5 = 4,
+  CAPTURE_CHANNEL6 = 5,
+  ALL_CAPTURE_CHANNEL_NUM,
+};
+
+typedef struct tagdv_Capture_PWM
+{
+	UCHAR Rate[2];//PWM波输出的占空比
+	UINT16 u16PulseCnt[ALL_CAPTURE_CHANNEL_NUM];
+	UINT16 u16LastCount[ALL_CAPTURE_CHANNEL_NUM];
+	UINT16 u16FinalData[ALL_CAPTURE_CHANNEL_NUM];
+	UCHAR ucGetPeriodNum;
+	VOID_INTERFACE_PROC fGetInputPulse;
+	INUCHARUCHAR_INTERFACE_PROC fOutputFanDriver;
+	INUINT16PUCHAR_OUTUCHAR_INTERFACE_PROC fGetCaptureValue;
+
+}dv_Capture_PWM_TypeDef;
+
+void BSP_Base_TIME_Deal(void);

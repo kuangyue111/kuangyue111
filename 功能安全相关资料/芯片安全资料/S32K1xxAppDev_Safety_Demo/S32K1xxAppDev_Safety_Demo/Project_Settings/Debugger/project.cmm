@@ -1,0 +1,113 @@
+entry &build_cfg &binary_file &cpu_name &cfg
+
+WinCLEAR
+
+; --------------------------------------------------------------------------------
+; initialize and start the debugger
+RESet
+SYStem.RESet
+SYStem.CPU &cpu_name
+SYStem.CONFIG.DEBUGPORTTYPE SWD
+IF COMBIPROBE()||UTRACE()
+(
+  SYStem.CONFIG.CONNECTOR MIPI20T
+)
+SYStem.Option DUALPORT ON
+SYStem.MemAccess DAP
+SYStem.JtagClock CTCK 10MHz
+Trace.DISable
+SYStem.Up
+
+; disable BootROM
+GOSUB DisableBootrom
+; disable Watchdog
+GOSUB DisableWatchdog
+
+IF "&cfg"=="flash"
+(
+  ; --------------------------------------------------------------------------------
+  ; Flash programming
+
+  ; prepare flash programming (declarations)
+  DO ~~/demo/arm/flash/s32k.cmm PREPAREONLY
+
+  ; ReProgram Flash
+  FLASH.ReProgram ALL
+  Data.LOAD.Elf ./&build_cfg/&binary_file /verify
+  FLASH.ReProgram OFF
+
+  ; --------------------------------------------------------------------------------
+  ; Reset the target again
+  SYStem.Up
+
+  ; disable BootROM
+  GOSUB DisableBootrom
+  ; disable Watchdog
+  GOSUB DisableWatchdog
+)
+ELSE
+(
+  Data.LOAD.Elf ./&build_cfg/&binary_file /verify
+)
+
+; initialize RTOS support
+ PRINT "initializing FreeRTOS support..."
+ TASK.CONFIG ~~/demo/arm/kernel/freertos/freertos.t32       ; load FreeRTOS awareness
+ MENU.ReProgram ~~/demo/arm/kernel/freertos/freertos.men    ; load FreeRTOS menu
+ HELP.FILTER.Add rtosfreertos   ; add FreeRTOS awareness manual to filtered help
+
+ PRINT "load complete."
+ 
+; open some windows
+ WinPOS 0. 0. 70. 20.
+ List.auto
+ WinPOS 48. 5. 65. 20. 0. 1. W001
+ TASK.TaskList
+
+; --------------------------------------------------------------------------------
+; start program execution
+Go.direct main
+WAIT !STATE.RUN()
+
+; --------------------------------------------------------------------------------
+; open some windows
+List.auto
+
+ENDDO
+
+DisableBootrom:
+(
+  Data.Set SD:0x4007F010 %LE %Long 0x6
+  Data.Set SD:0x4007F014 %LE %Long 0x0
+  RETURN
+)
+
+DisableWatchdog:
+(
+  LOCAL &tmp1 &tmp2
+  &tmp1=Data.Long(ST:0x20000000)
+  &tmp2=Data.Long(ST:0x20000004)
+  Register.SWAP
+  ; The watchdog has a restrictive timing. It has to be configured and unlocked within a peripod
+  ; of 128 cycles. Therefor the unlock sequence need to be done by a small target program.
+  Data.Assemble ST:0x20000000  str  r1,[r0]  ;SD:0x40052004 = 0xD928C520   (Key)
+  Data.Assemble ,              str  r3,[r2]  ;SD:0x40052000 = 0x00002120   (Control register)
+  Data.Assemble ,              str  r5,[r4]  ;SD:0x40052008 = 0x0000FFFF   (Timeout value)
+  Data.Assemble ,              bkpt #0
+  Register.Set PC 0x20000000
+  Register.Set SP 0x20001000
+  Register.Set R0 0x40052004
+  Register.Set R1 0xD928C520
+  Register.Set R2 0x40052000
+  Register.Set R3 0x00002120
+  Register.Set R4 0x40052008
+  Register.Set R5 0x0000FFFF
+  Go.direct
+  WAIT !RUN()
+
+  Data.Set ST:0x20000000 %Long &tmp1
+  Data.Set ST:0x20000004 %Long &tmp2
+  Register.SWAP
+
+  RETURN
+)

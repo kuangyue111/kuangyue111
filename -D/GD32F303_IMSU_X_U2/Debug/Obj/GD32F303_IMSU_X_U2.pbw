@@ -1,0 +1,2270 @@
+[
+  {
+    "ID": "c:@\u013f",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u013f",
+    "location": {
+      "column": "4171",
+      "line": "2",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Include\\includes.h"
+    },
+    "name": "\u013f",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@B",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "B",
+    "location": {
+      "column": "225",
+      "line": "51",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\can.c"
+    },
+    "name": "B",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@U",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "U",
+    "location": {
+      "column": "11",
+      "line": "19",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\EEPROM.c"
+    },
+    "name": "U",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@ByJ",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "ByJ",
+    "location": {
+      "column": "152",
+      "line": "19",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\gd32f30x_it.c"
+    },
+    "name": "ByJ",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@t",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "t",
+    "location": {
+      "column": "85",
+      "line": "29",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\gd32f30x_it.c"
+    },
+    "name": "t",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@g",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "g",
+    "location": {
+      "column": "122",
+      "line": "29",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\gd32f30x_it.c"
+    },
+    "name": "g",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@zF",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "zF",
+    "location": {
+      "column": "260",
+      "line": "29",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\gd32f30x_it.c"
+    },
+    "name": "zF",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@n",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "n",
+    "location": {
+      "column": "17",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\I2C.c"
+    },
+    "name": "n",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Yt",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Yt",
+    "location": {
+      "column": "88",
+      "line": "5",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\I2C.c"
+    },
+    "name": "Yt",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@nZ",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "nZ",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\I2C.c"
+    },
+    "name": "nZ",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@L\u041f",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "L\u041f",
+    "location": {
+      "column": "174",
+      "line": "6",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\I2C.c"
+    },
+    "name": "L\u041f",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@J",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "J",
+    "location": {
+      "column": "42",
+      "line": "8",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\I2C.c"
+    },
+    "name": "J",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@e",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "e",
+    "location": {
+      "column": "101",
+      "line": "3",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\Source\\systick.c"
+    },
+    "name": "e",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@j",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "j",
+    "location": {
+      "column": "114",
+      "line": "14",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\main.c"
+    },
+    "name": "j",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0378eQ3",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0378eQ3",
+    "location": {
+      "column": "296",
+      "line": "15",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\App\\main.c"
+    },
+    "name": "\u0378eQ3",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@N",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "N",
+    "location": {
+      "column": "29",
+      "line": "9",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "N",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Wv9",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Wv9",
+    "location": {
+      "column": "34",
+      "line": "23",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "Wv9",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@A",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "A",
+    "location": {
+      "column": "5",
+      "line": "72",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "A",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@UlO5",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "UlO5",
+    "location": {
+      "column": "123",
+      "line": "86",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "UlO5",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@o4",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "o4",
+    "location": {
+      "column": "158",
+      "line": "86",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "o4",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@s",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "s",
+    "location": {
+      "column": "171",
+      "line": "108",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "s",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@d",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "d",
+    "location": {
+      "column": "234",
+      "line": "130",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "d",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0116",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0116",
+    "location": {
+      "column": "453",
+      "line": "161",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "\u0116",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@N",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "N",
+    "location": {
+      "column": "68",
+      "line": "222",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "N",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Y\u41ad2",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int Y\u41ad2(void)",
+    "location": {
+      "column": "74",
+      "line": "232",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "Y\u41ad2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@I",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "I",
+    "location": {
+      "column": "46",
+      "line": "240",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\CMSIS\\GD\\GD32F30x\\Source\\system_gd32f30x.c"
+    },
+    "name": "I",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@w",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "w",
+    "location": {
+      "column": "14",
+      "line": "45",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "w",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@K",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "K",
+    "location": {
+      "column": "44",
+      "line": "62",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "K",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@kJ",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "kJ",
+    "location": {
+      "column": "170",
+      "line": "69",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "kJ",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@t",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "t",
+    "location": {
+      "column": "11",
+      "line": "92",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "t",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@YT",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "YT",
+    "location": {
+      "column": "14",
+      "line": "122",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "YT",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@p",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "p",
+    "location": {
+      "column": "242",
+      "line": "167",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "p",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0479",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0479",
+    "location": {
+      "column": "56",
+      "line": "182",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "\u0479",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@l",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "l",
+    "location": {
+      "column": "55",
+      "line": "216",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "l",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@I\u058fn",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "I\u058fn",
+    "location": {
+      "column": "307",
+      "line": "216",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_adc.c"
+    },
+    "name": "I\u058fn",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@FW",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "FW",
+    "location": {
+      "column": "107",
+      "line": "5",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_bkp.c"
+    },
+    "name": "FW",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u047d",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u047d",
+    "location": {
+      "column": "1",
+      "line": "51",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_bkp.c"
+    },
+    "name": "\u047d",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@$",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "$",
+    "location": {
+      "column": "4149",
+      "line": "2",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_can.c"
+    },
+    "name": "$",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@T",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "T",
+    "location": {
+      "column": "4",
+      "line": "16",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_can.c"
+    },
+    "name": "T",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@v",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "v",
+    "location": {
+      "column": "16",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_crc.c"
+    },
+    "name": "v",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@wZ",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "wZ",
+    "location": {
+      "column": "219",
+      "line": "14",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_crc.c"
+    },
+    "name": "wZ",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0186",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0186",
+    "location": {
+      "column": "56",
+      "line": "17",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_ctc.c"
+    },
+    "name": "\u0186",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@L",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "L",
+    "location": {
+      "column": "95",
+      "line": "19",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_ctc.c"
+    },
+    "name": "L",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@E",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "E",
+    "location": {
+      "column": "52",
+      "line": "37",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_ctc.c"
+    },
+    "name": "E",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u74ab",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u74ab",
+    "location": {
+      "column": "114",
+      "line": "42",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_ctc.c"
+    },
+    "name": "\u74ab",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@_n",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "_n",
+    "location": {
+      "column": "89",
+      "line": "60",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_ctc.c"
+    },
+    "name": "_n",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@O",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "O",
+    "location": {
+      "column": "104",
+      "line": "62",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_ctc.c"
+    },
+    "name": "O",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@$",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "$",
+    "location": {
+      "column": "13",
+      "line": "13",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dac.c"
+    },
+    "name": "$",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@dt",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "dt",
+    "location": {
+      "column": "79",
+      "line": "19",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dac.c"
+    },
+    "name": "dt",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@q",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "q",
+    "location": {
+      "column": "35",
+      "line": "35",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dac.c"
+    },
+    "name": "q",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Pc",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Pc",
+    "location": {
+      "column": "56",
+      "line": "36",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dac.c"
+    },
+    "name": "Pc",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@a",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "a",
+    "location": {
+      "column": "141",
+      "line": "57",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dac.c"
+    },
+    "name": "a",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@pM",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "pM",
+    "location": {
+      "column": "13",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dbg.c"
+    },
+    "name": "pM",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Q",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Q",
+    "location": {
+      "column": "26",
+      "line": "3",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dbg.c"
+    },
+    "name": "Q",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@r",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "r",
+    "location": {
+      "column": "3",
+      "line": "15",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dbg.c"
+    },
+    "name": "r",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@J",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "J",
+    "location": {
+      "column": "52",
+      "line": "9",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "J",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u55cb",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u55cb",
+    "location": {
+      "column": "43",
+      "line": "12",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "\u55cb",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "F",
+    "location": {
+      "column": "28",
+      "line": "16",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "F",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@W",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "W",
+    "location": {
+      "column": "276",
+      "line": "19",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "W",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Er",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Er",
+    "location": {
+      "column": "421",
+      "line": "43",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "Er",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@cP",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "cP",
+    "location": {
+      "column": "104",
+      "line": "47",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "cP",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@W",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "W",
+    "location": {
+      "column": "122",
+      "line": "50",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "W",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@U",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "U",
+    "location": {
+      "column": "3",
+      "line": "162",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "U",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@z$",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "z$",
+    "location": {
+      "column": "17",
+      "line": "173",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "z$",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u074dR",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u074dR",
+    "location": {
+      "column": "73",
+      "line": "188",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "\u074dR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@l",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "l",
+    "location": {
+      "column": "71",
+      "line": "211",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "l",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Mz",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Mz",
+    "location": {
+      "column": "74",
+      "line": "222",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_dma.c"
+    },
+    "name": "Mz",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@UoaB",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "UoaB",
+    "location": {
+      "column": "162",
+      "line": "48",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "UoaB",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@i",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "i",
+    "location": {
+      "column": "80",
+      "line": "81",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "i",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@iR",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "iR",
+    "location": {
+      "column": "16",
+      "line": "94",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "iR",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@bV",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "bV",
+    "location": {
+      "column": "33",
+      "line": "125",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "bV",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@T",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "T",
+    "location": {
+      "column": "64",
+      "line": "126",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "T",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@u6",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "u6",
+    "location": {
+      "column": "44",
+      "line": "127",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "u6",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@S",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "S",
+    "location": {
+      "column": "115",
+      "line": "154",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "S",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0428TH",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0428TH",
+    "location": {
+      "column": "126",
+      "line": "170",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "\u0428TH",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@w",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "w",
+    "location": {
+      "column": "75",
+      "line": "195",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "w",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@iCCl",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "iCCl",
+    "location": {
+      "column": "105",
+      "line": "899",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "iCCl",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@R",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "R",
+    "location": {
+      "column": "160",
+      "line": "921",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "R",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@v",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "v",
+    "location": {
+      "column": "72",
+      "line": "1128",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "v",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@f",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "f",
+    "location": {
+      "column": "43",
+      "line": "1180",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "f",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Ae",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Ae",
+    "location": {
+      "column": "40",
+      "line": "1183",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "Ae",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0617",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0617",
+    "location": {
+      "column": "43",
+      "line": "1188",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "\u0617",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u05c0",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u05c0",
+    "location": {
+      "column": "115",
+      "line": "1188",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "\u05c0",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@JW",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "JW",
+    "location": {
+      "column": "126",
+      "line": "1198",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "JW",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@pM",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "pM",
+    "location": {
+      "column": "26",
+      "line": "1201",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "pM",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@B",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "B",
+    "location": {
+      "column": "5",
+      "line": "1222",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "B",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@l",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "l",
+    "location": {
+      "column": "72",
+      "line": "1258",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_enet.c"
+    },
+    "name": "l",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@_F",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "_F",
+    "location": {
+      "column": "19",
+      "line": "23",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_exmc.c"
+    },
+    "name": "_F",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@qy2",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "qy2",
+    "location": {
+      "column": "229",
+      "line": "22",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_exti.c"
+    },
+    "name": "qy2",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@I",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "I",
+    "location": {
+      "column": "191",
+      "line": "47",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_exti.c"
+    },
+    "name": "I",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@m",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "m",
+    "location": {
+      "column": "11",
+      "line": "59",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_exti.c"
+    },
+    "name": "m",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@f",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "f",
+    "location": {
+      "column": "395",
+      "line": "37",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "f",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@z",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "z",
+    "location": {
+      "column": "939",
+      "line": "37",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "z",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@v8K",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "v8K",
+    "location": {
+      "column": "941",
+      "line": "37",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "v8K",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@z",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "z",
+    "location": {
+      "column": "50",
+      "line": "40",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "z",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@v8K",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "v8K",
+    "location": {
+      "column": "52",
+      "line": "40",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "v8K",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@L",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "L",
+    "location": {
+      "column": "106",
+      "line": "71",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "L",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0438",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0438",
+    "location": {
+      "column": "96",
+      "line": "81",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "\u0438",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Ws",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Ws",
+    "location": {
+      "column": "104",
+      "line": "118",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "Ws",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@p",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "p",
+    "location": {
+      "column": "17",
+      "line": "135",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "p",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@w",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "w",
+    "location": {
+      "column": "1",
+      "line": "136",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "w",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@b",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "b",
+    "location": {
+      "column": "165",
+      "line": "166",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "b",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@w",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "w",
+    "location": {
+      "column": "54",
+      "line": "170",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "w",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "F",
+    "location": {
+      "column": "54",
+      "line": "181",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "F",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@w",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "w",
+    "location": {
+      "column": "202",
+      "line": "191",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "w",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@t",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "t",
+    "location": {
+      "column": "21",
+      "line": "214",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fmc.c"
+    },
+    "name": "t",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@k",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "k",
+    "location": {
+      "column": "21",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fwdgt.c"
+    },
+    "name": "k",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u070d",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u070d",
+    "location": {
+      "column": "4101",
+      "line": "2",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fwdgt.c"
+    },
+    "name": "\u070d",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Z",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Z",
+    "location": {
+      "column": "4106",
+      "line": "2",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fwdgt.c"
+    },
+    "name": "Z",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "F",
+    "location": {
+      "column": "97",
+      "line": "31",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fwdgt.c"
+    },
+    "name": "F",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@M",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "M",
+    "location": {
+      "column": "18",
+      "line": "32",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_fwdgt.c"
+    },
+    "name": "M",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@I",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "I",
+    "location": {
+      "column": "15",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_gpio.c"
+    },
+    "name": "I",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@R\u0145",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "R\u0145",
+    "location": {
+      "column": "84",
+      "line": "16",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_gpio.c"
+    },
+    "name": "R\u0145",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Fp",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Fp",
+    "location": {
+      "column": "90",
+      "line": "35",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_gpio.c"
+    },
+    "name": "Fp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@n\u709eK",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "n\u709eK",
+    "location": {
+      "column": "56",
+      "line": "37",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_gpio.c"
+    },
+    "name": "n\u709eK",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0533",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0533",
+    "location": {
+      "column": "20",
+      "line": "7",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "\u0533",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@O",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "O",
+    "location": {
+      "column": "277",
+      "line": "87",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "O",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@n",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "n",
+    "location": {
+      "column": "39",
+      "line": "100",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "n",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@r",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "r",
+    "location": {
+      "column": "49",
+      "line": "108",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "r",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u02360",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u02360",
+    "location": {
+      "column": "214",
+      "line": "138",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "\u02360",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@tJC",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "tJC",
+    "location": {
+      "column": "114",
+      "line": "158",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "tJC",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@g",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "g",
+    "location": {
+      "column": "54",
+      "line": "195",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "g",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@b",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "b",
+    "location": {
+      "column": "63",
+      "line": "207",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_i2c.c"
+    },
+    "name": "b",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@Lk",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "Lk",
+    "location": {
+      "column": "20",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_misc.c"
+    },
+    "name": "Lk",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@kb",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "kb",
+    "location": {
+      "column": "19",
+      "line": "3",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_pmu.c"
+    },
+    "name": "kb",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@A",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "A",
+    "location": {
+      "column": "23",
+      "line": "13",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_pmu.c"
+    },
+    "name": "A",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@i",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "i",
+    "location": {
+      "column": "38",
+      "line": "20",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_pmu.c"
+    },
+    "name": "i",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@yq",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "yq",
+    "location": {
+      "column": "235",
+      "line": "34",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_pmu.c"
+    },
+    "name": "yq",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@O",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "O",
+    "location": {
+      "column": "108",
+      "line": "45",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_pmu.c"
+    },
+    "name": "O",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@z",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "z",
+    "location": {
+      "column": "118",
+      "line": "88",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_pmu.c"
+    },
+    "name": "z",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@XI",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "XI",
+    "location": {
+      "column": "31",
+      "line": "20",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_rcu.c"
+    },
+    "name": "XI",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@B",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "B",
+    "location": {
+      "column": "315",
+      "line": "33",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_rcu.c"
+    },
+    "name": "B",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@g",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "g",
+    "location": {
+      "column": "46",
+      "line": "41",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_rcu.c"
+    },
+    "name": "g",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@CgM",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "CgM",
+    "location": {
+      "column": "57",
+      "line": "41",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_rcu.c"
+    },
+    "name": "CgM",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@$",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "$",
+    "location": {
+      "column": "34",
+      "line": "68",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_rcu.c"
+    },
+    "name": "$",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@H",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "H",
+    "location": {
+      "column": "18",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_rtc.c"
+    },
+    "name": "H",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@o",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "o",
+    "location": {
+      "column": "197",
+      "line": "37",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_rtc.c"
+    },
+    "name": "o",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0494",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0494",
+    "location": {
+      "column": "22",
+      "line": "43",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_sdio.c"
+    },
+    "name": "\u0494",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@cE",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "cE",
+    "location": {
+      "column": "59",
+      "line": "49",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_sdio.c"
+    },
+    "name": "cE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@x",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "x",
+    "location": {
+      "column": "27",
+      "line": "71",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_sdio.c"
+    },
+    "name": "x",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@u",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "u",
+    "location": {
+      "column": "19",
+      "line": "2",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_spi.c"
+    },
+    "name": "u",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@_",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "_",
+    "location": {
+      "column": "21",
+      "line": "20",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_spi.c"
+    },
+    "name": "_",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@C",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "C",
+    "location": {
+      "column": "19",
+      "line": "78",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_spi.c"
+    },
+    "name": "C",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u01d7",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u01d7",
+    "location": {
+      "column": "47",
+      "line": "78",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_spi.c"
+    },
+    "name": "\u01d7",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u06e5",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u06e5",
+    "location": {
+      "column": "45",
+      "line": "106",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_spi.c"
+    },
+    "name": "\u06e5",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@r",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "r",
+    "location": {
+      "column": "91",
+      "line": "143",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_spi.c"
+    },
+    "name": "r",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@a",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "a",
+    "location": {
+      "column": "104",
+      "line": "143",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_spi.c"
+    },
+    "name": "a",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@S",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "S",
+    "location": {
+      "column": "15",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "S",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u04ae",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u04ae",
+    "location": {
+      "column": "280",
+      "line": "18",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "\u04ae",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@f",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "f",
+    "location": {
+      "column": "64",
+      "line": "143",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "f",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "F",
+    "location": {
+      "column": "136",
+      "line": "143",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "F",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@z",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "z",
+    "location": {
+      "column": "187",
+      "line": "143",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "z",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@a",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "a",
+    "location": {
+      "column": "161",
+      "line": "149",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "a",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@h",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "h",
+    "location": {
+      "column": "14",
+      "line": "186",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "h",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@V",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "V",
+    "location": {
+      "column": "19",
+      "line": "220",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "V",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "F",
+    "location": {
+      "column": "433",
+      "line": "242",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_timer.c"
+    },
+    "name": "F",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@f",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "f",
+    "location": {
+      "column": "265",
+      "line": "19",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_usart.c"
+    },
+    "name": "f",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@g",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "g",
+    "location": {
+      "column": "13",
+      "line": "34",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_usart.c"
+    },
+    "name": "g",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@d",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int d(int)",
+    "location": {
+      "column": "219",
+      "line": "63",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_usart.c"
+    },
+    "name": "d",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@q",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "q",
+    "location": {
+      "column": "226",
+      "line": "92",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_usart.c"
+    },
+    "name": "q",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@C",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "C",
+    "location": {
+      "column": "46",
+      "line": "100",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_usart.c"
+    },
+    "name": "C",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@\u0665",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "\u0665",
+    "location": {
+      "column": "18",
+      "line": "1",
+      "path": "E:\\S32K144_Development\\7\u3001GD32F303\\U2\\GD32F303_IMSU_X_U2\\GD32F30x_standard_peripheral\\Source\\gd32f30x_wwdgt.c"
+    },
+    "name": "\u0665",
+    "origin": "project_file",
+    "scope": null
+  }
+]

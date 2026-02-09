@@ -1,0 +1,2148 @@
+
+#ifndef __main_H
+#define __main_H
+
+
+#include "base_def.h"
+#include "includes.h"
+
+#include <time.h>
+#include "interface.h"
+#include "init1.h"
+#include "setdata.h"
+#include "History.h"
+#include "mutex.h"
+#include "uip_arp.h"
+
+extern UINT8 u8DebugVal;
+//#define WDOG_ENABLE					1
+#define SFT_WDOG_PERIOD				(3*60*(OS_TICKS_PER_SEC))
+#define NET_PRINTF(...)				//printf(__VA_ARGS__)
+#define INVALID_DELAY				-100
+#define CHARGE_LOG
+
+#define mVERHIGH            1
+#define mVERLOW		    0      
+
+//setdata version
+#define mSETDATAVERHIGH     1
+#define mSETDATAVERLOW      0
+
+//#define	KAIPU_2017VER_TEST			1		//开普电科院通信合规测试开关
+
+#define DCMETER_RATIO_ENABLE			1		//预留直流电流系数
+
+//#define FAILS_REASON_UNKNOWN	1			//未知原因
+//#define FAILS_REASON_E_STOP		2			//紧急停机
+//#define FAILS_REASON_CC1		3			//CC1故障
+//#define FAILS_REASON_BMS_FAULT		4		//BMS故障
+//#define FAILS_REASON_BMS_ERROR		5		//BMS错误
+//#define FAILS_REASON_CELL_OVER_V	6		//单体电压过高
+//#define FAILS_REASON_CELL_OVER_T	7		//单体温度过高
+//#define FAILS_REASON_AC_OVER		8		//输入过压
+//#define FAILS_REASON_AC_UNDER		9		//输入欠压
+//#define FAILS_REASON_AC_PHASE		10		//输入缺相
+//#define FAILS_REASON_OUT_SHORT		11		//输出短路
+//#define FAILS_REASON_SELF_CHECK		12		//内部故障 自检错误
+//#define FAILS_REASON_DC_OVER_V		13		//输出过压
+//#define FAILS_REASON_OUT_BREAK		14		//输出断路
+//#define FAILS_REASON_APP			15		//APP触发
+//#define FAILS_REASON_BRUSH			16		//刷卡停机
+//#define FAILS_REASON_NET_ADMIN		17		//网管
+//#define FAILS_REASON_SPEAR			18		//未插枪 或枪拔出 
+//#define FAILS_REASON_BATT_FULL		19		//车载点满 无法继续充电
+//#define FAILS_REASON_NET_BREAK		20		//网络故障
+//#define FAILS_REASON_INSULT			21		//绝缘故障
+//#define FAILS_REASON_VIN			22		//VIN码不匹配
+//#define FAILS_REASON_POLARITY		23		//电池反接
+//#define FAILS_REASON_STATION_SPEAR_DISBLE	24	//充电枪或桩被禁用
+//#define FAILS_REASON_BMS_PROTOCOL			25	//协议不匹配
+//#define FAILS_REASON_ROTATORY_ONE_WORK		26	//一枪正在工作
+//#define FAILS_REASON_SINGLE_ONE_WORK		27	//一枪正在工作
+//#define FAILS_REASON_ONE_SELF_WORK			28	//本枪正在工作中
+//#define FAILS_REASON_ORDER					29	//本枪预约中
+
+
+
+#if KAIPU_2017VER_TEST
+	#define	BATT_OVER_VOLT_AlmDly	10
+#else
+	#define	BATT_OVER_VOLT_AlmDly	200
+#endif
+
+#define FINISH_CODE_NORMAL		1			//正常结束（废弃）
+#define FINISH_CODE_ABORT		2			//异常停机 在不具备	充电结束条件下，充电机停止    未定义的则使用异常停止
+#define FINISH_CODE_EPO			3			//紧急停机按钮故障 充电机停止
+#define FINISH_CODE_CC1			4			//CC1 连接确认故障
+#define FINISH_CODE_BMS_FAILS	5			//bms故障    充电机停止
+#define FINISH_CODE_BMS_ERROR	6			//bms错误    充电机停止
+#define FINISH_CODE_CELL_OVER_V	7			//单体电压高停机
+#define FINISH_CODE_CELL_OVER_T	8			//单体温度高停机
+#define FINISH_CODE_AC_OVER		9				//交流过压
+#define FINISH_CODE_AC_UNDER		10				//交流欠压
+#define FINISH_CODE_AC_PHASE		11				//交流缺相
+#define FINISH_CODE_OUT_SHORT		12		//输出短路
+#define FINISH_CODE_SELF_CHECK		13		//内部故障 自检错误
+#define FINISH_CODE_DC_OVER_V		14		//输出过压
+#define FINISH_CODE_OUT_BREAK		15		//输出断路
+#define FINISH_CODE_APP				80		//APP触发
+#define FINISH_CODE_BRUSH			81		//刷卡停机
+#define FINISH_CODE_NET_ADMIN		82		//网管
+#define FINISH_CODE_SPEAR			83		//未插枪 或枪拔出 
+#define FINISH_CODE_BATT_FULL		84		//车载充满了
+#define FINISH_CODE__NET_BREAK		85		//充电过程中 网络故障达到阈值
+
+#define TICKS_COUT_UNINT   OS_TICKS_PER_SEC
+
+#define IS_PUTIAN_BMS		1
+#define ISNT_PUTIAN_BMS		0
+
+#define PARALLEL_SEM_VAL	(4*1000)
+#define PARALLEL_SEM_FLAT		0
+#define PARALLEL_SEM_EXECUTE	1
+#define PARALLEL_SEM_NONE		2
+
+#define ERR_BRM_00_DBDB_TIME_OUT		0x01
+#define ERR_BRM_00_TIME_OUT				0x02
+#define ERR_BCP_TIME_OUT				0x03
+#define ERR_BCP_DBDBTIME_OUT			0x04
+#define ERR_BRO_TIME_OUT				0x05
+#define ERR_CRO_AA_TIME_OUT				0x06
+#define ERR_BCS_BCL_TIME_OUT			0x07
+
+
+
+
+//用于Stuff CEM
+#define CHARGING_RCV_BCL_SEND_CCS_2		200   //BCS超时
+
+
+
+#define EV_BSM_PAUSE		0xf2
+#define EV_BSM_NO_RCV		0xf1
+#define EV_BSM_NONE			0xf0
+#define EV_BST_NONE			0xf0
+#define EV_INVALID_RESULT	0xf0
+
+#define BMS_VERSION_2011	0
+#define BMS_VERSION_2015	1
+
+#define EV_HAS_ELEC_LOCK	1
+
+#define CELL_ALM_STOP		1
+#define CELL_ALM_NONE		0
+#define CELL_ALM_ONLY		2
+
+#define SPEAR_IS_LOCK	1
+#define SPEAR_IS_UNLOCK	0
+
+#define HOLL_COEF_K			867.32
+#define HOLL_COEF_B			782.7
+
+#define NO_APPROVE_CHARGE	0		//不准充电
+#define APPROVE_CHARGE		1		//充电
+
+#define SPEAR_ON_LINE		0x01
+#define SPEAR_ON_LINE_KEY	0x02
+#define SPEAR_NO_ON_LINE	0x00
+
+#define EV_STOP_TIMER		-3
+
+#define BMS_AUTO		0
+#define BMS_TIME		1
+#define BMS_ENERGY		2
+#define BMS_MONEY		3
+#define BMS_SOC			4
+
+/************************************************ 网络相关的宏定义 *******************************************************/
+#define NET_SUPPORT_ZHIXIN	0
+#define NET_SUPPORT_YUNSHAN	1
+
+#define EV_ENTER_IC_CARD	1
+#define EV_ENTER_APP		2
+#define EV_ENTER_admin		3
+#define EV_ENTER_IC_CARD_NET 4
+#define EV_ENTER_VIN		5
+
+#define EV_STAT_IDL		0
+#define EV_STAT_READY_OK	1
+#define EV_STAT_CHARGING	2
+#define EV_STAT_FINISH		3
+#define EV_STAT_START_FAIL	4
+#define EV_STAT_ODER		5
+#define EV_STAT_SYS_FAILT	6
+#define EV_STAT_NEED_WAIT	7
+
+
+//历史记录
+#define ZTE_NO_REPORT_CHARGE_LOG	0x5a
+#define ZTE_CLR_CHARGE_LOG			0xa5
+
+
+#define INVALIDE_TIME_FLAG	0xff
+#define TIME_IS_0_30_MIN	0
+#define TIME_IS_31_59_MIN	1
+
+
+//并机相关的宏定义
+#define EV_CommMode_WAIT_CC1_START	1
+#define EV_CommMode_ALREADY_START	2
+#define EV_CommMode_NONE	0
+
+#define NO_ADJUST_ON_OFF	2
+#define ADJUST_RECT_VOLT_CURR	1
+#define NO_ADJUST_RECT_VOLT_CURR	0
+
+#define TEST_CAN1			1
+#define TEST_CAN2			2
+#define TEST_485_UART4		4
+#define TEST_485_UART5		5	//做主
+#define TEST_UART1			1
+#define TEST_UART2			2
+
+
+#define BMS_IMMEDIATELY_TYPE	0		//对应云杉  自动 充满
+#define BMS_TIMMING_TYPE	1			//预约充电 但是不属于云杉类型，云杉哪怕预约了还是要发个命令过来开始充电的！
+#define BMS_ENERGY_TYPE		8			//对应云杉  按电量 充满
+#define BMS_TIME_YUNSHAN_TYPE	9		//对应云杉  按云杉 时间方式 充电
+#define BMS_MONEY_TYPE		10			//对应云杉  按云杉 金额方式 充电
+
+#define BMS_SOC_TYPE		11
+
+#define IS_SPEAR_CONNECT	0
+#define IS_SPEAR_ISNT_CONNECT	1
+
+#define TIME_IMMEDIATELY_TYPE	2
+#define TIME_TIMMING_TYPE	3
+#define ENEGY_IMMEDIATELY_TYPE	4
+#define ENEGY_TIMMING_TYPE	5
+#define MONEY_IMMEDIATELY_TYPE	6
+#define MONEY_TIMMING_TYPE	7
+
+#define ALM_LED_BLINK()	HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_7)
+
+#define _LITTLE_ENDIAN_TYPE
+
+#define VARIABLE_SET_BIT(Args,Pst) (Args|=(0x01<<Pst))				//置位
+#define VARIABLE_CLR_BIT(Args,Pst) (Args&=(~(0x01<<Pst)))			//清零
+#define VARIABLE_CHK_BIT(Args,Pst) (Args&(0x01<<Pst))				//检测
+
+#define BRUSH_COMFAIL_NUM  5
+
+#define TASK_NAME_EN (0)
+
+#define UART1_SEQUECE_NO	1
+#define UART2_SEQUECE_NO	2
+#define UART6_SEQUECE_NO	6
+#define UART4_SEQUECE_NO	4
+#define UART5_SEQUECE_NO	5
+
+#define UART2_RECV_MAX_NUM	10
+
+#define UART6_RECV_MAX_NUM	255
+#define UART6_SEND_MAX_NUM	255
+
+#define UART6_YDN23_RECV_MAX_NUM	200
+#define UART6_YDN23_SEND_MAX_NUM	400
+
+#define UART1_RECV_MAX_NUM	100
+#define UART1_SEND_MAX_NUM	70
+#define  CAN1_BUF_MAX_NUM	1
+#define  CAN_A_B_BUF_MAX_NUM	100
+#define  UART4_SEND_BUFF_MAX_NUM 300
+#define  CAN_A_B_TEST_BUF_MAX_NUM	5
+#define  MDBUS_BUFF_MAX_NUM	100
+
+#define  RS485_UART5_RX_MAX_NUM	330
+#define  RS485_UART5_TX_MAX_NUM	50
+
+#define  RS485_UART4_RX_MAX_NUM	330
+#define  RS485_UART4_TX_MAX_NUM	50
+
+
+
+#define  UART4_RCV_ARRY_NUM	4
+#define  CAN_FUN_CONDE_AUTO_RPT	5
+#define  CAN_CCS_ADDR		2
+#define  CAN_BROADCAST_ADDR	15
+
+#define YDN23_IMCU_ADDR	0x01
+
+
+#define YDN23_IMCU_CID1_COPY	0xe1
+#define YDN23_IMCU_CID1	0x50
+#define YDN23_IMIU_CID1	0x60
+#define YDN23_ADDR_SELF	1
+
+#define YDN23_EID_VAL	0x41
+#define YDN23_GET_ANLG	0x41
+#define YDN23_GET_ALM	0x44
+#define YDN23_GET_STAT	0x43
+#define YDN23_CTRL_RECT 0x45
+#define YDN23_ADJUST_RECT 0x80
+#define YDN23_INVALID_VAL 0x00
+
+#define YDN23_VER_PST	1
+#define YDN23_ADDR_PST	3
+#define YDN23_CID1_PST	5
+#define YDN23_CID2_PST	7
+#define YDN23_DATAINFO_PST	13
+
+#define CAN_BRST_ADDR		15
+#define CAN_DESTADDR_PST	22
+#define CAN_SORCEADDR_PST	18
+#define CAN_FUNC_CODE_PST	10
+#define CAN_INFO_CODE_PST	0
+
+
+#define EV750_RATED_CURRENT	11.3	//8.5KW
+#define EV550_RATED_CURRENT	11.3	//8.5KW
+#define EV750_MAX_OUT_VOLT	750
+#define EV750_MIN_OUT_VOLT	200
+
+#define CHARGE_START	0x01
+#define CHARGE_STOP	0x00
+
+#define HUA_SHANG_S3	NEWDO5
+#define HUA_SHANG_S1	NEWLLVD
+#define HUA_SHANG_S2	NEWBLVD
+
+#define S_CONNECT_DI_VALUE 1
+
+
+#define LOCALFLAGFST      0x5A
+#define LOCALFLAGSEC      0xA5
+#define REMOTEFLAGFST     0xA5
+#define REMOTEFLAGSEC     0x5A
+
+//key values
+#ifdef LCD_LINE_8
+#define KEY_ESC   0x2e
+#define KEY_ENT   0x27
+#define KEY_UP    0x2b
+#define KEY_DN    0x2d
+#define KEY_NONE  0x2f
+#define KEY_RESET (KEY_ESC & KEY_ENT)//0x26
+#define KEY_BLUP  (KEY_UP & KEY_ENT)
+#define KEY_BLDN  (KEY_DN & KEY_ENT)
+#else
+#define KEY_ESC   0x1f
+#define KEY_ENT   0x3e
+#define KEY_UP    0x3b
+#define KEY_DN    0x37
+#define KEY_LEFT  0x2f
+#define KEY_RIGHT 0x3d
+#define KEY_NONE  0x3f
+#define KEY_RESET (KEY_ESC & KEY_ENT)//0x1e
+#define KEY_BLUP  (KEY_UP & KEY_ENT)
+#define KEY_BLDN  (KEY_DN & KEY_ENT)
+#define KEY_ADVANCED  (KEY_RIGHT & KEY_ENT)
+#endif
+
+#define mRESETKEYTIME   20
+
+#define mREPEATKEYTIME  3
+#define mDOUBLEKEYTIME  10
+#define m4TIMEKEYTIME   30
+#define mNOPASSWORDTIME 750
+#define mNOKEYALARMPOP  375     //375 * 0.16 = 1 Min
+#define mNOKEYTIME      3000
+#define mKEYONCE        1
+#define mKEYREPEAT      2
+#define mKEYDOUBLE      4
+#define mKEY4TIME       8
+
+#define YDN23_NONE  	0
+#define YDN23_PROTOCOL  23
+#define YDN23_HEAD      1
+#define YDN23_START     0x7e
+#define YDN23_END       0x0d
+#define YDN23_OLD_ADD   '@'
+
+#define SET_AC_DATAFLAG_SW_CHG      0
+#define SET_RECT_DATAFLAG_SW_CHG    1
+#define SET_DC_DATAFLAG_SW_CHG      2
+#define SET_MPPT_DATAFLAG_SW_CHG    3
+
+
+//SignalDisplayMode
+#define DIRECT_NORMAL       1
+#define DIRECT_REVERSE      2
+#define INDIRECT_NORMAL     3
+#define INDIRECT_REVERSE    4
+
+
+//CTRLSIGNAL
+#define CHARGE_CTRL         0
+#define INSUL_CTRL          1
+#define CHARGE_MODE_SET     2
+#define RECT_ON_OFF_CTRL    3
+#define FAN_FULL_CTRL       4
+#define CONTACTOR_CTRL      5
+
+//SetSignal
+
+
+//SYSTEMINFO
+
+
+//INSULINFO
+#define INSUL_VOLT              0
+#define INSUL_CURR              1
+#define INSUL_P_G_RES           2
+#define INSUL_N_G_RES           3
+
+//AC/DC Meter INFO
+//measure analog index
+
+
+#define TEMP1_NUM      4
+#define TEMP2_NUM      5
+#define TEMP3_NUM      6
+
+#define AC1VA_NUM      7
+#define AC1VB_NUM      8
+#define AC1VC_NUM      9
+#define AC1IA_NUM      10
+#define AC1IB_NUM      11
+#define AC1IC_NUM      12
+
+#define LOAD1FUSE_NUM  13
+#define LOAD2FUSE_NUM  14
+#define LOAD3FUSE_NUM  15
+#define LOAD4FUSE_NUM  16
+#define LOAD5FUSE_NUM  17
+#define LOAD6FUSE_NUM  18
+#define LOAD7FUSE_NUM  19
+
+#define BATT1FUSE_NUM  20
+#define BATT2FUSE_NUM  21
+#define BATT3FUSE_NUM  22
+#define BATT4FUSE_NUM  23
+
+#define BMV1_NUM       24
+#define BMV2_NUM       25
+#define BMV3_NUM       26
+#define BMV4_NUM       27
+#define BMV5_NUM       28
+#define BMV6_NUM       29
+#define BMV7_NUM       30
+#define BMV8_NUM       31
+#define BMV9_NUM       32
+
+#define LOADCURR_NUM   33
+#define DCEMCURR1_NUM  34
+#define DCEMCURR2_NUM  35
+#define DCEMCURR3_NUM  36
+#define DCEMCURR4_NUM  37
+#define SIG_ID_BATT_SOC 38
+
+#define ADMAXCOUNT      4096
+#define BUSVREF         2.5    
+#define DCEMHARDCOEFF   27.67
+#define VOLTVREF        2     
+#define CURRVREF        50   
+#define LOADFUSECOEFF   26    
+#define BATTFUSECOEFF   16   
+
+
+#define mFANSELFTEST		1  
+#define mFANPWRONTEST		2  
+#define mFACTORYTEST		3  
+
+
+#define mFAN1				0
+#define hPOWER_PWM			1
+
+
+#define CHK_SEND_STAT(u8Stat) (u8Stat&(1<<0))
+#define SET_SEND_STAT(u8Stat) (u8Stat|=(1<<0))
+#define CLR_SEND_STAT(u8Stat) (u8Stat&=~(1<<0))
+
+#define CHK_CONN_STAT(u8Stat) (u8Stat&(1<<1))
+#define SET_CONN_STAT(u8Stat) (u8Stat|=1<<1)
+#define CLR_CONN_STAT(u8Stat) (u8Stat&=~(1<<1))
+
+#define CHK_DHCP_STAT(u8Stat) (u8Stat&(1<<2))
+#define SET_DHCP_STAT(u8Stat) (u8Stat|=1<<2)
+#define CLR_DHCP_STAT(u8Stat) (u8Stat&=~(1<<2))
+
+#define BMS_COMM_ERR_INVALID				0xff
+
+
+#define CEM_CRM00_TIMEOUT					1	//HANDSHAKE_START_CRM00
+#define CEM_RCV_BCP_OR_S_CRMAA_TIMEOUT		2	//CONFIG_RCV_BCP_OR_S_CRMAA
+#define CEM_SEND_CML_RCV_BRO_TIMEOUT		3	//CONFIG_SEND_CML_RCV_BRO
+#define CEM_RCV_BCS_OR_S_CRO_TIMEOUT		4	//CHARGING_RCV_BCS_OR_S_CRO
+#define CEM_RCV_BCL_SEND_CCS_TIMEOUT		5	//CHARGING_RCV_BCL_SEND_CCS
+#define CEM_CEM_XXXX_TIMEOUT				6	//EV_CEM_XXXX
+#define CEM_CST_BST_TIMEOUT					7	//EV_CST_BST
+#define CEM_BSD_CSD_TIMEOUT					8	//EV_BSD_CSD
+#define CEM_OTHER_TIMEOUT					9	//ELSE
+#define CRM00_LOCK_ERR						10	//充点前 锁不对
+#define SELF_TEST_ERR						11	//自检错误
+#define CRO_BUS_VOLT_ERR					12	//CRO阶段无法吸合继电器
+#define MCCB_CHECK_ERR						13	//母排电压校准错误
+#define CHARGE_ALM_BY_BMS					14	//充电时 有告警停机
+#define CHARGE_RECEIVE_BST					15	//收到		BST
+#define CHARGE_BSM_ERR						16	//BSM  报文有异常！！
+#define CHARGE_BUS_OVER_VOLT				17
+#define SELF_TEST_CAR_VOLT_ERR				18	//自检时 车端电池电压大于30V  或时 一检测发现<-80V
+#define SELF_TEST_INSULATION_ERR			19	//自检时 绝缘告警或通信失败
+#define BMS_SOC_100							20	//充满
+#define MANUANL_ALM_STOP					21	//手动方式 应为告警所以停机
+#define MANUAL_FIX_TIME_FINISH				22	//手动方式 按时间到充满
+#define MANUAL_ENERGY_FINISH				23	//手动方式 按电量到充满
+#define MANUAL_MONEY_FINISH					24	//手动方式 按金额到充满
+#define RECEIVE_STOP_CMD_BY_NET				25	//网络停机
+#define MANUAL_SOC_FINISH					26	//按SOC到充满_
+#define LUI_STOP_CMD						27	//屏点击停止充电
+#define LUI_STOP_CMD_2						28	//屏点击停止充电
+#define CONSOLE_STOP_CMD					29	//串口后台停机
+#define ALL_RECT_COM_FAILS					30	//所有模块通信失败
+#define BRUSH_STOP_CMD						31	//刷卡停机
+#define NET_BREAK_STOP						32	//网络 APP告警停机
+#define CHARGE_DOOR_ALM_BY_BMS				33	//门禁告警停机
+#define CHARGE_ELE_LOCK_ALM_BY_BMS			34	//充电电子锁告警
+#define CHARGE_SPEAR_CONNCT_ALM_BY_BMS		35	//充电枪连接告警
+#define CHARGE_EPO_ALM_BY_BMS				36	//EPO
+#define START_CHARGE_CC1_ALM				37	//cc1 连接确认 故障
+#define BATT_VOLT_IS_NEGATIVE				38	//电池电压负值
+#define CHARGE_ISLT_COMM_ALM				39	//充电过程中 绝缘 通信 告警
+#define CHARGE_SPD_ALM						40	//充电过程中 防雷告警
+#define CHARGE_WH_COMM_ALM					41	//充电过程中 电表通信失败
+#define CHARGE_CELL_VOLT_ALM				42	// 节	电压过压！
+#define CHARGE_OVER_CURR_ALM				43	// 过流
+#define APP_CMD_ENTER_CHG_OVERTIME			44	// APP启动后90秒内未进入正式充电，需要停止
+#define CHG_DURING_OVERTIME					45	// 充电持续实际超过24小时
+#define CARD_LEAVE_MONEY_NOT_ENOUGH			46	// 卡余额不足
+#define CHARGE_PAUSE_OVER_10_MIN			47	// 暂停10分钟时间到
+#define CHARGE_RING_FALT					48	// 环网故障
+#define SELF_TEST_CAR_VOLT_ERR_MCCB_SHORT	49	//自检时 车端电池电压大于30V  (输出接触器短路了?）
+#define SELF_TEST_CAR_VOLT_ERR_NEG_VOLT		50	//自检错误 自检前检测到-20V电压
+
+#define CHARGE_RECEIVE_BST_SOC				51	//收到BST SOC满足条件
+#define CHARGE_RECEIVE_BST_VOLT				52	//收到BST 达到电压设定值
+#define CHARGE_RECEIVE_BST_CELL_VOLT		53	//收到BST 达到单体电压设定值
+#define CHARGE_RECEIVE_BST_CHARGER_ST		54	//收到BST 充电机主动停止
+#define CHARGE_RECEIVE_BST_INSUL_FALT		55	//收到BST 绝缘故障
+#define CHARGE_RECEIVE_BST_CONTACTOR_OVER_TEMP	56	//收到BST 输出连接器过温
+#define CHARGE_RECEIVE_BST_DEVICE_OVER_TEMP	57	//收到BST 其它BMS原件过温
+#define CHARGE_RECEIVE_BST_CONTACTOR_FALT	58	//收到BST 充电连接器故障
+#define CHARGE_RECEIVE_BST_BATT_OVER_TEMP	59	//收到BST 电池过温
+#define CHARGE_RECEIVE_BST_HIGH_VOLT_CONTACTOR_FALT	60	//收到BST 高压继电器故障
+#define CHARGE_RECEIVE_BST_CC2_FALT			61	//收到BST 检测点2电压故障
+#define CHARGE_RECEIVE_BST_OTHER_FALT		62	//收到BST 其它故障
+#define CHARGE_RECEIVE_BST_OVER_CURR		63	//收到BST 电流过大
+#define CHARGE_RECEIVE_BST_VOLT_ABNORMAL	64	//收到BST 电压异常
+#define CHARGE_GUN_OVER_TEM_ALM				65	//充电枪过温
+#define SELF_TEST_RECT_NOT_WORK_ALM			66	//自检时模块无输出
+#define SELF_TEST_DCMCCB_BREAK_ALM			67	//自检时输出接触器没闭合
+#define CONTROLLER_FAIL_RESTART				68	//监控掉电重启
+#define CHARGE_NO_CURR_STOP					69	//长时间无电流停充
+#define STOP_REASON_VIN_FAIL				70  //VIN码验证失败
+#define STOP_REASON_GET_COST_NO_FAIL		71  //获取交易号失败
+
+#define IST_RECT				50
+#define ALM_BRUSH				1
+#define ALM_POLARITY			2
+#define ALM_WH					3
+#define ALM_SPD					4
+#define ALM_CC1					5
+#define ALM_DOOR				6
+#define ALM_LOCK				7
+#define ALM_BUS_VOLT			8
+#define ALM_MCCB				9
+#define ALM_BMS_ABORT_STOP		10
+#define ALM_CELL_VOLT			11
+#define ALM_RECT_STOP			12
+#define ALM_CRM_TIMEOUT			13
+#define ALM_BCP_TIMEOUT			14
+#define ALM_BRO_TIMEOUT			15
+#define ALM_BCS_TIMEOUT			16
+#define ALM_BCL_TIMEOUT			17
+#define ALM_INSLT_COMM			18
+#define ALM_INSLT				19
+#define ALM_RECT_OVER_TEMP		20
+#define ALM_RECT_FAN			21
+#define ALM_RECT_FAULT			22
+#define ALM_RECT_PROTECT		23
+#define ALM_EPO					24
+
+#define FAULT_LOG_RAM_NUM		50
+#define FAULT_LOG_VIEW_NUM		5
+
+#define MENU_79_PLUG_IN_SPEAR		79
+#define MENU_78_ORDER_NOTE			78
+#define MENU_80_TAKE_OF_SPEAR		80
+#define MENU_81_PLUG_IN_SPEAR		81		//81 界面提示插枪 该界面特殊，如果枪没插则返回到HOME界面，如果插枪了，直接充电！
+#define MENU_82_PLUG_IN_SPEAR		82
+#define MENU_83_BusinessSelet		83
+#define MENU_41_ALM_NOTE			41
+#define MENU_10_HOME				10
+#define MENU_123_APP_CHARGE			123
+#define MENU_127_ADMIN_CHARGE		127
+#define MENU_124_BRUSH_CHARGE		124
+#define MENU_125_Charge_Result		125
+#define MENU_126_CONFIM_STOP		126
+#define MENU_92_PSWD				92
+#define MENU_84_SELECT				84
+#define MENU_85_ENERGY_SELECT		85
+#define MENU_86_TIME_SELECT			86
+#define MENU_87_REMOTE_START		87
+#define MENU_88_TIME_SELECT			88
+#define MENU_110_FAULT_VIEW			110
+
+/************************************************ 模块相关宏定义 *******************************************************/
+#define CTRL_RECT_OPEN	1
+#define CTRL_RECT_CLOSE	0
+
+#define RECT_VoltageSum_VALUE			0
+#define RECT_CurrentSum_VALUE			1
+
+#define INVALID_PARAM_RECT			0
+
+//rect alarm index
+#define RECT_ACNotBalance_Alarm		4
+#define Rect_LoadShare_Alarm		5
+
+#define RECT_ACVoltHigh_Alarm		6
+#define RECT_ACVoltLow_Alarm		7
+#define Rect_ACLostPhase_Alarm		8
+#define Rect_IDSame_Alarm			9
+#define Rect_OutVoltHigh_Alarm		10
+#define Rect_OverTemp_Alarm			11
+#define Rect_FanFault_Alarm			12
+#define Rect_Protect_Alarm			13
+#define Rect_Fault_Alarm			14
+#define Rect_OutPutShort_Alarm		15
+#define Rect_CommBreak_Alarm		16
+
+
+//rect status index
+#define RECT_GroupInfo_ID	    0
+#define RECT_ACLimitPower_STATUS    0
+#define RECT_TempLimitPower_STATUS  1
+#define RECT_LimitPower_STATUS      2
+#define RECT_Close_STATUS           3
+#define RECT_FanFullSpeed_STATUS    4
+#define RECT_WalkIn_STATUS          5
+#define RECT_HVD_STATUS             6
+#define RECT_SequenceStart_STATUS   7
+
+
+//rect alarm index
+#define RECT_ACFailure_STATUS       8
+#define RECT_OverTemp_STATUS        9
+#define RECT_Fault_STATUS           10
+#define RECT_Protect_STATUS         11
+#define RECT_FanFault_STATUS        12
+#define RECT_EEPROMFault_STATUS     13
+#define RECT_LoadShare_STATUS       14
+#define RECT_HVSD_STATUS            15
+#define RECT_ACFailureAlarm_STATUS  16
+#define RECT_NUMBER_SUM				17
+
+//数字量预留  -----	100
+
+//rect analog index
+#define RECT_VoltageValue_VALUE  	100
+#define RECT_RealCurrent_VALUE   	101
+#define RECT_CurrentLimit_VALUE  	102
+#define RECT_Temperature_VALUE   	103
+#define RECT_ACVoltage_VALUE     	104
+#define RECT_VoltageUp_VALUE     	105
+#define RECT_CurrentValue_VALUE  	106
+#define RECT_AC3PVoltageA_VALUE  	107
+#define RECT_AC3PVoltageB_VALUE  	108
+#define RECT_AC3PVoltageC_VALUE  	109
+#define RECT_ALLTIME                110
+#define RECT_POWER_VALUE            111
+
+#define RECT_G_CURR_SUM				135
+#define RECT_G_LAST_RECT_SUM		136
+
+//控制量 150--160
+#define RECT_G_ON_OFF_ALL			150
+
+#define RECT_BARCODE1_VALUE         160
+#define RECT_BARCODE2_VALUE         161
+#define RECT_BARCODE3_VALUE         162
+#define RECT_BARCODE4_VALUE         163
+#define RECT_BARCODE5_VALUE         164
+#define RECT_BARCODE6_VALUE         165
+#define RECT_BARCODE7_VALUE         166
+#define RECT_BARCODE8_VALUE         167
+#define RECT_BARCODE9_VALUE         168
+#define RECT_BARCODE10_VALUE        169
+#define RECT_BARCODE11_VALUE        170
+#define RECT_BARCODE12_VALUE        171
+#define RECT_BARCODE13_VALUE        172
+#define RECT_BARCODE14_VALUE1		173
+#define RECT_BARCODE15_VALUE        174
+#define RECT_BARCODE16_VALUE        175
+#define RECT_BARCODE17_VALUE        176
+#define RECT_BARCODE18_VALUE        177
+#define RECT_BARCODE19_VALUE        178
+#define RECT_BARCODE20_VALUE        179
+#define RECT_BARCODE21_VALUE        180
+#define RECT_BARCODE22_VALUE        181
+#define RECT_BARCODE23_VALUE        182
+#define RECT_BARCODE24_VALUE        183
+#define RECT_BARCODE25_VALUE        184
+#define RECT_BARCODE26_VALUE        185
+#define RECT_BARCODE27_VALUE        186
+#define RECT_BARCODE28_VALUE        187
+#define RECT_SERIAL0_VALUE          188
+
+#define RECT_CURRLIMIT_SET          189
+
+#define RECT_ESTOP_STATUS           190
+#define RECT_AC_VOLT_TOTAL_ALM		191
+
+
+//DCEM 未使用将来 LCD  删除！！！  以免发生段错误
+#define DCEM_Voltage_VALUE          120
+#define DCEM_Current1_VALUE         121
+#define DCEM_Current2_VALUE         122
+#define DCEM_Current3_VALUE         123
+#define DCEM_Current4_VALUE         124
+#define DCEM_KWH1_VALUE             125
+#define DCEM_KWH2_VALUE             126
+#define DCEM_KWH3_VALUE             127
+#define DCEM_KWH4_VALUE             128
+#define DCEM_KWatt1_VALUE           129
+#define DCEM_KWatt2_VALUE           130
+#define DCEM_KWatt3_VALUE           131
+#define DCEM_KWatt4_VALUE           132
+#define DCEM_DCEM2_VALUE            140
+
+#define RECT_Voltage_VALUE			17
+#define RECT_AC3PHAVoltage_VALUE    20
+#define RECT_AC3PHBVoltage_VALUE    21
+#define RECT_AC3PHCVoltage_VALUE    22
+
+
+#define UNUSED_XXX_ID		0
+
+/*定义系统类型*/
+#define SYSTYPE_24V_SET             4				/*4:24V/set*/
+#define SYSTYPE_48V_100             5				/*5:48V/100*/
+#define SYSTYPE_48V_300             6				/*6:48V/300*/
+#define SYSTYPE_48V_500             7				/*7:48V/500*/
+#define SYSTYPE_48V_1000            8				/*8:48V/1000*/
+#define SYSTYPE_48V_SET             9				/*9:48V/set*/
+/*定义系统工作模式*/
+#define SYSMODE_AC					0				/*纯市电开关电源模式*/
+#define SYSMODE_COOPERATE			1				/*开关电源+太阳能方阵投切式 集成互补模式*/
+#define SYSMODE_MIX					2				/*开关电源模块+MPPT模块 混插模式*/
+#define SYSMODE_SOLAR               3				/*纯MPPT模块模式*/
+#define SYSMODE_NUM                 4
+
+/*光电混合模式下控制策略 */
+#define CTRL_SAVE                   0				/*节能为主，多利用太阳能*/
+#define CTRL_STABLY                 1				/*稳定为主，延长电池寿命*/
+
+#define  CUT_TYPE_CLOSE		0						//常闭接触器   
+#define  CUT_TYPE_OPEN		1						//常开接触器
+
+/*定义模块类型*/
+#define RECTTYPE_200A               0
+#define RECTTYPE_100A               1
+#define RECTTYPE_75A                2
+#define RECTTYPE_55A                3
+#define RECTTYPE_50A                4
+#define RECTTYPE_30A                5
+#define RECTTYPE_15A                6
+#define RECTTYPE_7_5A               7
+#define RECTTYPE_37_5A              8
+#define RECTTYPE_86A                9
+#define RECTTYPE_43A                10
+
+/*定义太阳能模式下，电源侧有电池的判断电流*/
+#define HaveBattCurr               2
+#define ENTER_BY_IC_CARD	0
+#define ENTER_BY_PASSWORD	1
+#define RUN_TYPE_IMMEDIATELY	0
+#define RUN_TYPE_TIME		1
+#define CHARGE_METOD_IS_BMS	0
+#define CHARGE_METOD_IS_TIME	1
+#define CHARGE_METOD_IS_ENERGY	2
+#define CHARGE_METOD_IS_MONEY	3
+
+#define TASK_STK_SIZE_CAN1			800
+#define TASK_STK_SIZE_EEPROM		600
+#define TASK_STK_SIZE_MODEM			600
+#define TASK_STK_SIZE_MEASURE		600
+#define TASK_STK_SIZE_ALARM			500
+#define TASK_STK_SIZE_CAN2			800
+#define TASK_STK_SIZE_SELF_TEST		500
+#define TASK_STK_SIZE_RTC			500
+
+#define TASK_STK_SIZE_CAN3			600
+#define TASK_STK_SIZE_RING			500
+#define TASK_STK_SIZE_UART5			600
+#define TASK_STK_SIZE_ETHERNET		800
+#define TASK_STK_SIZE_I2C			800
+#define TASK_STK_SIZE_DISPLAY		400
+#define TASK_STK_SIZE_PWM			500
+#define TASK_STK_SIZE_UART4			600
+#define TASK_STK_NET_ZHIXIN			800
+#define TASK_STK_SIZE_UART1			600
+#define TASK_STK_SIZE_FLASH			800
+
+#define IS_LOCK		1
+#define IS_UN_LOCK	0
+#define  IS_FIRST_RUNNING	1
+#define  ISNT_FIRST_RUNNING	0
+
+
+#define BY_E2PROM			1
+#define BY_SRAM				0
+
+
+#define	mENGLISH			0
+#define mCHINESE            1
+
+#define mCONFIG             0
+#define mMENU               1
+
+#define	mDISABLE	        0
+#define	mENABLE		        1
+
+#define mESHUTDOWN          1
+#define mESTOP              2
+
+
+#define mPOWERSPLIT         1
+
+#define mESHUTDOWN_DI1      10
+#define mESHUTDOWN_DI2      11
+#define mESHUTDOWN_DI3      12
+#define mESHUTDOWN_DI4      13
+#define mESHUTDOWN_DI5      14
+#define mESHUTDOWN_DI6      15
+#define mESHUTDOWN_DI7      16
+#define mESHUTDOWN_DI8      17
+#define mESHUTDOWN_SPD      18
+
+#define mESTOP_DI1          20
+#define mESTOP_DI2          21
+#define mESTOP_DI3          22
+#define mESTOP_DI4          23
+#define mESTOP_DI5          24
+#define mESTOP_DI6          25
+#define mESTOP_DI7          26
+#define mESTOP_DI8          27
+#define mESTOP_SPD          28
+
+#define	mFALSE				0
+#define	mTRUE				1
+
+#define	mNONE				0
+#define	mBATTCURR			1
+#define	mLOADCURR		    2 
+#define	mBATTERYTEMP	    1
+#define	mAMBIENTTEMP	    2
+
+//#define	mBATTERY2TEMP	3
+//#define	mAMBIENT2TEMP	4
+
+#define mTC1                0
+#define mTC2                1
+#define mTC3                2
+
+#define mDHCP_NEED_INIT			0//需要申请
+#define mDHCP_REQUESTING		1//申请中
+#define mDHCP_CONFIGURED		2//申请成功
+
+#define mUART               0
+#define mNET                1
+
+#define mYDN23              0
+#define mEEM                1
+#define	mRSOC 	            2
+#define mSOCTPE             3
+
+#define	mMODEM				1
+#define	mRS232				0
+
+#define	m9600				0
+#define	m4800				1
+#define	m2400				2
+#define	m1200				3
+#define	m19200				4
+#define	m38400				5
+#define	m115200				6
+
+#define	mECU				0
+#define	mMANUAL				1
+#define	mAUTO				2
+
+//#define   mNONE           0
+#define mAC1                1
+#define mAC2                2
+#define mACERROR            3
+
+#define mDGRun				0
+#define mATS1               1
+#define mATS2               2
+#define mATSAll             3
+
+#define mMains				0
+#define mDG1                1
+#define mDG2                2
+#define mBattery            3
+
+#define mDEFAULT	0
+#define mDEFAULT2	1
+
+#define	mPERCENT			0
+#define	mTIME				1
+#define	mCAP				2
+
+#define	mVOLTMODE			0
+#define	mTIMEMODE			1
+
+#define	mLEVEL				0//mono
+#define	mPULSE				1//bistable
+
+#define	mLOWVOLT			1
+#define	mCUTBATT			2
+#define mCUTLOAD            3
+#define mCUTBOTH            4
+
+//#define   mNONE                              0
+#define	m1PHASE				1
+#define	m3PHASE				2
+
+#define	mOBSERVATION	    1
+#define	mMAJOR				2
+#define	mCRITICAL			3
+
+#define	mLOWALARM			0
+#define	mHIGHALARM		    1
+  
+#define	mLOWLEVEL			0
+#define	mHIGHLEVEL		    1
+
+#define	mNORMAL				0
+#define	mACTIVE				1
+#define mDEACTIVE           2
+
+#define mFAULT              1
+
+#define mSAVEPOWERDELAY     5
+
+#define mNOLIMIT            1
+#define mSMOOTHRECON        2
+
+#define	mTRIMZERO			128
+
+#define	mFLOATCHARGE	    0
+#define	mTEMPCOMP			1
+#define	mNEEDEC				2
+#define	mAUTOEC				3
+#define	mTIMEEC				4
+#define	mAUTOTEST			5
+#define	mAUTOSTABLETEST		6
+#define	mSHORTTEST		    7
+
+#define	mRELAY1				1
+#define	mRELAY2				2
+#define	mRELAY3				3
+#define	mRELAY4				4
+#define	mRELAY5				5
+#define	mRELAY6				6
+#define	mRELAY7				7
+#define	mRELAY8				8
+
+#define	mOPTION1            1
+#define	mOPTION2            2
+#define	mOPTION3            3
+#define	mOPTION4            4
+#define	mOPTION5            5    //用于DI
+
+#define mHOT                0 //热交换型
+#define mAIR                1 //直通风型
+
+
+#define mTempSensor1        0//温度传感器1
+#define mTempSensor2        1 //温度传感器2
+
+#define	m1PHAir				0//单相空调
+#define	m3PHAir				1//三相空调
+
+
+#define COUNTTIME           10  //i2c 通讯中断判断次数
+#define LOCK                1   //menu中headerlock
+
+
+#define mDAY                0   //白天 
+#define mNIGHT              1   //黑夜
+#define mPVFAULT            2   //PV故障
+
+#define EEM_PORT            5050
+#define EEM_NO_INPUT        0
+#define EEM_INPUT_DATA      1
+#define EEM_INPUT_DATA_TAKEN 2
+#define EEM_OUTPUT_PREPARE_UP 3
+
+#define  SWITCH_IN_AC1      2    //交流采样输入1
+#define  SWITCH_IN_AC2      3    //交流采样输入2
+  
+#define mReceive            0  
+#define mTransmit           1
+
+//交流供电模式
+#define  MAINS_ACPOWER		0   //市电
+#define  DG_ACPOWER			1   //油机
+#define  MAINS_DG_ACPOWER	2   //市电+油机
+#define  NONE_ACPOWER		3   //无交流输入
+
+//油机控制所需的输入信号
+#define  MAINS_ON_SIGNAL	0   //市电供电信号
+#define  DG_ON_SIGNAL		1   //油机运行信号
+#define  DG_OILLEVEL_SIGNAL	2   //油机油位信号
+#define  DG_FAULT_SIGNAL	3   //油机故障信号
+
+//油机控制状态
+#define  DG_STOP            0
+#define  DG_NEEDSTART       1
+#define  DG_START           2
+#define  DG_TEST            3
+
+
+#define   DCEM_CTRL_LED_BLINK   10
+#define   DCEM_CTRL_LED_NOBLINK 11
+#define   DCEM_CTRL_CLEAR1      1
+#define   DCEM_CTRL_CLEAR2      2
+#define   DCEM_CTRL_CLEAR3      3
+#define   DCEM_CTRL_CLEAR4      4
+#define   DCEM_CTRL_DISABLE1    5
+#define   DCEM_CTRL_DISABLE2    6
+#define   DCEM_CTRL_DISABLE3    7
+#define   DCEM_CTRL_DISABLE4    8
+#define   DCEM_CTRL_ENABLE_ALL  9
+
+//2011-05-06 光电混合模式下，整流模块浮充电压设置下限必须比下电恢复电压点高0.5V，以防无法上电
+#define RECT_FCVOLT_HIGHTHAN_LVDRSTVOLT 0.5
+
+//液晶模块中LED灯分单色、双色类型，其驱动方式不同  NameData.AlarmLedType
+#define  LED_TYPE_SINGLE       0
+#define  LED_TYPE_DOUBLE       1
+
+/************************************************/
+/*E2PROM地址定义*/
+/*24C512:64K Bytes*/
+/*地址范围:0x0000--0xffff*/
+/************************************************/
+/*设置数据:字符型*/
+#define	E2PROMCharData			0x0000				/*0x0000-0x0fff:4096个字节配置数据*/
+#define E2PROMSysType			0x0000				/*第一个配置数据*/
+/*设置数据:浮点数型*/
+#define	E2PROMFloatData			0x1000				/*0x1000-0x1fff:4096字节*/
+
+/*设置数据备份1*/
+/*设置数据:字符型*/
+#define	E2PROMCharData1		      0x2000
+/*设置数据:浮点数型*/
+#define	E2PROMFloatData1	      0x3000
+
+/*设置数据备份2*/
+/*设置数据:字符型*/
+#define	E2PROMCharData2		      0x4000
+/*设置数据:浮点数型*/
+#define	E2PROMFloatData2	      0x5000
+
+/*default setdata*/
+#define E2PROMDEFAULTCharData   0x6000
+#define E2PROMDEFAULTFloatData  0x7000
+
+
+//EV 设置参数起始地址  0x8000
+
+/*****************************************************************************************************
+							参数   0x8000(32768)----0x84d0(34000)
+******************************************************************************************************/
+//浮点数  0x8000  32768	!!
+//#define EV_CHARGE_PARAMATER_START	32768		//0x8000
+//
+//#define EV_SET_HOLL_1COEFA_ADD	32772			//fBattVolt_1CoefA;霍尔1校准系数a
+//#define EV_SET_HOLL_1COEFB_ADD	32776			//fBattVolt_1CoefB;霍尔1校准系数b
+//#define EV_SET_HOLL_2COEFA_ADD	32780			//fBattVolt_2CoefA;霍尔2校准系数a
+//#define EV_SET_HOLL_2COEFB_ADD	32784			//fBattVolt_2CoefB;霍尔2校准系数b
+////#define EV_SETJYMSHUNT_COEF_ADD	32788
+////#define EV_SETJYMCURR_COEFA_ADD	32792
+////#define EV_SETJYMCURR_COEFB_ADD	32796
+////#define EV_SETJYMVOLT_COEFA_ADD	32800
+////#define EV_SETJYMVOLT_COEFB_ADD	32804
+//#define EV_SETJYMALM_RESIST_ADD	32808
+//#define EV_FEE_1_ADD		32812
+//#define EV_FEE_2_ADD		32816
+//#define EV_FEE_3_ADD		32820
+//#define EV_FEE_4_ADD		32824
+//#define EV_OUTCOMPENSATE_ADD	32828
+//#define EV_CC1_COEF_ADD		32832
+//#define EV_RECT_DEFAULT_OVER_VOLT_ADD		32836
+//#define EV_WALKING_IN_TIME	32840
+//#define EV_RECT_RATED_CURR	32844
+//#define EV_RECT_MAX_CURR	32848
+//#define EV_RECT_MAX_VOLT	32852
+//#define EV_SYS_MAX_OUT_CURR	32856
+//#define EV_CC1_COEF_B_ADD	32860
+//#define EV_CC1_2_COEF_ADD	32864
+//#define EV_CC1_2_COEF_B_ADD	32868
+//#define EV_BCL_TIME_OUT_VAL	32872
+//#define EV_MITIL_INTERVAL_VAL	32876
+//#define EV_YUNSHAN_FIX_FARE	32880			//云杉 固定 费率
+//#define EV_AC_WH_COEF		32884			//交流电表系数
+//
+//#define EV_FLASH_TOTAL_RECORD_NUM	32888		//gFlashOptInfo. u32TotalRecordNum
+//#define EV_FLASH_PAGE_IDX			32892		//gFlashOptInfo.u32CurrPageIdx
+//#define EV_FLASH_UN_REPORT_LOG		32896		//32896---(【3】【8】3个扇区  8个UINT32类型*32) 32896 + （24*4=96）所以 32992 
+////32992
+//
+//#define EV_MAX_LINE_OFF_TIME	32996
+////用满了，再往后压到字节型变量了 参数   0x8000(32768)----0x84d0(34000)
+////所以	33500  开始再存储浮点数
+//
+//#define EV_STATION_NUMBER		33500	//充电桩 编号   厂家 第几台机而已。
+//
+//
+////字节型
+//#define EV_SET_POLARITYALMMODE_ADD	33000		//	电池反接告警  后台的参数
+//							/****************************
+//								0x01告警使能
+//								0x00告警屏蔽
+//							*****************************/
+//#define EV_SET_JYMCTRLSTAT_ADD		33001		//绝缘检测控制状态 
+//							/****************************
+//								0x03手动检测
+//								0x02后台检测
+//								0x01自动检测
+//								0x00告警屏蔽
+//							*****************************/
+//#define EV_SPD_ALMMASK_ADD		33002
+//#define EV_POLARITYALMMASK_ADD		33003
+//#define EV_JYMALMSTATMASK_ADD		33004
+//#define EV_JYMCTRLSTAT_ADD		33005		//绝缘控制状态
+///****************************
+//	0x03手动检测
+//	0x02后台检测
+//	0x01自动检测
+//	0x00告警屏蔽
+//*****************************/
+//#define EV_CalcMoneyType_ADD		33006		//计量方式
+//#define EV_CC1CheckEnable_ADD		33007		//CC1 校验方式
+//#define EV_SelfCheckEnable_ADD		33008		//启动自校准 检测
+//#define EV_MCCB_ON_CHECK_ENABLE_ADD	33009		//继电器 吸合判断使能  电池电压和输出电压在10V之内才进行吸合
+//#define EV_OutShortView_ENABLE_ADD	33010		//短路显示使能
+//#define EV_OutOverVolt_ENABLE_ADD	33011		//输出过压使能
+//#define EV_POLARITY_COVER_FLAG		33012		//电池反接逻辑取反
+//#define EV_DOOR_ALM_MASK		33013		//门禁告警屏蔽
+//#define EV_HAS_EV_LOCK			33014		//是否存在电子锁
+//#define EV_WH_TYPE			33015		//电表类型 0 直流表 1交流表
+//#define EV_WH_ALM_MASK			33016
+//#define EV_BRUSH_ALM_MASK		33017
+//#define EV_PWM_POLARITY_COVER		33018
+//#define EV_LOCK_CTRL_TYPE		33019		//电子锁 控制方式  0原来永贵的控制方式，永贵需要正负 12V电压， 而广州这家只需要12V电压或0V电压
+//#define EV_LOCK_DI_TYPE			33020		
+//#define EV_EPOAlmVltLEVEL		33021
+//#define EV_BRUSH_FACTOR_TYPE		33022
+//#define EV_FAN_START_TEMP		33023
+//#define EV_FAN_STOP_TEMP		33024
+//#define EV_RPT_DISABLE_FLAG		33025
+//
+//#define EV_POWER_ON_TIMES_H		33026
+//#define EV_POWER_ON_TIMES_M		33027
+//#define EV_POWER_ON_TIMES_L		33028
+//#define EV_INSULATION_CHECK_TYPE	33029					//u8InsltCheckByVolt
+//#define EV_FIXEDPERIOD				33030
+//#define EV_NET_MASK_SET				33031					//是否屏蔽网络功能
+//#define EV_FORCE_BMS2011_SET		33032
+
+//不能超过33500
+
+//END  0x8000(32768)----0x84d0(34000)
+
+//0x84d1 34001
+//预计存储	150条记录
+/********************************************************************************************************
+									------------
+									|			|
+									|			|
+--->u16BytesPst当前在此区域的字节偏移|			|
+									|			|
+									|			|
+									|			|
+									|			|
+									------------
+*********************************************************************************************************/
+#define FAULT_LOG_NUM_ADDR_H	34001  //0x84D1
+#define FAULT_LOG_NUM_ADDR_L	34002
+#define FAULT_LOG_PST_ADDR_H	34003
+#define FAULT_LOG_PST_ADDR_L	34004
+
+#define FAULT_LOG_VAL_ADDR		34010		//0X84DA	(0xAEE0 - 0X84DA=0X2A06=10758个字节)
+#define MAX_FAULT_LOG_NUM		200
+#define VIEW_FAULT_PER_FIVE		5
+
+
+
+
+
+
+/*MAC地址6个字节*/
+#define E2PROMMACADD        0xbbe5       /*0xbbe5~0xbbea*/
+
+/*升级标志*/
+#define E2PROMFLAGADD1      0xbbeb
+#define E2PROMFLAGADD2      0xbbec
+/*设置标志*/
+#define	E2PROMSetFlag1		  0xbbed				/*0x55*/
+#define	E2PROMSetFlag2		  0xbbee				/*0xaa*/
+
+#define E2PROMDEFAULTFlag1  0xbbef        /*0x55*/
+#define E2PROMDEFAULTFlag2  0xbbf0        /*0xaa*/
+
+/*校准标志*/
+#define	E2PROMAdjFlag1		  0xbbf1				/*0x55*/
+#define	E2PROMAdjFlag2		  0xbbf2				/*0xaa*/
+
+/*历史数据标志*/
+#define	E2PROMEventFlag1	  0xbbf3				/*0x55*/
+#define	E2PROMEventFlag2	  0xbbf4				/*0xaa*/
+
+/*版本*/
+//#define	E2PROMVersion1		  0xbbf5				/*版本高位*/
+//#define	E2PROMVersion2		  0xbbf6				/*版本低位*/
+//硬件版本
+#define E2PROM_HW_VER_HIGH	  0xbbf5				//A\B\C\...
+#define E2PROM_HW_VER_LOW	  0xbbf6				//00\01\02...
+
+/*时间*/
+#define	E2PROMTimeFlag1		  0xbbf7				/*0x55*/
+#define	E2PROMTimeFlag2		  0xbbf8				/*0xaa*/
+
+/*名称*/
+#define	E2PROMNameFlag1		  0xbbf9				/*0x55*/
+#define	E2PROMNameFlag2		  0xbbfa				/*0xaa*/
+
+
+
+//#define E2PROMMenuFlag1     0xbbfd
+//#define E2PROMMenuFlag2     0xbbfe
+
+
+#define	E2PROMNumber		    0xbbff				/*模块数，用于模块丢失告警*/
+
+//#define	E2PROMSPLASH		    0xbc00				/*0xbc00-0xbfff:1024字节*/
+
+/*重启记录*/
+#define	E2PROMRResetReasonPos 0xbc00
+#define	E2PROMRResetReason1	  0xbc01			
+#define	E2PROMRResetDogBit1	  0xbc02				
+#define	E2PROMRResetReason2	  0xbc06			
+#define	E2PROMRResetDogBit2	  0xbc07
+#define	E2PROMRResetReason3	  0xbc0b			
+#define	E2PROMRResetDogBit3	  0xbc0c
+
+/*another 64k eeprom for menu define*/
+#define E2PROMMenuConfig      0x0000
+#define E2PROMSystemName      E2PROMMenuConfig        /*32*60=1920 bytes*/
+//#define E2PROMAliasName       E2PROMSystemName + sizeof(System_TypeDef) * MAX_SYSTEM_NUM/*3200 bytes*/
+#define E2PROMMenuName        E2PROMSystemName + sizeof(System_TypeDef) * MAX_SYSTEM_NUM
+#define E2PROMAliasName       0x780    //E2PROMMENUNAME + sizeof(Menu_TypeDef) * MAX_MANU_NUM
+#define E2PROMLineConfig      E2PROMAliasName + sizeof(Alias_TypeDef) * MAX_ALIAS_NUM   /*15360 bytes*/
+#define E2PROMScreenConfig    E2PROMLineConfig + sizeof(Line_TypeDef) * MAX_LINE_NUM    /*2720 bytes*/
+
+#define E2PROMAlarmName       E2PROMScreenConfig + sizeof(ScreenCfg_TypeDef) * MAX_SCREEN_NUM  /*32768 bytes*/
+#define E2PROMAnalogAlarmName E2PROMAlarmName + sizeof(Alarm_TypeDef) * mALARMNAMENUM   /*9408 bytes*/
+
+//#define E2PROMNext            E2PROMAnalogAlarmName + sizeof(AnalogAlarm_TypeDef) * mAANUM /*65376=0xff60*/
+
+#define E2PROMMENUDATA      0xffe0  /*增加菜单参数配置*/
+
+#define START_CHARGE_VAL	0
+#define STOP_CHARGE_VAL		1
+
+#define SPEAR_TYPE_IS_PULSE		0
+#define SPEAR_TYPE_IS_VOLT		1
+
+//绿灯
+#define __GREEN_LED_ON() do {} while (0);
+#define __GREEN_LED_OFF() do {} while (0);
+
+//A	充电灯
+#define __A_CC2_ON() do {\
+			BSP_DO_Ctrl(NEWDO13, DO_ON);\
+			BSP_DO_Ctrl(NEWDO13, DO_ON);\
+			BSP_DO_Ctrl(NEWDO13, DO_ON);\
+			BSP_DO_Ctrl(NEWDO14, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO14, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO14, DO_OFF);\
+} while (0);
+#define __A_CC2_OFF() do {\
+			BSP_DO_Ctrl(NEWDO13, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO13, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO13, DO_OFF);\
+} while (0);
+
+#define __A_CCS1_CS_ON() do {\
+	BSP_DO_Ctrl(NEWDO14, DO_ON);\
+	BSP_DO_Ctrl(NEWDO14, DO_ON);\
+	BSP_DO_Ctrl(NEWDO14, DO_ON);\
+	BSP_DO_Ctrl(NEWDO13, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO13, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO13, DO_OFF);\
+} while (0);
+#define __A_CCS1_CS_OFF() do {\
+	BSP_DO_Ctrl(NEWDO14, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO14, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO14, DO_OFF);\
+} while (0);
+
+//B	充电灯
+#define __B_CC2_ON() do {\
+			BSP_DO_Ctrl(NEWDO15, DO_ON);\
+			BSP_DO_Ctrl(NEWDO15, DO_ON);\
+			BSP_DO_Ctrl(NEWDO15, DO_ON);\
+			BSP_DO_Ctrl(NEWDO16, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO16, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO16, DO_OFF);\
+} while (0);
+#define __B_CC2_OFF() do {\
+			BSP_DO_Ctrl(NEWDO15, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO15, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO15, DO_OFF);\
+} while (0);
+
+#define __B_CHAdeMO_CS_ON() do {\
+	BSP_DO_Ctrl(NEWDO16, DO_ON);\
+	BSP_DO_Ctrl(NEWDO16, DO_ON);\
+	BSP_DO_Ctrl(NEWDO16, DO_ON);\
+	BSP_DO_Ctrl(NEWDO15, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO15, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO15, DO_OFF);\
+} while (0);
+#define __B_CHAdeMO_CS_OFF() do {\
+	BSP_DO_Ctrl(NEWDO16, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO16, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO16, DO_OFF);\
+} while (0);
+
+
+
+
+
+
+
+//A 枪 直流母排输出
+#define __A_GBT_MCCB_ON() do {\
+			BSP_DO_Ctrl(NEWDO1, DO_ON);\
+			BSP_DO_Ctrl(NEWDO1, DO_ON);\
+			BSP_DO_Ctrl(NEWDO1, DO_ON);\
+			BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+} while (0);
+#define __A_GBT_MCCB_OFF() do {\
+			BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+} while (0);
+#define __A_CCS1_MCCB_ON() do {\
+	BSP_DO_Ctrl(NEWDO11, DO_ON);\
+	BSP_DO_Ctrl(NEWDO11, DO_ON);\
+	BSP_DO_Ctrl(NEWDO11, DO_ON);\
+	BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+} while (0);
+
+#define __A_CCS1_MCCB_OFF() do {\
+	BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+} while (0);
+#define __A_CCS2_MCCB_ON() do {\
+	BSP_DO_Ctrl(NEWDO8, DO_ON);\
+	BSP_DO_Ctrl(NEWDO8, DO_ON);\
+	BSP_DO_Ctrl(NEWDO8, DO_ON);\
+	BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO1, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO11, DO_OFF);\
+} while (0);
+
+#define __A_CCS2_MCCB_OFF() do {\
+	BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO8, DO_OFF);\
+} while (0);
+
+
+
+
+//B 枪 直流母排输出
+#define __B_DC_MCCB_ON() do {\
+			BSP_DO_Ctrl(NEWDO2, DO_ON);\
+			BSP_DO_Ctrl(NEWDO2, DO_ON);\
+			BSP_DO_Ctrl(NEWDO2, DO_ON);\
+			BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+} while (0);
+#define __B_DC_MCCB_OFF() do {\
+			BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+} while (0);
+
+#define __B_CCS2_MCCB_ON() do {\
+	BSP_DO_Ctrl(NEWDO9, DO_ON);\
+	BSP_DO_Ctrl(NEWDO9, DO_ON);\
+	BSP_DO_Ctrl(NEWDO9, DO_ON);\
+	BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+} while (0);
+#define __B_CCS2_MCCB_OFF() do {\
+	BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+} while (0);
+#define __B_CHAdeMO_MCCB_ON() do {\
+	BSP_DO_Ctrl(NEWDO12, DO_ON);\
+	BSP_DO_Ctrl(NEWDO12, DO_ON);\
+	BSP_DO_Ctrl(NEWDO12, DO_ON);\
+	BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO2, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO9, DO_OFF);\
+} while (0);
+#define __B_CHAdeMO_MCCB_OFF() do {\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+} while (0);
+
+
+//并机控制！！！
+#define __PARALLEL_ON() do {\
+			BSP_DO_Ctrl(NEWDO4, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO4, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO4, DO_OFF);\
+} while (0);
+
+#define __PARALLEL_OFF() do {\
+			BSP_DO_Ctrl(NEWDO4, DO_ON);\
+			BSP_DO_Ctrl(NEWDO4, DO_ON);\
+			BSP_DO_Ctrl(NEWDO4, DO_ON);\
+} while (0);
+
+#define __CHADEMO_CP3_ON() do {\
+	BSP_DO_Ctrl(NEWDO10, DO_ON);\
+	BSP_DO_Ctrl(NEWDO10, DO_ON);\
+	BSP_DO_Ctrl(NEWDO10, DO_ON);\
+} while (0);
+
+#define __CHADEMO_CP3_OFF() do {\
+	BSP_DO_Ctrl(NEWDO10, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO10, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO10, DO_OFF);\
+} while (0);
+
+
+
+#define __B_BMS_12V() do {\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO12, DO_OFF);\
+} while (0);
+
+#define __B_BMS_24V() do {\
+	BSP_DO_Ctrl(NEWDO12, DO_ON);\
+	BSP_DO_Ctrl(NEWDO12, DO_ON);\
+	BSP_DO_Ctrl(NEWDO12, DO_ON);\
+} while (0);
+
+//A		锁枪
+#define __A_SPEAR_LOCK() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_A_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+		OSTimeDly(20);\
+		gSelfTest.fSetTaskID(Tasko_ID_CAN1);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		OSTimeDly(200);\
+		gSelfTest.fSetTaskID(Tasko_ID_CAN1);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_A_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	}\
+} while (0);
+
+//A		锁枪 -- 环网调用，不用很长时间
+#define __A_SPEAR_LOCK_Ring() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_A_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+	OSTimeDly(20);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_A_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	}\
+} while (0);
+
+//A		解锁
+#define __A_SPEAR_UNLOCK() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_A_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO3, DO_ON);\
+		BSP_DO_Ctrl(NEWDO3, DO_ON);\
+		BSP_DO_Ctrl(NEWDO3, DO_ON);\
+		OSTimeDly(20);\
+		gSelfTest.fSetTaskID(Tasko_ID_CAN1);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		OSTimeDly(200);\
+		gSelfTest.fSetTaskID(Tasko_ID_CAN1);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		BSP_DO_Ctrl(NEWDO5, DO_ON);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_A_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	}\
+} while (0);
+//A		解锁  ---环网调用
+#define __A_SPEAR_UNLOCK_Ring() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_A_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO3, DO_ON);\
+	BSP_DO_Ctrl(NEWDO3, DO_ON);\
+	OSTimeDly(20);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	BSP_DO_Ctrl(NEWDO5, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_A_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	}\
+} while (0);
+//A  锁枪  稳态 
+#define __A_SPEAR_LOCK_STABLE() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_A_LOCKType)\
+	{\
+			BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+	}\
+} while (0);
+
+//A 解锁  稳态
+#define __A_SPEAR_UNLOCK_STABLE() do {\
+			BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO5, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+			BSP_DO_Ctrl(NEWDO3, DO_OFF);\
+} while (0);
+
+/////////////////////////////////////////////////////////
+//B		锁枪
+#define __B_SPEAR_LOCK() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_B_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		OSTimeDly(20);\
+		gSelfTest.fSetTaskID(TASK_ID_CAN2);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		OSTimeDly(200);\
+		gSelfTest.fSetTaskID(TASK_ID_CAN2);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_B_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	}\
+} while (0);
+
+//B		锁枪 --环网调用
+#define __B_SPEAR_LOCK_Ring() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_B_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+	OSTimeDly(20);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_B_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	}\
+} while (0);
+
+//B		解锁
+#define __B_SPEAR_UNLOCK() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_B_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO7, DO_ON);\
+		BSP_DO_Ctrl(NEWDO7, DO_ON);\
+		BSP_DO_Ctrl(NEWDO7, DO_ON);\
+		OSTimeDly(20);\
+		gSelfTest.fSetTaskID(TASK_ID_CAN2);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		OSTimeDly(200);\
+		gSelfTest.fSetTaskID(TASK_ID_CAN2);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		BSP_DO_Ctrl(NEWDO6, DO_ON);\
+		OSTimeDly(200);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_B_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	}\
+} while (0);
+//B		解锁--环网调用
+#define __B_SPEAR_UNLOCK_Ring() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_B_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO7, DO_ON);\
+	BSP_DO_Ctrl(NEWDO7, DO_ON);\
+	BSP_DO_Ctrl(NEWDO7, DO_ON);\
+	OSTimeDly(20);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	BSP_DO_Ctrl(NEWDO6, DO_ON);\
+	OSTimeDly(200);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	}\
+	if(SPEAR_TYPE_IS_VOLT == gEvChargeInfo.u8_B_LOCKType)\
+	{\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	}\
+} while (0);
+//B  锁枪  稳态 
+#define __B_SPEAR_LOCK_STABLE() do {\
+	if(SPEAR_TYPE_IS_VOLT != gEvChargeInfo.u8_B_LOCKType)\
+	{\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+	}\
+} while (0);
+
+//B 解锁  稳态
+#define __B_SPEAR_UNLOCK_STABLE() do {\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO7, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+		BSP_DO_Ctrl(NEWDO6, DO_OFF);\
+} while (0);
+
+
+#define __START_CHARGE_CMD() do {} while (0);
+#define __STOP_CHARGE_CMD() do {} while (0);
+
+//#define FRQ_VAL_TIME5			84000000
+//#define PERIOD_TIME_5			8400
+//#define PRESCALER_TIME_5		100
+//#define PRESCALER_PER_SEC_TIME5	1000
+//#define TIME5_T_VAL	((double)PERIOD_TIME_5 * PRESCALER_TIME_5)/(double)FRQ_VAL_TIME5)
+//#define TIME5_250MS	 ((double)(250.000/1000.000)/(double)TIME5_T_VAL)
+//#define TIME5_50MS	 ((double)(50.000/1000.000)/(double)TIME5_T_VAL)
+//#define TIME5_500MS	 ((double)(500.000/1000.000)/(double)TIME5_T_VAL)
+//#define TIME5_10MS	 ((double)(10.000/1000.000)/(double)TIME5_T_VAL)
+
+#define FRQ_VAL_TIME5			84000000
+#define PERIOD_TIME_5			8400
+#define PRESCALER_TIME_5		100
+#define PRESCALER_PER_SEC_TIME5	1000
+
+#define TIME5_T_VAL	 (double)(PERIOD_TIME_5 * PRESCALER_TIME_5)/(double)FRQ_VAL_TIME5
+
+#define TIME5_250MS_COUNT	((((250 * (FRQ_VAL_TIME5/PRESCALER_PER_SEC_TIME5))/(PERIOD_TIME_5 * PRESCALER_TIME_5))))
+#define TIME5_50MS_COUNT	((((50 * (FRQ_VAL_TIME5/PRESCALER_PER_SEC_TIME5))/(PERIOD_TIME_5 * PRESCALER_TIME_5))))
+#define TIME5_100MS_COUNT	((((100 * (FRQ_VAL_TIME5/PRESCALER_PER_SEC_TIME5))/(PERIOD_TIME_5 * PRESCALER_TIME_5))))
+#define TIME5_500MS_COUNT	((((510 * (FRQ_VAL_TIME5/PRESCALER_PER_SEC_TIME5))/(PERIOD_TIME_5 * PRESCALER_TIME_5))))
+#define TIME5_10MS_COUNT	((((10 * (FRQ_VAL_TIME5/PRESCALER_PER_SEC_TIME5))/(PERIOD_TIME_5 * PRESCALER_TIME_5))))
+
+
+typedef struct
+{
+	uint32_t iFlag; //本帧是否接收  未处理
+	uint32_t iDCL;
+	uint32_t Id;
+	uint8_t Data[8];
+	
+} canmsgTXY;
+typedef struct
+{
+	uint32_t iFlag; //本帧是否接收  未处理
+	CanRxMsgTypeDef RxMsg;
+
+} canmsgTXY2;
+
+
+struct _TP_CM_RTS
+{
+	UINT8 PF;
+	UINT8 CTLByte;			//控制字节
+	UINT16 TotalMsgByteNum;		//整个消息字节数量
+	UINT8 TotalPkgNum;
+	UINT32 PkgMsgNo;
+	UINT8 PkgMsgNoLSB;
+	UINT8 PkgMsgNoMID;
+	UINT8 PkgMsgNoMSB;
+};
+typedef struct _TP_CM_RTS TP_CM_RTS_INFO;
+
+struct _Uart4RecvInfo
+{
+	UINT8 uReceivFlag;			//1ok	0无数据
+	UINT8 uBuf[MDBUS_BUFF_MAX_NUM];
+};
+typedef struct _Uart4RecvInfo  UART4_RECV_INFO;
+
+struct _Task_XXXInfo
+{
+	void          (*fTaskProc)(void *);
+	uint16_t      u16Stk_Size;
+	uint8_t       u8Priority;
+	uint8_t       u8Id;
+	OS_STK        *StkPtr;
+};
+typedef struct _Task_XXXInfo TASK_XXXInfo;
+
+
+struct ___Sig_Addr
+{
+	UINT8	u8EType;
+	UINT32	u16SigIdx;
+	UINT32	u32E2pAddr;
+	UINT8	u8SigType;//0 浮点数	1字节型		2 32位整型
+};
+typedef struct ___Sig_Addr __SIG_E2P_ADDR;
+
+struct _stFrameInfo
+{
+	BYTE byLabelDI3;
+	BYTE byLabelDI2;
+	BYTE byLabelDI1;
+	BYTE byLabelDI0;	
+	BYTE bySigForm;		//数据小数点的格式，0数据无小数点，1数据一位小数点，2数据两位小数点，3,数据三位小数点4,数据四位小数点5
+	BYTE bySigLength;	//该信号所占字节个数
+	INT32 iRoughNum;	//在采集缓存中的位置索引，如果是获取块数据则该位置是块数据的起始索引位置
+};
+typedef struct _stFrameInfo stFrameInfo;
+
+struct _stKEY_DATA
+{
+	int iMenuNo;
+	int iFocus;
+	int iMAIN_Menu10JumpNo;			//主界面
+	int iEVINFO_Menu11JumpNo;		//充电机信息
+	int iHELP_Menu15JumpNo;
+	int iNOCARDCHARGE_Menu34JumpNo;		//无卡充电
+	int iMAINTAIN_MenuJumpNo;
+	int iICPswd_MenuJumpNo;
+	int iCharge_Menu24JumpNO;
+	int iRECTINFO_Menu29JumpNo;
+	int iRESULT_Menu27JumpNo;
+	int iSELECT_Menu22JumpNo;
+	int iBMS_TYPE_Menu18JumpNo;
+	int iTIME_TYPE_Menu19JumpNo;
+	int iENERGY_TYPE_Menu20JumpNo;
+	int iMONEY_TYPE_Menu21JumpNo;
+	int iMenu13JumpNo;
+	int iMaintenaceLogInMenu32_JumpNo;
+	int iMaintenaceMenu25_JumpNo;
+	int iChargeRecordMenu28_JumpNo;
+	int iHisAlmMenu14_JumpNo;
+};
+typedef struct _stKEY_DATA stKey_Data;
+
+struct __BMS_TYPE_KEY_VAL
+{
+	int iKey_Day;
+	int iKey_Hour;
+	int iKey_Min;
+};
+typedef struct  __BMS_TYPE_KEY_VAL  BMS_Type_Key_Val;
+
+struct __TIME_TYPE_KEY_VAL
+{
+	float fKeyVolt;
+	float fKeyCurr;
+	float  fKeyTime;
+	int iKey_Day;
+	int iKey_Hour;
+	int iKey_Min;
+};
+typedef struct  __TIME_TYPE_KEY_VAL  TIME_Type_Key_Val;
+
+struct __ENERGY_TYPE_KEY_VAL
+{
+	float fKeyVolt;
+	float fKeyCurr;
+	float  fKeyEnergy;
+	int iKey_Day;
+	int iKey_Hour;
+	int iKey_Min;
+};
+typedef struct  __ENERGY_TYPE_KEY_VAL  ENERGY_Type_Key_Val;
+
+struct __MONEY_TYPE_KEY_VAL
+{
+	float fKeyVolt;
+	float fKeyCurr;
+	float  fKeyMoney;
+	int iKey_Day;
+	int iKey_Hour;
+	int iKey_Min;
+};
+typedef struct  __MONEY_TYPE_KEY_VAL  MONEY_Type_Key_Val;
+
+
+#define CHAR_TYPE   sizeof(gSetDataInfo.SetData.ArrayData.CfgCharData)
+#define FLOAT_TYPE  (sizeof(gSetDataInfo.SetData.ArrayData.CfgFloatData) / 4)
+#define GetSetData(d1, d2)      gSetDataInfo.fGetSetData(d1, d2)
+#define SetSetData(d1, d2)      gSetDataInfo.fSetSetData(d1, d2)
+#define GetCharSetData(d1, d2)  gSetDataInfo.fGetSetData(d1, d2)
+#define SetCharSetData(d1, d2)  gSetDataInfo.fSetSetData(d1, d2)
+#define GetFloatSetData(d1, d2) gSetDataInfo.fGetSetData(d1 + CHAR_TYPE, d2)
+#define SetFloatSetData(d1, d2) gSetDataInfo.fSetSetData(d1 + CHAR_TYPE, d2)
+#define SetFloatSetData1(d1, d2) gSetDataInfo.fSetSetData1(d1 + CHAR_TYPE, d2)
+#define GetDefaultCharSetData(d1, d2)  gSetDataInfo.fGetDefaultSetData(d1, d2)
+#define SetDefaultCharSetData(d1, d2)  gSetDataInfo.fSetDefaultSetData(d1, d2)
+#define GetDefaultFloatSetData(d1, d2) gSetDataInfo.fGetDefaultSetData(d1 + CHAR_TYPE, d2)
+#define SetDefaultFloatSetData(d1, d2) gSetDataInfo.fSetDefaultSetData(d1 + CHAR_TYPE, d2)
+
+void tcp_client_reconnect(void);
+void tcp_client_connected(void);
+void ask_dns_server_get_ip(void);
+void tcp_client_reconnect_domainname(void);
+//extern functions
+void TASK_E2promProc(void* pdata);
+void TASK_Uart6Proc(void* pdata);
+void TASK_MeasureProc (void* pdata);
+void TASK_AlmProc (void* pdata);
+void TASK_CAN2Proc (void* pdata);
+void TACK_Uart1Proc(void* pdata);
+void TASK_SelfTestProc (void* pdata);
+void TASK_RTCProc (void* pdata);
+void TASK_CAN3_Proc (void* pdata);
+void TASK_DisplayProc (void* pdata);
+void TASK_Uart4Proc (void* pdata);
+void TASK_Uart5Proc (void* pdata);
+void TASK_EthernetProc(void* pdata);
+void TAST_FanProc(void* pdata);
+void TASK_CAN1Proc(void* pdata);
+void TASK_FlashProc (void* pdata);
+void TASK_Ethernet(void* pdata);
+
+
+void SP_SetData_V101(void);
+void SP_SetData_V102(void);
+void SP_SetData_V103(void);
+void SP_SetData_V104(void);
+void InitEVInfo(void);
+
+
+
+void CAN_2_SendCallBack(void);
+
+
+UINT8 SendCSD_A(void);
+UINT8 SendCST_A(void);
+UINT8 SendQuick_A(void);
+UINT8 SendCHM_A(void);
+UINT8 SendCRM_00_A(void);
+UINT8 SendCRM_AA_A(void);
+UINT8 SendCML_A(void);
+UINT8 SendCTS_A(void);
+UINT8 SendCRO_00_A(void);
+UINT8 SendCRO_AA_A(void);
+UINT8 SendCCS_A(void);
+UINT8 SendCEM_A(void);
+void CAN_1_SendCallBack(void);
+
+void TASK_NET_ZhixinProc(void* pdata);
+
+void FaultLogIdxRefresh(void);
+
+
+void API_CreateRecordLog(void);
+void SetChargeSTART_CMD(UINT8 u8StartReason);
+//void SetChargeSTOP_Cmd(UINT8 u8StopReason);
+void GetChargeLogPstByFixIdx(UINT16 u16FixIdx, UINT16* u16Offset, UINT16* u16SectPst);
+UINT8 GetUnRptPageIdxByE2prom(UINT16* u16Offset, UINT16* u16SectPst);
+void ClrUnRptPageIdxAtE2prom(UINT16 u16Offset, UINT16 u16SectPst);
+void Save_E2pRomValue(__XXX_UNION_VALUE Value,UINT8 u8IsByte,UINT32 E2PROM_ADDR);
+
+
+
+
+void ClrFaultLOG(void);
+
+void NET_Clean_SBuf(void);
+void NET_Clean_RBuf(void);
+UINT32 NET_Read(void *input_buf);
+void NET_Send(UINT8* pBuf, UINT16 u16Len);
+
+UINT8 TEST_Mode_485_Proc(UINT8 uartNo);
+UINT8 TEST_Mode_DO_CAN_Proc(UINT8 canNO);
+UINT8 u8RectIsAllClose(void);
+UINT8 TEST_Mode_Uart_Proc(UINT8 uUartNo);
+void Uart2TestMode(UINT8 u8IsTestMode);
+void TxCAN1_TESTData(void);
+
+void PAGE_76_KeyBord_NETDeal(void);
+UINT8 u8IsDoorOpen(void);
+UINT8 u8IsEPOActive(void);
+
+extern float gADCC2Val;
+extern float gADCC1Val;
+extern float gADTestFVal1;
+extern float gADVoltFVal1;
+extern float gADTestFVal2;
+extern float gTestFVal3;
+
+extern NOINIT MODBUS_RECV_INFO gMdbusRcvInfo[MDBUS_RCV_ARRY_NUM+4];
+extern UINT8 gUart6ArryIdx;
+
+extern NOINIT UINT8			gu8EVPSWD_MD5_32[64];
+extern CAN_HandleTypeDef	Can_2_Handle;
+extern CAN_HandleTypeDef	Can_1_Handle;
+//extern int gMachineState;
+extern NOINIT UINT16 Uart6_YDN23_RecvBuff[UART6_YDN23_RECV_MAX_NUM];
+
+
+extern UINT8 gUart4TimeOutFlag;
+extern UINT16 gUart4TimeOutCout;
+
+
+extern NOINIT CanRxMsgTypeDef CanRxMsgBuff_TEST_A[CAN_A_B_TEST_BUF_MAX_NUM];
+extern NOINIT CanRxMsgTypeDef CanRxMsgBuff_TEST_B[CAN_A_B_TEST_BUF_MAX_NUM];
+extern uint32_t pRecvCAN2Idx;
+extern uint32_t pRecvCAN1Idx;
+extern uint32_t pProcCAN2Buf;
+extern uint32_t pProcCAN1Buf;
+extern uint32_t gTestEXID;
+extern canmsgTXY2 gCan2RxMsgBuf[CAN_A_B_BUF_MAX_NUM];
+extern canmsgTXY2 gCan1RxMsgBuf[CAN_A_B_BUF_MAX_NUM];
+extern NOINIT UINT8 gUart5RecvBuff[RS485_UART5_RX_MAX_NUM];
+extern NOINIT UINT8 gUart4RecvBuff[RS485_UART4_RX_MAX_NUM];
+extern NOINIT UINT8 gUart2RecvBuf[UART2_RECV_MAX_NUM];
+
+extern SetDataExchangeInterface_TypeDef gSetDataInfo;
+extern KeyInterface_TypeDef gs_Key;
+extern RTCData_Type gRTCData;
+extern CANCommData_TypeDef gs_CANComm;
+extern CANTxData_TypeDef TxData[];
+
+extern SeltTest_TypeDef gSelfTest;
+extern E2PROM_TypeDef  gs_E2PROM;
+extern FanMng_TypeDef gFANMngInfo;
+//extern NOINIT ScreenCfg_TypeDef         Screen[MAX_SCREEN_NUM];
+//extern NOINIT LCDSource_TypeDef         LCDSource;
+extern dv_LCD_TypeDef dv_LCD;
+extern dv_RTC_TypeDef dv_RTC;
+extern dv_Output_TypeDef dv_Output;
+extern dv_Uart1_TypeDef dv_Uart1;
+extern dv_Uart2_TypeDef dv_Uart2;
+extern dv_Uart6_TypeDef  dv_Uart6;
+extern dv_Uart4_TypeDef dv_Uart4;
+extern dv_Uart5_TypeDef dv_Uart5;
+extern dv_E2PROM_TypeDef dv_E2PROM;
+extern dv_Adc_TypeDef dv_Adc;
+extern dv_CAN_TypeDef dv_CAN1;
+extern dv_Dog_TypeDef  dv_Dog;
+extern dv_Capture_PWM_TypeDef  dv_Capture_PWM;
+extern dv_I2C3_TypeDef dv_I2C3;
+extern TASK_XXXInfo sTaskArray[TASK_MAX_NUM];
+
+extern const __SIG_E2P_ADDR stArgsSigAddr[];
+
+extern NOINIT __CHARGE_RECORD stChargeRecordFlash;
+extern NOINIT __CHARGE_RECORD  stViewChargeRecordFlash;
+extern NOINIT __ST_ZTE_FAULT_LOG_RAM gZTEFaultLog[FAULT_LOG_RAM_NUM];
+extern NOINIT __ZTE_FAULT_LOG_IDX gZTEFaultLogIdx;
+extern NOINIT __ZTE_FAULT_LOG gZTEFaultLogView[FAULT_LOG_VIEW_NUM + 2];
+extern NOINIT __CHARGE_RECORD gEVChargeRecordFlashView;
+extern __FLASH_CTRL_INFO gFlashOptInfo;
+
+extern NOINIT __CHARGE_RECORD gView_RecordFlash,gUnRPT_RecordFlash;
+//TXY
+extern float gTESTCAN2Val;
+
+
+
+extern NOINIT stKey_Data gKey_Data;
+extern dv_ethdev_TypeDef dv_ethdev;
+extern EEMExchangeInterface_TypeDef gs_eem;
+extern SNMPTRAPExchangeInterface_TypeDef   gs_trap;
+extern UINT8 gCSTbuf[4];
+extern UCHAR gOutPutSwitchState;
+extern UCHAR gAllRectCtrlState ; //预留接口
+extern UCHAR gFanFullCtrlState ;
+extern UCHAR gContactorCtrlState;
+
+
+extern NOINIT CHARGE_CTRL_INFO gChargeCtrl;
+extern NOINIT EV_CHARGE_INFO	gEvChargeInfo;
+extern __CHARGE_ARGS gTempChargeArgs;
+extern __VIEW_RESULT_INFO gA_Result;
+extern __VIEW_RESULT_INFO gB_Result;
+
+extern NOINIT __CHARGE_RECORD SendRecord_1;
+extern NOINIT __CHARGE_RECORD SendRecord_2;
+extern NOINIT ChargeLogTable gChargeLogTable;
+
+
+#endif // __main_H
+// End of file

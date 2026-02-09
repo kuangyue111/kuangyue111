@@ -1,0 +1,754 @@
+------------------------------------------------------------
+-- Emerson Energy Systems (EES)
+-- Power MIB
+------------------------------------------------------------
+
+EES-POWER-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+	MODULE-IDENTITY, OBJECT-TYPE, NOTIFICATION-TYPE,
+	Integer32, Counter32, enterprises
+		FROM SNMPv2-SMI
+	TEXTUAL-CONVENTION, DisplayString, DateAndTime
+		FROM SNMPv2-TC;
+		
+		
+------------------------------------------------------------
+-- Node definitions
+------------------------------------------------------------
+
+ees OBJECT IDENTIFIER ::= { enterprises 6302 }
+
+global OBJECT IDENTIFIER ::= { ees 2 }
+
+
+powerMIB MODULE-IDENTITY
+	LAST-UPDATED "200810152122Z"
+	ORGANIZATION "
+		Emerson Energy Systems (EES)"
+	CONTACT-INFO "
+		Emerson Energy Systems
+		141 82 Stockholm
+		Sweden"
+	DESCRIPTION "
+		Emerson Energy Systems (EES) Power MIB, revision B."
+	::= { global 1 }
+
+------------------------------------------------------------
+-- Textual conventions
+------------------------------------------------------------
+
+Status ::= TEXTUAL-CONVENTION
+	STATUS current
+	DESCRIPTION "
+		This integer value represents the operational or administrative
+		status of the system. Also used as alarm severity.
+		Depending on situation there may be limits on allowed values.
+		Operational values:
+		(1) unknown - status has not yet been defined
+		(2) normal - there are no activated alarms
+		(3) warning - OA, lowest level of 'abnormal' status
+		(4) minor - A3
+		(5) major - MA
+		(6) critical - CA, highest level of 'abnormal' status
+		Administrative values:
+		(7) unmanaged
+		(8) restricted
+		(9) testing
+		(10) disabled"
+	SYNTAX INTEGER {
+		unknown(1),
+		normal(2),
+		warning(3),
+		minor(4),
+		major(5),
+		critical(6),
+		unmanaged(7),
+		restricted(8),
+		testing(9),
+		disabled(10) }
+
+StatusChange ::= TEXTUAL-CONVENTION
+	STATUS current
+	DESCRIPTION "
+		Indicates 'activated' (1) or 'deactivated' (2) alarm events."
+	SYNTAX INTEGER {
+		activated(1),
+		deactivated(2) }
+
+
+------------------------------------------------------------
+-- 1.1 Identification of the plant { powerMIB 1 }
+------------------------------------------------------------
+
+ident OBJECT IDENTIFIER ::= { powerMIB 1 }
+
+identManufacturer OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The name of the equipment manufacturer."
+	::= { ident 1 }
+
+identModel OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The manufacturers model designation of the power system."
+	::= { ident 2 }
+
+identControllerFirmwareVersion OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The firmware (software) version of the controller."
+	::= { ident 3 }
+
+identSiteID OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		The site ID of the power plant. This object should be set by
+		the administrator."
+	::= { ident 4 }
+
+------------------------------------------------------------
+-- 1.2 System values { powerMIB 2 }
+------------------------------------------------------------
+
+system OBJECT IDENTIFIER ::= { powerMIB 2 }
+
+systemStatus OBJECT-TYPE
+	SYNTAX Status
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		Status of the complete plant (highest alarm). One of
+		(1) unknown - status has not yet been defined
+		(2) normal - there are no activated alarms
+		(3) warning - OA, lowest level of 'abnormal' status
+		(4) minor - A3
+		(5) major - MA
+		(6) critical - CA, highest level of 'abnormal' status
+		(7) unmanaged
+		(8) restricted
+		(9) testing
+		(10) disabled"
+	::= { system 1 }
+
+systemVoltage OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		System voltage, stored as mV, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+	::= { system 2 }
+
+systemCurrent OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		System current, stored as mA, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+	::= { system 3 }
+
+systemUsedCapacity OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		Used capacity, stored as % of the total capacity.
+		The integer 2147483647 represents invalid value."
+	::= { system 4 }
+	
+
+-- ------------------------------------------------------------------------ 
+-- 1.2.5. the psBattery group
+-- ------------------------------------------------------------------------ 
+
+psBattery OBJECT IDENTIFIER ::= { system 5 }
+
+    psBatteryVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "Battery voltage, stored as mV, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+        ::= { psBattery 1 }
+    
+    psBatteryCurrent OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "Battery current, stored as mA, including positive or negative
+		sign. The integer 2147483647 represents invalid value."
+        ::= { psBattery 2 }
+        
+    psBattRemainedCapacity OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "Battery remained capacity, stored as %. The integer 2147483647 represents invalid value."
+        ::= { psBattery 3 }
+
+-- ------------------------------------------------------------------------ 
+-- 1.2.6. the psInput group
+-- ------------------------------------------------------------------------ 
+
+psInput OBJECT IDENTIFIER ::= { system 6 }
+
+    psInputLineAVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line A voltage, stored as mV. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 1 }
+
+    psInputLineBVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line B voltage, stored as mV. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 2 }
+
+    psInputLineCVoltage OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line C voltage, stored as mV. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 3 }
+        
+     psInputLineACurrent OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line A Current, stored as mA. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 4 }
+
+    psInputLineBCurrent OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line B Current, stored as mA. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 5 }
+
+    psInputLineCCurrent OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The AC line C Current, stored as mA. The integer 2147483647 
+		represents invalid value."
+        ::= { psInput 6 }
+
+-- ------------------------------------------------------------------------ 
+-- 1.2.7. the temperatures(two routes:maybe ambient temperature,
+--				      maybe battery temperature)
+-- ------------------------------------------------------------------------ 
+
+psTemperature OBJECT IDENTIFIER ::= { system 7 }
+
+    psTemperature1 OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The first route temperature, stored as 0.001 Celsius degree. 
+		The integer 2147483647 represents invalid value."
+        ::= { psTemperature 1 }
+
+    psTemperature2 OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The second route temperature, stored as 0.001 Celsius degree. 
+		The integer 2147483647 represents invalid value.."
+        ::= { psTemperature 2 }
+
+psStatusCommunication OBJECT-TYPE
+        SYNTAX INTEGER {
+            unknown(1),
+            normal(2),
+            interrupt(3)
+        }
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The status of communication with the Power System. interrupt(3) indicates
+             some errors occurred between Power System and agent."
+        ::= { system 8 }
+
+psStatusBatteryMode OBJECT-TYPE
+        SYNTAX INTEGER  {
+	    unknown(1),
+	    FloatCharging(2),
+	    ShortTest(3),
+	    BCForTest(4),
+	    ManualTesting(5),
+	    PlanTesting(6),
+	    ACFailTesting(7),
+	    ACFail(8),
+	    ManualBC(9),
+	    AutoBC(10),
+	    CyclicBC(11),
+	    MasterBC(12),
+	    MasterBT(13)
+	}
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The status of battery modes, 
+		FloatCharging(2),
+		ShortTest(3),
+		BoostChargingForTest(4),
+		ManualTesting(5),
+		PlanTesting(6),
+		ACFailTesting(7),
+		ACFail(8),
+		ManualBoostCharging(9),
+		AutoBoostCharging(10),
+		CyclicBoostCharging(11),
+		MasterBoostCharging(12),
+		MasterBateryTesting(13)."
+        ::= { system 9 }
+        
+-------------------------------------------------------------------------- 
+-- 1.2.10. the SM series group(only get number of SM series)
+-- ------------------------------------------------------------------------ 
+
+psSMNumber OBJECT IDENTIFIER ::= { system 10 }
+
+    psSMACNumber OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The number of SM AC module."
+        ::= { psSMNumber 1 }
+
+    psSMBATNumber OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The number of SM BAT module."
+        ::= { psSMNumber 2 }
+
+    psSMIONumber OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The number of SM IO module."
+        ::= { psSMNumber 3 }
+        
+-- ------------------------------------------------------------------------ 
+-- 1.2.11. Statistic of the system 
+-- ------------------------------------------------------------------------ 
+
+psStatistic OBJECT IDENTIFIER ::= { system 11 }
+
+    psMainsCumulativeKWH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The cumulative KWH of Mains, stored as KWH. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 1 }
+
+    psMainsLastMonthKWH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The last month KWH of Mains, stored as KWH. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 2 }
+        
+    psMainsCumulativeRunH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The cumulative Run Hours of Mains, stored as Hour. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 3 }
+
+    psMainsLastMonthRunH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The last month Run Hours of Mains, stored as Hour. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 4 }
+        
+    psBattCumulativeKWH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The cumulative KWH of battery, stored as KWH. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 5 }
+
+    psBattLastMonthKWH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The last month KWH of battery, stored as KWH. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 6 }
+        
+    psBattCumulativeRunH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The cumulative Run Hours of battery, stored as Hour. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 7 }
+
+    psBattLastMonthRunH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The last month Run Hours of battery, stored as Hour. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 8 }
+        
+	psBatteryDischgCycle OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The battery charge/discharge cycle, stored as times. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 9 }
+        
+    psDCOutputPower OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The DC output power, stored as W. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 10 }
+        
+	psLoadCumulativeKWH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The cumulative KWH of Load, stored as KWH. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 11 }
+
+    psLoadLastMonthKWH OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-only
+        STATUS current
+        DESCRIPTION
+            "The last month KWH of Load, stored as KWH. 
+		The integer 2147483647 represents invalid value."
+        ::= { psStatistic 12 }        
+
+
+------------------------------------------------------------
+-- Alarm trap counter { powerMIB 3 }
+------------------------------------------------------------
+
+alarmLastTrapNo OBJECT-TYPE
+	SYNTAX Counter32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The sequence number of last submitted alarm trap,
+		also last row in alarmTrapTable."
+	::= { powerMIB 3 }
+
+------------------------------------------------------------
+-- Alarm trap table { powerMIB 4 }
+------------------------------------------------------------
+
+alarmTrapTable OBJECT-TYPE
+	SYNTAX SEQUENCE OF AlarmTrapEntry
+	MAX-ACCESS not-accessible
+	STATUS current
+	DESCRIPTION "
+		Table holding information about the submitted alarm traps."
+	::= { powerMIB 4 }
+
+alarmTrapEntry OBJECT-TYPE
+	SYNTAX AlarmTrapEntry
+	MAX-ACCESS not-accessible
+	STATUS current
+	DESCRIPTION "
+		An entry (conceptual row) in the alarmTrapTable."
+	INDEX { alarmTrapNo }
+	::= { alarmTrapTable 1 }
+
+AlarmTrapEntry ::= SEQUENCE {
+	alarmTrapNo Counter32,
+	alarmTime DateAndTime,
+	alarmStatusChange StatusChange,
+	alarmSeverity Status,
+	alarmDescription DisplayString,
+	alarmType Integer32 }
+
+alarmTrapNo OBJECT-TYPE
+	SYNTAX Counter32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The unique sequence number of this alarm trap."
+	::= { alarmTrapEntry 1 }
+
+alarmTime OBJECT-TYPE
+	SYNTAX DateAndTime
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		Date and time when event occured (local time), including
+		timezone if supported by controller."
+	::= { alarmTrapEntry 2 }
+
+alarmStatusChange OBJECT-TYPE
+	SYNTAX StatusChange
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The type of alarm change. One of
+		(1) activated
+		(2) deactivated"
+	::= { alarmTrapEntry 3 }
+
+alarmSeverity OBJECT-TYPE
+	SYNTAX Status
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		The severity of the alarm. One of
+		(3) warning - OA, lowest level of alarm severity
+		(4) minor - A3
+		(5) major - MA
+		(6) critical - CA, highest level of alarm severity"
+	::= { alarmTrapEntry 4 }
+
+alarmDescription OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		Free-text description of alarm."
+	::= { alarmTrapEntry 5 }
+
+alarmType OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION "
+		Alarm type, i.e. an integer specifying the type of alarm."
+	::= { alarmTrapEntry 6 }
+
+------------------------------------------------------------
+-- Events/traps { powerMIB 5 }
+------------------------------------------------------------
+
+powerEvents OBJECT IDENTIFIER ::= { powerMIB 5 }
+
+alarmTrap NOTIFICATION-TYPE
+	OBJECTS {
+		alarmTrapNo,
+		alarmTime,
+		alarmStatusChange,
+		alarmSeverity,
+		alarmDescription,
+		alarmType }
+	STATUS current
+	DESCRIPTION "
+		An alarm trap is sent when an alarm occurs (activated) or
+		returns to normal state (deactivated). Alarm traps are logged
+		in alarmTrapTable. Variables in this trap:
+		* alarmTrapNo - The unique sequence number of this alarm trap.
+		* alarmTime - Date and time when event occured (local time),
+		      including timezone if supported by controller.
+		* alarmStatusChange - (1) activated or (2) deactivated.
+		* alarmSeverity - Integer describing the severity of the alarm.
+		* alarmDescription - Free-text description of alarm.
+		* alarmType - Integer indicating type of alarm."
+	::= { powerEvents 1 }
+	
+	
+------------------------------------------------------------
+-- Parameter settings { powerMIB 6 }
+------------------------------------------------------------
+
+settings OBJECT IDENTIFIER ::= { powerMIB 6 }
+	
+stFloatVoltage OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Battery float voltage, stored as mV.
+		This object can be set by the host."
+	::= { settings 1 }
+	
+stBoostVoltage OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Battery float voltage, stored as mV.
+		This object can be set by the host."
+	::= { settings 2 }
+	
+stBattstdCapacity OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Battery standard capacity, stored as AH.
+		This object can be set by the host."
+	::= { settings 3 }
+	
+stChargeCurrentLimit OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Battery charge limitation, stored as %(0.01C). 
+		This object can be set by the host."
+	::= { settings 4 }
+	
+stLLVDVoltage OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Load disconnection voltage, stored as mV.
+		This object can be set by the host."
+	::= { settings 5 }
+	
+stBLVDVoltage OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Battery disconnection voltage, stored as mV.
+		This object can be set by the host."
+	::= { settings 6 }
+	
+stDCLowVoltThreshold OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		DC low voltage alarm threshold, stored as mV.
+		This object can be set by the host."
+	::= { settings 7 }
+	
+stAmbientHighTempThreshold OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Ambient high temperature alarm threshold, stored as degree celsius.
+		This object can be set by the host."
+	::= { settings 8 }
+	
+stBattHighTempThreshold OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Battery high temperature alarm threshold, stored as degree celsius.
+		This object can be set by the host."
+	::= { settings 9 }
+	
+stOverLoadAlarmThreshold OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		Over load alarm threshold, stored as %.
+		This object can be set by the host."
+	::= { settings 10 }
+	
+stAviationLampONTime OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		The ON time of the aviation lamp. The value range is from 
+		0 to 47 which means 00:00 to 23:30. This object can be set by
+		the host."
+	::= { settings 11 }
+	
+stAviationLampOFFTime OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		The OFF time of the aviation lamp. The value range is from 
+		0 to 47 which means 00:00 to 23:30. This object can be set by
+		the host."
+	::= { settings 12 }
+	
+stAirconditionerONTemperature OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		The ON temperature of the air conditioner, stored as degree celsius. 
+		This object can be set by the host."
+	::= { settings 13 }
+	
+stAirconditionerOFFTemperature OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		The OFF temperature of the air conditioner, stored as degree celsius. 
+		This object can be set by the host."
+	::= { settings 14 }
+
+	
+stIPAddress OBJECT-TYPE
+	SYNTAX DisplayString
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION "
+		The IP address of the controller.
+		 This object can be set by the host."
+	::= { settings 15 }
+        
+------------------------------------------------------------
+-- End of MIB definitions
+------------------------------------------------------------
+
+END

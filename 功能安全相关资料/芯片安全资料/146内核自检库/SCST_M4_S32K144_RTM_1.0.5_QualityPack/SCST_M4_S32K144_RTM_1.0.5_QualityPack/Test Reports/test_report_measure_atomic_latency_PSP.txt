@@ -1,0 +1,550 @@
+##############################################################################
+#
+# Cortex M4 Structural Core Self Test (SCST) Library
+# Test Report generated on: 23. Feb 2020, 12:03:28
+#
+#
+##############################################################################
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Start executing tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_FLASH with PSP stack
+-------------------------------------------------------------------
+Measure latency by m4_scst_exception_test_svc
+latency_counter_max 414
+Latency time max 5,1 us
+
+latency_counter_min 78
+Latency time min 0,9 us
+
+latency counter diff 336
+Latency time diff 4,2 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_test_pendsv
+latency_counter_max 420
+Latency time max 5,2 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 324
+Latency time diff 4,0 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_test_systick
+latency_counter_max 420
+Latency time max 5,2 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 324
+Latency time diff 4,0 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_hard_fault1
+latency_counter_max 635
+Latency time max 7,9 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 540
+Latency time diff 6,7 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_hard_fault2
+latency_counter_max 505
+Latency time max 6,3 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 410
+Latency time diff 5,1 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_usage_fault
+latency_counter_max 445
+Latency time max 5,5 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 350
+Latency time diff 4,3 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_mem_fault
+latency_counter_max 435
+Latency time max 5,4 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 340
+Latency time diff 4,2 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_bus_fault
+latency_counter_max 472
+Latency time max 5,9 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 376
+Latency time diff 4,7 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_test_nmihf
+latency_counter_max 473
+Latency time max 5,9 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 378
+Latency time diff 4,7 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_test_tail_chain
+latency_counter_max 569
+Latency time max 7,1 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 474
+Latency time diff 5,9 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_test_masking
+latency_counter_max 456
+Latency time max 5,7 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 360
+Latency time diff 4,5 us
+------------------------------------------------------------------
+Measure latency by m4_scst_exception_test_handler_thread
+latency_counter_max 818
+Latency time max 10,2 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 722
+Latency time diff 9,0 us
+------------------------------------------------------------------
+Measure latency by m4_scst_regbank_test4
+latency_counter_max 351
+Latency time max 4,3 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 256
+Latency time diff 3,2 us
+------------------------------------------------------------------
+Measure latency by m4_scst_alu_test7
+latency_counter_max 446
+Latency time max 5,5 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 350
+Latency time diff 4,3 us
+------------------------------------------------------------------
+Measure latency by m4_scst_branch_test3
+latency_counter_max 472
+Latency time max 5,9 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 376
+Latency time diff 4,7 us
+------------------------------------------------------------------
+Measure latency by m4_scst_status_test3
+latency_counter_max 452
+Latency time max 5,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 356
+Latency time diff 4,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_regbank_test6
+latency_counter_max 142
+Latency time max 1,7 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 46
+Latency time diff 0,5 us
+------------------------------------------------------------------
+Measure latency by m4_scst_fetch_test
+latency_counter_max 138
+Latency time max 1,7 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 42
+Latency time diff 0,5 us
+------------------------------------------------------------------
+Measure latency by m4_scst_loadstore_test6
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_loadstore_test1
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_loadstore_test2
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_loadstore_test3
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_loadstore_test4
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_loadstore_test5
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_regbank_test1
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_regbank_test2
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_regbank_test3
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_regbank_test5
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_mac_test1
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_mac_test2
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_alu_test1
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_alu_test2
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_alu_test3
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_alu_test4
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_alu_test5
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_alu_test6
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_simdsat_test1
+latency_counter_max 132
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 36
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_simdsat_test2
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_simdsat_test3
+latency_counter_max 132
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 36
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_simdsat_test4
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_branch_test1
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_branch_test2
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_status_test1
+latency_counter_max 133
+Latency time max 1,6 us
+
+latency_counter_min 95
+Latency time min 1,1 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+Measure latency by m4_scst_status_test2
+latency_counter_max 134
+Latency time max 1,6 us
+
+latency_counter_min 96
+Latency time min 1,2 us
+
+latency counter diff 38
+Latency time diff 0,4 us
+------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_STASK_USED skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T01 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T02 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T03 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T05 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T06 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T07 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T09 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T10 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T11 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T12 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T13 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T14 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T15 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T16 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T17 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+All executed tests have successfully passed!
+-------------------------------------------------------------------

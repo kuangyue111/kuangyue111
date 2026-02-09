@@ -1,0 +1,288 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_C_Compiler_Includes</name>
+      <values lines_count="33">
+        <Line>"${ProjDirPath}/SDK/platform/drivers/src/clock/S32K1xx"</Line>
+        <Line>"${ProjDirPath}/SDK/rtos/FreeRTOS_S32K/Source/include"</Line>
+        <Line>"${ProjDirPath}/SDK/rtos/FreeRTOS_S32K/Source/portable/GCC/ARM_CM4F"</Line>
+        <Line>"${ProjDirPath}/SDK/rtos/osif/"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/drivers/src/adc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/drivers/src/adc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/drivers/src/ftm"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/pal/inc"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/devices"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/devices/common"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/devices/S32K146/include"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/devices/S32K146/startup"</Line>
+        <Line>"${ProjDirPath}/SDK/platform/drivers/inc"</Line>
+      </values>
+    </option>
+    <option>
+      <name>PE_G_4PEx_ToolChain_C_Compiler_Symbols</name>
+      <values lines_count="1">
+        <Line>USING_OS_FREERTOS</Line>
+      </values>
+    </option>
+    <option>
+      <name>PE_G_4PEx_ilg_gnuarmeclipse_managedbuild_cross_option_c_compiler_defs</name>
+      <values lines_count="1">
+        <Line>"CPU_S32K146_100"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/croutine.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312217" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/timing_pal3.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312685" FileType="45637" CompNumb="26" />
+      <File Name="Generated_Code/dmaController1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312838" FileType="45637" CompNumb="9" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/pmc_hw_access.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="Generated_Code/timing_pal3.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312685" FileType="45637" CompNumb="26" />
+      <File Name="Generated_Code/dmaController1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312834" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/timing_pal1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312702" FileType="45637" CompNumb="24" />
+      <File Name="SDK/platform/drivers/inc/lpuart_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312450" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/timing_pal1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312685" FileType="45637" CompNumb="24" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/smc_hw_access.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="SDK/platform/pal/src/ic/ic_irq.h" FileDate="2020-01-09, 11:58:57" FileAge="1578542337885" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/rtos/osif/osif_freertos.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312286" FileType="1048576" CompNumb="7" />
+      <File Name="SDK/platform/drivers/inc/flexio_spi_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312516" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/spi_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375569" FileType="45637" CompNumb="33" />
+      <File Name="SDK/platform/pal/src/ic/ic_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312364" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/drivers/inc/adc_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312450" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/ewm_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312634" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/semphr.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312236" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/flexcan/flexcan_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312552" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/ewm/ewm_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312618" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/spi_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312333" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/pal/inc/spi_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312333" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/devices/device_registers.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/stream_buffer.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312252" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/inc/ftm_pwm_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312583" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/pwm_pal1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312745" FileType="45637" CompNumb="23" />
+      <File Name="Generated_Code/pwm_pal1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312705" FileType="45637" CompNumb="23" />
+      <File Name="SDK/platform/pal/inc/pwm_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312379" FileType="1048576" CompNumb="23" />
+      <File Name="SDK/platform/drivers/inc/ftm_ic_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312583" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/uart_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375574" FileType="45637" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/FreeRTOS.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312226" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/inc/pins_driver.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="2" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/event_groups.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312194" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_common.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312567" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/event_groups.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312223" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/portable/MemMang/heap_2.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312268" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/pdb/pdb_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312466" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/wdog_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312618" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/adc_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312317" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/FreeRTOS.c" FileDate="1970-01-01, 07:59:59" FileAge="-1" FileType="45637" CompNumb="6" />
+      <File Name="SDK/platform/pal/inc/can_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312348" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312867" FileType="45637" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/timers.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312212" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/portable/GCC/ARM_CM4F/port.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312268" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/pdb/pdb_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312466" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312871" FileType="45637" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/clock.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="Generated_Code/pwm_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375551" FileType="45637" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/lptmr_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312603" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/can_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312348" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/drivers/src/wdog/wdog_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312618" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpuart/lpuart_irq.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312447" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_pwm_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312583" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/wdog/wdog_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312618" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpuart/lpuart_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312430" FileType="1048576" CompNumb="33" />
+      <File Name="Documentation/BMU_DEBUG_146.txt" FileDate="2020-03-11, 10:07:39" FileAge="1583892459121" FileType="3072" />
+      <File Name="Generated_Code/pin_mux.h" FileDate="2020-01-09, 20:05:01" FileAge="1578571501589" FileType="45637" CompNumb="2" />
+      <File Name="SDK/platform/pal/src/uart/uart_pal.c" FileDate="2020-01-09, 12:00:33" FileAge="1578542433279" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/pin_mux.c" FileDate="2020-01-09, 20:05:01" FileAge="1578571501596" FileType="45637" CompNumb="2" />
+      <File Name="SDK/platform/drivers/src/ewm/ewm_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312634" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/queue.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312200" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/lptmr/lptmr_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312603" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpspi/lpspi_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312501" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lptmr/lptmr_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312603" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpspi/lpspi_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312498" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/ic_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312364" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/pal/inc/i2c_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312348" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/mpu_prototypes.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312236" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/adc/adc_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312450" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpuart/lpuart_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312430" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/ic_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312364" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_ic_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312583" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/deprecated_definitions.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312220" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/wdg_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375542" FileType="45637" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/flexio.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312516" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/lpspi_slave_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312501" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/wdg_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312399" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/uart_pal2.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312826" FileType="45637" CompNumb="10" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/sim_hw_access.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="Generated_Code/wdg_pal2.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312669" FileType="45637" CompNumb="29" />
+      <File Name="SDK/platform/drivers/src/edma/edma_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312286" FileType="1048576" CompNumb="9" />
+      <File Name="Generated_Code/adc_pal_cfg.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312634" FileType="45637" CompNumb="33" />
+      <File Name="Generated_Code/uart_pal2.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312822" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/wdg_pal2.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312669" FileType="45637" CompNumb="29" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312567" FileType="1048576" CompNumb="33" />
+      <File Name="Sources/main.c" FileDate="2020-01-10, 16:05:25" FileAge="1578643525816" FileType="128" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312552" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="SDK/platform/pal/inc/uart_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312317" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.c" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="3" />
+      <File Name="SDK/platform/drivers/src/pins/pins_port_hw_access.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="2" />
+      <File Name="SDK/platform/drivers/src/lpit/lpit_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312583" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/wdog/wdog_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312618" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/pins/pins_port_hw_access.c" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="2" />
+      <File Name="SDK/platform/drivers/inc/interrupt_manager.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="4" />
+      <File Name="SDK/platform/drivers/inc/ftm_mc_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312567" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/pdb/pdb_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312450" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/lpit_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312600" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/spi4.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312789" FileType="45637" CompNumb="16" />
+      <File Name="Generated_Code/adc_pal1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312814" FileType="45637" CompNumb="12" />
+      <File Name="Generated_Code/spi4.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312787" FileType="45637" CompNumb="16" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/list.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312197" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/spi2.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312801" FileType="45637" CompNumb="14" />
+      <File Name="SDK/platform/drivers/src/pins/pins_gpio_hw_access.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="2" />
+      <File Name="SDK/platform/drivers/src/lpspi/lpspi_shared_function.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312481" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/src/can/can_pal.c" FileDate="2020-01-09, 11:57:22" FileAge="1578542242652" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/adc_pal1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312810" FileType="45637" CompNumb="12" />
+      <File Name="Generated_Code/spi2.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312798" FileType="45637" CompNumb="14" />
+      <File Name="Generated_Code/ic_pal1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312752" FileType="45637" CompNumb="22" />
+      <File Name="Generated_Code/ic_pal1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312748" FileType="45637" CompNumb="22" />
+      <File Name="SDK/platform/drivers/src/edma/edma_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312301" FileType="1048576" CompNumb="9" />
+      <File Name="Generated_Code/can_pal2.h" FileDate="2020-01-09, 20:11:08" FileAge="1578571868238" FileType="45637" CompNumb="20" />
+      <File Name="SDK/platform/drivers/src/lpi2c/lpi2c_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312532" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/edma/edma_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312286" FileType="1048576" CompNumb="9" />
+      <File Name="Generated_Code/can_pal2.c" FileDate="2020-01-10, 09:34:59" FileAge="1578620099367" FileType="45637" CompNumb="20" />
+      <File Name="Generated_Code/FreeRTOSConfig.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312840" FileType="45637" CompNumb="6" />
+      <File Name="SDK/platform/drivers/inc/clock_manager.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="SDK/platform/drivers/src/flexcan/flexcan_irq.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312552" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/uart_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312317" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/timing_pal4.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312685" FileType="45637" CompNumb="27" />
+      <File Name="SDK/platform/drivers/src/pins/pins_driver.c" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="2" />
+      <File Name="SDK/platform/drivers/src/flexcan/flexcan_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312552" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpspi/lpspi_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312481" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/timing_pal4.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312669" FileType="45637" CompNumb="27" />
+      <File Name="Generated_Code/timing_pal2.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312685" FileType="45637" CompNumb="25" />
+      <File Name="Generated_Code/timing_pal2.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312685" FileType="45637" CompNumb="25" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/croutine.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312190" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/can_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375560" FileType="45637" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/flexio/flexio_common.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312516" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/devices/callbacks.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418116" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/flexio/flexio_common.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312501" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/devices/S32K146/include/S32K146_features.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418121" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/flexcan/flexcan_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312550" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/pwm_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312379" FileType="1048576" CompNumb="23" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_mc_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312567" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/flexcan/flexcan_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312532" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/ftm_oc_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312603" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/adc/adc_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312450" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/trgmux/trgmux_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312466" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/timing_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312397" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/message_buffer.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312232" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/i2c1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312777" FileType="45637" CompNumb="18" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/stream_buffer.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312204" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/flexio/flexio_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312516" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/timing_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312379" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/i2c1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312774" FileType="45637" CompNumb="18" />
+      <File Name="Documentation/BMU_DEBUG_146_Settings.xml" FileDate="2020-01-06, 14:06:30" FileAge="1578290790844" FileType="3072" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/pcc_hw_access.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="SDK/platform/pal/src/spi/spi_pal.c" FileDate="2020-01-09, 11:59:44" FileAge="1578542384388" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/portable/GCC/ARM_CM4F/portmacro.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312268" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/StackMacros.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312252" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/devices/S32K146/include/S32K146.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418121" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/src/adc/adc_pal.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312317" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/devices/S32K146/startup/system_S32K146.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418121" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/projdefs.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312236" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/lpspi/lpspi_slave_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312481" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/trgmux_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312481" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/timing_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375546" FileType="45637" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/task.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312252" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/devices/S32K146/startup/system_S32K146.c" FileDate="2020-01-06, 13:43:38" FileAge="1578289418121" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpi2c/lpi2c_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312532" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/edma/edma_irq.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312301" FileType="1048576" CompNumb="9" />
+      <File Name="SDK/platform/drivers/src/interrupt/interrupt_manager.c" FileDate="2020-01-06, 13:43:38" FileAge="1578289418085" FileType="1048576" CompNumb="4" />
+      <File Name="SDK/platform/devices/devassert.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpi2c/lpi2c_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312532" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/edma/edma_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312286" FileType="1048576" CompNumb="9" />
+      <File Name="SDK/platform/pal/inc/adc_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312333" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/pal/inc/wdg_pal.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312399" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/pal/src/wdg/wdg_pal.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312399" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/drivers/src/ftm/ftm_oc_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312603" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/lpi2c_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312532" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpuart/lpuart_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312430" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/src/adc/adc_irq.h" FileDate="2020-01-09, 11:57:49" FileAge="1578542269463" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/tasks.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312209" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/drivers/src/lpit/lpit_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312583" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpuart/lpuart_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312430" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/ic_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375555" FileType="45637" CompNumb="33" />
+      <File Name="SDK/platform/pal/src/adc/adc_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312317" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/list.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312229" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/clockMan1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312859" FileType="45637" CompNumb="3" />
+      <File Name="SDK/platform/pal/src/i2c/i2c_pal.c" FileDate="2020-01-09, 11:58:40" FileAge="1578542320736" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/drivers/inc/ftm_common.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312567" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/uart_pal3.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312820" FileType="45637" CompNumb="11" />
+      <File Name="Generated_Code/clockMan1.c" FileDate="2020-01-06, 15:51:02" FileAge="1578297062255" FileType="45637" CompNumb="3" />
+      <File Name="Generated_Code/uart_pal3.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312816" FileType="45637" CompNumb="11" />
+      <File Name="Generated_Code/uart_pal1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312832" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/wdg_pal1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312669" FileType="45637" CompNumb="28" />
+      <File Name="SDK/platform/drivers/inc/flexcan_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312552" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/uart_pal1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312829" FileType="45637" CompNumb="8" />
+      <File Name="SDK/platform/drivers/src/lpspi/lpspi_master_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312481" FileType="1048576" CompNumb="33" />
+      <File Name="Generated_Code/wdg_pal1.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312669" FileType="45637" CompNumb="28" />
+      <File Name="SDK/platform/devices/startup.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418119" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/inc/i2c_pal_mapping.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312348" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/pal/src/timing/timing_pal.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312379" FileType="1048576" CompNumb="0" />
+      <File Name="SDK/platform/drivers/src/lpi2c/lpi2c_irq.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312532" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/devices/startup.c" FileDate="2020-01-06, 13:43:38" FileAge="1578289418121" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/osif/osif.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312285" FileType="1048576" CompNumb="7" />
+      <File Name="SDK/platform/drivers/inc/lpspi_shared_function.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312501" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/lpi2c/lpi2c_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312516" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/trgmux/trgmux_hw_access.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312466" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/src/trgmux/trgmux_hw_access.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312466" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/edma_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312301" FileType="1048576" CompNumb="9" />
+      <File Name="SDK/platform/devices/common/s32_core_cm4.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418118" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/portable.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312236" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/i2c_pal_cfg.h" FileDate="2020-03-11, 09:49:35" FileAge="1583891375564" FileType="45637" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/lpspi_master_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312501" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/drivers/inc/pdb_driver.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312466" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/pal/src/pwm/pwm_pal.c" FileDate="2020-01-09, 11:59:32" FileAge="1578542372729" FileType="1048576" CompNumb="23" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/mpu_wrappers.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312236" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/adc_pal2.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312783" FileType="45637" CompNumb="17" />
+      <File Name="Generated_Code/spi3.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312795" FileType="45637" CompNumb="15" />
+      <File Name="Generated_Code/adc_pal2.c" FileDate="2020-01-09, 19:36:16" FileAge="1578569776632" FileType="45637" CompNumb="17" />
+      <File Name="SDK/platform/drivers/src/clock/S32K1xx/scg_hw_access.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="3" />
+      <File Name="Generated_Code/spi3.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312792" FileType="45637" CompNumb="15" />
+      <File Name="SDK/platform/pal/src/ic/ic_pal.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312364" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/spi1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312807" FileType="45637" CompNumb="13" />
+      <File Name="SDK/platform/pal/src/timing/timing_irq.h" FileDate="2020-01-09, 11:59:58" FileAge="1578542398071" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/spi1.c" FileDate="2020-03-11, 10:07:38" FileAge="1583892458988" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/can_pal3.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312758" FileType="45637" CompNumb="21" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/queue.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312236" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/platform/pal/src/timing/timing_irq.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312379" FileType="1048576" CompNumb="0" />
+      <File Name="Generated_Code/can_pal3.c" FileDate="2020-01-10, 09:34:59" FileAge="1578620099374" FileType="45637" CompNumb="21" />
+      <File Name="Generated_Code/can_pal1.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312771" FileType="45637" CompNumb="19" />
+      <File Name="SDK/platform/drivers/src/flexio/flexio_spi_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312501" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/platform/devices/status.h" FileDate="2020-01-06, 13:43:38" FileAge="1578289418101" FileType="1048576" CompNumb="33" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/stack_macros.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312252" FileType="1048576" CompNumb="6" />
+      <File Name="SDK/rtos/FreeRTOS_S32K/Source/include/timers.h" FileDate="2020-01-06, 13:58:32" FileAge="1578290312252" FileType="1048576" CompNumb="6" />
+      <File Name="Generated_Code/can_pal1.c" FileDate="2020-01-10, 09:34:59" FileAge="1578620099360" FileType="45637" CompNumb="19" />
+      <File Name="SDK/platform/drivers/src/lptmr/lptmr_driver.c" FileDate="2020-01-06, 13:58:32" FileAge="1578290312603" FileType="1048576" CompNumb="33" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>28</CodeGenReference>
+</CodeGenerationInfo>

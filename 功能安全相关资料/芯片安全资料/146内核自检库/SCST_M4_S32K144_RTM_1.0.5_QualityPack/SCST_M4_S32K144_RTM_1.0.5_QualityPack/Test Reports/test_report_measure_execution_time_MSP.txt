@@ -1,0 +1,243 @@
+##############################################################################
+#
+# Cortex M4 Structural Core Self Test (SCST) Library
+# Test Report generated on: 23. Feb 2020, 12:33:18
+#
+#
+##############################################################################
+-------------------------------------------------------------------
+Execution of tests M4_SCST_EXECUTION_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Start executing tests M4_SCST_EXECUTION_TIME_REPORT_FLASH with cache disabled and MSP Stack:
+-------------------------------------------------------------------
+Measure the execution time of m4_scst_exception_test_svc
+Counter difference 814
+Execution time 10,17 us
+Measure the execution time of m4_scst_exception_test_pendsv
+Counter difference 794
+Execution time 9,92 us
+Measure the execution time of m4_scst_exception_test_systick
+Counter difference 794
+Execution time 9,92 us
+Measure the execution time of m4_scst_exception_hard_fault1
+Counter difference 1948
+Execution time 24,35 us
+Measure the execution time of m4_scst_exception_hard_fault2
+Counter difference 1528
+Execution time 19,10 us
+Measure the execution time of m4_scst_exception_usage_fault
+Counter difference 1404
+Execution time 17,55 us
+Measure the execution time of m4_scst_exception_mem_fault
+Counter difference 812
+Execution time 10,15 us
+Measure the execution time of m4_scst_exception_bus_fault
+Counter difference 970
+Execution time 12,12 us
+Measure the execution time of m4_scst_exception_test_nmihf
+Counter difference 1456
+Execution time 18,20 us
+Measure the execution time of m4_scst_exception_test_tail_chain
+Counter difference 956
+Execution time 11,95 us
+Measure the execution time of m4_scst_exception_test_masking
+Counter difference 1394
+Execution time 17,42 us
+Measure the execution time of m4_scst_exception_test_handler_thread
+Counter difference 1972
+Execution time 24,65 us
+Measure the execution time of m4_scst_regbank_test4
+Counter difference 870
+Execution time 10,87 us
+Measure the execution time of m4_scst_alu_test7
+Counter difference 842
+Execution time 10,52 us
+Measure the execution time of m4_scst_branch_test3
+Counter difference 1704
+Execution time 21,30 us
+Measure the execution time of m4_scst_status_test3
+Counter difference 876
+Execution time 10,95 us
+Measure the execution time of m4_scst_regbank_test6
+Counter difference 3050
+Execution time 38,12 us
+Measure the execution time of m4_scst_fetch_test
+Counter difference 400
+Execution time 5,0 us
+Measure the execution time of m4_scst_loadstore_test6
+Counter difference 6004
+Execution time 75,5 us
+Measure the execution time of m4_scst_loadstore_test1
+Counter difference 3300
+Execution time 41,25 us
+Measure the execution time of m4_scst_loadstore_test2
+Counter difference 4890
+Execution time 61,12 us
+Measure the execution time of m4_scst_loadstore_test3
+Counter difference 3268
+Execution time 40,85 us
+Measure the execution time of m4_scst_loadstore_test4
+Counter difference 3882
+Execution time 48,52 us
+Measure the execution time of m4_scst_loadstore_test5
+Counter difference 11930
+Execution time 149,12 us
+Measure the execution time of m4_scst_regbank_test1
+Counter difference 6566
+Execution time 82,7 us
+Measure the execution time of m4_scst_regbank_test2
+Counter difference 6022
+Execution time 75,27 us
+Measure the execution time of m4_scst_regbank_test3
+Counter difference 7206
+Execution time 90,7 us
+Measure the execution time of m4_scst_regbank_test5
+Counter difference 430
+Execution time 5,37 us
+Measure the execution time of m4_scst_mac_test1
+Counter difference 1764
+Execution time 22,5 us
+Measure the execution time of m4_scst_mac_test2
+Counter difference 1688
+Execution time 21,10 us
+Measure the execution time of m4_scst_alu_test1
+Counter difference 1016
+Execution time 12,70 us
+Measure the execution time of m4_scst_alu_test2
+Counter difference 4040
+Execution time 50,50 us
+Measure the execution time of m4_scst_alu_test3
+Counter difference 1266
+Execution time 15,82 us
+Measure the execution time of m4_scst_alu_test4
+Counter difference 13512
+Execution time 168,90 us
+Measure the execution time of m4_scst_alu_test5
+Counter difference 862
+Execution time 10,77 us
+Measure the execution time of m4_scst_alu_test6
+Counter difference 1080
+Execution time 13,50 us
+Measure the execution time of m4_scst_simdsat_test1
+Counter difference 3384
+Execution time 42,30 us
+Measure the execution time of m4_scst_simdsat_test2
+Counter difference 2300
+Execution time 28,75 us
+Measure the execution time of m4_scst_simdsat_test3
+Counter difference 3310
+Execution time 41,37 us
+Measure the execution time of m4_scst_simdsat_test4
+Counter difference 2670
+Execution time 33,37 us
+Measure the execution time of m4_scst_branch_test1
+Counter difference 1488
+Execution time 18,60 us
+Measure the execution time of m4_scst_branch_test2
+Counter difference 1968
+Execution time 24,60 us
+Measure the execution time of m4_scst_status_test1
+Counter difference 3012
+Execution time 37,65 us
+Measure the execution time of m4_scst_status_test2
+Counter difference 936
+Execution time 11,70 us
+M4-SCST(i,i) (i=0 -> 43) execution time 1504,72 us
+M4-SCST(0,43) execution time 1432,42 us
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_RAM skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_LATENCY_TIME_REPORT_FLASH skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_ATOMIC_STASK_USED skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T01 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T02 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T03 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T05 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T06 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of tests M4_SCST_UT_T07 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T09 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T10 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T11 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T12 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T13 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T14 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T15 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T16 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+Execution of test M4_SCST_UT_T17 skipped
+according to the settings in config.cmm file
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+All executed tests have successfully passed!
+-------------------------------------------------------------------

@@ -1,0 +1,65 @@
+#Generating source browse information for project GD32F303_IMSU_X_U2
+
+
+#Abbreviations
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build BSP.pbi : index BSP.xcl
+build Calibration.pbi : index Calibration.xcl
+build can.pbi : index can.xcl
+build EEPROM.pbi : index EEPROM.xcl
+build gd32f30x_it.pbi : index gd32f30x_it.xcl
+build I2C.pbi : index I2C.xcl
+build systick.pbi : index systick.xcl
+build main.pbi : index main.xcl
+build system_gd32f30x.pbi : index system_gd32f30x.xcl
+build gd32f30x_adc.pbi : index gd32f30x_adc.xcl
+build gd32f30x_bkp.pbi : index gd32f30x_bkp.xcl
+build gd32f30x_can.pbi : index gd32f30x_can.xcl
+build gd32f30x_crc.pbi : index gd32f30x_crc.xcl
+build gd32f30x_ctc.pbi : index gd32f30x_ctc.xcl
+build gd32f30x_dac.pbi : index gd32f30x_dac.xcl
+build gd32f30x_dbg.pbi : index gd32f30x_dbg.xcl
+build gd32f30x_dma.pbi : index gd32f30x_dma.xcl
+build gd32f30x_enet.pbi : index gd32f30x_enet.xcl
+build gd32f30x_exmc.pbi : index gd32f30x_exmc.xcl
+build gd32f30x_exti.pbi : index gd32f30x_exti.xcl
+build gd32f30x_fmc.pbi : index gd32f30x_fmc.xcl
+build gd32f30x_fwdgt.pbi : index gd32f30x_fwdgt.xcl
+build gd32f30x_gpio.pbi : index gd32f30x_gpio.xcl
+build gd32f30x_i2c.pbi : index gd32f30x_i2c.xcl
+build gd32f30x_misc.pbi : index gd32f30x_misc.xcl
+build gd32f30x_pmu.pbi : index gd32f30x_pmu.xcl
+build gd32f30x_rcu.pbi : index gd32f30x_rcu.xcl
+build gd32f30x_rtc.pbi : index gd32f30x_rtc.xcl
+build gd32f30x_sdio.pbi : index gd32f30x_sdio.xcl
+build gd32f30x_spi.pbi : index gd32f30x_spi.xcl
+build gd32f30x_timer.pbi : index gd32f30x_timer.xcl
+build gd32f30x_usart.pbi : index gd32f30x_usart.xcl
+build gd32f30x_wwdgt.pbi : index gd32f30x_wwdgt.xcl
+build GD32F303_IMSU_X_U2_part0.pbi : link BSP.pbi Calibration.pbi can.pbi EEPROM.pbi gd32f30x_it.pbi I2C.pbi
+build GD32F303_IMSU_X_U2_part1.pbi : link systick.pbi main.pbi system_gd32f30x.pbi gd32f30x_adc.pbi gd32f30x_bkp.pbi gd32f30x_can.pbi
+build GD32F303_IMSU_X_U2_part2.pbi : link gd32f30x_crc.pbi gd32f30x_ctc.pbi gd32f30x_dac.pbi gd32f30x_dbg.pbi gd32f30x_dma.pbi gd32f30x_enet.pbi
+build GD32F303_IMSU_X_U2_part3.pbi : link gd32f30x_exmc.pbi gd32f30x_exti.pbi gd32f30x_fmc.pbi gd32f30x_fwdgt.pbi gd32f30x_gpio.pbi gd32f30x_i2c.pbi
+build GD32F303_IMSU_X_U2_part4.pbi : link gd32f30x_misc.pbi gd32f30x_pmu.pbi gd32f30x_rcu.pbi gd32f30x_rtc.pbi gd32f30x_sdio.pbi gd32f30x_spi.pbi
+build GD32F303_IMSU_X_U2_part5.pbi : link gd32f30x_timer.pbi gd32f30x_usart.pbi gd32f30x_wwdgt.pbi
+build GD32F303_IMSU_X_U2.pbd : link GD32F303_IMSU_X_U2_part0.pbi GD32F303_IMSU_X_U2_part1.pbi GD32F303_IMSU_X_U2_part2.pbi GD32F303_IMSU_X_U2_part3.pbi GD32F303_IMSU_X_U2_part4.pbi GD32F303_IMSU_X_U2_part5.pbi
+build GD32F303_IMSU_X_U2.pbw : browsedata GD32F303_IMSU_X_U2.pbd
+
+

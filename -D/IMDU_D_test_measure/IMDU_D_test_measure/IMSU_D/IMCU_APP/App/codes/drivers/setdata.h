@@ -1,0 +1,62 @@
+enum __SETDATA_UINT8_ID
+{
+	SETDATA_ucSysType_NUM =0,
+	SETDATA_ucSoftWareVersion_H_NUM ,
+	SETDATA_ucSoftWareVersion_L_NUM ,
+	SETDATA_ucSetDataVersion_H_NUM,
+	SETDATA_ucSetDataVersion_L_NUM,
+	SETDATA_ucLoadDataSource_NUM,
+	SETDATA_GUN1_ucAuxPowerType_NUM,
+	SETDATA_GUN2_ucAuxPowerType_NUM,
+	SETDATA_ucDoCtrlBoard_NUM,
+	SETDATA_ucNetEnable_NUM,
+	SETDATA_ucDHCPEnable_NUM,
+	SETDATA_ucSelfIP_1_NUM,
+	SETDATA_ucSelfIP_2_NUM,
+	SETDATA_ucSelfIP_3_NUM,
+	SETDATA_ucSelfIP_4_NUM,
+	SETDATA_ucSubMask_1_NUM,
+	SETDATA_ucSubMask_2_NUM,
+	SETDATA_ucSubMask_3_NUM,
+	SETDATA_ucSubMask_4_NUM,
+	SETDATA_ucGateWay_1_NUM,
+	SETDATA_ucGateWay_2_NUM,
+	SETDATA_ucGateWay_3_NUM,
+	SETDATA_ucGateWay_4_NUM,
+	SETDATA_ucServerIP_1_NUM,
+	SETDATA_ucServerIP_2_NUM,
+	SETDATA_ucServerIP_3_NUM,
+	SETDATA_ucServerIP_4_NUM,
+	SETDATA_ucNetPort_H_NUM,
+	SETDATA_ucNetPort_L_NUM,
+	SETDATA_ucMACAddress_1_NUM,
+	SETDATA_ucMACAddress_2_NUM,
+	SETDATA_ucMACAddress_3_NUM,
+	SETDATA_ucMACAddress_4_NUM,
+	SETDATA_ucMACAddress_5_NUM,
+	SETDATA_ucMACAddress_6_NUM,
+};
+enum __SETDATA_FLOAT_ID
+{
+	SETDATA_GUN1_fVoltDetal_NUM,
+	SETDATA_GUN2_fVoltDetal_NUM,
+	SETDATA_GUN1_fCurrDetal_NUM,
+	SETDATA_GUN2_fCurrDetal_NUM,
+
+
+	SETDATA_GUN1_fCC2_Coeff_A_NUM =1000,
+	SETDATA_GUN2_fCC2_Coeff_A_NUM =1001,
+	SETDATA_GUN1_fVolt_Coeff_A_NUM =1002,
+	SETDATA_GUN2_fVolt_Coeff_A_NUM =1003,
+
+	SETDATA_GUN1_fCC2_Coeff_B_NUM =1010,
+	SETDATA_GUN2_fCC2_Coeff_B_NUM =1011,
+	SETDATA_GUN1_fVolt_Coeff_B_NUM =1012,
+	SETDATA_GUN2_fVolt_Coeff_B_NUM =1013,
+};
+
+
+
+
+
+

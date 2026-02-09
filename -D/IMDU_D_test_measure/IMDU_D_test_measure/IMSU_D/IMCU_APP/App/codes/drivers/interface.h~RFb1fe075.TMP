@@ -1,0 +1,3893 @@
+#ifndef INTERFACE_H
+#define INTERFACE_H
+
+//#include "main.h"
+
+#include "uip.h"
+#include "dhcpc.h"
+
+
+#define	mBMS_POWER_12V	        0
+#define	mBMS_POWER_24V	        1
+#define	mBMS_POWER_BOTH	        2
+
+typedef unsigned long ULONG;
+typedef enum 
+{ 
+	FALSE = 0, 
+	TRUE  = !FALSE,
+} BOOL;
+
+enum GUN_NO_DEF
+{
+	GUN_NO_A = 0,
+	GUN_NO_B,
+	ALL_GUN_NUM
+};
+enum IMEU_NO_DEF
+{
+	IMEU1_ID= 0,
+	IMEU2_ID =1,
+	ALL_IMEU_NUM
+};
+enum CAN_FRAME_TYPE
+{
+	CAN_STAND = 0,
+	CAN_EXTEND= 1,
+	ALL_FRAME_TYPE_NUM
+};
+enum LOAD_DATA_SOURCE
+{
+	FROM_RECT = 0,
+	FROM_IMIU = 1,
+};
+enum LOAD_DATA_ID
+{
+	BUS_VOLT = 0,
+	BUS_CURR = 1,
+};
+enum BMS_PROTOCOL_TYPE
+{
+	PROTOCOL_TYPE_GBT = 0,
+	PROTOCOL_TYPE_GBT_PT,
+	PROTOCOL_TYPE_CCS1,
+	PROTOCOL_TYPE_CCS2,
+	PROTOCOL_TYPE_CHADEMO,
+	ALL_PROTOCOL_TYPE_NUM
+};
+
+enum DI_STATE_INDEX
+{
+	DI_1_ID = 0,
+	DI_2_ID, 
+	DI_3_ID, 
+	DI_4_ID, 
+	DI_5_ID,
+	DI_6_ID,
+	DI_7_ID,
+	DI_8_ID,
+	ALL_DI_NUM
+};
+
+#define	mBMS_POWER_NO_CHECK	    0
+#define	mBMS_POWER_12V_OK	    1
+#define	mBMS_POWER_24V_OK	    2
+#define	mBMS_POWER_12V_Fail	    3
+#define	mBMS_POWER_24V_Fail	    4
+
+#define	GRP_WORKMODE_RECTIFIER	0xA0
+#define	GRP_WORKMODE_INVERTER	0xA1
+
+#define NO_BUTTOM_START			0
+#define BUTTOM_START_1_CHARGE	1	//第一次开始充电
+#define BUTTOM_START_2_CHARGE	2	//第二次开始充电
+#define BUTTOM_START_AGING		3	//开始老化
+#define BUTTOM_INSUL_START	    4	//绝缘检测
+#define BUTTOM_BMS_START	    5	//BMS模拟启动
+		
+
+#define POWER_ON_3C				0			//上电
+#define SPEAR_CHANGE_3C			1			//枪状态变化
+#define TRADE_3C				2			//交易号
+#define PLUGIN_TIME_OUT_3C		3			//插枪超时！
+#define FINISH_CHARGE_3C		4			//停止充电后
+#define ALM_3C					5			//存在告警	或告警消失
+#define CHARGING_3C				6			//充电过程中！
+	
+	
+	
+#define ETHER_SEM_INVALID	0xff
+#define ETHER_SEM_NUM		10
+#define BUTTONS_BRUSH_EVENT_KEY	0
+
+#define MDBUS_RCV_ARRY_NUM	3
+#define MDBUS_BYTES_MAX_NUM 300
+#define MDBUS_SEND_BYTES_MAX_NUM 300
+
+#define STEP_Kwh_START_CALC		0
+#define STEP_KWH_STOP_CALC		1
+#define STEP_KWH_IDL_CALC		2
+#define RECORD_E2PROM_IDX	8
+#define STEP_Kwh_NUM		48
+enum MdbRcvState
+{
+	MDB_BUFF_STAT_NEED_PROC = 0,
+	MDB_BUFF_STAT_BYTES_NUM,
+	MDB_BUFF_STAT_SIG_END
+};
+
+#define UI_RCV_BUFF_MAX_NUM		1
+
+#define PARALLEL_STAND_MODE			0
+#define PARALLEL_CURR_MODE			1
+#define PARALLEL_ROTATION_MODE		2
+#define PARALLEL_COME_ON_MODE		3
+
+#define RECT_OFF_SPEAR_IDL		0
+#define RECT_ON_SPEAR_IDL		1
+#define RECT_OFF_SPEAR_WORK		2		//此情况不可能
+#define RECT_ON_SPEAR_WORK		3
+
+
+#define HMI_KEY_MAX_NUM		64
+
+#define MDB_IMSU_ADDR_VALUE		0x01
+#define MDB_ADDR_VALUE			0x5a
+#define UI_MODBUS_CMD_01_ID		0x01
+#define UI_MODBUS_CMD_02_ID		0x02
+#define UI_MODBUS_CMD_03_ID		0x03
+#define UI_MODBUS_CMD_04_ID		0x04
+#define UI_MODBUS_CMD_05_ID		0x05
+#define UI_MODBUS_CMD_06_ID		0x06
+#define UI_MODBUS_CMD_10_ID		0x10
+
+enum tag_EV_CMD_NUM_def
+{
+	EV_CHM_CMD,
+	EV_CRM_CMD,
+	EV_CTS_CMD,
+	EV_CML_CMD,
+	EV_CRO_CMD,
+	EV_CCS_CMD,
+	EV_CST_CMD,
+	EV_CSD_CMD,
+	EV_CMD_SUM,
+};
+enum tag_EV_CMD_Interval_def
+{
+	STANDARD_VALUE,
+	MAX_VALUE,
+	MIN_VALUE,
+	LAST_COUNT,
+	ALL_SUM,
+};
+
+
+enum MdbRcvSigId
+{
+	MDB_RCV_BYTE_0_ADDR = 0,
+	MDB_RCV_BYTE_1_CMD,
+	MDB_RCV_BYTE_2_REG_ADDR_H,
+	MDB_RCV_BYTE_3_REG_ADDR_L,
+	MDB_RCV_BYTE_4_H,
+	MDB_RCV_BYTE_5_L,
+	MDB_RCV_BYTE6_10H_BYTE_NUM = 6,//refer to modbus 10CMD
+	UI_RCV_BYTES_MAX_NUM// = 60
+};
+
+#define MDB_SIG_VALUE_PST			7
+
+
+#define E_TYPE_SYS		0
+#define E_TYPE_BMS1			1
+#define E_TYPE_BMS2			2
+#define E_TYPE_IMIU1		3
+#define E_TYPE_IMIU2		4
+#define E_TYPE_WH1			5
+#define E_TYPE_WH2			6
+#define E_TYPE_BRUSH		7
+#define E_TYPE_BMS1_CTRL	8
+#define E_TYPE_BMS2_CTRL	9
+#define E_TYPE_OTHER		10
+#define E_RECT_INFO			11
+
+#define E_TYPE_INVALID		0xFE
+#define INVALID_ITEM		0xffffffff
+#define RECORD_BLOCK_MAX_NUM		3	 //16Mbit共有 32个block
+#define RECORD_TABLE_BLOCK_NO		4
+#define PAGE_NUM_PER_BLOCK			256
+#define BYTES_NUM_PER_PAGE			256
+#define ADDR_TOTAL_NUM_PST			250
+#define ADDR_UN_RPT_FLAG_PST		254
+#define VAL_RPT_FLAG				0x5a
+#define VAL_UN_RPT_FLAG				0xFF
+
+#define PAGE_WriteOk_FLAG_PST		255			//页写成功标志 位置
+#define PAGE_WriteOk_FLAG			0xA5		//页写成功标志
+#define PAGE_WriteFail_FLAG			0x5A		//页写失败标志  -- 例如写了一半掉电了
+
+#define MAX_RECORD_NUMBER	(PAGE_NUM_PER_BLOCK*(RECORD_BLOCK_MAX_NUM-1))		//支持512个记录
+
+//	字节型	地址只能顺序向后增加，不能插入！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+enum __ADDR_U8_TYPE
+{
+	ADDR1_u8WH_ALM_Mask= 7,
+	ADDR2_u8WH_ALM_Mask,						//8
+	ADDR_u8SetCalcMoneyType,					//9
+	ADDR_u8CC1CheckEnable_1,					//10
+	ADDR_u8CC1CheckEnable_2,					//11
+	ADDR_u8SelfTestEnable_1,					//12
+	ADDR_u8SelfTestEnable_2,					//13
+	ADDR_u8MCCBOnCheckEnable_1,				//14
+	ADDR_u8MCCBOnCheckEnable_2,				//15
+	ADDR_u8OutOverVoltEnable_1,				//16
+	ADDR_u8OutOverVoltEnable_2,				//17
+	ADDR_u8PolarityAlmMask_1,				//18
+	ADDR_u8PolarityAlmMask_2,				//19
+	ADDR_u8DoorAlmMask_1,					//20
+	ADDR_u8DoorAlmMask_2,					//21
+	ADDR_u8HasElec_Lock_1,					//22
+	ADDR_u8HasElec_Lock_2,					//23
+	ADDR_u8_A_LOCKType,						//24
+	ADDR_u8_B_LOCKType,						//25
+	ADDR_u8LOCK_A_DIType,					//26
+	ADDR_u8LOCK_B_DIType,					//27
+	ADDR_u8EV_StartTemp,						//28
+	ADDR_u8EV_StopTemp,						//29
+	ADDR_u8NET_OffLine_Charge_Enable,		//30
+	ADDR_u8PWMPolarityCover,					//31
+	ADDR_u8EPOAlmVltLEVEL,					//32
+	ADDR_u8BrushFactorType,					//33
+	ADDR1_u8WH_TYPE,							//34
+	ADDR2_u8WH_TYPE,							//35
+	ADDR1_u8JYMAlmStatMask,					//36
+	ADDR2_u8JYMAlmStatMask,					//37
+	ADDR1_u8SetJYMCtrlMode,					//38
+	ADDR2_u8SetJYMCtrlMode,					//39
+	ADDR1_u8InsltCheckByVolt,				//40
+	ADDR2_u8InsltCheckByVolt,				//41
+	ADDR_u8_A_ForceVer2011,					//42
+	ADDR_u8_B_ForceVer2011,					//43
+	ADDR_u8IP_1,								//45
+	ADDR_u8IP_2,								//46
+	ADDR_u8IP_3,								//47
+	ADDR_u8IP_4,								//48
+	ADDR_u8IP_5,								//49
+	ADDR_u8IP_6,								//50
+	ADDR_u8Mac_1,							//
+	ADDR_u8Mac_2,							//
+	ADDR_u8Mac_3,							//
+	ADDR_u8Mac_4,							//
+	ADDR_u8Mac_5,							//
+	ADDR_u8Mac_6,							//55
+	ADDR_u8Gateway_1,	
+	ADDR_u8Gateway_2,	
+	ADDR_u8Gateway_3,	
+	ADDR_u8Gateway_4,	
+	ADDR_u8Gateway_5,	
+	ADDR_u8Gateway_6,	
+	ADDR_u8Subnetmask_1,					//62
+	ADDR_u8Subnetmask_2,
+	ADDR_u8Subnetmask_3,
+	ADDR_u8Subnetmask_4,
+	ADDR_u8Subnetmask_5,
+	ADDR_u8Subnetmask_6,
+	ADDR_u8PowerStarIP_1,					//68
+	ADDR_u8PowerStarIP_2,
+	ADDR_u8PowerStarIP_3,
+	ADDR_u8PowerStarIP_4,
+	ADDR_u8PowerStarIP_5,
+	ADDR_u8PowerStarIP_6,					//73
+	ADDR_u8SPDAlmMask,
+
+	ADDR_u8EVStationCode1,
+	ADDR_u8EVStationCode2,
+	ADDR_u8EVStationCode3,
+	ADDR_u8EVStationCode4,
+	ADDR_u8EVStationCode5,
+	ADDR_u8EVStationCode6,
+	ADDR_u8EVStationCode7,
+	ADDR_u8EVStationCode8,
+	ADDR_u8EVStationCode9,
+	ADDR_u8EVStationCode10,
+	ADDR_u8EVStationCode11,
+	ADDR_u8EVStationCode12,
+	ADDR_u8EVStationCode13,
+	ADDR_u8EVStationCode14,
+	ADDR_u8EVStationCode15,
+	ADDR_u8EVStationCode16,
+	ADDR_u8EVStationCode17,
+	ADDR_u8EVStationCode18,
+	ADDR_u8EVStationCode19,
+	ADDR_u8EVStationCode20,
+	ADDR_u8EVStationCode21,
+	ADDR_u8EVStationCode22,
+	ADDR_u8EVStationCode23,
+	ADDR_u8EVStationCode24,
+	ADDR_u8EVStationCode25,
+	ADDR_u8EVStationCode26,
+	ADDR_u8EVStationCode27,
+	ADDR_u8EVStationCode28,
+	ADDR_u8EVStationCode29,
+	ADDR_u8EVStationCode30,
+	ADDR_u8EVStationCode31,
+	ADDR_u8EVStationCode32,
+	ADDR_u8EVStationCode33,
+	ADDR_u8EVStationCode34,
+	ADDR_u8EVStationCode35,
+	ADDR_u8EVStationCode36,
+	ADDR_u8EVStationCode37,
+	ADDR_u8EVStationCode38,
+	ADDR_u8EVStationCode39,
+	ADDR_u8EVStationCode40,
+	ADDR_u8EVStationCode41,
+	ADDR_u8EVStationCode42,
+	ADDR_u8EVStationCode43,
+	ADDR_u8EVStationCode44,
+	ADDR_u8EVStationCode45,
+	ADDR_u8EVStationCode46,
+	ADDR_u8EVStationCode47,
+	ADDR_u8EVStationCode48,
+	ADDR_u8EVStationCode49,
+	ADDR_u8EVStationCode50,
+	ADDR_u8EVStationCode51,
+	ADDR_u8EVStationCode52,
+	ADDR_u8EVStationCode53,
+	ADDR_u8EVStationCode54,
+	ADDR_u8EVStationCode55,
+	ADDR_u8EVStationCode56,
+	ADDR_u8EVStationCode57,
+	ADDR_u8EVStationCode58,
+	ADDR_u8EVStationCode59,
+	ADDR_u8EVStationCode60,
+
+	ADDR_u8OffLinePwsd1,		//lkf  用户密码级别1
+	ADDR_u8OffLinePwsd2,
+	ADDR_u8OffLinePwsd3,
+	ADDR_u8OffLinePwsd4,
+	ADDR_u8OffLinePwsd5,
+	ADDR_u8OffLinePwsd6,
+
+
+	ADDR_1_BMS_POWER,
+	ADDR_2_BMS_POWER,
+
+	ADDR_DHCP_VALUE,
+
+	ADDR_PARALLEL_MODE,
+	ADDR_EV_SYS_POWER,			//133
+	ADDR_SETDATA_RemoteServerIsDomainName,
+	ADDR_DNSServerIP_1,					
+	ADDR_DNSServerIP_2,
+	ADDR_DNSServerIP_3,
+	ADDR_DNSServerIP_4,
+	ADDR_DNSServerIP_5,
+	ADDR_DNSServerIP_6,
+
+	ADDR_RemoteServerDomainName_1,		
+	ADDR_RemoteServerDomainName_32 = ADDR_RemoteServerDomainName_1+31,	
+
+	ADDR_TelaidianStarionID_1,		
+	ADDR_TelaidianStarionID_32 = ADDR_TelaidianStarionID_1+31,	
+
+	ADDR_TelaidianUserName_1,		
+	ADDR_TelaidianUserName_32 = ADDR_TelaidianUserName_1+31,	
+
+	ADDR_TelaidianPassword_1,		
+	ADDR_TelaidianPassword_32 = ADDR_TelaidianPassword_1+31,	
+
+	ADDR_MaskNet,
+	ADDR_u8BRUSH_ALM_Mask,
+
+	ADDR_SETDATA_FeeMode_NUM,
+	ADDR_SETDATA_ServiceFeeMode_NUM,
+
+	ADDR_SETDATA_AdjustMode_NUM,
+
+	ADDR_SETDATA_EVChargeCodeOnUI_NUM,
+
+	ADDR_u8IsRingEnabled,
+	ADDR_bIsGunInsertMode,
+
+	ADDR_bySelfAddress,
+	ADDR_nTotalRingStub,	
+	
+	ADDR_nGunInsertMode_Start_Hour,
+	ADDR_nGunInsertMode_Start_Min,
+	ADDR_nGunInsertMode_Stop_Hour,
+	ADDR_nGunInsertMode_Stop_Min,
+
+	ADDR_IsSingleGunMode,
+	ADDR_EnGunOverTemDi,
+	ADDR_GunOverTemDiAlmStat,
+
+
+	ADDR_UserPassword_L2_1,								//lkf  用户密码级别2
+	ADDR_UserPassword_L2_6 = ADDR_UserPassword_L2_1+5,	
+
+	ADDR_UserPassword_L3_1,								//lkf  用户密码级别3
+	ADDR_UserPassword_L3_6 = ADDR_UserPassword_L3_1+5,	
+	ADDR_u8ShuimuAutoEndSoc,
+
+	ADDR_StChgByOverVoltOrCurr_Source,
+
+	ADDR_u8FanMaxSpeed,
+	ADDR_u8VinChgEn,
+	ADDR_u8ButtonChgEn,
+
+	ADDR_GunASetQrCode_NUM_1,
+	ADDR_GunASetQrCode_NUM_128 = ADDR_GunASetQrCode_NUM_1+127,
+
+	ADDR_GunBSetQrCode_NUM_1,
+	ADDR_GunBSetQrCode_NUM_128 = ADDR_GunBSetQrCode_NUM_1+127,
+	ADDR_u8ChgModeSelEn,
+	ADDR_u8PowerStar2IP_1,
+	ADDR_u8PowerStar2IP_2,
+	ADDR_u8PowerStar2IP_3,
+	ADDR_u8PowerStar2IP_4,
+	ADDR_u8PowerStar2IP_5,
+	ADDR_u8PowerStar2IP_6,
+	ADDR_u8Server2Enable,
+	ADDR_u8ACInputContactorOpenDelay,
+	ADDR_u8DoorOpenDisconACInput,
+
+	ADDR_u8GRP1_MODULE_NUM,
+	ADDR_u8GRP2_MODULE_NUM,
+	ADDR_u8GRP3_MODULE_NUM,
+	ADDR_u8GRP4_MODULE_NUM,
+	ADDR_u8GRP5_MODULE_NUM,
+	ADDR_u8GRP6_MODULE_NUM,
+	ADDR_u8GRP7_MODULE_NUM,
+	ADDR_u8GRP8_MODULE_NUM,
+	ADDR_u8GRP9_MODULE_NUM,
+	ADDR_u8GRP10_MODULE_NUM,
+
+	ADDR_u8UserSetBMSPower,
+	ADDR_u8DisplayStopKey,
+	ADDR_u8OrderChargeEnable,
+
+
+	CHAR_ARGS_MAX_ADDR,
+};
+
+
+
+//浮点型！！
+//地址 只能增加！不能进行插入，向后顺序增加！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+enum __ADDR_FLOAT_U32_TYPE
+{
+	ADDR_CC1_1Coef_A=87,
+	ADDR_CC1_1Coef_B,						//88
+	ADDR_CC1_2Coef_A,						//89
+	ADDR_CC1_2Coef_B,						//90
+	ADDR_fSysSetOverVolt,					//91
+	ADDR_fRectLoadStartTime,					//92
+	ADDR_MaxOutCurr,							//93
+	ADDR_MaxOutVolt,							//94
+	ADDR_fBattVolt_1CoefA,					//95
+	ADDR_fBattVolt_1CoefB,					//96
+	ADDR_fBattVolt_2CoefA,					//97
+	ADDR_fBattVolt_2CoefB,					//98
+	ADDR_u32_B_CTS_DB_T1,					//99
+	ADDR_u32_B_DB_DB_T2,						//100
+	ADDR_u16SetBCLTimeOutVal_1,				//101
+	ADDR_u16SetBCLTimeOutVal_2,				//102
+	ADDR_u16SetBRMTimeOutVal_1,				//103
+	ADDR_u16SetBRMTimeOutVal_2,				//104
+	ADDR_u16SetBCSTimeOutVal_1,				//105
+	ADDR_u16SetBCSTimeOutVal_2,				//106
+	ADDR_fSetLimitMaxOutCurr_1,				//107
+	ADDR_fSetLimitMaxOutCurr_2,				//108
+	ADDR_fMaxOffLineTime,					//109
+	ADDR_u32PowerOnTimes,					//110
+	ADDR1_fACWhCoef,						//111
+	ADDR2_fACWhCoef,						//112
+	ADDR1_fSetJYMAlm_Resist,				//113
+	ADDR2_fSetJYMAlm_Resist,				//114
+	ADDR_u32_A_CTS_DB_T1,					//117
+	ADDR_u32_A_DB_DB_T2,					//118
+	ADDR_u32_NET_PORT,						//119
+	SETDATA_SoftwareVersion_NUM,
+	ADDR_LocalTimeZone,
+
+	ADDR_fTimePrice1,
+	ADDR_fTimePrice2,
+	ADDR_fTimePrice3,
+	ADDR_fTimePrice48 = (ADDR_fTimePrice1+47),
+	ADDR_SETDATA_fServicePrice_NUM,
+	ADDR_SETDATA_fFixPrice_NUM,
+
+	
+	ADDR_SETDATA_Adjust_Volt1,
+	ADDR_SETDATA_Adjust_Volt2,
+
+	ADDR_NetFrameHead_NUM,
+	ADDR_fRingStartMergeCurr,
+	ADDR_AllRingsPwrLmt,
+	ADDR_RingChgCurrIncSpeed,
+	ADDR_fContactorShortThreshold,
+	ADDR_fGunOverTemLmtCurrRatio,
+	ADDR_fGunOverTemIntervalTime,
+
+	ADDR_MinOutVolt,
+
+	ADDR_fTimeServicePrice1,
+	ADDR_fTimeServicePrice2,
+	ADDR_fTimeServicePrice3,
+	ADDR_fTimeServicePrice48 = (ADDR_fTimeServicePrice1+47),
+	ADDR_fDCMeterRatio,	
+	ADDR_fHallVoltK,
+	ADDR_fInsulationAlmCoeff,
+	ADDR_u32NET_PORT2,
+	FLOAT_U32_ARGS_MAX_ADDR	,					//120
+	
+};
+
+//
+enum IDX_OTHER
+{
+	ID_fCC1_1Coef_A = 0,
+	ID_fCC1_1Coef_B,
+	ID_fCC1_2Coef_A,
+	ID_fCC1_2Coef_B,
+	ID_fSysSetOverVolt,					//系统过压点  --预留用于过压告警判断
+	ID_fRectLoadStartTime,				//缓启动时间
+	ID_fMaxOutCurr,						//最大输出电流
+	ID_fMaxOutVolt,						//最大输出电压
+
+
+	ID_u32_B_CTS_DB_T1,
+	ID_u32_B_DB_DB_T2,
+
+	ID_u32_A_CTS_DB_T1,
+	ID_u32_A_DB_DB_T2,
+	ID_u16SetBCLTimeOutVal_1,				
+	ID_u16SetBCLTimeOutVal_2,		
+	ID_u16SetBRMTimeOutVal_1,
+	ID_u16SetBRMTimeOutVal_2,
+	ID_u16SetBCSTimeOutVal_1,
+	ID_u16SetBCSTimeOutVal_2,
+	ID_fSetLimitMaxOutCurr_1,
+	ID_fSetLimitMaxOutCurr_2,
+	ID_u8PolarityAlmMask_1,
+	ID_u8PolarityAlmMask_2,
+
+	ID_fMaxOffLineTime,
+	ID_u8SetCalcMoneyType,
+
+	ID_u8CC1CheckEnable_1,
+	ID_u8CC1CheckEnable_2,
+
+	ID_u8SelfTestEnable_1,
+	ID_u8SelfTestEnable_2,
+
+	ID_u8MCCBOnCheckEnable_1,
+	ID_u8MCCBOnCheckEnable_2,
+
+	ID_u8OutOverVoltEnable_1,
+	ID_u8OutOverVoltEnable_2,
+		
+	ID_u8DoorAlmMask_1,	
+	ID_u8DoorAlmMask_2,		
+
+	ID_u8HasElec_ALock,
+	ID_u8HasElec_BLock,
+		
+	ID_u8BRUSH_ALM_Mask,
+	ID_u8PWMPolarityCover,
+
+	ID_u8_A_LOCKType,
+	ID_u8LOCK_A_DIType,
+
+	ID_u8_B_LOCKType,
+	ID_u8LOCK_B_DIType,
+
+	ID_u8EPOAlmVltLEVEL,
+
+	ID_u8BrushFactorType,
+
+	ID_u8EV_StartTemp,
+	ID_u8EV_StopTemp,
+
+	ID_u8NET_OffLine_Charge_Enable,
+	ID_u32PowerOnTimes,
+
+	ID_u8SPDAlmMask,
+
+	ID_A_ChargeCMD,
+	ID_B_ChargeCMD,
+
+	ID_u8_A_ForceVer2011,
+	ID_u8_B_ForceVer2011,
+
+	ID_NET_DHCP,
+	ID_u32NET_PORT,
+	ID_u8IP_1,
+	ID_u8IP_2,
+	ID_u8IP_3,
+	ID_u8IP_4,
+	ID_u8IP_5,
+	ID_u8IP_6,
+	ID_u8Mac_1,
+	ID_u8Mac_2,
+	ID_u8Mac_3,
+	ID_u8Mac_4,
+	ID_u8Mac_5,
+	ID_u8Mac_6,
+	ID_u8Gateway_1,
+	ID_u8Gateway_2,
+	ID_u8Gateway_3,
+	ID_u8Gateway_4,
+	ID_u8Gateway_5,
+	ID_u8Gateway_6,
+	ID_u8Subnetmask_1,
+	ID_u8Subnetmask_2,
+	ID_u8Subnetmask_3,
+	ID_u8Subnetmask_4,
+	ID_u8Subnetmask_5,
+	ID_u8Subnetmask_6,
+	ID_u8PowerStarIP_1,
+	ID_u8PowerStarIP_2,
+	ID_u8PowerStarIP_3,
+	ID_u8PowerStarIP_4,
+	ID_u8PowerStarIP_5,
+	ID_u8PowerStarIP_6,
+
+	ID_u8StationCode_No1,
+	ID_u8StationCode_No2,
+	ID_u8StationCode_No3,
+	ID_u8StationCode_No4,
+	ID_u8StationCode_No5,
+	ID_u8StationCode_No6,
+	ID_u8StationCode_No7,
+	ID_u8StationCode_No8,
+	ID_u8StationCode_No9,
+	ID_u8StationCode_No10,
+	ID_u8StationCode_No11,
+	ID_u8StationCode_No12,
+	ID_u8StationCode_No13,
+	ID_u8StationCode_No14,
+	ID_u8StationCode_No15,
+	ID_u8StationCode_No16,
+	ID_u8StationCode_No17,
+	ID_u8StationCode_No18,
+	ID_u8StationCode_No19,
+	ID_u8StationCode_No20,
+	ID_u8StationCode_No21,
+	ID_u8StationCode_No22,
+	ID_u8StationCode_No23,
+	ID_u8StationCode_No24,
+	ID_u8StationCode_No25,
+	ID_u8StationCode_No26,
+	ID_u8StationCode_No27,
+	ID_u8StationCode_No28,
+	ID_u8StationCode_No29,
+	ID_u8StationCode_No30,
+	ID_u8StationCode_No31,
+	ID_u8StationCode_No32,
+	ID_u8StationCode_No33,
+	ID_u8StationCode_No34,
+	ID_u8StationCode_No35,
+	ID_u8StationCode_No36,
+	ID_u8StationCode_No37,
+	ID_u8StationCode_No38,
+	ID_u8StationCode_No39,
+	ID_u8StationCode_No40,
+	ID_u8StationCode_No41,
+	ID_u8StationCode_No42,
+	ID_u8StationCode_No43,
+	ID_u8StationCode_No44,
+	ID_u8StationCode_No45,
+	ID_u8StationCode_No46,
+	ID_u8StationCode_No47,
+	ID_u8StationCode_No48,
+	ID_u8StationCode_No49,
+	ID_u8StationCode_No50,
+	ID_u8StationCode_No51,
+	ID_u8StationCode_No52,
+	ID_u8StationCode_No53,
+	ID_u8StationCode_No54,
+	ID_u8StationCode_No55,
+	ID_u8StationCode_No56,
+	ID_u8StationCode_No57,
+	ID_u8StationCode_No58,
+	ID_u8StationCode_No59,
+	ID_u8StationCode_No60,
+
+	ID_u8OffLinePwsd1,			//lkf  用户密码级别1
+	ID_u8OffLinePwsd2,
+	ID_u8OffLinePwsd3,
+	ID_u8OffLinePwsd4,
+	ID_u8OffLinePwsd5,
+	ID_u8OffLinePwsd6,
+
+	ID_1_BMS_POWER,
+	ID_2_BMS_POWER,
+
+	ID_ParallelMode,
+	ID_EV_SYS_POWER,//系统功率，是150KW还是200KW 还是60千瓦还是30千瓦还是120千瓦
+	ID_SETDATA_RemoteServerIsDomainName_NUM,
+	ID_SETDATA_DNSServerIP_NUM_1,
+	ID_SETDATA_DNSServerIP_NUM_2,
+	ID_SETDATA_DNSServerIP_NUM_3,
+	ID_SETDATA_DNSServerIP_NUM_4,
+	ID_SETDATA_DNSServerIP_NUM_5,
+	ID_SETDATA_DNSServerIP_NUM_6,
+	ID_SETDATA_RemoteServerDomainName_NUM_1,
+	ID_SETDATA_RemoteServerDomainName_NUM_32 = ID_SETDATA_RemoteServerDomainName_NUM_1+31,
+
+	ID_SETDATA_TelaidianStarionID_NUM_1,
+	ID_SETDATA_TelaidianStarionID_NUM_32 = ID_SETDATA_TelaidianStarionID_NUM_1+31,
+
+	ID_SETDATA_TelaidianUserName_NUM_1,
+	ID_SETDATA_TelaidianUserName_NUM_32 = ID_SETDATA_TelaidianUserName_NUM_1+31,
+
+	ID_SETDATA_TelaidianPassword_NUM_1,
+	ID_SETDATA_TelaidianPassword_NUM_32 = ID_SETDATA_TelaidianPassword_NUM_1+31,
+
+	ID_LocalTimeZone,
+	ID_SETDATA_MASK_NET_NUM,
+
+
+	ID_fTimePrice1,
+	ID_fTimePrice48 = ID_fTimePrice1+47,
+
+
+	ID_SETDATA_FeeMode_NUM,
+	ID_SETDATA_ServiceFeeMode_NUM,
+	ID_SETDATA_fServicePrice_NUM,
+	ID_SETDATA_fFixPrice_NUM,
+
+	ID_SETDATA_AdjustMode_NUM,
+	ID_SETDATA_Adjust_Volt1,
+	ID_SETDATA_Adjust_Volt2,
+
+	ID_SETDATA_SetDataVersion_NUM,				//120
+	ID_SETDATA_SoftwareVersion_NUM,
+	ID_SETDATA_EVChargeCodeOnUI_NUM,
+
+	ID_NetFrameHead_NUM,
+
+	ID_u8IsRingEnabled,	
+	ID_fRingStartMergeCurr,
+
+	ID_bIsGunInsertMode,
+
+	ID_nGunInsertMode_Start_Hour,
+	ID_nGunInsertMode_Start_Min,
+	ID_nGunInsertMode_Stop_Hour,
+	ID_nGunInsertMode_Stop_Min,
+
+	ID_bySelfAddress,
+	ID_nTotalRingStub,
+
+	ID_AllRingsPwrLmt,
+	ID_RingChgCurrIncSpeed,
+	
+	ID_IsSingleGunMode,
+	ID_fContactorShortThreshold,
+
+	ID_EnGunOverTemDi,
+	ID_GunOverTemDiAlmStat,
+	ID_fGunOverTemLmtCurrRatio,
+	ID_fGunOverTemIntervalTime,
+
+
+	ID_UserPassword_L2_1,								//lkf  用户密码级别2
+	ID_UserPassword_L2_6 = ID_UserPassword_L2_1+5,	
+
+	ID_UserPassword_L3_1,								//lkf  用户密码级别3
+	ID_UserPassword_L3_6 = ID_UserPassword_L3_1+5,	
+	ID_u8ShuimuAutoEndSoc,
+
+	ID_StChgByOverVoltOrCurr_Source,
+	ID_fMinOutVolt,						//最低输出电压
+
+	ID_fTimeServicePrice1,
+	ID_fTimeServicePrice48 = ID_fTimeServicePrice1+47,
+
+	ID_u8FanMaxSpeed,
+	ID_u8VinChgEn,
+	ID_u8ButtonChgEn,
+
+	ID_SETDATA_GunASetQrCode_NUM_1,
+	ID_SETDATA_GunASetQrCode_NUM_128 = ID_SETDATA_GunASetQrCode_NUM_1+127,
+
+	ID_SETDATA_GunBSetQrCode_NUM_1,
+	ID_SETDATA_GunBSetQrCode_NUM_128 = ID_SETDATA_GunBSetQrCode_NUM_1+127,
+
+	ID_fDCMeterRatio,
+	ID_u8ChgModeSelEn,
+	ID_fHallVoltK,
+	ID_fInsulationAlmCoeff,
+	ID_u8PowerStar2IP_1,
+	ID_u8PowerStar2IP_2,
+	ID_u8PowerStar2IP_3,
+	ID_u8PowerStar2IP_4,
+	ID_u8PowerStar2IP_5,
+	ID_u8PowerStar2IP_6,
+	ID_u8Server2Enable, //ID_SETDATA_MASK_NET_NUM,
+	ID_u32NET_PORT2,
+	
+	ID_u8ACInputContactorOpenDelay,
+	ID_u8DoorOpenDisconACInput,
+
+	ID_u8GRP1_MODULE_NUM,
+	ID_u8GRP2_MODULE_NUM,
+	ID_u8GRP3_MODULE_NUM,
+	ID_u8GRP4_MODULE_NUM,
+	ID_u8GRP5_MODULE_NUM,
+	ID_u8GRP6_MODULE_NUM,
+	ID_u8GRP7_MODULE_NUM,
+	ID_u8GRP8_MODULE_NUM,
+	ID_u8GRP9_MODULE_NUM,
+	ID_u8GRP10_MODULE_NUM,
+
+	ID_u8UserSetBMSPower,
+	ID_u8DisplayStopKey,
+	ID_u8OrderChargeEnable,
+};
+
+enum IDX_WH	
+{
+	ID_WH_Reserved = 0,
+	ID_u8WH_TYPE,
+	ID_u8WH_ALM_Mask,
+	ID_u8WHCommAlm,
+	ID_fWHRealValue,
+	ID_fWH_A_Volt,
+	ID_fWH_B_Volt,
+	ID_fWH_C_Volt,
+	ID_fWH_A_Curr,
+	ID_fWH_B_Curr,
+	ID_fWH_C_Curr,
+	ID_fWHStartValue,
+	ID_fWHStartTempValue,
+	ID_fACWhCoef,
+};
+	
+enum IDX_IMIU
+{
+	ID_IMIU_Reserved = 0,
+	ID_u8QuickSmpIMIUFlag,						//TRUE 需要快采			FALSE 不需要快采
+	ID_u8InsltCheckByVolt,						//0 电阻不按电压来，  1绝缘下降电阻按电压来。
+	ID_u8JYMAlmStatMask,						//绝缘板告警屏蔽	1屏蔽
+	ID_fJYMCurr,
+	ID_fJYMVolt,
+	ID_fJYMP2gVolt,
+	ID_fJYMN2gVolt,
+	ID_fJYMP2gResist,
+	ID_fJYMN2gResist,
+	ID_u8JYMAlmStat,							//绝缘板告警	0x01告警，0x00正常
+	ID_fJYMAction,								//绝缘动作状态	0x02待机中，0x01检测中，0x00脱离
+	
+	ID_fRunJYMShunt_Coef,						//	绝缘板分流器系数	选择哪种型号的分流器  如:500A/25mv
+	ID_fRunJYMCurr_CoefA,						//	绝缘板分流器电流校准系数a
+	ID_fRunJYMCurr_CoefB,						//	绝缘板分流器电流校准系数b
+	ID_fRunJYMVolt_CoefA,						//	绝缘板母排电压采样校准系数a
+	ID_fRunJYMVolt_CoefB,						//	绝缘板母排电压采样校准系数b
+	ID_fRunJYMAlm_Resist,						//	绝缘告警阀值
+	ID_u8RunJYMCtrlStat,						//	绝缘检测控制状态 
+
+	ID_fSetJYMShunt_Coef,						//	绝缘板分流器系数	选择哪种型号的分流器  如:500A/25mv
+	ID_fSetJYMCurr_CoefA,						//	绝缘板分流器电流校准系数a
+	ID_fSetJYMCurr_CoefB,						//	绝缘板分流器电流校准系数b
+	ID_fSetJYMVolt_CoefA,						//	绝缘板母排电压采样校准系数a
+	ID_fSetJYMVolt_CoefB,						//	绝缘板母排电压采样校准系数b
+	ID_fSetJYMAlm_Resist,						//	绝缘告警阀值
+	ID_u8SetJYMCtrlMode,						//	绝缘检测控制状态 
+													/****************************
+															0x03手动检测
+															0x02后台检测
+															0x01自动检测
+															0x00告警屏蔽
+													*****************************/
+	
+	//控制命令
+	ID_u8CTRLInsulationCMDFlag,
+	ID_u8CTRLInsulationCMD,						//0x02待机，0x01检测，0x00脱离
+
+	ID_u8InsltCommAlm,							//绝缘检测板通信状态  TRUE 告警	
+};	
+
+enum IDX_RECT
+{
+	ID_RECT_Reserved = 0,
+	ID_RECT_OUT_VOLT,
+	ID_RECT_OUT_CURR,
+};
+	
+
+#define EV_OFF_LINE_PSWD	6
+#define EV_STATION_CODE_NUM	64
+#define STOP_REASON_MAX_NUM	5
+
+#define OFF_LINE_CHARGE_ENABLE		1
+#define OFF_LINE_CHARGE_DIS			0
+
+#define CARD_INFO_BYTES		64
+#define CARD_NO_BYTES		48
+
+#define COST_NO_BYTES		32
+
+#define DEFAULT_BAUD_9600	0
+#define UARTX_BAUD_19200		1
+#define UARTX_BAUD_38400		2
+
+#define UARTX_PARITY_EVEN	2
+#define UARTX_PARITY_NONE	0
+#define UARTX_PARITY_ODD	1
+
+#define MAX_EMIU_NUM	1
+#define MAX_RECT_NUM	10
+#define CURRENTCLEARPOINT   0.0015
+#define CURRENTCLEARVALUE   1
+
+#define	mRECTNUM	32
+
+
+
+      
+#define mUSERNUM             4 
+#define mUSER1               0 
+#define mUSER2               1 
+#define mUSER3               2
+#define mUSER4               3
+#define mNONEUSER            4
+
+
+#define mOTHER               3 //其它
+
+#define MACRO_UNUSED4       12
+#define MACRO_UNUSED5   15
+      
+//#define mWORKCHANELNUM      7
+/********************************************************************************
+	原来
+	PA3 ---- CURR1
+	PA4 -----CURR2
+	PA5 -----CURR3
+	PA6 -----CURR4
+	PB0 -----CURR5
+	PB1 -----VBUST
+	PC0 -----ad_all
+	现在
+	只使用
+	PA3 ---ad TEMP1
+	PA4 ---AD TEMP2
+	PA5 --- ad VOLT
+	PA6 ----ad CURR
+*********************************************************************************/
+//TXY-AD 更改这个宏我容易吗？我，要提防越界！
+
+
+#define mSLOW_ALL_POINT_NUM     100
+#define mPOINT_NUM_EACH_TIME     10    //计算电量用5个采集点
+#define mSLOW_DISCARD_NUM         20
+
+
+
+#define IS_FLOAT	0
+#define IS_CHAR		1
+#define IS_ULONG	2
+#define NOT_DEFINED	0xff	//未定定义
+
+#define  UDELAY(count) Delay(8*(count))
+
+enum tag_SW_NUM_def
+{
+    SW_SPD = 0,			//bit0 <-> J5(pin1/2)
+    SW_DIN1,			//bit0 <-> J5(pin3/4), bit1~7 <-> J14(pin1~7)
+    SW_DIN2,			//bit0 <-> J14(pin8), bit1 <-> J14(pin9)
+    SW_DIN3,
+    SW_NUM,
+};
+#define	mALARMNUM	        1024
+#define mALARMNAMENUM      mALARMNUM 
+
+
+#define mALARMTYPENAMENUM    74
+
+#define MACRO_UNUSED7            10
+#define MACRO_UNUSED8           12//14
+#define MACRO_UNUSED9            2
+
+#define mTOTALFANNUM		6 
+
+#define mMENUDATANUM        8
+
+#define BARCODE_LEN         29
+
+#define MaxCANTxNum     48  
+
+#define COMMAND10 gs_CANComm.CMD_10
+
+#define PLUS_MODE           1
+#define MINUS_MODE          0
+
+#define MIN_SECONDS         (60l)
+#define HOUR_SECONDS    (3600l)
+#define DAY_SECONDS     (24l * HOUR_SECONDS)
+#define MON28_SECONDS       (28l * DAY_SECONDS)
+#define MON29_SECONDS       (29l * DAY_SECONDS)
+#define MON_SECONDS         (30l * DAY_SECONDS)
+#define MON31_SECONDS       (31l * DAY_SECONDS)
+#define YEAR_SECONDS        (365 * DAY_SECONDS)
+#define LEAPYEAR_SECONDS    (366 * DAY_SECONDS)
+
+#define GMT_TIME_MAX    (2145916800L - 1)
+#define TIME_MAX        ULONG_SUB_SLONG(2145916800L - 1,\
+  -(long)(gRTCData.fGetLocalTimeZone() * MIN_SECONDS)) /*0x7fffffff*/
+                                                     //2038.01.01 00:00:00 Thu
+#define GMT_TIME_MIN    946684800L
+#define TIME_MIN        ULONG_SUB_SLONG(946684800L, \
+  -(long)(gRTCData.fGetLocalTimeZone() * MIN_SECONDS)) /*2000.01.01 00:00:00*/
+                                                     //0=1970.01.01
+
+#define TEST_TIME_MAX           GMT_TIME_MIN+31622400+31536000L-86400L * 31  //默认2001年
+#define TEST_TIME_MAX_1         GMT_TIME_MIN+31622400+31536000L-86400L
+#define TEST_TIME_MAX_2         GMT_TIME_MIN+31622400+31536000L-3600L
+
+#define TEST_TIME_MIN           GMT_TIME_MIN+31622400+0
+
+#define YEAR0                   1900
+#define EPOCH_YR                1970
+#define SECS_DAY                (24L * 60L * 60L)
+#define LEAPYEAR(year)          (!((year) % 4) && (((year) % 100) || !((year) % 400)))
+#define YEARSIZE(year)          (LEAPYEAR(year) ? 366 : 365)
+
+#define uCOSID					0
+#define TASK_ID_START			1
+#define TASK_ID_RTC				2
+#define TASK_ID_CAN2			3
+#define Tasko_ID_CAN1			4
+#define Tasko_ID_ethernet		5
+#define TASK_ID_UART5			6
+#define TASK_ID_UART4			7
+#define Tasko_ID_ETHERNET_App	8
+#define TASK_ID_MEASURE			9
+#define TASK_ID_CAN3			10 
+#define Task_ID_E2prom			11
+#define Task_ID_Uart1			12
+#define Task_ID_Console			13
+#define TASK_ID_ALARM			14
+#define Task_ID_Flash			15
+#define TASK_ID_FAN				16
+#define TASK_ID_UDisk			17
+
+#define TASK_MAX_NUM		17	  //不含uCOSID
+#define CHECKTASKNUM		18		//含uCOSID	
+
+#define TASK_START_ID		30
+#define PRIO_TASK_START		30
+#define TASK_STK_SIZE		300
+
+#define FULL_LINE_CHAR      16
+
+#define mRES                    0xff
+//#define Num_RectBrd             9					//Brd命令个数-1
+//#define Num_RectQry             2
+//#define Num_MPPTBrd             5
+//#define Num_MPPTQry             1
+//#define Num_SMDUSet             4
+//#define Num_SMDUQry             1
+//#define Num_DCEMSet             3
+//#define Num_DCEMQry             2
+//#define Num_DCDCSet             5
+//#define Num_DCDCQry             1
+
+//#define No_RectAlloc            0
+//#define No_RectBrd_St           1
+//#define No_RectBrd_End          No_RectBrd_St + Num_RectBrd		//10
+//#define No_RectVolt             No_RectBrd_End + 1			//11
+//#define No_Number               No_RectVolt + 1				//12
+//#define No_RectQry_St           No_Number + 1				//13
+//#define No_RectCmd10            No_RectQry_St + 1			//14
+//#define No_RectQry_End          No_RectQry_St + Num_RectQry		//15
+
+#define MAX_MENU_LINE_NUM	63				//菜单行个数
+#define MAX_INFO_LINE_NUM	160				//信息行个数
+#define MAX_CFG_LINE_NUM	265				//设置行个数
+#define MAX_ALIAS_NUM		150				//选项的名称个数
+#define MAX_SYSTEM_NUM		10				//系统的名称个数
+#define MAX_LTITLE_NUM		301				//行名称个数
+#define MAX_SCREEN_NUM		55				//屏个数
+#define MAX_SCREENLINE_NUM	24				//单屏包括行数
+#define MAX_ANALOG_ALARM_NAME_NUM	16		//模拟量告警名个数
+#define MAX_ALARM_NAME_NUM		70			//告警名称个数
+
+//#define MEASURE_SWITCH			1
+//#define MEASURE_ANALOG			2
+//#define RECT_SWITCH				3
+//#define RECT_ANALOG				4
+//#define SETDATA_FLOAT			7
+//
+//#define SETDATA_CHAR			8
+//#define SETDATA_IP				9
+//#define SETDATA_PHONE			10
+//#define SETDATA_PASSWORD		11
+//#define ENTER_PASSWORD			12
+//#define SETDATA_CHAR_SYS		13
+//#define CTL_BATT_MNG			14
+//#define CTL_LVD1				15
+//#define CTL_LVD2				16
+//#define CTL_RECT_DC_ONOFF		17
+//#define CTL_RECT_AC_ONOFF		18
+//#define CTL_RECT_RESET			19
+//#define CLEAR_HISTORYALARM		20
+//#define CTL_VOLTAGE				21
+//#define CTL_CURRENT_LIMIT		22
+//#define CTL_FAN_TEST			23
+//#define SETDATA_NUM				24
+//#define CLEAR_RECTLOST			25
+//#define INIT_PWD				26
+//#define CTL_CLEAR				27
+//#define CTL_RECT_LEDBLINK		28
+//#define SETDATA_RECT_LOCATION	29
+//#define SETDATA_BARCODE			30
+//#define OLD_SW_VER				31
+//#define SW_CONFIG				32
+//#define SETDATA_DIN_NAME		33
+//#define ALARMTYPE_NAME			34
+//#define SETDATA_BARCODE1		35
+//#define CTL_SMDU_LEDBLINK		36
+//#define SETDATA_FLOAT_V			37
+//#define SETDATA_USER_CHAR		39
+//#define RTC_TIME				40
+//#define CFG_RTC_DATE			41
+//#define CFG_RTC_TIME			42
+//#define SETDATA_USER_FLOAT		43
+//#define ALARM_SYSTEM			45
+//#define ALARM_STATUS			46
+//#define SAVE_STATUS				47
+//#define CHARGE_STATUS			50
+//#define BATT_SYMMETRY_VOLT		51
+//#define BMS_INFO				52
+//#define CTRL_SIGNAL				53
+//
+//#define SYSTEM_INFO				54
+//#define METER_INFO				55
+//#define INSUL_INFO				56
+//#define SET_SIGNAL				57
+//
+//#define RECT_NUM				60
+//#define RECT_VOLTAGE			61
+//#define RECT_CURRENT			62
+//#define RECT_CURR_LIMIT			63
+//#define RECT_TEMP				64
+//#define RECT_AC_VOLT			65
+//#define RECT_AC_VOLT_A			66
+//#define RECT_AC_VOLT_B			67
+//#define RECT_AC_VOLT_C			68
+//
+//#define RECT_DC_ONOFF			70
+//#define RECT_AC_ONOFF			71
+//
+//#define RECT_AC_DERATE			72
+//#define RECT_TEMP_DERATE		73
+//#define RECT_BARCODE			74
+//#define RECT_BARCODE1			75
+//#define RECT_BARCODEH			76
+//
+//#define RECT_END				79
+//
+//#define MACRO_UNUSED10             104
+//#define MACRO_UNUSED11            105
+//#define MACRO_UNUSED12           106
+//#define MACRO_UNUSED13           107
+//
+//#define MACRO_UNUSED14     110
+//#define MACRO_UNUSED15    111
+//
+//#define MACRO_UNUSED16   113
+//#define MACRO_UNUSED17     114
+//#define SIG_EV_CHARGE_ENERGY   114
+//
+//#define ALARMTYPE_LEVEL       115	/*设置告警级别*/
+//#define ALARM_RELAY           116	/*设置告警 关联继电器*/
+//#define DI_Number             117	/*设置数字量输入- 序号*/
+//#define ALARM_TYPE_NUM	      118	//设置告警级别时的类型序号
+//#define SIG_EV_CHARGE_TIME          150	//累计充电时间
+//#define SIG_EV_REQUIRE_CURR	151
+//#define USER_NAME           152
+//#define USER_CURR           153
+//#define USER_POWER          154
+//#define USER_ENERGY         155
+//#define USER_ENERGYRATE     156
+//
+//#define SETDATA_BATT_DATE   160
+//#define SETDATA_TEST_DATE   161
+//#define SIG_ID_REQUIRE_VOLT 162
+//#define BAT_CHG_CNT       162		
+//#define BAT_DISCHG_CNT  163		
+//#define Bootloader  164			
+//#define SETDATA_ModelName  165		
+//
+//#define Solar_Load_Curr  166		
+//#define Solar_Batt_Curr  167		
+//#define Solar_Output_Curr  168		
+//#define DG_power_supply    169		
+//#define SETDATA_CHAR_Systemmode    170	
+//
+//#define DCEM_NUM_D		171
+//#define DCEM_VOLT		172
+//#define DCEM_CURR1		173
+//#define DCEM_CURR2		174
+//#define DCEM_CURR3		175
+//#define DCEM_CURR4		176
+//#define DCEM_KW1		177
+//#define DCEM_KW2		178
+//#define DCEM_KW3		179
+//#define DCEM_KW4		180
+//#define DCEM_KWH1		181
+//#define DCEM_KWH2		182
+//#define DCEM_KWH3		183
+//#define DCEM_KWH4		184
+//
+
+#define CTL_MPPT_DC_ONOFF     185
+#define CTL_MPPT_RESET        186
+#define CTL_MPPT_LEDBLINK     175
+
+//#define MPPT_NUM              187
+//#define MPPT_VOLTAGE          188
+//#define MPPT_CURRENT          189
+//#define MPPT_CURR_LIMIT       190
+//#define MPPT_TEMP             191
+//#define MPPT_INPUT_VOLT       192
+//#define MPPT_INPUT_CURR       193
+//#define MPPT_OUTPUT_PWR       194
+//#define MPPT_DC_ONOFF         195
+//#define MPPT_BARCODE          196
+//#define MPPT_END              197
+
+//#define SETDATA_MPPT_LOCATION 198
+//#define CLEAR_MPPTLOST        199
+
+//#define STATISTIC_SUM         200  //各统计量
+//
+//#define SETDATA_CHAR_SYSMODE    201
+//
+//#define DG_RUN_STATE		  202
+//#define SET_DG_DAILY_TIME	  203
+//#define DG_NOWRUNTIME		  204
+//#define DG_TOTALRUNTIME		  205
+//#define DG_STARTTIMER		  206
+//#define DG_CTRL_STATE		  207
+
+
+//#define CTL_MPPT_VOLTAGE      210
+//#define CTL_MPPT_CURRENT_LIMIT 211
+//
+//#define CTL_DCDC_DC_ONOFF     215
+//#define CTL_DCDC_RESET        216
+//#define CTL_DCDC_LEDBLINK     217
+//
+//#define DCDC_NUM              220
+//#define DCDC_VOLTAGE          221
+//#define DCDC_CURR             222
+//#define DCDC_TEMP             223
+//#define DCDC_DC_ONOFF         224
+//#define DCDC_BARCODE          225
+//#define DCDC_END              226
+//#define SETDATA_DCDC_LOCATION 228
+//#define CLEAR_DCDCLOST        229
+
+//#define DCDC_OUTVOLTAVE       230  
+//#define DCDC_PWRRATE          231  
+//#define DCDC_OUTCURRENT       232  
+//#define MIN_STACK_FREE        250
+
+//end
+
+#define PHONE_END           11	
+#define PASSWORD_END        62	
+#define NAME_END            63	
+
+#define PASSWORD_NONE       0
+#define PASSWORD_ENTER      1
+#define PASSWORD_ERROR      2
+#define PASSWORD_LEVEL1     3
+#define PASSWORD_LEVEL2     4
+#define PASSWORD_LEVEL3     5
+#define PASSWORD_LEN        6
+
+#define RELATION_UP         0x01
+#define RELATION_DN         0x02
+#define RELATION_UPDN       0x03
+
+#define FLOAT_MODE_LINE           1
+#define FLOAT_MODE_SCREEN         2
+#define FLOAT_EQ_SETDATA_CHAR     (0x01 << 2)	//==
+#define FLOAT_NEQ_SETDATA_CHAR    (0x02 << 2)	//!=
+#define FLOAT_MT_SETDATA_CHAR     (0x03 << 2)	//>
+#define FLOAT_LT_SETDATA_CHAR     (0x04 << 2)	//<
+#define FLOAT_MTEQ_SETDATA_CHAR   (0x05 << 2)	//>=
+#define FLOAT_LTEQ_SETDATA_CHAR   (0x06 << 2)	//<=
+#define FLOAT_DCSET_SETDATA_CHAR  (0x3f << 2)	//特别处理
+
+#define FLOAT_EQ_SETDATA_FLOAT    (0x07 << 2)	//==
+#define FLOAT_NEQ_SETDATA_FLOAT   (0x08 << 2)	//!=
+#define FLOAT_MT_SETDATA_FLOAT    (0x09 << 2)	//>
+#define FLOAT_LT_SETDATA_FLOAT    (0x0a << 2)	//<
+#define FLOAT_MTEQ_SETDATA_FLOAT  (0x0b << 2)	//>=
+#define FLOAT_LTEQ_SETDATA_FLOAT  (0x0c << 2)	//<=
+
+#define FLOAT_EQ_ACTIVEALARM_NUM  (0x0d << 2)
+#define FLOAT_EQ_HISTORYALARM_NUM (0x0e << 2)
+#define FLOAT_EQ_HISTORYEVENT_NUM (0x0f << 2)
+
+#define FLOAT_EQ_DISABLE_BATT_MID_VOLT	  (0x25 << 2)
+#define FLOAT_NOT_DISPLAY_NUM     (0x3e << 2)
+
+#define FLOAT_EQ_MPPT_NUM		0x90+ (0x02 << 2)
+#define FLOAT_EQ_NOMPPT			0x90+ (0x03 << 2)	
+#define FLOAT_NEQ_MIXMODE		0x90+ (0x04 << 2)
+
+//#define MDB_ADDR_VALUE			0x5a
+//#define UI_MODBUS_CMD_01_ID		0x01
+//#define UI_MODBUS_CMD_02_ID		0x02
+//#define UI_MODBUS_CMD_03_ID		0x03
+//#define UI_MODBUS_CMD_04_ID		0x04
+//#define UI_MODBUS_CMD_05_ID		0x05
+//#define UI_MODBUS_CMD_06_ID		0x06
+//#define UI_MODBUS_CMD_10_ID		0x10
+#define CHARGE_MACHINE_FISSION 0
+#define CHARGE_MACHINE_INCORPORATE	1	
+#define RPT_INVALID_PASWD		0xffffffff
+
+#define RECT_ON		0
+#define RECT_OFF	1
+#define MCCB_CONNECT	1
+#define MCCB_DISCONNECT	0
+typedef enum tag_RECT_GRP_Idx
+{
+	GRP_A = 0,
+	GRP_B,
+	_MAX_GRP_NUM
+}RECT_GRP_IDX;
+
+typedef enum tagERR_Code
+{
+	//from protocol
+	ERR_CAN_R_NO_ERR = 0x00,
+	ERR_CAN_R_WRONG_ADDR = 0x01,
+	ERR_CAN_R_WRONG_CMD = 0x02,
+	ERR_CAN_R_WRONG_DATA = 0x03,
+	ERR_CAN_R_IN_STARTING = 0x07, //地址重排未完成/**/
+
+	//self define
+	ERR_CAN_R_COMM_FAIL = 0x1F, //to Judge Comm interrupt Alarm
+	ERR_CAN_R_NO_LOCK	//被control命令抢占了锁,需要等下一圈再继续采集/**/
+}ERR_CODE_CAN_R;
+
+typedef enum tagRectCanCmd_Idx
+{
+	//单模块命令/**/
+	_CAN_R_CMD_ID_S_03 = 0, //电压、电流/**/
+	_CAN_R_CMD_ID_S_04,//组号、状态/**/
+	_CAN_R_CMD_ID_S_06, //三相电压/**/
+	_CAN_R_CMD_ID_S_07, //版本号/**/
+	//模块组命令/**/
+	_CAN_R_CMD_ID_G_01, //总电压、电流/**/
+	_CAN_R_CMD_ID_G_02, //模块个数、系统状态/**/
+	_CAN_R_CMD_ID_G_24,	//设置工作模式
+	_CAN_R_CMD_ID_G_1A, //模块组开关机/**/
+	_CAN_R_CMD_ID_G_13, //设置WalkIn/**/
+	_CAN_R_CMD_ID_G_1B, //模块组调压、限流/**/
+	_MAX_CAN_R_CMD
+
+}ID_CMD_RECT;
+
+
+#define  INIT_RECT_CMD(p, _Times,_Count, _cmdType, _pfnHandler) \
+	((p)->nCmdType = (_cmdType), \
+	(p)->u8SampTimes = (_Times), \
+	(p)->u8SampCount = (_Count), \
+	(p)->pfnCmdHandler = (_pfnHandler), \
+	(p)++);
+
+#define  CAN_3_MAX_BUFF			20
+
+
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+
+#define SWCFG(a, b)    (((b) == (1)) ? (a) : (~a))
+#define NOZERO(a, b)   ((((a) != (0)) && ((b) != (0))) ? (1) : (0))
+/* signed long add to unsigned long */
+#define ULONG_ADD_SLONG( unsignedLong, signedLong )          \
+	(((signedLong) > 0) ? ((unsignedLong) + (signedLong))    \
+	: ((unsignedLong) - (-signedLong)) )
+/* unsigned long sub signed long */
+#define ULONG_SUB_SLONG( unsignedLong, signedLong )          \
+	(((signedLong) > 0) ? ((unsignedLong) - (signedLong))    \
+	: ((unsignedLong) + (-signedLong)) )
+
+
+typedef	void(*VOID_INTERFACE_UART45_PROC)(UCHAR BaudRateCase,UCHAR ParityCase);
+typedef	void(*VOID_INTERFACE_PROC)(void);
+typedef	void(*INDOTYPES_INTERFACE_PROC)(UCHAR data);
+typedef	UCHAR(*OUTUCHAR_INTERFACE_PROC)(void);
+typedef	UCHAR(*INUINT16P_OUTUCHAR_INTERFACE_PROC)(UINT16 * pdata);
+typedef	void(*INUCHAR_INTERFACE_PROC)(UCHAR data);
+typedef	void(*ININT32U_INTERFACE_PROC)(INT32U data);
+typedef void(*INUINT32_INTERFACE_PROC)(UINT32 data);
+typedef	void(*ININT8S_INTERFACE_PROC)(INT8S data);
+typedef	UINT32(*OUTUINT32_INTERFACE_PROC)(void);
+typedef	void(*INUCHARUCHAR_INTERFACE_PROC)(UCHAR data1, UCHAR data2);
+typedef	void(*INUCHARUCHARUCHAR_INTERFACE_PROC)(UCHAR data1, UCHAR data2, UCHAR data3);
+typedef	void(*INUCHARUINT16_INTERFACE_PROC)(UCHAR data1, UINT16 data2);
+typedef	void(*INUCHARUINT16UCHAR_INTERFACE_PROC)(UCHAR data1, UINT16 data2, UCHAR data3);
+typedef	UINT16(*OUTUINT16_INTERFACE_PROC)(void);
+typedef	void(*INUINT16_INTERFACE_PROC)(UINT16 data);
+typedef	void(*INUINT16UINT16_INTERFACE_PROC)(UINT16 data1, UINT16 data2);
+typedef	INT32(*OUTINT32_INTERFACE_PROC)(void);
+typedef	void(*ININT32_INTERFACE_PROC)(INT32 data);
+typedef	void(*PUCHAR_INT32_INTERFACE_PROC)(UCHAR *data,UINT16 data2);
+
+typedef	time_t(*OUTTIME_INTERFACE_PROC)(void);
+
+typedef	float(*OUTFLOAT_INTERFACE_PROC)(void);
+typedef	float(*INFLOAT_OUTFLOAT_INTERFACE_PROC)(float data);
+typedef	float(*INUCHAR_OUTFLOAT_INTERFACE_PROC)(UCHAR  i);
+typedef	void(*GET_CTRL_VOLT_CURR)(UCHAR  i, float* fVal1, float* fVal2);
+typedef	UINT8(*GET_CTRL_ON_OF)(UCHAR i);
+typedef	void(*SET_CTRL_ON_OF)(UCHAR i,UINT8 u8OnOff);
+
+typedef	float(*INUINT16_OUTFLOAT_INTERFACE_PROC)(UINT16  i);
+typedef	float(*INUCHARUCHAR_OUTFLOAT_INTERFACE_PROC)(UCHAR  mode, UCHAR  i);
+typedef	float(*GET_RECT_ANALOG)(UCHAR uGrpNo, UCHAR RectId, UCHAR SigID);
+typedef	UCHAR(*INUCHARUCHARFLOAT_OUTUCHAR_INTERFACE_PROC)(UCHAR  mode, UCHAR  i, float data);
+typedef	UCHAR(*INUCHARUCHARUCHAR_OUTUCHAR_INTERFACE_PROC)(UCHAR  mode, UCHAR  i, UCHAR data);
+
+typedef	void(*INFLOAT_INTERFACE_PROC)(float data);
+typedef	UCHAR(*INFLOAT_OUTUCHAR_INTERFACE_PROC)(float data);
+typedef	void(*INUCHARFLOAT_INTERFACE_PROC)(UCHAR i, float data);
+typedef	void(*SET_RECT_VOLT_CURR)(UCHAR i, float fVal1, float fVal2);
+typedef	UCHAR(*RETURN_DATA_INTERFACE_PROC)(UINT16 nID, void *pDataBuf);
+typedef	UCHAR(*RETURN_DATA_INTERFACE1_PROC)(UINT16 nID, void *pDataBuf,  UCHAR ucGetDirectFlag);
+typedef	UCHAR(*INUINT16FLOAT_OUTUCHAR_INTERFACE_PROC)(UINT16 nID, float data);
+typedef	void(*INUCHARP_INTERFACE_PROC)(UCHAR * pDataBuf);
+typedef	UCHAR(*INUCHARUCHARP_OUTUCHAR_INTERFACE_PROC)(UCHAR data, UCHAR * pDataBuf);
+typedef	void(*INUCHARPUINT16_INTERFACE_PROC)(UCHAR * pDataBuf, UINT16 len);
+typedef	void(*RTC_INTERFACE_PROC)(struct tm * tmNow);
+typedef	UCHAR(*INUCHAR_OUTUCHAR_INTERFACE_PROC)(UCHAR data);
+typedef	UCHAR(*CAN3_R_INTERFACE_PROC)(UCHAR data, CanRxMsgTypeDef* pRcvMsg);
+typedef	UCHAR(*CAN3_W_INTERFACE_PROC)(canmsg * pRcvMsg, UINT8 u8Len);
+
+typedef	UCHAR(*INUCHARUCHAR_OUTUCHAR_INTERFACE_PROC)(UCHAR data1, UCHAR data2);
+typedef	UCHAR(*INUINT16_OUTUCHAR_INTERFACE_PROC)(UINT16 data);
+typedef	void(*INUINT16UCHAR_INTERFACE_PROC)(UINT16 data1, UCHAR data2);
+typedef	UCHAR(*INUINT16UCHAR_OUTUCHAR_INTERFACE_PROC)(UINT16 data1, UCHAR data2);
+
+typedef	UCHAR(*INUINT16UCHAR2_OUTUCHAR_INTERFACE_PROC)(UINT16 data1, UCHAR data2, UCHAR data3);
+
+typedef	UCHAR(*HISTORY_EVENT_RECORD_INTERFACE_PROC)(UCHAR	EventType, UINT16 EventTable, UCHAR	cValue, float	fValue);
+
+typedef UCHAR(*WRITE_E2PROM_INTERFACE_PROC)(UINT16 Address, UCHAR inChar);
+typedef UCHAR(*READ_E2PROMPAGE_INTERFACE_PROC)(UCHAR * pDataBuf, UINT16 StartAddress, UCHAR ReadLength);
+typedef  UCHAR(*WRITE_E2PROMPAGE_INTERFACE_PROC)(UCHAR * pDataBuf, UINT16 StartAddress, UCHAR WriteLength);
+
+typedef void(*FILTERDATA_INTERFACE_PROC)(UCHAR i, float mData, UCHAR UpFilter, UCHAR DnFilter, UCHAR Clear);
+
+typedef void(*WRITE_LCD_INTERFACE_PROC)(UCHAR * pDataBuf, UCHAR mode, UCHAR cursor);
+typedef	UCHAR(*CONTROL_LCD_INTERFACE_PROC)(UINT16 uiCmd, UCHAR ulArg);
+
+typedef	UCHAR(*RETURN_DATA1_INTERFACE_PROC)(UINT16 k, UCHAR data, void *pDataBuf);
+
+typedef UINT16 (*IN8_OUTU16_INTERFACE_PROC)(UCHAR addr);
+typedef	UCHAR(*INUCHARP_OUTUCHAR_INTERFACE_PROC)(UCHAR * pdata);
+
+typedef void(*INUINT16P_INUCHAR_INTERFACE_PROC)(UINT16 *pDataBuf,UCHAR ID);
+typedef void(*INUINT32P_INUINT32_INTERFACE_PROC)(UINT32 *pDataBuf,UINT32 ID);
+typedef void(*INPCANMSG_INTERFACE_PROC)(canmsg *pDataBuf);
+typedef UCHAR(*INUINT16UINT16_OUTUCHAR_INTERFACE_PROC)(UINT16 data1, UINT16 data2);
+typedef UCHAR(*INUINT16UINT16INUCHAR_OUTUCHAR_INTERFACE_PROC)(UINT16 data1, UINT16 data2,UCHAR inchar);
+typedef	UCHAR(*OUTUCHAR_INPUTVOID_INTERFACE_PROC)(void);
+typedef	void(*RETURN_VOID_DATA_INTERFACE_PROC)(void *pDataBuf,UINT16 *nID);
+typedef	UCHAR(*RETURN_UCHAR_DATA_INTERFACE_PROC)(void *pDataBuf,UINT16 nID,UINT8 u8ResetFlag);
+typedef UCHAR(*INUINT16PUCHAR_OUTUCHAR_INTERFACE_PROC)(UCHAR ID,UINT16 *pDataBuf);
+typedef	void(*RETURN_VOID_CHAR_DATA_INTERFACE_PROC)(void *pDataBuf,UINT16 nID);
+typedef	void(*RETURN_VOID_INT_DATA_INTERFACE_PROC)(UINT16 nID);
+typedef	UINT16(*OUTUINT16_INPUTVOID_INTERFACE_PROC)(void);
+typedef UCHAR (*ON_STATE_MACH_PROC) (void);
+typedef void (*InputMutilPara_Data_INTERFACE_PROC)(UCHAR ucGunNo,UCHAR ucRectMode,UCHAR ucRectOn,float fVolt,float fCurr);
+typedef void (*CAN_RECT_SAMPLE_PROC)(int SGNo, void* pRawData,void* pSetData); //组号地址号，	解析数据，	设置数据
+
+
+struct _MdbusRecvInfo
+{
+	UINT8 uReceivFlag;							//1ok	0无数据
+	UINT16 u16ReceivLenth;						//1ok	0无数据
+	UINT8 uBuf[MDBUS_BYTES_MAX_NUM];
+};
+typedef struct _MdbusRecvInfo  MODBUS_RECV_INFO;
+
+typedef struct tagACANFrame
+{
+	UINT8					u8SampTimes;
+	UINT8					u8SampCount;
+	ID_CMD_RECT				nCmdType;
+	CAN_RECT_SAMPLE_PROC	pfnCmdHandler;
+
+}CAN_RECT_FRAME_INFO;
+
+
+//gBrushInfo.u8AccountRequestStep
+enum _ACCOUNT_REQUEST_STEP_def
+{
+	ACCOUNT_REQUEST_STEP_Init = 0, 
+	ACCOUNT_REQUEST_STEP_1,   //刷卡后，上报卡号和卡上余额给后台
+	ACCOUNT_REQUEST_STEP_2,	  //后台回复卡上余额不对，需要把服务器上的金额写入卡（写入成功后需要再次上报卡号和卡上余额给后台）
+	ACCOUNT_REQUEST_STEP_3,   //后台回复ok，可以启动充电
+	ACCOUNT_REQUEST_STEP_4,	  //后台回复不能启动，显示原因，停留60秒给用户看
+};
+
+
+struct __PageAddr
+{
+	UINT16 u16BasePageAddr;
+	UINT16 u16_A_PageAddr;
+	UINT16 u16_B_PageAddr;
+};
+typedef struct __PageAddr PAGE_ADDR;
+
+union __HMI_INFO
+{
+	PAGE_ADDR unPageAddr;
+	UINT16 u16Data[300];
+};
+typedef union __HMI_INFO  HMI_INFO;
+
+typedef struct tagLCDCursor
+{
+	unsigned char x;			//0--128
+	unsigned char y;			//0--64
+}LCDCursor_TypeDef;
+
+typedef struct tagdv_LCD
+{
+  UCHAR                       noLCD;
+  UCHAR                       LEDData;
+  UCHAR                       isLartin;
+  //UCHAR                       isVertical;
+  UCHAR                       LCDRSTFlag;
+
+  LCDCursor_TypeDef           CurrCursor;
+  
+  UCHAR                       BackLight;  //Ats 新增
+  UCHAR                       GreenLED;   //Ats 新增
+  UCHAR                       YellowLED;  //Ats 新增
+  UCHAR                       RedLED;     //Ats 新增
+  UCHAR				LedType;   //LED 类型 LED_TYPE_SINGLE / LED_TYPE_DOUBLE
+
+  OUTUCHAR_INTERFACE_PROC     fGetnoLCD;
+  INUCHAR_INTERFACE_PROC      fSetnoLCD;
+  OUTUCHAR_INTERFACE_PROC     fLCDOnLine;
+
+  VOID_INTERFACE_PROC         fOpenRedLED;
+  VOID_INTERFACE_PROC         fCloseRedLED;
+  VOID_INTERFACE_PROC         fOpenGreenLED;
+  VOID_INTERFACE_PROC         fCloseGreenLED;
+  VOID_INTERFACE_PROC         fOpenYellowLED;
+  VOID_INTERFACE_PROC         fCloseYellowLED;
+
+  VOID_INTERFACE_PROC         fOpenBackLight;
+  VOID_INTERFACE_PROC         fCloseBackLight;
+
+  OUTUCHAR_INTERFACE_PROC     fReadKeyboard;
+  VOID_INTERFACE_PROC         fInitLCD;
+  VOID_INTERFACE_PROC         fActiveLCD;
+  INUCHAR_INTERFACE_PROC      fClearLCD;
+  VOID_INTERFACE_PROC         fClearLine;
+  CONTROL_LCD_INTERFACE_PROC  fControlLCD;
+  WRITE_LCD_INTERFACE_PROC    fWriteLCD;
+  INUCHARUCHAR_INTERFACE_PROC fWriteLCDData;
+  INUCHARP_INTERFACE_PROC     fWriteSplash;
+  INUCHAR_INTERFACE_PROC      fSetIsLartin;
+  OUTUCHAR_INTERFACE_PROC     fGetBackLight;  //Ats 新增
+  OUTUCHAR_INTERFACE_PROC     fGetGreenLED;   //Ats 新增
+  OUTUCHAR_INTERFACE_PROC     fGetYellowLED;  //Ats 新增
+  OUTUCHAR_INTERFACE_PROC     fGetRedLED;     //Ats 新增
+  WRITE_LCD_INTERFACE_PROC  fWriteLCDHz;
+  INUCHARUCHARUCHAR_INTERFACE_PROC fWriteLCDChar;
+  INUCHARP_INTERFACE_PROC fWriteSymbol;  //写8*8点阵图形符号
+  OUTUCHAR_INTERFACE_PROC  fGetLCDState;
+  
+}dv_LCD_TypeDef;
+typedef struct tagdv_ethdev
+{
+    UINT32   TimeCount;
+    VOID_INTERFACE_PROC fInitNetPort;
+    //VOID_INTERFACE_PROC fNetWorkDeviceSend;
+    OUTUCHAR_INTERFACE_PROC fNetWorkDeviceSend;
+    OUTUINT16_INTERFACE_PROC fNetWorkDeviceRead;
+
+}dv_ethdev_TypeDef;
+
+typedef struct tagAlarmToSNMPTrap
+{
+  UINT16        TrapNum;
+  UINT16        AlarmNum;//0-1023
+  unsigned char	TrapType;//0:NA,3:OA,5:MA,6:CA
+  unsigned char	TrapStatus;//0:NA,2:恢复,1:发生
+  unsigned char	TrapTime[11];				/*时间*/
+  unsigned char	TrapName[16+10];
+}AlarmToSNMPTrap_TypeDef;
+
+
+
+#define EEM_MAX_SIZE    1472
+typedef struct tagEEMExchangeInterface
+{
+    UINT16      eem_flag;
+    UINT16      port;
+    void       *input_buf;
+    UINT16      Rlen;
+    UINT16      slen;
+    UCHAR      connect;
+    UCHAR      ClientToServerFlag;
+    UCHAR       Readeem_buf[EEM_MAX_SIZE];
+    UCHAR       Sendeem_buf[EEM_MAX_SIZE];		
+    OUTUCHAR_INPUTVOID_INTERFACE_PROC           fcheck_eem_input;
+    OUTUCHAR_INPUTVOID_INTERFACE_PROC			fcheck_eem_output;
+    RETURN_VOID_DATA_INTERFACE_PROC				fget_eem_input;
+    RETURN_UCHAR_DATA_INTERFACE_PROC			fset_eem_output;
+    RETURN_VOID_CHAR_DATA_INTERFACE_PROC		fset_eem_input;
+    RETURN_VOID_INT_DATA_INTERFACE_PROC		    fset_eem_flag;
+    RETURN_VOID_INT_DATA_INTERFACE_PROC		    fset_eem_port;
+    OUTUINT16_INPUTVOID_INTERFACE_PROC			fget_eem_flag;
+}EEMExchangeInterface_TypeDef;
+typedef struct tagSlowADCData
+{
+	UCHAR                     ucGetDataNum;
+	UINT32                    u32ADCValue[mSLOW_ALL_POINT_NUM];
+}dv_SlowADCData_TypeDef;
+typedef struct tagdev_Adc
+{
+  UCHAR                     ucDMASampelTime;
+  UCHAR                     ucStartMeasureFlag;
+  UCHAR                     ucOneLoopFlag;
+  UCHAR                     ucSampleIntervalCount;
+  UINT32                    u32OneLoopValue[mPOINT_NUM_EACH_TIME];
+  UINT32					u32FastChannelADCValue[ADC_FAST_CHANNEL_NUM];//快速采集，则用一次采集到底值进行计算
+ dv_SlowADCData_TypeDef		 stSlowChannelData[ADC_SLOW_CHANAL_NUM];
+  INUCHAR_INTERFACE_PROC    fADWorkPortSelect;
+  INUINT32P_INUINT32_INTERFACE_PROC  fStartMeasure;
+	INUINT16PUCHAR_OUTUCHAR_INTERFACE_PROC fGetAdcValue;
+  VOID_INTERFACE_PROC       fDMAStop;
+   VOID_INTERFACE_PROC       fInitAdc;
+  
+}dv_Adc_TypeDef;
+
+typedef struct tagdev_Dog
+{
+  VOID_INTERFACE_PROC       fFeedDog;
+  
+}dv_Dog_TypeDef;
+
+
+typedef struct tagdev_CAN
+{	
+	UCHAR  ucRxReady;
+	UINT32 ucRxCheckInfo;
+	UCHAR  ucRxFrameNum;
+	UCHAR  ucGetFrameNum;
+	VOID_INTERFACE_PROC fCAN1BusInit;
+	INPCANMSG_INTERFACE_PROC fCAN1TxData;
+	VOID_INTERFACE_PROC fCAN1RxInit;
+	INUCHARUCHAR_OUTUCHAR_INTERFACE_PROC fCAN1ReadFrame;
+}dv_CAN_TypeDef;
+
+typedef struct tagdev_Output
+{
+	HANDLE			hMutexReadWriteRelayData;
+	OUTUCHAR_INTERFACE_PROC	fInitMutex;
+	VOID_INTERFACE_PROC		fOpenBeep;
+	VOID_INTERFACE_PROC		fCloseBeep;
+}dv_Output_TypeDef;
+
+typedef struct tagdv_RTC
+{
+	struct tm  tmNow;
+	INT32 RTC_Counter;
+	INT32 RTC_Counter_Back;
+
+	VOID_INTERFACE_PROC                   fDvInitRTC;
+	OUTINT32_INTERFACE_PROC               fGetGMTSeconds;
+	ININT32_INTERFACE_PROC                fSetGMTSeconds;
+
+	INUCHAR_OUTUCHAR_INTERFACE_PROC       fReadRTC;
+	INUCHARUCHAR_OUTUCHAR_INTERFACE_PROC  fWriteRTC;
+	INDOTYPES_INTERFACE_PROC              fReadTime;
+}dv_RTC_TypeDef;
+
+typedef struct tagE2PROM
+{
+	UINT16 DefaultUpdate;
+	UINT16 SetDataUpdate;
+	UINT16 BattTestUpdate;
+	UINT16 BattRecordUpdate;
+	UINT16 ClearDefaultFlag;
+	UINT16 ClearSetFlag;
+	UINT16 ClearEventFlag;
+	UINT16 ClearAllFlag;
+	UINT16 ActiveAlarmUpdate;
+	UINT16 HistoryAlarmUpdate;
+	UINT16 HistoryEventUpdate;
+	UINT16 MenuSystemNameUpdate;
+	UINT16 MenuAliasNameUpdate;
+	UINT16 MenuLineConfigUpdate;
+	UINT16 MenuScreenConfigUpdate;
+	UINT16 MenuAlarmNameUpdate;
+	UINT16 MenuAnalogAlarmNameUpdate;
+	UINT16 StatisticUpdate;
+	UINT16 DGdataUpdate;
+	UINT16 StatisticTempUpdate;
+
+	UINT16 SplashUpdate;
+	UINT16 SplashOpenFlagUpdate;
+	UCHAR  SplashFlag1;
+	UCHAR  SplashFlag2;
+	//UCHAR  Splash[1024];
+
+	UCHAR  ResetReasonRecordPos;
+	UCHAR    ResetReasonRecord[3];
+	UINT32  u32ResetReasonDogBit[3];
+
+	VOID_INTERFACE_PROC   fSetDefaultUpdate;
+	VOID_INTERFACE_PROC   fClearDefaultUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsDefaultUpdate;
+
+	VOID_INTERFACE_PROC   fSetSetDataUpdate;
+	VOID_INTERFACE_PROC   fClearSetDataUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsSetDataUpdate;
+
+	VOID_INTERFACE_PROC   fSetBattTestUpdate;
+	VOID_INTERFACE_PROC   fClearBattTestUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsBattTestUpdate;
+
+	
+	VOID_INTERFACE_PROC   fSetBattRecordUpdate;
+	VOID_INTERFACE_PROC   fClearBattRecordUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsBattRecordUpdate;
+
+	VOID_INTERFACE_PROC   fSetClearDefaultFlag;
+	VOID_INTERFACE_PROC   fClearClearDefaultFlag;
+	OUTUCHAR_INTERFACE_PROC  fIsClearDefaultFlag;
+
+	VOID_INTERFACE_PROC   fSetClearSetFlag;
+	VOID_INTERFACE_PROC   fClearClearSetFlag;
+	OUTUCHAR_INTERFACE_PROC  fIsClearSetFlag;
+
+	VOID_INTERFACE_PROC   fSetClearEventFlag;
+	VOID_INTERFACE_PROC   fClearClearEventFlag;
+	OUTUCHAR_INTERFACE_PROC  fIsClearEventFlag;
+
+	VOID_INTERFACE_PROC   fSetClearAllFlag;
+	VOID_INTERFACE_PROC   fClearClearAllFlag;
+	OUTUCHAR_INTERFACE_PROC  fIsClearAllFlag;
+
+	VOID_INTERFACE_PROC   fSetActiveAlarmUpdate;
+	VOID_INTERFACE_PROC   fClearActiveAlarmUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsActiveAlarmUpdate;
+
+	VOID_INTERFACE_PROC   fSetHistoryAlarmUpdate;
+	VOID_INTERFACE_PROC   fClearHistoryAlarmUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsHistoryAlarmUpdate;
+
+	VOID_INTERFACE_PROC   fSetHistoryEventUpdate;
+	VOID_INTERFACE_PROC   fClearHistoryEventUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsHistoryEventUpdate;
+
+	INUCHARUCHAR_INTERFACE_PROC fSetSplashFlag;
+	RETURN_DATA_INTERFACE_PROC  fSetSplash;
+	VOID_INTERFACE_PROC   fSetSplashOpenFlagUpdate;
+	VOID_INTERFACE_PROC   fClearSplashOpenFlagUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsSplashOpenFlagUpdate;
+	VOID_INTERFACE_PROC   fSetSplashUpdate;
+	VOID_INTERFACE_PROC   fClearSplashUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsSplashUpdate;
+	
+	VOID_INTERFACE_PROC   fSetStatisticUpdate;
+	VOID_INTERFACE_PROC   fClearStatisticUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsStatisticUpdate;
+	
+	VOID_INTERFACE_PROC   fSetDGdataUpdate;
+	VOID_INTERFACE_PROC   fClearDGdataUpdate;
+	OUTUCHAR_INTERFACE_PROC  fIsDGdataUpdate;
+	
+	VOID_INTERFACE_PROC       fSetStatisticTempUpdate;
+	VOID_INTERFACE_PROC       fClearStatisticTempUpdate;
+	OUTUCHAR_INTERFACE_PROC   fIsStatisticTempUpdate;
+
+}E2PROM_TypeDef;
+
+typedef struct tagSelfTest
+{
+  UINT16  TaskID[CHECKTASKNUM];
+  UINT16  StopFeedDog;
+  UCHAR   CheckSetDataVersion;
+  UINT32 minTaskStkFree;
+  INT8S  OSCPUUsage;               /* Percentage of CPU used*/
+  INT32U OSCtxSwCtr;
+  UINT32 u32DogBit;
+  INT32  iSDOGPeriod;
+   UCHAR   StopFeedDogReason;
+   UINT32 u32DogBit_Bak;  
+   UINT16  LastSetDataID;
+   UCHAR fLastSetDataValue;
+  INUCHAR_INTERFACE_PROC    fSetTaskID;
+  
+  VOID_INTERFACE_PROC       fSetStopFeedDog;
+  OUTUCHAR_INTERFACE_PROC   fGetStopFeedDog;
+  OUTUCHAR_INTERFACE_PROC   fIsStopFeedDog;
+
+  INUINT16P_OUTUCHAR_INTERFACE_PROC fCheck_taskID;
+  //INUINT16P_OUTUCHAR_INTERFACE_PROC fCheck_ucOSID;
+
+  OUTUINT32_INTERFACE_PROC  fGetMinTaskStkFree;
+  ININT32U_INTERFACE_PROC   fSetMinTaskStkFree;
+  ININT8S_INTERFACE_PROC    fSetOSCPUUsage;
+  ININT32U_INTERFACE_PROC   fSetOSCtxSwCtr;
+}SeltTest_TypeDef;
+
+typedef struct tagKey
+{
+  UCHAR  KeyTemp;
+  UCHAR  KeyValue;
+  UCHAR  LastKeyValue;
+  UCHAR  KeyValueforHost;
+  UCHAR  Mode;
+  UCHAR  RecordService;
+  UCHAR  BLoff;
+  UINT16 NoKeyTime;
+  UINT16 KeyPressedTime;
+  UCHAR  Password;
+  UCHAR  KeyBuffer;
+}Key_TypeDef;
+
+typedef struct tagKeyInterface
+{
+  Key_TypeDef           KeyData;
+  VOID_INTERFACE_PROC   fReadKey;
+  OUTUCHAR_INTERFACE_PROC  fGetKey;
+  OUTUCHAR_INTERFACE_PROC  fGetKeyFromHost;
+  INUCHAR_INTERFACE_PROC   fSetKeyForHost;
+  OUTUCHAR_INTERFACE_PROC  fGetKeyForHost;
+  OUTUCHAR_INTERFACE_PROC  fGetKeyMode;
+  INUCHAR_INTERFACE_PROC   fSetKey;
+  VOID_INTERFACE_PROC   fModifyServiceDate;
+  OUTUCHAR_INTERFACE_PROC  fGetPassWordStatus;
+  INUCHAR_INTERFACE_PROC   fSetPassWordStatus;
+}KeyInterface_TypeDef;
+
+
+//菜单屏的行结构：无对应信号
+typedef struct tagMenu_Line
+{
+  UINT16  LineNum;
+  UINT16 TitleNum;			//Title[2][16];//15+1
+  UCHAR  TitleDisplayStart;
+  UCHAR  TitleDisplayMode;//标题显示模式
+  
+  UCHAR  PasswordScreen;
+  UCHAR  PasswordLevel;
+  UCHAR  ConfirmScreen;
+  UCHAR  RelationorFloat;//用于浮点数设置的关联和浮点数显示浮动与否:0-无关联无浮动，1－关联上限，2－关联下限，3－关联上下限
+  UCHAR  cFloatDisplayValue;//用于显示浮动
+  UCHAR  RelationUporFloatHigh;//用于浮点数设置的上限关联配置浮点数序号，浮动关联的配置数据序号高位
+  UCHAR  RelationDnorFloatLow;//用于浮点数设置的下限关联配置浮点数序号，浮动关联的配置数据序号低位
+  float fFloatDisplayValue;//用于显示浮动  
+}Menu_Line_TypeDef;//数据长度15  
+
+//查询状态屏的行结构 ：有对应信号，但不支持参数调整
+typedef struct tagInfo_Line
+{
+  UINT16 LineNum;
+  UINT16 TitleNum; //Title[2][16];//15+1
+  UCHAR  TitleDisplayStart;
+  UCHAR  TitleDisplayMode;//标题显示模式
+  
+  UCHAR  PasswordScreen;
+  UCHAR  PasswordLevel;
+  UCHAR  ConfirmScreen;
+  UCHAR  RelationorFloat;//用于浮点数设置的关联和浮点数显示浮动与否:0-无关联无浮动，1－关联上限，2－关联下限，3－关联上下限
+  UCHAR  cFloatDisplayValue;//用于显示浮动
+  UCHAR  RelationUporFloatHigh;//用于浮点数设置的上限关联配置浮点数序号，浮动关联的配置数据序号高位
+  UCHAR  RelationDnorFloatLow;//用于浮点数设置的下限关联配置浮点数序号，浮动关联的配置数据序号低位
+  float fFloatDisplayValue;//用于显示浮动
+  
+  UCHAR  SignalMode;//信号类型：0：无，1：采集开关量，2：采集模拟量，3：模块开关量，4：模块模拟量，
+  UCHAR  SignalUnit[4];//信号单位 4+1
+  UINT16 SignalIndex;
+  UCHAR  SignalDisplayMode;//信号显示模式：0：不显示，1：直接显示，2：直接反白显示，3：间接显示，4：间接反白显示
+  UCHAR  SignalDisplayAlias[10];//信号选项名称
+  UCHAR  SignalDisplayStart;
+  UCHAR  SignalDisplayLen;
+  UCHAR  SignalDisplayDecimal;   
+}Info_Line_TypeDef;//数据长度35
+
+//设置参数屏的行结构：有对应信号，并且支持参数调整
+typedef struct tagSet_Line
+{
+  UINT16 LineNum;
+  UINT16 TitleNum; //Title[2][16];//15+1
+  UCHAR  TitleDisplayStart;
+  UCHAR  TitleDisplayMode;//标题显示模式
+  
+   UCHAR  PasswordScreen;
+  UCHAR  PasswordLevel;
+  UCHAR  ConfirmScreen;
+  UCHAR  RelationorFloat;//用于浮点数设置的关联和浮点数显示浮动与否:0-无关联无浮动，1－关联上限，2－关联下限，3－关联上下限
+  UCHAR  cFloatDisplayValue;//用于显示浮动
+  UCHAR  RelationUporFloatHigh;//用于浮点数设置的上限关联配置浮点数序号，浮动关联的配置数据序号高位
+  UCHAR  RelationDnorFloatLow;//用于浮点数设置的下限关联配置浮点数序号，浮动关联的配置数据序号低位
+  float fFloatDisplayValue;//用于显示浮动
+  
+  UCHAR  SignalMode;//信号类型：0：无，1：采集开关量，2：采集模拟量，3：模块开关量，4：模块模拟量，
+  UCHAR  SignalUnit[4];//信号单位 4+1
+  UINT16 SignalIndex;
+  UCHAR  SignalDisplayMode;//信号显示模式：0：不显示，1：直接显示，2：直接反白显示，3：间接显示，4：间接反白显示
+  UCHAR  SignalDisplayAlias[10];
+  UCHAR  SignalDisplayStart;
+  UCHAR  SignalDisplayLen;
+  UCHAR  SignalDisplayDecimal;
+ 
+  UCHAR  cStep;
+  UCHAR  cFastStep;
+  UCHAR  CharUpLimit;
+  UCHAR  CharDnLimit;
+  float fStep;
+  float fFastStep;
+  float fUpLimit;
+  float fDnLimit;  
+}Cfg_Line_TypeDef;//数据长度55
+
+
+typedef struct tagAlias
+{
+  UCHAR  AliasName[2][16];
+}Alias_TypeDef;
+
+typedef struct tagSystem
+{
+  UCHAR  SystemName[2][16];
+}System_TypeDef;
+
+typedef struct tagAlarm
+{
+  UCHAR  AlarmName[2][16];
+}Alarm_TypeDef;
+
+typedef struct tagAnalogAlarm
+{
+  UCHAR  AlarmName[2][6][16];
+}AnalogAlarm_TypeDef;
+
+typedef struct tagLineTitle
+{
+  UCHAR  Title[2][16];//15+1
+}LineTitle_TypeDef;
+
+typedef struct tagLCDSource
+{
+  Alias_TypeDef        Alias[MAX_ALIAS_NUM];
+  LineTitle_TypeDef    LTitle[MAX_LTITLE_NUM];  
+  System_TypeDef       System[MAX_SYSTEM_NUM];
+  
+  Alarm_TypeDef        Alarm[MAX_ALARM_NAME_NUM]; 
+  AnalogAlarm_TypeDef  AnalogAlarm[MAX_ANALOG_ALARM_NAME_NUM];
+  
+  Menu_Line_TypeDef    MenuLine[MAX_MENU_LINE_NUM];  //菜单屏的行对象 
+  Info_Line_TypeDef    InfoLine[MAX_INFO_LINE_NUM]; //信息屏的行对象 
+  Cfg_Line_TypeDef     CfgLine[MAX_CFG_LINE_NUM];  //参数设置屏的行对象 
+  
+}LCDSource_TypeDef;
+
+
+typedef struct tagScreenCfg
+{
+  UCHAR  ScreenNum;
+  UCHAR  Mode;
+  UCHAR  LineNum;
+  UCHAR  PasswordScreen;
+  UINT16  LineIndex[MAX_SCREENLINE_NUM];
+  UCHAR  EntIndex[MAX_SCREENLINE_NUM];
+  UCHAR  PasswordLevel;
+  UCHAR  LockHeader;
+  UCHAR  Up;
+  UCHAR  Down;
+  UCHAR  Esc;
+  UCHAR  Ent;
+  UCHAR  RelationorFloat;			//用于浮点数设置的关联和浮点数显示浮动与否:0-无关联无浮动，1－关联上限，2－关联下限，3－关联上下限
+  UCHAR  cFloatDisplayValue;		//用于显示浮动
+  float  fFloatDisplayValue;		//用于显示浮动
+  UCHAR  RelationUporFloatHigh;		//用于浮点数设置的上限关联配置浮点数序号，浮动关联的配置浮点数序号和字节型序号高位
+  UCHAR  RelationDnorFloatLow;		//用于浮点数设置的下限关联配置浮点数序号，浮动关联的配置字节型序号低位
+  UCHAR  FatherLineBakEn;			//上一屏对应菜单行记忆标志0-无须记忆 1-需记忆
+  UCHAR  temp1;
+  UCHAR  temp2;
+}ScreenCfg_TypeDef;//数据长度68
+
+typedef struct tagScreen
+{
+  UCHAR  CurrScreen;
+  UCHAR  NewScreen;
+  UCHAR  CurrLine;
+  UCHAR  StartLine;
+  UCHAR  LineNum;
+  UINT16 LineIndex[MAX_SCREENLINE_NUM+10];
+  UCHAR  EntIndex[MAX_SCREENLINE_NUM];
+  UINT16 NewLineIndex[MAX_SCREENLINE_NUM];
+  UCHAR  NewEntIndex[MAX_SCREENLINE_NUM];
+  UINT16 Edit;
+  UCHAR  CharBuf;
+  UCHAR  CharBak;
+  float fBuf;
+  time_t SecBuf;
+  UCHAR  PasswordBuf[6];
+  UCHAR  DINNameBuf[16];
+  UINT16 Index;
+  UCHAR  DIIndex;
+  UCHAR  MenuData[mMENUDATANUM];    /*0-- isLatin 0:not Latin; 1: Latin
+                                      1-- MainScreen (1)
+                                      2-- AlarmPopScreen (7)
+                                      3-- ShelfCueScreen (34)
+                                      4-- ConfirmLine in Line (255)
+                                      5-- BackupLine in Menu (49)
+                                      6-- SysTypeChangeLine in Menu(48)
+                                      7-- UpdateLine in Menu(47)*/
+
+  UCHAR ucRectLEDBlink;
+  OUTUCHAR_INTERFACE_PROC            fGetCurrScreenPasswordLevel;
+  OUTUCHAR_INTERFACE_PROC            fGetCurrLinePasswordLevel;
+  OUTUCHAR_INTERFACE_PROC            fIsCurrLineEdit;
+  VOID_INTERFACE_PROC                fSetCurrLineNotEdit;
+  OUTUCHAR_INTERFACE_PROC            fGetCurrScreenEsc;
+
+  INUCHAR_OUTUCHAR_INTERFACE_PROC             fSetCurrScreen;
+
+  INUCHAR_INTERFACE_PROC             fClearLine;
+  VOID_INTERFACE_PROC             fClearScreen;
+  INUCHARUINT16UCHAR_INTERFACE_PROC        fDisplayLine;
+  INUCHARUINT16UCHAR_INTERFACE_PROC        fDisplayMenu;
+  VOID_INTERFACE_PROC             fDisplayScreen;
+  VOID_INTERFACE_PROC             fDisplayUpDown;
+  VOID_INTERFACE_PROC             fClearUpDown;
+  INUINT16UINT16_INTERFACE_PROC         fDisplayScroll;
+  VOID_INTERFACE_PROC             fClearScroll;
+
+  VOID_INTERFACE_PROC             fKeyDeal;
+  OUTUCHAR_INTERFACE_PROC            fCheckPassWord;
+  INUINT16UCHAR2_OUTUCHAR_INTERFACE_PROC    fFloatDisplay;
+
+   RETURN_DATA1_INTERFACE_PROC     fGetAllAlarmName;
+   UCHAR ucMpptLEDBlink;
+   UCHAR ucDCDCLEDBlink;
+  
+}Screen_TypeDef;
+
+typedef struct tagRTCData
+{
+	time_t RTCGMTSec;
+	struct tm GMTtime;
+	struct tm localtime;
+	float  localtimezone;
+	UCHAR  refresh;
+
+	struct tm RTCset;
+	float  settimezone;
+	UCHAR  set;
+	UCHAR   ucSecondChangeFlag;
+
+	VOID_INTERFACE_PROC     fDataInitRTC;
+
+	RTC_INTERFACE_PROC      fGetLocalTime;
+	RTC_INTERFACE_PROC      fSetLocalTime;
+	RTC_INTERFACE_PROC      fRefreshLocalTime;
+	OUTFLOAT_INTERFACE_PROC fGetLocalTimeZone;
+	VOID_INTERFACE_PROC     fSetLocalTimeZone;
+
+	VOID_INTERFACE_PROC     fInitGMTTime;
+	RTC_INTERFACE_PROC      fRefreshGMTTime;
+	RTC_INTERFACE_PROC      fSetGMTTime;
+	OUTUCHAR_INTERFACE_PROC    fGetGMTOldSecond;
+	OUTTIME_INTERFACE_PROC  fGetDvGMTSeconds;
+	OUTTIME_INTERFACE_PROC  fGetSecondsGMT2LOCAL;
+}RTCData_Type;
+
+typedef struct tagdv_E2PROM
+{
+	HANDLE					hMutexReadWriteE2PROMData;
+	UCHAR					TaskRun;
+	OUTUCHAR_INTERFACE_PROC			fInitMutex;
+	VOID_INTERFACE_PROC			fInitEEPROMI2CBus;
+	VOID_INTERFACE_PROC			fSetE2PROMTaskRun;
+	OUTUCHAR_INTERFACE_PROC			fIsE2PROMTaskRun;
+	INUINT16_OUTUCHAR_INTERFACE_PROC	fReadE2PROM;
+	WRITE_E2PROM_INTERFACE_PROC		fWriteE2PROM;
+	READ_E2PROMPAGE_INTERFACE_PROC		fReadE2PROMPage;
+	WRITE_E2PROMPAGE_INTERFACE_PROC		fWriteE2PROMPage;
+	INUINT16_OUTFLOAT_INTERFACE_PROC	fReadE2PROMFloat;
+	INUINT16FLOAT_OUTUCHAR_INTERFACE_PROC	fWriteE2PROMFloat;
+
+	INUINT16_OUTFLOAT_INTERFACE_PROC	fReadE2PROMFloat_2;
+	INUINT16FLOAT_OUTUCHAR_INTERFACE_PROC	fWriteE2PROMFloat_2;
+}dv_E2PROM_TypeDef;
+
+typedef struct tagdv_I2C3
+{
+	VOID_INTERFACE_PROC               fInitI2CBus;
+	INUINT16UINT16_OUTUCHAR_INTERFACE_PROC  fReadData;
+	INUINT16UINT16INUCHAR_OUTUCHAR_INTERFACE_PROC      fWriteData;
+}dv_I2C3_TypeDef;
+
+typedef struct tagdv_Capture_PWM
+{
+	UCHAR Rate[2];
+    UCHAR ucFanPulseGetFlag;
+	UINT32 u32LastCount[mTOTALFANNUM];
+	VOID_INTERFACE_PROC fGetFanPulse;
+	INUCHARUCHAR_INTERFACE_PROC fOutputFanDriver;
+	VOID_INTERFACE_PROC fFeedFan;
+    INUCHAR_OUTUCHAR_INTERFACE_PROC fGetFanGroupRate;
+}dv_Capture_PWM_TypeDef;
+
+typedef struct tagdv_USB
+{
+	UCHAR ucLoadflag;
+	UCHAR ucUSBFlag;
+	VOID_INTERFACE_PROC  fUSBInit;
+	VOID_INTERFACE_PROC fUSBProcess;
+	PUCHAR_INT32_INTERFACE_PROC fUSBWriteData;
+	OUTUCHAR_INTERFACE_PROC fGetUDiskState;
+
+}dv_USB_TypeDef;
+
+
+/*风机管理*/
+typedef struct tagFanMng
+{
+	UINT16 u16FanPulseInput[mTOTALFANNUM+10]; //风机反馈脉冲个数
+}FanMng_TypeDef;
+
+
+typedef struct tagdv_Uart6
+{
+  HANDLE hSemWriteUart6Data;
+  UINT16 pData;
+  UINT8  pBuff;
+  UINT8  u8TimeOutFlag;
+  UINT8  u8TimeOutCount;
+  UINT16 Head;
+  UCHAR  uRecvFinish;
+  UCHAR  SendLastDelay;							//最后一个字节后的delay
+  OUTUCHAR_INTERFACE_PROC	fInitSem;			//初始化信号量
+  VOID_INTERFACE_PROC		fSetUart6BaudRate;
+  VOID_INTERFACE_PROC		fEnableUart6Rx;
+  PUCHAR_INT32_INTERFACE_PROC fSendData;
+}dv_Uart6_TypeDef;
+
+typedef struct tagdv_Uart4and5
+{
+	UINT16 pData;
+	UCHAR  ReceiveFlag;
+	UCHAR  ucFrameFinishFlag;
+	UCHAR  SendLastDelay;							//最后一个字节后的delay
+	HANDLE hSemWriteUart4Data;
+	INUCHAR_INTERFACE_PROC   fRS485CTL;
+	VOID_INTERFACE_PROC      fResetUartState;
+	//VOID_INTERFACE_PROC      fInitUart;
+	VOID_INTERFACE_UART45_PROC fInitUart;
+	//TXY
+	VOID_INTERFACE_PROC      fEnableRx;
+	PUCHAR_INT32_INTERFACE_PROC fSendData;
+
+}dv_Uart4_TypeDef;
+
+typedef struct tagdv_Uart5
+{
+	volatile UINT16  pData;
+	volatile UCHAR  ReceiveFlag;
+	UCHAR  ucFrameFinishFlag;
+	UCHAR  SendLastDelay;							//最后一个字节后的delay
+	HANDLE hSemWriteUart4Data;
+	INUCHAR_INTERFACE_PROC   fRS485CTL;
+	VOID_INTERFACE_PROC      fResetUartState;
+	//VOID_INTERFACE_PROC      fInitUart;
+	VOID_INTERFACE_UART45_PROC fInitUart5;
+	//TXY
+	VOID_INTERFACE_PROC      fEnableRx;
+	PUCHAR_INT32_INTERFACE_PROC fSendData;
+
+}dv_Uart5_TypeDef;
+
+
+typedef struct tagdv_Uart1
+{
+	volatile UINT16  pData;
+	volatile UCHAR  ReceiveFlag;
+	VOID_INTERFACE_PROC      fInitUart1;
+	VOID_INTERFACE_PROC      fUart1EnableRx;
+	PUCHAR_INT32_INTERFACE_PROC fSendData;
+
+}dv_Uart1_TypeDef;
+
+typedef struct tagdv_Uart2
+{
+	volatile UINT16  pUart2Data;
+	volatile UCHAR  Uart2ReceiveFlag;
+	VOID_INTERFACE_PROC      fInitUart2;
+	VOID_INTERFACE_PROC      fUart2EnableRx;
+	PUCHAR_INT32_INTERFACE_PROC fSendData;
+
+}dv_Uart2_TypeDef;
+
+
+
+
+//串行温湿度传感器接口
+typedef struct tagHumSensorInterface
+{
+	 UCHAR ucTempHumSelect;  //当前转换通道：0-温度  1-湿度
+	UCHAR ucDataBuf[3];     //存放从传感器所读回数值   
+	float AnalogData[2];  //0-温度  1-湿度
+	UCHAR ucHumSensorOpStep;    // 当前操作步骤0-1-2
+	UCHAR ucHumSensorStatus;    // 传感器故障状态 TRUE-正常/FALSE-故障  
+	UCHAR ucNoAckCnt;           // 写命令码后无ACK信号响应的次数
+	UCHAR ucDataNotReadyDelay;  // 无数据准备ok信号的延时计时器  
+	
+	UCHAR ucOsTimeDlyCnt;          // 延时计数器
+
+}HumSensorInterface_TypeDef;
+
+
+
+//typedef struct tagRectCommData
+//{
+//	UCHAR			RectExist;					//模块是否存在
+//	UCHAR			RectGroupInfo;              //模块组信息
+//	UCHAR			RectClose;					/*开关机状态  0:开机,1:关机*/
+//	UCHAR			RectInLimitState;			//模块处于限功率状态
+//	UCHAR			RectWalkIn;					/*WALK-In功能 0:不使能,1:使能*/
+//
+//	UCHAR			RectACVoltHighAlarm;		//交流输入过压告警
+//	UCHAR			RectACVoltLowAlarm;			//交流输入欠压告警
+//	UCHAR			RectACNotBalanceAlarm;		//三相不平衡告警
+//	UCHAR			RectACLostPhaseAlarm;		//三相缺相告警
+//	UCHAR			RectLoadShareAlarm;			//模块严重不均流告警
+//	UCHAR			RectIDIsSameAlarm;			//模块ID重复告警
+//	UCHAR			RectOutVoltHighAlarm;		//模块输出过压告警
+//	UCHAR			RectOverTempAlarm;			/*模块过温*/
+//	UCHAR			RectFanFaultAlarm;			/*风扇故障*/
+//	UCHAR			RectProtectAlarm;			/*模块保护*/
+//	UCHAR			RectFaultAlarm;				/*模块故障*/
+//	UCHAR			RectOutPutShortAlarm;		/*模块短路*/
+//	UCHAR			RectCommBreakAlarm;			/*模块通讯中断*/
+//
+//	UCHAR			RectCommCount;				/*模块通讯中断计数器*/
+//
+//
+//	/*模拟量*/
+//	float			RectVoltageValue;			/*电压*/
+//	float			RectRealCurrent;			/*实际电流*/
+//	float			RectTemperature;			/*温度*/
+//	float			RectAC3PVoltage[3];			/*三相电压A,B,C*/
+//}RectCommData_Type;
+
+typedef struct tagARectRawData
+{
+	int	nBelongedGrp;
+	//实时信息/**/
+	float	fRealTime_Volt;
+	float	fRealTime_Curr;
+	float	fRealTime_Temp;
+	//版本等固定信息/**/
+	float	fDC_Ver;
+	float	fAC_Ver;
+	float	fHW_Ver;
+	//最大电压，最小电压，最大电流/**/
+	float	fMax_OutVolt;
+	float	fMin_OutVolt;
+	float	fMax_OutCurr;
+	float	fRatedPower;
+	//状态信息/**/
+	UINT8		bAC_Off;
+	UINT8		bAC_OverVolt;
+	UINT8		bDC_LowVolt;
+	UINT8		bAC_NoBalance;
+	UINT8		bAC_PhaseLack;
+	UINT8		bCurr_NoBalace;
+	UINT8		bID_Conflict;
+	UINT8		bPowerLimited;
+
+	//UINT8		bRectCommFail;
+	UINT8		bWalkIn_Enabled;
+	UINT8		bDC_OverVolt;
+	UINT8		bOverTemp;
+	UINT8		bFanFault;
+	UINT8		bProtected;
+	UINT8		bRectFail;
+	UINT8		bDC_Off;
+
+	UINT8		bDisCh_Err;
+	UINT8		bOn_Sleep;
+	UINT8		bPFC_Err;
+	UINT8		bInternalCommErr;
+	UINT8		bInternalDC_LowVolt;
+	UINT8		bDC_Shorted;
+
+	UINT8		bIsExisted;//本桩监控A、B枪所连接模块 存在标志
+
+	//通过计算看是否通信中断/**/
+	int			nCommFailTimes;
+	UINT8		bCommFail;
+	float		fAB_Volt;
+	float		fBC_Volt;
+	float		fCA_Volt;
+
+	UINT8		bStatCode[3];
+
+}RECT_RAW_DATA;
+
+//gs_CANComm.RectData.bStatCode[3]		告警位定义
+#define	RECT_STAT_CODE_0_ALM_BITs	0x2F	
+#define	RECT_STAT_CODE_1_ALM_BITs	0xBE
+#define	RECT_STAT_CODE_2_ALM_BITs	0x7F
+
+typedef struct tagRectGrp_Data
+{
+	int		nCommRectNum; //本组内在线模块个数/**/	
+
+	float		fOutVolt;
+	float		fOutCurr;
+
+	UINT8		bAllRectProtected;
+	UINT8		bAllRectFailed;
+	UINT8		bAllRect_Off;
+
+	//Calc最大电压，最小电压，最大电流/**/
+	float		fMax_OutVolt;
+	float		fMin_OutVolt;
+	float		fMax_OutCurr;
+	float		fMax_OutCurr_ring;
+	float		fRatedMaxCurr;
+	float		fRatedPower;
+
+
+	UINT8		u8IsNoNormalRect;		//本组无正常模块
+	UINT8		bIsAnyRectAlarm;		//本组某块存在告警  0-不存在 1-存在 仅用于显示,不影响充电
+
+}RECT_GRP_DATA;
+
+
+struct _RectUnitInfo
+{
+	//模拟量
+	float fOutCuur;
+	float fTempreture;
+	float fLimit;
+	float fOutVolt;
+	float fABVolt;
+	float fBCVolt;
+	float fACVolt;
+	unsigned char iPost;
+	
+	//状态量
+	unsigned char iOnOffStat;			//开/关机状态：   	  00H：开机，01H：关机
+	unsigned char iIsLimitStat;			//限流/不限流状态：     00H：限流，01H：不限流
+
+	//告警量
+	unsigned char iRectFaultALM;			//整流模块故障
+	unsigned char iRectProtectALM;			//模块保护（用01H表示故障）
+	unsigned char iFANFaultALM;			//风扇故障（用01H表示故障）
+	unsigned char iOverTempALM;			//模块过温（用01H表示故障）
+	unsigned char iLimitALM;			//模块限功率（用01H表示限功率）
+	unsigned char iACFailALM;			//模块交流停电（E1H表示交流停电）
+	unsigned char iCommFailALM;			//模块通讯中断（用E2H表示故障）
+	unsigned char iACUnderVoltlALM;			//模块交流欠压（用01H表示）
+};
+typedef struct _RectUnitInfo RECT_UNIT_INFO;
+
+struct _UART_RECT_INFO
+{
+	float fOutAverageVolt;
+	unsigned char iCommFailCount;
+	unsigned char iCommFailStat;
+	unsigned char iRectNum;
+	RECT_UNIT_INFO RectInfo[MAX_RECT_NUM];
+};
+typedef struct _UART_RECT_INFO UART_RECT_INFO;
+
+typedef struct tagCANCommData
+{
+	float fMaxOutVolt;				//系统过压点
+	float fMaxOutCurr;				//系统过流点
+
+	UINT8 u8GroupRectCMDIndex[_MAX_GRP_NUM];
+	UINT8 u8RectIndex;
+
+	UINT8 u8GroupRectOnOff[_MAX_GRP_NUM];
+	UINT8 u8GRP_WorkModeSet[_MAX_GRP_NUM];		//A0-正向 A1-反向
+
+	float fRect_GRP_NeedOutVolt[_MAX_GRP_NUM];
+	float fRect_GRP_NeedOutCurr[_MAX_GRP_NUM];
+
+    UINT8 nScanedRectNum ;
+	UINT8 nCommFailedNum;
+	
+
+	BYTE		bNeedReConfig;
+	BYTE		bySelfAddress; //本桩与整流模块通信时采用的地址，等于用户设置的桩号（gEvChargeInfo.bySelfAddress）减1再加上0xF0，
+							   //用于设置CAN3接收屏蔽码，范围0xF0~0xFF						
+
+	int			nOnlineTotalGrp; //實際在線的各種模塊的組數,必须为0,1,2
+
+	BYTE		byGrpIdx[_MAX_GRP_NUM];//真实的组号，等于用户设置的桩号gEvChargeInfo.bySelfAddress*2，用于环网时桩监控之间的通信，范围1~16
+	BYTE		bIsGrpExist[_MAX_GRP_NUM];//该组存在状态
+	BYTE		bIsInitClosed[_MAX_GRP_NUM]; //是否初始化关闭了该组模块
+	
+	int			nNotAccessbleCount[_MAX_GRP_NUM];
+	BYTE		bIsGrp_NotAvailable[_MAX_GRP_NUM];
+	/*环网 end*/
+	
+
+	/***/
+	HANDLE hMutexReadWriteCANCommData;
+
+	HANDLE hMutexWriteCAN3Port;
+
+	UINT8 u8IsAllCommFail;
+	UINT8 u8IsACOver;
+	UINT8 u8IsACUnder;
+	UINT16 u16AllCommFailResetDelay;	//秒
+	UINT16 u16RectCommPeriodResetDelay;     //分
+	UINT8 AddrInfo[mRECTNUM];			//属于A枪和B枪的模块其对应的 具体地址（模块自己排址所得地址）
+	int iCount[mRECTNUM];
+	RECT_RAW_DATA RectData[mRECTNUM+1];
+	RECT_GRP_DATA GrpData[_MAX_GRP_NUM+1];
+
+	CAN_RECT_FRAME_INFO	cmdInfos[_MAX_CAN_R_CMD +1];
+
+	OUTUCHAR_INTERFACE_PROC fMutexInit;
+
+	INUCHAR_INTERFACE_PROC						fInitRectData;
+	GET_CTRL_VOLT_CURR							fGetRectCtlVoltCurr;
+	SET_RECT_VOLT_CURR							fSetRectCtlVoltCurr;
+	GET_CTRL_ON_OF								fGetRectCtlStatus;
+	SET_CTRL_ON_OF								fSetRectCtlStatus;
+	GET_CTRL_ON_OF								fGetRectCtlMode;
+	SET_CTRL_ON_OF								fSetRectCtlMode;
+	INUCHARUCHAR_OUTUCHAR_INTERFACE_PROC		u8GetRectDigital;
+	GET_RECT_ANALOG								fGetRectAnalog;
+	InputMutilPara_Data_INTERFACE_PROC			fCtrlRectFunction;
+
+	RETURN_DATA_INTERFACE_PROC					fGetRectBarcode;
+	INUCHAR_OUTUCHAR_INTERFACE_PROC				fGetRectIDForShelf;
+}CANCommData_TypeDef;
+
+typedef struct tagCANTxData
+{
+	UINT32                             TxID;				//包头
+	UINT8                              DeviceNum;			//设备号
+	UINT8                              DSTAddress;			//目标地址
+	UINT8                              TxMsgType;			//命令码
+	UCHAR                              ModuleNum;			//发送模块个数
+	UCHAR                              isSend;				//0:不发送 0xff:始终发送 其他:发送几次
+	UCHAR                              chDelayTime;			//需要等待时间
+	UCHAR                              chRecvFrameNum;		//接收针数
+
+	INDOTYPES_INTERFACE_PROC          ModifyDeviceNumAndAddress;	
+	INUCHARP_INTERFACE_PROC			DataProc;				//发送数据填充
+	OUTUCHAR_INTERFACE_PROC           ModuleDeal;			//接收数据处理
+	IN8_OUTU16_INTERFACE_PROC         CANCounter;			//CAN收发计数
+}CANTxData_TypeDef;
+
+
+union _XXXUnionValue
+{
+	UINT32  u32Value;
+	UINT16  u16temp[2];
+	float	ftemp;
+	UCHAR	chtemp[4];
+};
+typedef union _XXXUnionValue	__XXX_UNION_VALUE;
+typedef	__XXX_UNION_VALUE		VAR_VALUE;
+/**********************************************/
+/*设置数据结构	8k */
+/************************************************/
+typedef union tagSetData
+{
+	struct
+	{
+		UCHAR	CfgCharData[4096];		/*字节型数据:4K bytes*/
+		float	CfgFloatData[1024];		    /*浮点数数据:4K bytes*/
+	}ArrayData;									          /*设置数据结构*/
+
+	struct sElemetData
+	{
+		/*4096个字节配置数据*/
+		/*1.char型系统配置数据*/
+		UCHAR	ucSysType;				/*序号:0,系统类型*/
+		UCHAR	ucSoftWareVersion[2];				/*序号:1-2,系统类型*/
+		UCHAR	ucSetDataVersion[2];				/*序号:3-4,系统类型*/
+		UCHAR	ucLoadDataSource;					/*序号:5,负载数据来源*/
+		UCHAR	ucAuxPowerType[ALL_GUN_NUM];		/*序号:6-7,辅助电源类型*/					
+		UCHAR	u8Data[4088];   /*序号:8-4095,系统类型*/
+		/*1024个浮点数配置数据*/
+		float  fBusVoltDelat[ALL_GUN_NUM];/*序号:0-1,枪1-2的母排电压测量误差范围*/
+		float  fBusCurrDelat[ALL_GUN_NUM];/*序号:2-3,枪1-2的母排电流测量误差范围*/
+		float  fReserve[996];/*序号:4-999,预留*/
+		
+		float  fCC2_Coeff_A[ALL_GUN_NUM];/*序号:1000-1001,枪1-2的CC2校准系数A*/
+		float  fVolt_Coeff_A[ALL_GUN_NUM];/*序号:1002-1003,枪1-2的CC2校准系数A*/
+		float  fReserve_Coeff_A[6];/*序号:1004-1009,预留*/
+
+		float  fCC2_Coeff_B[ALL_GUN_NUM];/*序号:1010-1011,枪1-2的CC2校准系数B*/
+		float  fVolt_Coeff_B[ALL_GUN_NUM];/*序号:1012-1013,枪1-2的CC2校准系数B*/
+		float  fReserve_Coeff_B[10];/*序号:1014-1023,预留*/
+	}NameData;						
+}SetData_TypeDef;						/*设置数据联合*//*16*192*/
+
+
+
+
+typedef struct tagSetDataExchangeInterface
+{
+  HANDLE                        hMutexReadWriteSetData;
+
+  SetData_TypeDef               SetData;
+
+  OUTUCHAR_INTERFACE_PROC          fInitMutex;
+  RETURN_DATA_INTERFACE_PROC    fGetSwitchName;
+  RETURN_DATA_INTERFACE_PROC	  fGetSetData;
+  RETURN_DATA_INTERFACE_PROC	  fSetSetData;
+  RETURN_DATA_INTERFACE_PROC	  fSetSetData1;
+  RETURN_DATA_INTERFACE_PROC	  fGetDefaultSetData;
+  RETURN_DATA_INTERFACE_PROC	  fSetDefaultSetData;
+  RETURN_DATA_INTERFACE_PROC    fDownLoadSetData;
+}SetDataExchangeInterface_TypeDef;
+
+
+extern SetDataExchangeInterface_TypeDef gSetDataInfo;
+
+#define FLOAT_RESERVE_MPPT  (sizeof(gSetDataInfo.SetData.NameData.float_reserve_MPPT)/4)
+
+enum DEBUG_SIG_DEF   //调测控制 0x00080BC0~0x0080BEF
+{
+	DEBUG_ONOFF = 0,		//调测控制 开关状态
+	DEBUG_MCCB_A, 			//调测控制 A枪接触器
+	DEBUG_BMS_12V_A,		//调测控制 A枪辅助电源
+	DEBUG_LOCK_A,			//调测控制 A枪锁
+	DEBUG_ALARM_LIGHT_A,	//调测控制 A枪告警灯
+	DEBUG_CHG_LIGHT_A,		//调测控制 A枪充电灯
+	DEBUG_RING_RELAY_A,		//调测控制 并机接触器
+	DEBUG_MCCB_B,			//调测控制 B枪接触器
+	DEBUG_BMS_12V_B,		//调测控制 B枪辅助电源
+	DEBUG_LOCK_B,			//调测控制 B枪锁
+	DEBUG_ALARM_LIGHT_B,	//调测控制 B枪告警灯
+	DEBUG_CHG_LIGHT_B,		//调测控制 B枪充电灯
+	DEBUG_RING_RELAY_B,		//调测控制 环网接触器
+	DEBUG_AC_FAN,			//调测控制 交流风扇
+	DEBUG_DC_FAN,			//调测控制 直流风扇
+	DEBUG_QUIT_DEBUG_EN,	//调测控制 退出使能
+	DEBUG_SIG_MAX
+};
+
+//TXY
+struct _UIRcvBuff
+{
+	volatile int  iBuffIdxNo;//注意0-->1--->2-->3--->4--->0 当得4的时候一加一取余就变为0了！
+	unsigned char byRcvState[UI_RCV_BUFF_MAX_NUM +1][MDB_BUFF_STAT_SIG_END];
+	unsigned char byRcvBuff[UI_RCV_BUFF_MAX_NUM +1][UI_RCV_BYTES_MAX_NUM];		//10命令最多可以设置6个寄存器。
+};
+typedef struct _UIRcvBuff  UI_RCV_BUFF;
+
+struct __stNetInfo
+{
+	UINT8 u8IP[6];
+	UINT8 u8Mask[6];
+	UINT8 u8Gateway[6];
+};
+typedef struct __stNetInfo ST_NET_INFO;
+
+
+
+
+	
+struct __IMIU_INFO
+{
+	UINT8 u8Reserved;
+	UINT8 u8QuickSmpIMIUFlag;								//TRUE 需要快采			FALSE 不需要快采
+	UINT8 u8InsltCheckByVolt;								//0 电阻不按电压来，  1绝缘下降电阻按电压来。 2-漏电流模式
+	UINT8 u8JYMAlmStatMask;									//绝缘板告警屏蔽	1屏蔽
+	float fJYMCurr[MAX_EMIU_NUM];
+	float fJYMVolt[MAX_EMIU_NUM];
+	float fJYMP2gVolt[MAX_EMIU_NUM];
+	float fJYMN2gVolt[MAX_EMIU_NUM];
+	float fJYMP2gResist[MAX_EMIU_NUM];
+	float fJYMN2gResist[MAX_EMIU_NUM];
+	UINT8 u8JYMAlmStat[MAX_EMIU_NUM];						//绝缘板告警	0x01告警，0x00正常
+	UINT8 u8JYMAction[MAX_EMIU_NUM];						//绝缘动作状态	0x02待机中，0x01检测中，0x00脱离
+	
+	//获取设置运行参数
+	float fRunJYMShunt_Coef[MAX_EMIU_NUM];					//	绝缘板分流器系数	选择哪种型号的分流器  如:500A/25mv
+	float fRunJYMCurr_CoefA[MAX_EMIU_NUM];					//	绝缘板分流器电流校准系数a
+	float fRunJYMCurr_CoefB[MAX_EMIU_NUM];					//	绝缘板分流器电流校准系数b
+	float fRunJYMVolt_CoefA[MAX_EMIU_NUM];					//	绝缘板母排电压采样校准系数a
+	float fRunJYMVolt_CoefB[MAX_EMIU_NUM];					//	绝缘板母排电压采样校准系数b
+	float fRunJYMAlm_Resist[MAX_EMIU_NUM];					//	绝缘告警阀值
+	UINT8 u8RunJYMCtrlStat[MAX_EMIU_NUM];					//	绝缘检测控制状态 
+													/****************************
+															0x03手动检测
+															0x02后台检测
+															0x01自动检测
+															0x00告警屏蔽
+													*****************************/
+	//float fSetJYMShunt_Coef[MAX_EMIU_NUM];					//	绝缘板分流器系数	选择哪种型号的分流器  如:500A/25mv
+	//float fSetJYMCurr_CoefA[MAX_EMIU_NUM];					//	绝缘板分流器电流校准系数a
+	//float fSetJYMCurr_CoefB[MAX_EMIU_NUM];					//	绝缘板分流器电流校准系数b
+	//float fSetJYMVolt_CoefA[MAX_EMIU_NUM];					//	绝缘板母排电压采样校准系数a
+	//float fSetJYMVolt_CoefB[MAX_EMIU_NUM];					//	绝缘板母排电压采样校准系数b
+	float fSetJYMAlm_Resist[MAX_EMIU_NUM];					//	绝缘告警阀值
+	UINT8 u8SetJYMCtrlStat[MAX_EMIU_NUM];					//	绝缘检测控制状态 
+															/****************************
+																	0x03手动检测
+																	0x02后台检测
+																	0x01自动检测
+																	0x00告警屏蔽
+															*****************************/
+	
+	//控制命令
+	UINT8 u8CTRLInsulationCMDFlag[MAX_EMIU_NUM];
+	UINT8 u8CTRLInsulationCMD[MAX_EMIU_NUM];			//0x02待机，0x01检测，0x00脱离
+
+	UINT8 u8InsltCommAlm[MAX_EMIU_NUM];					//绝缘检测板通信状态  TRUE 告警
+
+	UINT8 u8EarthFalt[MAX_EMIU_NUM];					//接地故障 TRUE 告警
+};
+typedef struct __IMIU_INFO stIMIU_Info;
+//stIMIU_Info.u8InsltCheckByVolt
+enum INSLT_CHK_MODE_Def
+{
+	INSLT_CHK_Mode_IMIU_Rpt_Alm = 0,   //由IMIU产生绝缘告警
+	INSLT_CHK_Mode_IMIU_Rpt_Volt,      //绝缘下降按电压来
+	INSLT_CHK_Mode_LeakageCurr,		//单枪霍尔漏电流模式
+};
+
+struct __WH_INFO
+{
+	UINT8 u8Reserved;
+	UINT8 u8WH_TYPE;					//0 直流表	1交流表
+	UINT8 u8WH_ALM_Mask;				//1 电表告警屏蔽
+	UINT8 u8WHCommAlm;
+	float fWHRealValue;					//电表实时 数值  也等于最后数值
+	float fWH_A_Volt;			
+	float fWH_B_Volt;
+	float fWH_C_Volt;
+	float fWH_A_Curr;			
+	float fWH_B_Curr;
+	float fWH_C_Curr;
+	float fWHStartValue;				//电表开始充电数值！
+	float fWHStartTempValue;
+	float fACWhCoef;					//交流表 互感器  系数
+
+	float fMaxWHRealValue;	
+};
+typedef struct __WH_INFO stWHInfo;
+
+extern NOINIT stWHInfo gWH_Info[ALL_GUN_NUM];
+
+//gEvChargeInfo.u8EnGunOverTemDi
+enum  GUNOVERTEMP_PROT_def
+{
+	GUN_OVERTEM_NOPROT = 0,
+	GUN_OVERTEM_ST,		//停充
+	GUN_OVERTEM_LMTCURR,  //限流
+};
+struct _EVChargeInfo
+{
+	
+
+
+
+	HANDLE hMutexWriteEVInfo;
+	UINT8 u8TEST_MODE_FLAG;
+	UINT8 u8RcvYdn23Flag;
+	//这个结构体中的参数变量完全没必要定义了后续再优化，8K的大池子足以了，后边可以继续优化。
+	//这样GET  和 SET 写法也会简单得多，最后找问题 按地址去查就好了！这里要感谢毛思想！
+	//定义一大片空间 做一个MYLLOC函数！
+/*************************************************	参数！		******************************************************/
+	UINT32 u32PowerOnTimes;
+
+
+	UINT8 u8EVCode[EV_STATION_CODE_NUM];
+	UINT8 u16UserPassword[4][EV_OFF_LINE_PSWD];
+	UINT8 u8_A_ForceVer2011;
+	UINT8 u8_B_ForceVer2011;
+
+	UINT8 u8NET_Mask;								//后台屏蔽功能	0 不屏蔽  1屏蔽
+	UINT8 u8NET2_Enable;		
+	UINT8 u8NET_OffLine_Charge_Enable;				//0 离线充电		1需要网络通信
+	float fMaxOffLineTime;							//最大离线时长	单位秒！
+	UINT32 u32OffLineTimeCount;							//离线计数器
+	UINT8 u8SelfTestEnable_1;
+	UINT8 u8SelfTestEnable_2;
+	UINT8 u8MCCBOnCheckEnable_1;
+	UINT8 u8MCCBOnCheckEnable_2;
+	UINT8 u8OutOverVoltEnable_1;
+	UINT8 u8OutOverVoltEnable_2;
+	UINT8 u8_B_LOCKType;						//B 电子锁类型
+	UINT8 u8_A_LOCKType;						//A 电子锁类型
+	UINT8 u8LOCK_A_DIType;						//A 锁反馈信号类型，
+	UINT8 u8LOCK_B_DIType;						//B 锁反馈信号类型，
+	UINT8 u8CC1CheckEnable_1;
+	UINT8 u8CC1CheckEnable_2;
+	UINT8 u8EV_StartTemp;						//起转温度
+	UINT8 u8EV_StopTemp;						//停转温度
+	float fMaxOutCurr;
+	float fMinOutVolt;
+	float fMaxOutVolt;
+	float fEV_BattVolt_1;						//电池1 电池电压
+	float fBattVolt_1CoefA;						//霍尔1校准系数a
+	float fBattVolt_1CoefB;						//霍尔1校准系数b
+	float fEV_BattVolt_2;						//电池2 电池电压
+	float fBattVolt_2CoefA;						//霍尔2校准系数a
+	float fBattVolt_2CoefB;						//霍尔2校准系数b
+	float fCC1_1Coef_A;
+	float fCC1_1Coef_B;
+	float fCC1_2Coef_A;
+	float fCC1_2Coef_B;
+	UINT8 u8BrushFactorType;					//刷卡机类型  0 创自  1铭特
+	UINT8 u8BRUSH_ALM_Mask;
+	UINT8 u8SPDAlmMask;							//防雷告警屏蔽	1屏蔽
+	UINT8 u8DoorAlmMask_1;
+	UINT8 u8DoorAlmMask_2;
+	UINT8 u8EPOAlmVltLEVEL;				
+	UINT8 u8PolarityAlmMask_1;					//电池反接板告警屏蔽	1屏蔽
+	UINT8 u8PolarityAlmMask_2;					//电池反接板告警屏蔽	1屏蔽
+	UINT8 u8PWMPolarityCover;
+	UINT32 u32_A_CTS_DB_T1;
+	UINT32 u32_A_DB_DB_T2;
+	UINT32 u32_B_CTS_DB_T1;
+	UINT32 u32_B_DB_DB_T2;
+	UINT32 u16SetBCLTimeOutVal_1;
+	UINT32 u16SetBCLTimeOutVal_2;
+	UINT32 u16SetBRMTimeOutVal_1;
+	UINT32 u16SetBRMTimeOutVal_2;
+	UINT32 u16SetBCSTimeOutVal_1;
+	UINT32 u16SetBCSTimeOutVal_2;
+	float fRectLoadStartTime;
+	float fSetLimitMaxOutCurr_1;
+	float fSetLimitMaxOutCurr_2;
+	UINT8 u8HasElec_ALock;						//A 枪是否存在电子锁
+	UINT8 u8HasElec_BLock;						//B 枪是否存在电子锁
+	UINT8 u8SetCalcMoneyType;					//计费方式	0 电表方式	1自己计算
+	float fSysSetOverVolt;						//模块默认过压点
+	UINT32 u32NET_PORT;							//后台端口号
+	UINT32 u32NET_PORT2;							//后台端口号
+	UINT8 u8IP_1;
+	UINT8 u8IP_2;
+	UINT8 u8IP_3;
+	UINT8 u8IP_4;
+	UINT8 u8IP_5;
+	UINT8 u8IP_6;
+	UINT8 u8Mac[6];
+	UINT8 u8Gateway[6];
+	UINT8 u8Subnetmask[6];
+	UINT8 u8PowerStarIP[6];
+	UINT8 u8PowerStar2IP[6];
+	UINT8 u8BMSPowerType[ALL_GUN_NUM];//用户设置默认的BMS电源类型
+	UINT8 u8UserSelectBMSPowerType[ALL_GUN_NUM];//界面设置时用户选择的BMS电源类型，必须插枪时选择，拔枪后回复默认值
+	UINT8 u8DisplayBMSPowerType[ALL_GUN_NUM];//界面显示用的BMS类型
+
+	UINT8 u8DNSIp[6];
+	UINT8 u16ServerName[32];
+	UINT8 u8RemoteServerIsDomainName;						
+/*********************************************	END  参数数值		********************************************************/
+
+
+
+
+
+/*************************************************	内存数值！		******************************************************/
+	UINT8 u8_Charge_CMD[ALL_GUN_NUM];
+	//UINT8 u8_Charge_CMD[GUN_NO_B];
+
+	UINT8 u8_StartReason[ALL_GUN_NUM];
+	UINT8 ucVINStartFlag[ALL_GUN_NUM];			//VIN开始标志
+	UINT8 u8EEPROMNeedRefreshVIN[ALL_GUN_NUM];
+	UINT8 u8VINAccoutCheck[ALL_GUN_NUM];
+
+	UINT8 u8TestMode[ALL_GUN_NUM];
+	UINT8 u8_AutoTestStep;   //
+	UINT8 u8_ManualTestStep;   //
+	UINT8 u8_AdjustResult[2];
+
+	UINT8 u8CC1_CH_No;
+	UINT8 u8EV_SpearPst[ALL_GUN_NUM];			//充电枪位置	0x02在位按键，0x01在位，0x00不在位	靠霍尔采样实现的
+
+	float fCC1_1VoltVal;						//CC1 1枪电压
+	float fCC1_2VoltVal;						//CC1 2枪电压
+	float fCC1_Set_B_Volt;
+	float fCC1_Set_A_Volt;
+
+	float fBattSet_A_Volt;						//SetAVolt
+	float fBattSet_B_Volt;						//SetBVolt
+
+	UINT8 u8Batt_1VoltSet_A_Flag;
+	UINT8 u8Batt_2VoltSet_A_Flag;
+	UINT8 u8Batt_1VoltSet_B_Flag;
+	UINT8 u8Batt_2VoltSet_B_Flag;
+
+	float fWH_StarVal[ALL_GUN_NUM];
+	//float fB_WH_StarVal;
+	//float fA_WH_EndVal;
+	//float fB_WH_EndVal;
+	//float fOutEnergyByWH[ALL_GUN_NUM];			//充电电量  By 电表
+	float fBattVoltRead_A_Volt;					//A点读取数据
+	float fBattVoltRead_B_Volt;					//B点读取数据
+
+
+	double fOutEnergyByCal[ALL_GUN_NUM];			//充电电量  By 计算
+	double fTotalServiceMoney[ALL_GUN_NUM];			//总的云杉服务费
+	float fEnergyByTIME[ALL_GUN_NUM][48+1];			//时段电量
+	float fMoneyByTIME[ALL_GUN_NUM][48+1];				//时段电量
+	float fEnergyLastOfThisTime[ALL_GUN_NUM];		//保存由于时间突变导致的电量丢失
+	UCHAR ucTimePhase[ALL_GUN_NUM];
+	UCHAR ucTimePhase_InitFlag[ALL_GUN_NUM];		//分时段计费初始化标志
+	UCHAR ucRingCostDelay[ALL_GUN_NUM];			//环网延时计费标志
+	float fWHStartTempValue[ALL_GUN_NUM];
+	float fTotalOutEnergy[ALL_GUN_NUM];
+	float fCostMoney[ALL_GUN_NUM];
+	float fCardLeaveMoney[ALL_GUN_NUM];			//卡余额
+
+	UCHAR ucPreChgOkFlag[ALL_GUN_NUM];			//预充成功标志
+
+	UINT8 u8Gun_Alm[ALL_GUN_NUM];								//系统告警！
+	UINT8 u8SysAlm;								//系统告警！
+	UINT8 u8NetCommAlm;
+	UINT8 u8TelaidianHostCommAlm;
+	UINT8 u8SPDAlm;								//交流防雷器告警
+	UINT8 u8EPOAlm;
+	UINT8 u8DoorAlm;							//门禁告警  打开就不能充电，并且告警。 NC
+	UINT8 u8ElecLock_AAlm;						//A 电子锁告警
+	UINT8 u8ElecLock_BAlm;						//B 电子锁告警
+	UINT8 u8Polarity_A_Alm;
+	UINT8 u8Polarity_B_Alm;
+	float fEV_InterTemp;						//IMCU1外接温度
+	
+	UINT8 u8SysFanALM;							//系统风扇告警！
+	UINT16 u8SysFanSpeed;						//系统风扇转速
+	double fBMS_ChargeTime[ALL_GUN_NUM];		//单位分钟					
+	struct tm  StartTime[ALL_GUN_NUM];
+	struct tm  ENDTime[ALL_GUN_NUM];
+	
+	struct tm  AB_Temp_CostTime;				//刷卡  和 06收到后台开始充电
+	struct tm  CostTime[ALL_GUN_NUM];			//刷卡  和 06收到后台开始充电
+
+	INT32 iPageTimeOut;
+	UINT8 u8InputKEY[HMI_KEY_MAX_NUM + 10];
+	UINT8 u8InputKEY_Idx;
+
+	UINT8 u8GunSelect;					//选中哪只枪 0-未选 1-A枪 2-B枪
+	UINT8 u8GunSelectTimeOut;			//选枪超时 返回到未选中   单位:秒
+
+	UINT8 u8IsOptionA;					//只做临时变量
+	UINT8 u8IsOptionB;					//只做临时变量
+	UINT8 u8ChargeMode[ALL_GUN_NUM];	//BMS	SOC		ENERGY		TIME
+	float fChargeParam[ALL_GUN_NUM];
+
+	//并机 逻辑		！！
+	UINT8 ParallelMode;					//0 独立模式	1功率电流模式	2轮充模式	3插枪即充模式
+	UINT8 A_IsParallel;					//把 B 模块用进来了。
+	UINT8 A_MccbOwner;
+	UINT8 B_MccbOwner;
+	UINT8 RectOwner[ALL_GUN_NUM];
+	UINT8 B_IsParallel;					//把 A 模块用进来了。
+	UINT8 u8BrushSem;					
+	UINT8 u8A_NoCardStopSem;
+	UINT8 u8B_NoCardStopSem;
+
+	UINT8 u8A_NetStartSem;
+	UINT8 u8B_NetStartSem;
+
+	INT32 i32_ParallSem;
+
+
+
+/************************************************************************************
+			外接指的是IMCU1X1板信号，外扩指的是IMEU1板信号
+			Ex1 为外接			Ex2为外扩
+**************************************************************************************/
+	UINT8 u8EV_InterDI_COM;				//1 -- 4	4个DI  RS232-2接口测试状态	RS232-3接口测试状态	CAN接口测试状态	485接口测试状态
+	UINT8 u8EV_Ex1DI;					//1 -- 8	外接8个DI
+	UINT8 u8EV_Ex2DI;					//1 -- 4	外扩4个DI   5-8 板内5--8DI
+	UINT8 u8EV_InterDO;					//1-6		6个DO
+	UINT8 u8EV_InterLVD;				// 1-5		1\2\3  3个板内功率DO	 1动作 0正常
+	UINT8 u8EV_DO9_16;
+	UINT8 u8Fan1Fan2Stat;				//低BIT0 为风扇1   BIT1 位风扇2
+	UINT16 u16EV_Ex2DO;					//1-16		16个DO
+	float fEV_Ex2Temp;					//IMEU1外接温度
+
+	UINT8 u8FloatParamUpDataCount;
+	UINT8 u8CharParamUpDataCount;
+	
+	UINT16 u16ALMRECTErrorCode;			//模块故障码
+
+	UINT8 u8CC1_1Set_A_Flag;
+	UINT8 u8CC1_1Set_B_Flag;
+	UINT8 u8CC1_2Set_A_Flag;
+	UINT8 u8CC1_2Set_B_Flag;
+
+	UINT8 u8_B_CST[8];
+	UINT8 u8_A_CST[8];
+
+	UINT8 u8_B_CSD[8];
+	UINT8 u8_A_CSD[8];
+
+	UINT8 u8_B_CEM[8];
+	UINT8 u8_A_CEM[8];
+
+	UINT8 u8BMSCommErrReason;
+
+	UINT8 u8BUSVoltAbortALM;
+	UINT8 u8RelayAdhesionALM;				//继电器粘连
+	UINT8 u8BMSAbortStopALM;		
+	//UINT8 u8CellVoltAbortStopALM;			//0 无告警   1 连续500次   2 警示
+
+	HANDLE hMetex_FLASH;
+	HANDLE hMetex_ALM;
+	HANDLE hMetexNet_R;
+	HANDLE hMetexNet_W;
+	ST_NET_INFO stDHCPNetInfo;
+
+	
+
+	//struct tm  PowerOnTime;						//最后一次启动时间
+
+	UINT32 u32ChargeFinishCode;					//结束充电原因编码
+
+	UINT32 u32ChargeFailtReason;				//失败原因
+
+	UINT8 u8CLRFaultLog;
+	
+	UINT8 u8SysAlmNoteVal;						//仅限在告警页面
+
+	UINT32 u32FactorNumber;
+
+	UINT8 u8CTRLEx2DOCMD;
+	UINT8 u8CTRLEx2DOCMDFlag;
+	UINT8 u8CTRLInterDOCMDFlag_2;
+	UINT8 u8CTRLEx1DOCMDFlag;
+	UINT8 u8CTRLEx1DOCMD;
+	UINT8 u8CTRLInterDOCMD;
+	UINT8 u8CTRLInterDOCMDFlag;
+	UINT8 u8CTRLInterDOCMD_B;
+	UINT8 u8CTRLInterDOCMDFlag_B;
+
+	UINT8 u8NetLogInFails;
+	UINT8 u8Sign_Result;				//登录结果
+	UINT8 u8RcvRunModeFlag;
+	UINT8  u8HeartBeatTimeOutParam;		//心跳超时次数	未使用！
+	UINT8 u8HeartBeatIntervalParam;		//未使用！
+	INT32 i32HeardBeat_Period;
+	INT32 u8HeardBeatTimes;
+	INT32 i32Sign_Interval;
+	INT32 i32HeardBeat_Count;
+	INT32 i32HeardBeat_TimeOutCount;
+	INT32 i32FixedPeriodCount;
+	UINT8 u8CommMode;					//0应答模式  1上报模式
+	UINT8 u8FixedPeriod;
+	UINT8 u8EherSem[ETHER_SEM_NUM];		//bit0----bit3表示哪种信号需要发送		bit4--bit6表示哪个枪	0 表示充电机	1 表示1枪	2表示2枪
+
+
+	UINT32 u32FLASHUnRptNum;			//FLASH 中未上报的记录个数！如果太多了，存不下了就不要进行充电了！
+	
+	UINT8 u8LogInMode[ALL_GUN_NUM];				//#define EV_ENTER_IC_CARD 1		#define EV_ENTER_APP 2		#define EV_ENTER_admin 3	
+	INT32 i32_A_CreateRecordDelay;
+	UINT32 u32_A_StopCode;					//充电结果上报
+	
+	INT32 i32_B_CreateRecordDelay;
+	UINT32 u32_B_StopCode;						//充电结果上报
+	INT32 i32_A_PageErrDelay;
+	INT32 i32_B_PageErrDelay;
+	UINT8 u8PSWD_0x70_Flag;
+
+	//float fCARDLeaveMoney;
+	//UINT8 u8CARD_Info_Result;
+
+
+	INT32 i32_GetRecordDelay;					//刚上电 会轮询，或
+	UINT8 u8SendRecordSem[2];
+	UINT16 u16SendRecordIdx[2];
+	UINT8 u8IsRecordSending;					//是否正处理发送充电记录	
+	INT32 i32Send77_78DataInterval;
+	UINT8 u8Ether_77_78_ErrTimes;
+	UINT8 u8IsEtherStep0X77RecordFinish;
+	UINT8 u8IsEther0X78RecordFinish;
+
+	UINT8 u8HardwareVer[2];
+
+	UINT16 u16_A_PageResultDelay;		//A结算页面 停留时间
+	UINT16 u16_B_PageResultDelay;		//B结算页面 停留时间
+
+	/*环网*/
+	BYTE		bySelfAddress; //本桩地址,用户设置的桩号 范围1~16  --lkf20180818 A枪在环网中的序号
+	BYTE		bySelfAddress_Bak; //本桩地址，备份一遍，用于判断是否发生变化
+	ULONG		nTotalRingStub;//所有环网桩数		--lkf20180818 在环网中的枪总数
+	ULONG		nTotalRingStub_Bak;//所有环网桩数，备份一遍，用于判断是否发生变化
+	UCHAR		u8IsRingEnabled;
+	//BOOL		bIsRingEnabled;//根据配置是否开启环网/**/
+	/*环网 end*/
+
+	UCHAR		u8IsSingleGunMode;			// 0-双枪模式 1-单枪模式
+	float		fContactorShortThreshold;	// 2015自检期间 判断汽车或桩接触器粘连时的电压阈值
+
+	UCHAR		u8EnGunOverTemDi;			// 枪过温DI使能 0-禁止 1-使能
+	UCHAR		u8GunOverTemDiAlmStatCfg;	// 枪过温DI告警状态  0-断开告警 1-闭合告警
+	float		fGunOverTemLmtCurrRatio;	// 枪过温时限流百分比例 %
+	float		fGunOverTemIntervalTime;	// 枪过温时限流处理周期 分钟  即限流后间隔多少分钟后再检测有无降温，若有则继续回限
+	UINT8		u8GunOverTemAlm[ALL_GUN_NUM]; //枪过温告警状态
+	UINT16		u16GunOverTemLmtCurrDelay[ALL_GUN_NUM]; //枪过温限流处理间隔延时 min
+	float		fGunOverTemLmtCurrMax[ALL_GUN_NUM];  //过温限流后最大限流值
+	UINT8		u8GunOverTemLmtCurrStep[ALL_GUN_NUM];  ////过温限流后最大限流值标志 =1 表示在限流阶段 =2 表示限过流后放开过程
+
+	float		fNowRectCtrlOutCurrent[ALL_GUN_NUM]; //当前实际下发给本枪所有模块（包括并机模块）的控制输出电流，用于显示。仅充电期间有效
+
+	UINT8		u8ShuimuAutoEndSoc;					//水木充电自动结束SOC
+	UINT8		u8FanMaxSpeed;						//风扇最高转速
+	UINT8		u8VinChgEn;
+	UINT8		u8ButtonChgEn;
+	UINT8		u8ChgModeSelEn;
+
+	UINT8		u8StChgByOverVoltOrCurr_Source;	//充电期间过压或过流停充判断的电压或电流来源 0-桩采集  1-BMS上报
+
+	float		fBattOverVoltValue[ALL_GUN_NUM][3];  //记录过压或过流时 测量值、需求值、上限值
+
+
+	UINT8		u8Is_PUTIAN_V15[ALL_GUN_NUM];
+
+	UINT8		u8DebugSig[DEBUG_SIG_MAX];		//Topway屏上定义的调测信号
+	UINT8		u8VinWaitHostConfirmTimeout;		//VIN码检查验证超时计时
+	UINT8		u8VinVerifyStat;					//VIN码验证状态 - 用于界面提示
+	UINT8		u8VinVerifyCtrl[2];					//VIN码验证控制
+	UINT8		u8VinCode[17];
+	UINT8		u8VinNetVerifyInterval;				//VIN码后台验证间隔延时
+	UINT8		u8GunASetQrCode[128+1];				//手动设置二维码
+	UINT8		u8GunBSetQrCode[128+1];				//手动设置二维码
+
+	float		fDCMeterRatio;
+	UINT8       u8InsulationAlm;					//通过漏电霍尔检测绝缘告警
+	UINT8       u8InsulationAlmDelay;				//通过漏电霍尔检测绝缘告警延时
+	UINT8		u8AdjustHall2Flag;
+	UINT8		u8AdjustHall2Flag_2;
+	UINT8		u8AdjustHall2Result;	 // 1-成功 2-失败 3-校准中 0-未启动
+	float		fHallVolt;
+	float		fHallVolt_Zero;
+	float		fHallVoltK;						//霍尔校准系数K
+	float		fInsulationAlmCoeff;
+
+	UINT8       Server2_StationID[16];			//连接服务器2的桩号  gs_EthAppCommMng.Server2_StationID
+
+	UINT16		u16GunNoCurrEndDelay[ALL_GUN_NUM];	//充电无电流
+
+	UINT8		u8ACInputContactorOpenDelayCfg;	//待机空闲超过此规定值则需要关交流接触器以节省待机功耗 0-不关闭 1~255分钟
+	UINT16		u16ACInputContactorDisconCnt;		//延时计时器  分钟
+	UINT8		u8ACInputContactorCtrlStat;		//交流接触器控制状态
+	UINT8		u8ACInputContactorCloseSampDelay;//交流接触器闭合后增加一点延时后再去采集
+	UINT8		u8ACInputContactorCloseAlmDelayFlag;//交流接触器闭合后增加一点延时后再去判断告警
+
+	UINT8		u8DoorOpenDisconACInput;
+	UINT8		u8DoorOpenDisconACInput_Flag;
+	UINT8		u8DoorOpenDisconACInput_Delay;
+
+	UINT8	u8UserSetBMSPower;
+	UINT8	u8DisplayStopKey;
+	UINT8	u8OrderChargeEnable;
+
+};
+typedef struct _EVChargeInfo EV_CHARGE_INFO;
+
+#define Independent_Mode			0
+#define Parallel_Mode				1
+#define TwoGun_Mode					2
+
+
+#define NO_USER_MODE				0
+#define USER_TEST_MODE				1	
+#define USER_AGING_MODE				2	
+#define USER_BMS_MODE				3	
+#define USER_SOURCE_MODE			4
+//此结构体不要超过250字节。否则需要重新规划!
+struct ChargeRecordFlah
+{
+	UINT8 u8GunType;				    //1 充电标准				1		
+	UINT8 u8GunNum;						//2 测试记录序号			1		
+	UINT8 u8Reserve;					//3测试记录序号				1		
+	UINT8 u8EVSerialNum[32];			//3 测试机柜序列号			32		34
+	float fUserSetVolt;					//4 用户设置的充电电压		4		39
+	float fUserSetCurr;					//5 用户设置的充电电流		4		43
+	UINT16 u16UserSetTime;				//6 用户设置的充电时长		2		45
+	float fEVOutputMaxVolt;				//7 桩上报的充电电压最大值	4		49
+	float fEVOutputMinVolt;             //8 桩上报的充电电压最小值	4		53
+	float fEVOutputMaxCurr;				//9 桩上报的充电电流最大值	4		57
+	float fEVOutputMinCurr;				//10桩上报的充电电流最小值	4		61
+	float fMeasuerMaxVolt;				//11 工装测量最大电压		4		65
+	float fMeasuerMinVolt;				//12 工装测量最小电压		4		69
+	float fMeasuerMaxCurr;				//13 工装测量最大电流		4		73
+	float fMeasuerMinCurr;				//14 工装测量最小电流		4		77
+	float fCC2Volt;						//15 工装测量的CC2电压		4		81
+	float fBMSVolt;						//16工装测量的辅助源电压	4		85
+	UINT16 u16TestTime;					//17 老化实际测试时间		2		87
+	UINT8 u8StartTime[7];				//18 老化开始时间			7		94
+	UINT8 u8EndTime[7];					//19 老化结束时间			7		101
+	UINT8 u8TestResult;					//20 老化测试结果			1		102
+	UINT8 u8TestFailReason;             //21 老化测试失败原因		1		103	
+};
+typedef struct ChargeRecordFlah  __CHARGE_RECORD;
+struct _ChargeCtrlInfo
+{
+	UCHAR	ucUserSelectMode[ALL_GUN_NUM];   //用户选择进入模式
+	UCHAR	ucUIStartChargeCMD[ALL_GUN_NUM]; //界面控制启动命令
+	UINT8	ucCtrlCmdState[ALL_GUN_NUM];		//实际启动命令状态
+	UINT8	u8BMSPowerStep[ALL_GUN_NUM];  // 1:第一次检测  2：第二次检测 0:不检测
+	UINT8   u8BMSPowerSet[ALL_GUN_NUM];
+	UINT8	u8BMSPoweState[ALL_GUN_NUM];  // 0:正常  1：失败
+
+	float  fUserSetVolt[ALL_GUN_NUM];
+	float  fUserSetLoadCurr[ALL_GUN_NUM];
+
+	UCHAR  ucAgingState[ALL_GUN_NUM];   //老化步骤
+	UINT16 u16AgingCount[ALL_GUN_NUM]; //老化计时
+	UINT16 u16AgingTime[ALL_GUN_NUM];    //用于老化的测试时长
+	UINT16 u16AgingFailCount[ALL_GUN_NUM];    //用于老化的测试时长
+
+	float  fBMSRequireVolt[ALL_GUN_NUM];
+	float  fBMSRequireCurr[ALL_GUN_NUM];	
+	float  fEVOutVolt[ALL_GUN_NUM];
+	float  fEVOutCurr[ALL_GUN_NUM];
+	float  fEVMaxVolt[ALL_GUN_NUM];
+	float  fEVMaxCurr[ALL_GUN_NUM];
+
+	UINT16  u16EVCMDGet[ALL_GUN_NUM];
+	UINT16  u16BMSCMDSend[ALL_GUN_NUM];
+	UCHAR  ucStopReason[ALL_GUN_NUM];
+	UCHAR  ucBMSPhase[ALL_GUN_NUM];
+	UCHAR  ucVIN[ALL_GUN_NUM][17];
+
+	UCHAR  ucGBTProtocolType[ALL_GUN_NUM];  //0:2011  1:2015
+	UCHAR  ucStopDelayCount[ALL_GUN_NUM];
+
+	UINT8 u8ChargeState[ALL_GUN_NUM];//0:启动充电 ，1 正在充电， 2充电完成， 3充电失败
+	UINT8 u8GetVoltCurrCount[ALL_GUN_NUM];
+	float  fActualVoltBack[ALL_GUN_NUM];
+	float  fActualCurrBack[ALL_GUN_NUM];
+	float  fEVOutVoltBack[ALL_GUN_NUM];
+	float  fEVOutCurrBack[ALL_GUN_NUM];
+	UINT16 u16StartCount[ALL_GUN_NUM];      //当启动延时>30S后还没有达到输出电压和电流，则启动失败
+	UCHAR  ucVoltCurrOKCount[ALL_GUN_NUM]; //0:fail >1:ok
+
+	UCHAR  ucEVCode[ALL_GUN_NUM][22];
+	UCHAR  ucScanEVCodeNumber[ALL_GUN_NUM];
+
+	UCHAR  ucAgingRecordState[ALL_GUN_NUM];  // 0:未开始， 1，开始（说明已经开始记录） 2结束
+	UCHAR  ucTestRecordState[ALL_GUN_NUM];  // 0:未开始， 1，开始（说明已经开始记录） 2结束
+	 __CHARGE_RECORD stAgingRecord[ALL_GUN_NUM];
+	
+	 
+	 UCHAR ucTestGunNum[ALL_GUN_NUM];
+	 UCHAR ucBMSProtocolType[ALL_GUN_NUM];//0:GBT, 1CCS 2CHAdeMo
+
+	 UCHAR ucSourceCtrlCmd[ALL_GUN_NUM]; //0:停止输出   1开始输出
+	 UCHAR ucRectWorkMode[ALL_GUN_NUM];
+	 UCHAR ucParallelMode[ALL_GUN_NUM];
+	
+	UINT16 u16SendHeadFrameCount;
+	UINT16 u16SendMultiFrameCount;
+	UINT16 u16SendVBICount;
+	UINT16 u16SendBRMCount;
+	UCHAR  ucInitFlag;        //1:初始化 0：不初始化
+	UCHAR  ucVoltCount;
+	UINT16 u16ChargeCount;//充电计时
+	UCHAR  ucEmergencyState;
+	UCHAR  ucInsulationVoltCheckFlag[ALL_GUN_NUM];
+	UINT16 u16PutResOnBusCount[ALL_GUN_NUM];	 //0:不投 >1：:投入
+	UINT16 u16InsulState[ALL_GUN_NUM];    //0:正在检测中，1：绝缘检测正常 2：绝缘异常
+	UINT16 u16FaultStep[ALL_GUN_NUM];
+	UCHAR  ucStepRTN[ALL_GUN_NUM];
+	UCHAR  ucTestModeCMD;   //0：不发送命令  >1：开始发送进入测试模式命令    
+	UCHAR  ucInTestMode;	//0: 正常模式    1：测试模式
+	UCHAR  ucTestStep;
+	UCHAR  ucTestModeResult;
+	UCHAR  ucGunLinkResult; 	//0:正在检测 1：成功  2：失败
+	UCHAR  ucGunLockResult; 	//0:正在检测 1：成功  2：失败
+	UCHAR  ucTempResult;		//0:正在检测 1：成功  2：失败 
+	UCHAR  ucRectResult;		//0:正在检测 1：成功  2：失败 
+	UCHAR  ucContactorResult;   //0:正在检测 1：成功  2：失败 
+	UCHAR  ucInsulationResult;  //0:正在检测 1：成功  2：失败 
+	UCHAR  ucVoltMeasureResult;
+	UCHAR  ucCurrMeaseruResult;
+	UCHAR  ucMeterVoltResult;
+	UCHAR  ucMeterCurrResult;
+	UCHAR  ucFanSpeedResult;
+	UCHAR  ucHallVoltAdjustResult;
+	UCHAR  ucResistanceResult;
+	UCHAR  ucCardReaderResult;
+	UCHAR  ucBMSPowerResult;
+	UCHAR  ucSPDAlarmResult;
+	UCHAR  ucEPOStartResult;
+	UCHAR  ucEPOResult;
+
+	UCHAR  ucContactorCount;
+	float  fCC1Volt;
+	float  fEVTemp;
+	float  fEVOutPutVolt;
+	float  fEVOutPutCurr;
+	float  fMaxDeltaVolt;
+	float  fMaxDeltaCurr;
+	float  fPToGRes;
+	float  fNToGRes;
+	UCHAR  ucFaultReason;  
+	float  fEVHallVolt;
+	float  fDCMeterVolt;
+	float  fDCMeterCurr;
+	float  fMeterMaxDeltaVolt;
+	float  fMeterMaxDeltaCurr;
+	UINT16 u16FanSpeed[2];
+	float  fHallVoltOld[2];
+	float  fEVOutPutVoltAdjust[2];
+	float  fHallVoltOldK;
+	float  fHallVoltOldB;
+	float  fHallVoltCalK;
+	float  fHallVoltCalB;
+	float  fHallVoltK;
+	float  fHallVoltB;
+	float  fBMSPowerLastStep;
+	UCHAR  ucResistanceFlag;
+	UCHAR  ucCardReaderFlag;
+	UCHAR  ucBMSPowerAutoStep;
+	UCHAR  ucSPDAlarm;
+	UCHAR  ucRectAlarm;
+
+	UINT16 ucTimecount;
+	UINT16 u16EVCMDInternal[EV_CMD_SUM][ALL_SUM];//标准值，最大值，最小值，上次时间点
+
+	UCHAR  ucInsulEnd;
+	UCHAR  ucRectNum;
+	float  fTemp;
+	INT16 i16_CML_CTS_TimeOUT;
+	INT32 u16_BRM_SendCount;			//控制BRM 发送周期
+	INT32 u16_BRM_SendDelay;			//延时发送BRM时间
+	INT32 u16_BCP_Muti_ACK_Count;			      //控制BCP 发送周期
+	INT32 u16_BCP_SendCount;			//控制BCP 发送周期
+	INT32 u16_BCP_SendDelay;			//延时发送BCP时间
+	INT32 u16_BCP_STOPSend;				//停止发送BCP时间
+
+	INT32 u16_BRO_SendCount;			//控制BRO 发送周期
+	INT32 u16_BRO_SendDelay;			//延时发送BRO时间
+	INT32 u16_BRO_STOPSend;				//停止发送BRO时间
+
+	INT32 u32_BCL_SendCount;			//控制BCL 发送周期
+	INT32 u32_BCL_SendDelay;			//延时发送BCL时间
+	INT32 u16_BCL_STOPSend;				//停止发送BCL时间
+
+	INT32 u32_BSM_SendCount;			//控制BSM 发送周期
+
+	INT32 u16_BST_SendCount;			//控制BST 发送周期
+	INT32 u16_BST_SendDelay;			//延时发送BST时间
+	INT32 u16_BST_STOPSend;				//停止发送BST时间
+
+	INT32 u16_BSD_SendCount;			//控制BST 发送周期
+	INT32 u16_BSD_SendDelay;			//延时发送BST时间
+	INT32 u16_BSD_STOPSend;				//停止发送BSD时间
+
+	INT32 u32_BCS_SendCount;			//控制BCS 发送周期
+	INT32 u32_BCS_SendDelay;			//延时发送BCS时间
+	INT32 u16_BCS_STOPSend;				//停止发送BCS时间
+
+	INT32 u16_CRO_TimeOUT;				//控制CRO 发送周期
+	INT32 u16_CCS_TimeOUT;				//CCS Time OUT
+	INT32 u16_CST_TimeOUT;
+	INT32 u16_CSD_TimeOUT;
+
+
+};
+typedef struct _ChargeCtrlInfo  CHARGE_CTRL_INFO;
+//gEvChargeInfo.u8ACInputContactorCloseSampDelay
+#define	ACInputContactorCloseSampDelay		14		//秒
+
+#define PAGE_RESULT_DELAY_SEC		60		//结算页面停留时间 秒
+#define  VIN_WAIT_HOST_CONFIRM_TIME 60		//S  gEvChargeInfo.u8VinWaitHostConfirmTimeout
+
+#define  NO_CURR_END_CONFIRM_TIME   600		//秒  gEvChargeInfo.u16GunNoCurrEndDelay
+
+
+//gEvChargeInfo.u8DoorOpenDisconACInput;
+enum DoorOpenDisconACInput_Mode_Def
+{
+	DoorOpenDisconACInput_Mode_Dis = 0,				//禁止
+	DoorOpenDisconACInput_Mode_Pulse,			//脉冲驱动式的磁保持锁壳接触器
+	DoorOpenDisconACInput_Mode_Level,				//电平保持式的接触器	
+}; 
+
+//gEvChargeInfo.u8VinVerifyStat
+enum VIN_VERIFY_STAT_Def
+{
+	Vin_Verify_Stat_0 = 0,				//枪未连接
+	Vin_Verify_Stat_1,					//服务器未连接
+	Vin_Verify_Stat_QueryVin,			//正在获取VIN码
+	Vin_Verify_Stat_QueryVinFail,		//未成功获取VIN码
+	Vin_Verify_Stat_QueryVinOk,			//已取得VIN码，正上报服务器
+	Vin_Verify_Stat_HostConfirmOverTime,//服务器验证超时
+	Vin_Verify_Stat_HostConfirmOk,		//服务器验证Ok	
+	Vin_Verify_Stat_HostConfirmFail,	//服务器验证未获通过
+
+};
+
+//gEvChargeInfo.VinVerifyCtrl
+enum VIN_VERIFY_CTRL_Step_Def
+{
+	Vin_Verify_Ctrl_Step_Init = 0,		//未启动
+	Vin_Verify_Ctrl_Step_Start,			//需要启动VIN获取操作
+	Vin_Verify_Ctrl_Step_Quit,	        //需要停止VIN获取操作
+};
+
+struct __ChargeResult
+{
+	/*UINT8 u8Shour;
+	UINT8 u8Smin;
+	UINT8 u8SSec;
+	UINT8 u8Ehour;
+	UINT8 u8Emin;
+	UINT8 u8ESec;*/
+	UINT8 u8Keephour;
+	UINT8 u8KeepEmin;
+	UINT8 u8KeepESec;
+	UINT8 u8S_SOC;
+	UINT8 u8E_SOC;
+	UINT8 u8ChargeMode;
+	UINT8 u8StartMode;
+	float fChargeTime;
+	float fEnergy;
+	float fMoney;
+	float f_WH_StarVal;
+	float f_WH_EndVal;
+	float fChargeParam;
+	UINT8 u8LastReason;
+	UINT16 u16Reason12;
+	struct tm StartTime;
+	struct tm EndTime;
+
+	UINT8 u8CARDInfo[CARD_INFO_BYTES];
+};
+typedef struct __ChargeResult  __VIEW_RESULT_INFO;
+
+struct ChargeModeArgs
+{
+	UINT8 u8ChargeMode;							//O BMS方式充电！	1 时间方式充电	2 定电量	3 SOC方式充电
+	float fSOCArgs;
+	float fTimeArgs;
+	float fEnergeArgs;
+	float fMoney;
+};
+typedef struct ChargeModeArgs __CHARGE_ARGS;
+
+
+
+struct LogTime
+{
+	//UINT16 tm_year;
+	UINT8 tm_year[2];
+	UINT8 tm_sec;
+	UINT8 tm_min;
+	UINT8 tm_hour;
+	UINT8 tm_mday;
+	UINT8 tm_mon; 
+};
+
+
+
+/***************************************************************************************
+可以把512条充电记录理解为一个滑动窗口（占两个扇区）
+在这如下三个扇区里滚动
+	RECORD_SECTION_MAX_NUM * PAGE_NUM_PER_SECTION
+	u8UnResponseIdx  0标识已经上传   1标识未上传！
+					______________
+					|			|
+					|_____________|
+    i16CurrPageIdx----->|			|
+					|_____________|
+					|			|
+					|_____________|
+***************************************************************************************/
+//此结构记录在 EEPROM中	！！
+struct FlashInfoIdx
+{
+	UINT16 u16OptPageIdx;
+	UINT8  u8WriteFlashRecordFlag;					//需要记录数据
+	UINT8  u8CleanRecordsFlag;						//需要清除历史记录
+	UINT8  u8CleanBulkFlag;							//需要擦出整个芯片
+	UINT16 u16NoReportNum;
+	UINT32 u32ViewPageIdx;							//当前索引的位置
+	UINT32 u32ViewRecordNo;							//显示的序号！
+
+	UINT16 u16NeedRptPageIdx[2];					//A\B枪需要202上报处理的记录序号
+
+};
+typedef struct FlashInfoIdx __FLASH_CTRL_INFO;
+
+struct __RecordPageInfo
+{
+	UINT8 u8IsUnRpt;								//是否未上传
+	UINT32 u32SeqcNo;								//记录号
+};
+typedef struct	__RecordPageInfo		RecordPageInfo;
+
+struct __ChargeLogTable
+{
+	UINT32 u32TotalNum;
+	UINT32 u32CurrPageIdx;			//永远是可以需要写的那个PAGE
+	UINT16 u16UnRptNum;
+
+	UINT32 u16LastPageIdx;			//最后一页,即序号最大那一页
+};
+typedef struct __ChargeLogTable	 ChargeLogTable;
+
+
+//20181018 充电途中掉电 需要恢复充电记录 本数据结构内容存于EEPROM
+typedef struct _ChargeRecordEeprom_StartData    //启动充电时写一次的数据
+{	
+	UINT8 u8SpearType;					//1 充电枪编号
+	UINT8 u8ChargeMode;					//2
+	UINT8 u8LogInType;					//3 登录方式 APP CARD admin!
+	UINT8 u8Reserve1;					//4
+	UINT8 u8Reserve2;					//5
+	UINT8 u8Reserve3;					//6	
+	UINT8 u8CARDNo[CARD_NO_BYTES];		//23~86
+	UINT8 u8CostNo[COST_NO_BYTES];					//7~22字节交易号！	
+	struct LogTime StartTime;			//87~93 这样时间字节数能省几个字节！！
+	struct LogTime CostTime;			//94~100
+	
+	float fReserve1;					//101
+	float fReserve2;					//105
+	float fReserve3;					//109
+	float fReserve4;					//113
+	float fReserve5;					//117
+	float fChargeModeParam;				//121
+	float fStartWHValue;				//125	
+}ChargeRecordEeprom_StartData;   //128 Bytes
+typedef struct _ChargeRecordEeprom_TimeData   //半点刷新数据
+{		
+	UINT8 u8StartSOC;				
+	UINT8 u8StopSOC;
+	UINT8 u8Reserve1;
+	UINT8 u8Reserve2;
+	float fChargeTotalTime;			// 充电时长 min为单位		
+	//float fTotalEnergyKWH;				// 千瓦时	
+	float  fMaxWHValue;				//最大电表读数
+	float fMoney;						// gEvChargeInfo.fCostMoney	
+}ChargeRecordEeprom_TimeData;   //16 Bytes
+typedef struct _EepromRecordMng
+{
+	ChargeRecordEeprom_StartData  StartData[2];
+	ChargeRecordEeprom_TimeData   TimeData[2];
+
+	UINT8 u8StartTimePhase[2][3];	
+	UINT8 u8EndTimePhase[2][3];
+
+	UINT8 u8LastTimePhase[2];
+
+	float fStepKwh_FromEEPROM[2][STEP_Kwh_NUM];			//就上电恢复时有用
+	UINT8  u8WriteStartDataFlag[2];
+
+	UINT8  u8WriteTimeDataFlag[2];
+	//UINT8  u8WriteTimeDataAddr[2];
+	float fStepKwh[2];									//用于半点时刻写入EEPROM
+
+	UINT8  u8ClearDataFlag[2];
+
+	UINT8  u8InitCompleteFlag[2];		//初始化完成标志--上电读取到电表后置1，恢复完EEPROM的掉电记录后置2
+
+	UINT8  u8WriteEndTimePhaseFlag[2];			//写次数
+	UINT8  u8WrtieCostNoFlag[2];
+}EepromRecordMng;
+extern EepromRecordMng  gs_EepromRecordMng;
+
+//gs_EepromRecordMng.u8InitCompleteFlag
+enum EEPROM_RECORD_InitFlagDef
+{
+	EEPROM_RECORD_InitFlag_Init = 0,  //上电初始化
+	EEPROM_RECORD_InitFlag_WriteFlash = 1,  //电表读取完成，需要写FLAGH
+	EEPROM_RECORD_InitFlag_WriteOk = 2,  //掉电记录写FLAGH ok
+};
+
+//eeprom总共需要688个字节   0xb000~0xb399	
+#define RECORD_EEPROM_BASE			0xB000
+//前面16个字节，用于存放起止time phase，每个存四遍
+#define	mRecordEepromStartEndTimePhaseSize			8
+#define RECORD_EEPROM_GUN_A_START_TIMEPHASE			RECORD_EEPROM_BASE
+#define RECORD_EEPROM_GUN_A_END_TIMEPHASE			(RECORD_EEPROM_GUN_A_START_TIMEPHASE + 4)
+#define RECORD_EEPROM_GUN_B_START_TIMEPHASE			(RECORD_EEPROM_GUN_A_START_TIMEPHASE+mRecordEepromStartEndTimePhaseSize)
+#define RECORD_EEPROM_GUN_B_END_TIMEPHASE			(RECORD_EEPROM_GUN_B_START_TIMEPHASE + 4)
+//A枪半点充电量 4*48 = 192
+#define	mRecordEepromPhaseKwhSize					192
+#define RECORD_EEPROM_GUN_A_PHASE_KWH				(RECORD_EEPROM_BASE+16)
+//B枪半点充电量 4*48 = 192
+#define RECORD_EEPROM_GUN_B_PHASE_KWH				(RECORD_EEPROM_GUN_A_PHASE_KWH+mRecordEepromPhaseKwhSize)
+
+//A枪启动信息 128
+#define	mRecordEepromStartDataSize   				128
+#define RECORD_EEPROM_GUN_A_START_DATA				(RECORD_EEPROM_GUN_B_PHASE_KWH+mRecordEepromPhaseKwhSize)
+//B枪启动信息 128
+#define RECORD_EEPROM_GUN_B_START_DATA				(RECORD_EEPROM_GUN_A_START_DATA+mRecordEepromStartDataSize)
+
+//A枪半点刷新信息 16
+#define	mRecordEepromTimeDataSize   				16
+#define RECORD_EEPROM_GUN_A_TIME_DATA				(RECORD_EEPROM_GUN_B_START_DATA+mRecordEepromStartDataSize)
+//B枪半点刷新信息 16
+#define RECORD_EEPROM_GUN_B_TIME_DATA				(RECORD_EEPROM_GUN_A_TIME_DATA+mRecordEepromTimeDataSize)
+
+#define RECORD_EEPROM_END							(RECORD_EEPROM_GUN_B_TIME_DATA+mRecordEepromTimeDataSize)
+
+
+//#define	mEEPROM_RECORD_START_DATA_DIV16		(sizeof(ChargeRecordEeprom_StartData) / 16)	
+#define	mEEPROM_RECORD_START_DATA_DIV16		(mRecordEepromStartDataSize / 16)	
+//#define	mEEPROM_RECORD_TIME_DATA_DIV16		(sizeof(ChargeRecordEeprom_TimeData) / 16)	
+#define	mEEPROM_RECORD_TIME_DATA_DIV16		(mRecordEepromTimeDataSize / 16)	
+
+
+//掉电记录改用flash
+#define  GUN_A_CHG_DATA_BLOCK_BASE   5
+#define  GUN_B_CHG_DATA_BLOCK_BASE   6
+#define  GUN_CHG_DATA_PAG_StartData		0   //相对地址
+#define  GUN_CHG_DATA_PAG_EndTimePhase	1   //相对地址
+#define  GUN_CHG_DATA_PAG_Kwh			2   //相对地址
+#define  GUN_CHG_DATA_PAG_No			3   //相对地址 -- 每写一次都加1,指向最后的EndTimePhase存放位置
+#define  GUN_CHG_DATA_PAG_RealData		4   //相对地址 4~6
+#define  GUN_CHG_DATA_PAG_CostNo		7   //相对地址
+
+struct ZTE_FaultLog
+{
+	UINT8 u8AlmVal;										//告警类型，
+	struct LogTime FaultTime;
+	UINT8 u8RectNo;
+};
+typedef struct ZTE_FaultLog __ZTE_FAULT_LOG;
+
+struct	stZTE_FaultLogRam
+{
+		UINT8 u8IsPop;									//TRUE 需要记录	 FALSE不需要记录
+		__ZTE_FAULT_LOG FaultVal;
+};
+typedef struct stZTE_FaultLogRam  __ST_ZTE_FAULT_LOG_RAM;
+
+struct ZTE_FaultLogIdx
+{
+	UINT16 u16TotalLOGNum;
+	UINT16 u16BytesPst;					//在EEPROM 存储空间的字节偏移位置
+	UINT16 u16ViewLogNumPerFive;		//以VIEW_FAULT_PER_FIVE为单位
+};
+typedef struct ZTE_FaultLogIdx __ZTE_FAULT_LOG_IDX;
+
+
+
+
+
+#define __A_RECT_OFF() do {\
+	gs_CANComm.fSetRectCtlVoltCurr(GRP_A,100, 1);\
+	gs_CANComm.fSetRectCtlStatus(GRP_A, RECT_OFF);\
+} while (0);
+
+#define __A_RECT_ON() do {\
+	gs_CANComm.fSetRectCtlStatus(GRP_A, RECT_ON);\
+} while (0);
+
+#define __A_RECT_ADJST_VLT_CURR(Volt, Curr) do {\
+	gs_CANComm.fSetRectCtlVoltCurr(GRP_A, Volt, Curr);\
+} while (0);
+
+#define __B_RECT_OFF() do {\
+	gs_CANComm.fSetRectCtlVoltCurr(GRP_B,100, 1);\
+	gs_CANComm.fSetRectCtlStatus(GRP_B, RECT_OFF);\
+} while (0);
+
+#define __B_RECT_ON() do {\
+	gs_CANComm.fSetRectCtlStatus(GRP_B, RECT_ON);\
+} while (0);
+
+#define __B_RECT_ADJST_VLT_CURR(Volt, Curr) do {\
+	gs_CANComm.fSetRectCtlVoltCurr(GRP_B, Volt, Curr);\
+} while (0);
+
+
+;
+
+UINT8 IsCharging(void);
+
+void ExSetSigInfo(UINT8 Etype, UINT16 Idx, __XXX_UNION_VALUE unVal,void* p,UINT8 We2p);
+void ExGetSigInfo(UINT8 Etype, UINT16 Idx, __XXX_UNION_VALUE* unVal,void* p,UINT8 Re2p);
+
+extern UCHAR	DSTADDR;
+void	RecordTime(unsigned char *pTime);
+void Delay(UINT32 delay_count);
+unsigned char fabs(float fNum1, float fNum2);
+time_t mktime_r(struct tm *tmbuf);
+struct tm *gmtime_r(const time_t *timer, struct tm *tmbuf);
+void  floattoascii(float fin, unsigned char * pDataBuf);
+void  FourByte2float(unsigned char * pDataBuf, float * pfout);
+unsigned char	BCDToHex(unsigned char	Input);
+unsigned char	HexToBCD(unsigned char	Input);
+unsigned char	RTCWeekToHex(unsigned char Input);
+unsigned char	HexToRTCWeek(unsigned char	Input);
+char *strncpyz(char *pDst, const char *pSrc, int nDstLen);
+
+//float fGetE2pVal(UINT8 Etype, UINT16 Idx);
+//UINT8 u8GetE2pVal(UINT8 Etype, UINT16 Idx);
+//void SetE2prmU8Value(UINT8 Etype, UINT16 Idx,UINT8 u8Value);
+//void SetE2prmFValue(UINT8 Etype, UINT16 Idx,float fValue);
+void SetE2prmValue(UINT8 Etype, UINT16 Idx, __XXX_UNION_VALUE unVal);
+__XXX_UNION_VALUE unionGetE2pVal(UINT8 Etype, UINT16 Idx, unsigned char* p);
+
+//obj 初始化函数
+void TxCAN1Buff(void);
+void TxCAN1Deal(void);
+UINT16 Broad_Type(UCHAR addr);
+void RectAddrDeal(void);
+time_t Getsec(INT16 Index);
+float CharToFloat(volatile UINT32 data);
+INT32 ReadTime_Try(void);
+unsigned char Ascii2Hex(unsigned char Input);
+unsigned char TwoAscii2Hex(unsigned char InputH, unsigned char InputL);
+UINT16 CalcRcvCheckSum(UINT8 UartNo);
+void HMIPageDeal(UINT16 u16KeyVal);
+
+unsigned char Hex2Ascii(unsigned char Input);
+void	Trap(void);
+void	Trap1(void);
+void	Trap2(void);
+void init_gs_Measure(void);
+void init_gs_E2PROM(void);
+void InitgCANComm(void);
+void init_gs_SetData(void);
+void init_gFANMngInfo(void);
+UINT8 GetEV_ErrorCode(void);
+void Ctrl_B_RectOut(float fCurr, float fVolt);
+void A_SetChargeSTOP_Cmd(UINT8 u8StopReason);
+void B_SetChargeSTOP_Cmd(UINT8 u8StopReason);
+void A_SetChargeSTART_Cmd(UINT8 u8StartReason);
+void B_SetChargeSTART_Cmd(UINT8 u8StartReason);
+float fGet_A_RectOutVolt(void);
+float fGet_B_RectOutVolt(void);
+float fGet_A_RectOutCurr(void);
+float fGet_B_RectOutCurr(void);
+void * GetgEquipInfo(UINT8 u8Etype);
+
+UINT8 CheckValidSpear(void);
+void Put_BrushSem(void);
+UINT8 Pop_BrushSem(void);
+void Put_A_StopSem(void);
+void Put_B_StopSem(void);
+UINT8 Pop_A_StopSem(void);
+UINT8 Pop_B_StopSem(void);
+void Put_ParallDlySem(void);
+UINT8 Pop_ParallDlySem(void);
+void Put_Ether_3CSem(UINT8 u8SemVal);
+UINT8 Pop_Ether_3CSem(void);
+//UINT8 RefreshErrorCode(UINT8 u8Value);
+extern uip_ipaddr_t gs_RemoteServerIp;
+extern unsigned char g_ucRemoteServerIpIsOk;
+
+void Put_EtherSendRecordSem(UINT16 u16Idx);
+UINT8 u8Pop_EtherSendRecordSem(UINT16* u16Idx);
+void Init_EtherSendRecordSem(void);
+void FLASH_GetRecordsTable(ChargeLogTable* pTable);
+UINT16 FLASH_GetPageIdx(UINT32 uSqsNo);
+UINT8 FLASH_ReadRecords(UINT32 u32Addr, UINT8* pBuf, UINT16 u16Len);
+UINT16 FLASH_WriteRecords(ChargeLogTable *pTable, __CHARGE_RECORD* pStRecord);
+UINT16 FLASH_GetUnRptNum(UINT16* pLastUnRptIDX);
+UINT8 FLASH_GetUnRptPageIdx(UINT16 *pPageIdx, UINT16 u16LastOpPageIdx);
+void FLASH_ClrUnRptFlag(UINT16 u16PageIdx);
+//UINT8 RefreshErrorCode(UINT8 u8Value);
+
+int CAN3_Send(canmsg *pMsg, UINT8 DataL);
+
+void InitTaskOfCan3Tx(void);
+void InitCan3Port(void);
+
+enum RtnSelftChkResult
+{
+	RtnSelftChkResult_OverTime = 0,		
+	RtnSelftChkResult_NegativeVolt,		//自检前检测到-20V电压
+	RtnSelftChkResult_IMIU_CommFail,	//IMIU通讯断	
+	RtnSelftChkResult_IMIU_InsulFalt,	//绝缘故障	
+	RtnSelftChkResult_Car_Contactor_Short,	//外侧有超过30V电压,表示汽车输出了电压
+	RtnSelftChkResult_DCMCCB_Short,		//外侧有超过30V电压,表示桩的输出接触器短路了
+
+	RtnSelftChkResult_RectNotWork,		//模块输出电压低于30V，认为模块无输出
+	RtnSelftChkResult_DCMCCB_Break,		//接触器闭合后，但外侧母排电压低于30V，认为接触器断路故障
+};
+unsigned char u8GetStopCodeBySelfCheckFail(unsigned char SelftChkResult);
+
+#define SELF_CHECK_ALM_2			3  //外侧有超过30V电压,表示桩的输出接触器短路了
+#define SELF_CHECK_ALM_3			4  //IMIU通讯断 或 绝缘故障
+#define SELF_CHECK_ALM_4			5  //自检前检测到-20V电压
+
+
+#define NO_CARD_EXIST	0
+#define CARD_NEED_WRITE	1
+#define CARD_WRITE_OK	2
+#define CARD_WRITE_FAIL	3
+
+enum ReadCardStep
+{
+	Step0_No_Card_Read = 0,			//0:未刷卡
+	Step1_Read_Card_First,			//1:第一次刷卡
+	Step2_Updata_Card_Info,			//2:卡信息已上传
+	Step3_Card_Indentify_RTN,		//3:卡识别结果已返回
+	Step4_Card_Indentify_TimeOut,	//4:卡识别超时
+	Step5_Card_Stop_CMD,			//5:刷卡停止
+	Step6_Card_Balance_CMD,			//6:刷卡结算
+	Step7_Card_Balance_Again		//7:刷卡失败，需再次刷卡
+};
+enum ReadCardResult
+{
+	CardNoProcess = 0,	//还未返回结果		
+	InvalidCard,				//1:无效卡
+	CardUsedNow,				//2:卡已经在别的桩上使用
+	NoEnoughMoney,				//3:余额不足
+	MoneyErrorCannotCharge,		//4:余额有误不能充电
+	MoneyErrorNeedWrite,		//5:余额有误重写
+	CardIsOK,					//6:刷卡结算
+	CardIndentifyNoResult
+};
+
+#define	CARD_REAL_BYTES	16
+
+extern HMI_INFO gHMIData;
+extern unsigned int g_i32TcpMssLenth;
+
+#define PAGE_INVALID_NO_0		0
+#define PAGE_HOME_NO_11			11
+#define PAGE_A_B_SPLIT_NO_12	12
+#define PAGE_A_QR_CODE_20		20
+#define PAGE_A_CHARGE_21		21
+#define PAGE_A_CHARGE_APP_22	22
+
+
+#define PAGE_B_QR_CODE_35		35
+#define PAGE_B_CHARGE_36		36
+#define PAGE_B_CHARGE_APP_37	37
+
+#define PAGE_MaintenanceLogIn_75		75
+#define PAGE_PSWD_KEYBOAD_76			76
+#define PAGE_BUSINESS_SELECT_77			77
+#define PAGE_SELECT_SPEAR_78			78
+#define PAGE_OTHER_CHARGE_MODE_79		79
+#define PAGE_ENERGE_ARGS_80				80
+#define PAGE_TIME_ARGS_81				81
+#define PAGE_SOC_ARGS_82				82
+#define PAGE_NOTE_PLUG_IN_83			83
+#define PAGE_A_RESULT_84				84
+#define PAGE_B_RESULT_85				85
+
+#define PAGE_BRUSH_STOP_CHG_87			87
+
+#define PAGE_TEST_CHARGE_200			200
+#define PAGE_SYS_PARAM_201				201
+#define PAGE_A_PARAM_202				202
+#define PAGE_B_PARAM_203				203
+#define PAGE_A_BUS_ADJUST_204			204
+#define PAGE_B_BUS_ADJUST_205			205
+#define PAGE_SYS_ALM_206				206
+#define PAGE_A_ALM_207					207
+#define PAGE_B_ALM_208					208
+#define PAGE_A_MORE_209					209
+#define PAGE_B_MORE_210					210
+#define PAGE_SYS_PARAM_2_211			211
+
+//超时事件定义(用于保存在事件记录中)  void RecordChargeRecord(event)
+enum RECORD_CHG_EVENT_DEF
+{	
+	EVENT_TIMEOUT_NONE = 0,		//无超时事件
+	EVENT_TIMEOUT_BRM,			//
+	EVENT_TIMEOUT_BCP,
+	EVENT_TIMEOUT_BRO_00,
+	EVENT_TIMEOUT_BRO_AA,
+	EVENT_TIMEOUT_CRO,
+	EVENT_TIMEOUT_BCL_FIRST,	
+	EVENT_TIMEOUT_BCS_FIRST,
+	EVENT_TIMEOUT_BCL,	
+	EVENT_TIMEOUT_BCS,
+	EVENT_TIMEOUT_BST,	
+	EVENT_TIMEOUT_BSD,	
+	EVENT_MAX
+};
+/*充电记录数据结构定义*/
+typedef struct tagChargeRecord
+{
+	unsigned short u16EndReason;	//结束原因
+	unsigned short u16EndPhase;		//结束阶段
+	unsigned short u16ChgDuration;	//充电持续时间
+	unsigned short u16ChgEnegy;		//充电能量
+}ChargeRecord_TypeDef;			//每个记录6个字节
+
+#define	CHARGE_RECORD_NUM	10
+
+/* 充电记录管理数据结构定义 */
+typedef struct tagChargeRecordMng
+{   
+	ChargeRecord_TypeDef  ChargeRecord[CHARGE_RECORD_NUM];	// 充电记录
+	unsigned char   ucChargeRecordNum;						// 充电记录数量    
+	unsigned char   ChargeRecordFull;						//已满CHARGE_RECORD_NUM条充电记录的标志 1-满 0-不满,  该标志需要写eeprom
+	unsigned char   CurrChargeRecord;						//下一条 充电记录存放位置序号(RAM中)
+	unsigned char   CurrChargeRecord_eeprom;				//下一条 充电记录存放位置序号(EEPROM中)，需要写eeprom
+	unsigned char   WriteChargeRecordFlag;					//写eeprom标志 >0 需要写
+	unsigned char   ClearChargeRecord;						//清 充电记录标志 1-需要充电记录 0-不需要      
+}ChargeRecordMng_TypeDef;
+
+extern ChargeRecordMng_TypeDef gs_ChargeRecordMng[2];
+void init_ChargeRecordMng(unsigned char GunNo);
+void RecordChargeRecord(unsigned char GunNo, unsigned char j);
+unsigned char GetChargeRecordIndex(unsigned char GunNo, unsigned char nID);
+void SetIMEUDOState(UCHAR ucIMEUNo,UCHAR ucDoNo,UCHAR ucState);
+float GetBusData(UCHAR ucGunNo, UCHAR ucDataID);
+typedef struct _PuTianMng
+{
+	UINT16	u16SetMiltDataInterval;  // = 75;			//75*10ms= 750ms
+	UINT16 u16SetBCLTimeOutVal;
+	/////
+
+	UINT32 u32CAN2_CRM00_TimeOUT;
+	INT16 i16CAN2Send_CRM00_Count;
+
+	INT16	i16CAN2_MutilData_T2_TimeOUT;
+	INT16	i16CAN2_Interval_T1_TimeOUT;
+	INT16	i16CAN2Send_CRMAA_Count;
+	UINT32	u32CAN2_BCP_TimeOUT;
+	UINT32	u32CAN2_BRO_TimeOUT;
+	INT16	i16CAN2Send_CML_Count;
+	INT16	i16CAN2Send_CTS_Count;
+	UINT32	u32CAN2_BRO_AA_TimeOUT;
+	UINT32	u32CAN2_BCL_BCS_TimeOUT;
+	UINT32	u32CAN2_BCL_TimeOUT;
+	INT16	i16CAN2Send_CRO_Count;
+	UINT32	u32CAN2_BCS_TimeOUT;
+
+	
+
+	UINT32	u32CAN2_BST_TimeOUT;
+	INT16	i16CAN2Send_CST_Count;
+
+	UINT32	u32CAN2_BSD_TimeOUT;
+
+	INT16	i16CAN2Send_CSD_Count;
+	INT16	i16CAN2Send_CCS_Count;
+
+}PuTianMngDef;
+extern PuTianMngDef gs_PuTianMng[2];
+
+#define CAN3_TX_MSG_BUF_NUM		20
+typedef struct tagCAN3TxDeal
+{
+	canmsg		TxCanMsgBuf[CAN3_TX_MSG_BUF_NUM];
+	unsigned char   CanTxBuffWrPos;      //写入指针,指向TxCanMsgBuf[]        
+	unsigned char   CanTxBuffRdPos;      //读取指针,指向TxCanMsgBuf[]   
+
+	unsigned char   ucClearBufFlag;        //清缓冲区标志 1- 是 	
+}tagCAN3TxDeal_def;	
+
+
+
+
+///* 充电记录管理数据结构定义 */
+//typedef struct tagChargeRecordMng
+//{ 
+//	UINT8 u8_A_CalcKWHStepNo;
+//	UINT16 u16_A_StepKwh[STEP_Kwh_NUM];
+//}ChargeRecordMng_TypeDef;
+extern void ACInputContactorAction(void);
+
+#endif

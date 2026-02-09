@@ -1,0 +1,21 @@
+; Environment variables
+OS=
+ID=T32
+TMP=c:/Windows/Temp
+SYS=c:/T32
+
+; Standard License File used
+
+; Host interface 
+PBI=
+USB
+
+; T32 API Access
+RCL=NETASSIST
+PACKLEN=1024
+PORT=20000
+
+; Screen settings
+SCREEN=
+FONT=SMALL
+HEADER=Trace32

@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+environment/project/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_RAM/PATH/delimiter=;
+environment/project/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_RAM/PATH/operation=prepend
+environment/project/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_RAM/PATH/value=${MSYS_LOC};
+environment/project/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_RAM/append=true
+environment/project/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_RAM/appendContributed=true
+environment/project/iar.arm.toolchain.project.exe.configuration.debug.v8.0.0.517302673/PATH/delimiter=;
+environment/project/iar.arm.toolchain.project.exe.configuration.debug.v8.0.0.517302673/PATH/operation=prepend
+environment/project/iar.arm.toolchain.project.exe.configuration.debug.v8.0.0.517302673/PATH/value=${MSYS_LOC};
+environment/project/iar.arm.toolchain.project.exe.configuration.debug.v8.0.0.517302673/append=true
+environment/project/iar.arm.toolchain.project.exe.configuration.debug.v8.0.0.517302673/appendContributed=true
+environment/project/iar.arm.toolchain.project.exe.configuration.release.v8.0.0.833238729/PATH/delimiter=;
+environment/project/iar.arm.toolchain.project.exe.configuration.release.v8.0.0.833238729/PATH/operation=prepend
+environment/project/iar.arm.toolchain.project.exe.configuration.release.v8.0.0.833238729/PATH/value=${MSYS_LOC};
+environment/project/iar.arm.toolchain.project.exe.configuration.release.v8.0.0.833238729/append=true
+environment/project/iar.arm.toolchain.project.exe.configuration.release.v8.0.0.833238729/appendContributed=true

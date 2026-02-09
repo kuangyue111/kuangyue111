@@ -1,0 +1,241 @@
+#define   BSP_MODULE
+#include  <bsp.h>
+#include  <main.h>
+#include  <bsp_os.h>
+
+#ifdef USE_STDPERIPH_DRIVER
+  #include "bsp_uart_std.h"
+  #include "bsp_timer_std.h"
+  #include "bsp_spi_flash_std.h"
+#endif
+
+//#ifdef USE_HAL_DRIVER
+//  #include "bsp_uart_hal.h"
+//  #include "bsp_timer_hal.h"
+//  #include "bsp_spi_flash_hal.h"
+//#endif
+#include "bsp_dido.h"
+#include "bsp_capture.h"
+
+#define  BSP_BIT_RCC_PLLCFGR_PLLM               25u
+#define  BSP_BIT_RCC_PLLCFGR_PLLN              336u
+#define  BSP_BIT_RCC_PLLCFGR_PLLP                2u
+#define  BSP_BIT_RCC_PLLCFGR_PLLQ                7u
+
+#define  BSP_GPIOG_LED1                        DEF_BIT_06
+#define  BSP_GPIOG_LED2                        DEF_BIT_08
+#define  BSP_GPIOI_LED3                        DEF_BIT_09
+#define  BSP_GPIOC_LED4                        DEF_BIT_07
+
+#define  BSP_REG_DEM_CR                       (*(CPU_REG32 *)0xE000EDFC)
+#define  BSP_REG_DWT_CR                       (*(CPU_REG32 *)0xE0001000)
+#define  BSP_REG_DWT_CYCCNT                   (*(CPU_REG32 *)0xE0001004)
+#define  BSP_REG_DBGMCU_CR                    (*(CPU_REG32 *)0xE0042004)
+
+#define  BSP_DBGMCU_CR_TRACE_IOEN_MASK                   0x10
+#define  BSP_DBGMCU_CR_TRACE_MODE_ASYNC                  0x00
+#define  BSP_DBGMCU_CR_TRACE_MODE_SYNC_01                0x40
+#define  BSP_DBGMCU_CR_TRACE_MODE_SYNC_02                0x80
+#define  BSP_DBGMCU_CR_TRACE_MODE_SYNC_04                0xC0
+#define  BSP_DBGMCU_CR_TRACE_MODE_MASK                   0xC0
+
+#define  BSP_BIT_DEM_CR_TRCENA                    DEF_BIT_24
+#define  BSP_BIT_DWT_CR_CYCCNTENA                 DEF_BIT_00
+
+void Hardware1000Vor750VInit(void)
+{
+	UINT8 u8HardwareVer[2];
+	UINT8 u8_R_HardwareVer[2];
+	u8HardwareVer[0] = 'A';
+	u8HardwareVer[1] = '0';
+
+	OSTimeDly(2);
+	dv_E2PROM.fReadE2PROMPage(u8_R_HardwareVer, E2PROM_NEW_BOARDFlag1, 2);
+	OSTimeDly(2);
+
+	if((u8_R_HardwareVer[0] == 'A') && (u8_R_HardwareVer[1] == '0'))
+	{
+		gEvChargeInfo.u8Is_1000V_Hardware = HARDWARE_IS_1000V;
+	}
+	else
+	{
+		gEvChargeInfo.u8Is_1000V_Hardware = HARDWARE_ISNT_1000V;
+	}
+}
+void  BSP_Init (void)
+{
+	BSP_IntInit();
+	CIM_Init();
+
+	HAL_Init();
+
+	SystemClock_Config();
+
+	BSP_vCLOCKInit();
+
+	BSP_vGpioInit();
+	
+	BSP_FsmcInit();
+	
+	BSP_EepromInit();
+	
+	Hardware1000Vor750VInit();
+	if(u8Is1000VHardwareA00())
+	{
+		BSP_vGpioReInit();
+		BSP_1000VClockInit();
+	}
+
+	BSP_InitSPI3();
+	SPIFlashInit();
+
+	BSP_AdcInit();
+	BSP_ADC3_Init();
+
+	BSP_vGpioEXIT1Init();
+
+	BSP_Can_1_Init(250,CAN_EXTEND);
+
+	BSP_TIM_BaseInit();
+
+	//TXY
+	BSP_Can_2_Init(250,CAN_EXTEND);
+
+
+	BSP_CaptureInit();
+	//TXY
+	BSP_Pwm1Init();
+	//TXY
+	BSP_Pwm2Init();
+
+	
+
+	
+	//I2C3_Init();
+#ifdef WDOG_ENABLE
+	BSP_WDGInit();
+#endif
+	
+	HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+	HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
+
+}
+
+
+CPU_INT32U  BSP_CPU_ClkFreq (void)
+{
+#ifdef USE_STDPERIPH_DRIVER 
+  RCC_ClocksTypeDef  rcc_clocks;
+  RCC_GetClocksFreq(&rcc_clocks);
+  return ((CPU_INT32U)rcc_clocks.HCLK_Frequency);
+#endif
+
+#ifdef USE_HAL_DRIVER
+  return(HAL_RCC_GetHCLKFreq());
+#endif
+}
+
+void BSP_Tick_Init (void)
+{
+    CPU_INT32U  cpu_clk_freq;
+    CPU_INT32U  cnts;
+
+    cpu_clk_freq = BSP_CPU_ClkFreq();
+
+#if (OS_VERSION >= 30000u)
+    cnts  = cpu_clk_freq / (CPU_INT32U)OSCfg_TickRate_Hz;
+#else
+    cnts  = cpu_clk_freq / (CPU_INT32U)OS_TICKS_PER_SEC;
+#endif
+
+    OS_CPU_SysTickInit(cnts);
+}
+
+
+static void SystemClock_Config(void)
+{
+  RCC_ClkInitTypeDef RCC_ClkInitStruct;
+  RCC_OscInitTypeDef RCC_OscInitStruct;
+
+  /* Enable Power Control clock */
+  __PWR_CLK_ENABLE();
+
+  /* The voltage scaling allows optimizing the power consumption when the device is 
+     clocked below the maximum system frequency, to update the voltage scaling value 
+     regarding system frequency refer to product datasheet.  */
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  /* Enable HSE Oscillator and activate PLL with HSE as source */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 16;
+  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;	//168MÖ÷Æµ
+  RCC_OscInitStruct.PLL.PLLQ = 7;
+  HAL_RCC_OscConfig(&RCC_OscInitStruct);
+    
+  /* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2 
+     clocks dividers */
+  RCC_ClkInitStruct.ClockType = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;			//168M
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;			//APB1	42M
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;			//APB2	84M
+  HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5);
+}
+
+#if (CPU_CFG_TS_TMR_EN == DEF_ENABLED)
+void  CPU_TS_TmrInit (void)
+{
+    CPU_INT32U  fclk_freq;
+
+
+    fclk_freq = BSP_CPU_ClkFreq();
+
+    BSP_REG_DEM_CR     |= (CPU_INT32U)BSP_BIT_DEM_CR_TRCENA;    /* Enable Cortex-M4's DWT CYCCNT reg.                   */
+    BSP_REG_DWT_CYCCNT  = (CPU_INT32U)0u;
+    BSP_REG_DWT_CR     |= (CPU_INT32U)BSP_BIT_DWT_CR_CYCCNTENA;
+
+    CPU_TS_TmrFreqSet((CPU_TS_TMR_FREQ)fclk_freq);
+}
+#endif
+
+#if (CPU_CFG_TS_TMR_EN == DEF_ENABLED)
+CPU_TS_TMR  CPU_TS_TmrRd (void)
+{
+    CPU_TS_TMR  ts_tmr_cnts;
+
+                                                                
+    ts_tmr_cnts = (CPU_TS_TMR)BSP_REG_DWT_CYCCNT;
+
+    return (ts_tmr_cnts);
+}
+#endif
+
+#if (CPU_CFG_TS_32_EN == DEF_ENABLED)
+CPU_INT64U  CPU_TS32_to_uSec (CPU_TS32  ts_cnts)
+{
+    CPU_INT64U  ts_us;
+    CPU_INT64U  fclk_freq;
+    fclk_freq = BSP_CPU_ClkFreq();    
+    ts_us     = ts_cnts / (fclk_freq / DEF_TIME_NBR_uS_PER_SEC);
+    return (ts_us);
+}
+#endif
+
+
+#if (CPU_CFG_TS_64_EN == DEF_ENABLED)
+CPU_INT64U  CPU_TS64_to_uSec (CPU_TS64  ts_cnts)
+{
+    CPU_INT64U  ts_us;
+    CPU_INT64U  fclk_freq;
+    
+
+    fclk_freq = BSP_CPU_ClkFreq();    
+    ts_us     = ts_cnts / (fclk_freq / DEF_TIME_NBR_uS_PER_SEC);
+
+    return (ts_us);
+}
+#endif

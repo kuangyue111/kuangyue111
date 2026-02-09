@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.lauterbach.trace32.debug.internal.core.T32LaunchConfigurationDelegate">
+<stringAttribute key="com.lauterbach.trace32.debug.t32.CMM_FILE" value="${ProjDirPath}/Project_Settings/Debugger/project.cmm Debug S32K1xxAppDev_SW_Unified_Framework_SDK_RTM3P0.elf S32K144 flash"/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.CONFIG_FILE" value="${ProjDirPath}/Project_Settings/Debugger/config.t32"/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.CPROJECT" value="S32K1xxAppDev_Safety_Demo"/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.EXECUTABLE" value="E:\Downloads\S32K\Lauterbach\trace32_arm_r_2018_02_000096069_win\bin\windows\t32marm.exe"/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.EXECUTABLE_TYPE" value="EXECUTABLE"/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.INSTALL" value=""/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.INVOKE_SCRIPT_AFTER_LAUNCH" value="true"/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.MASTER_LAUNCH" value=""/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.PROJECT_DIR" value="${ProjDirPath}"/>
+<stringAttribute key="com.lauterbach.trace32.debug.t32.USE_FOR_ALL_PROJECTS" value="false"/>
+</launchConfiguration>

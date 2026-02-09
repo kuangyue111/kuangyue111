@@ -1,0 +1,123 @@
+
+LOCAL &parameters &param_prepareonly &param_cpu &param_masserase &param_dualport
+ENTRY %LINE &parameters
+&param_prepareonly=(STRing.SCAN(STRing.UPpeR("&parameters"),"PREPAREONLY",0)!=-1)
+&param_cpu=STRing.SCANAndExtract(STRing.UPpeR("&parameters"),"CPU=","")
+&param_masserase=(STRing.SCAN(STRing.UPpeR("&parameters"),"MASSERASE",0)!=-1)
+&param_dualport=STRing.SCANAndExtract(STRing.UPpeR("&parameters"),"DUALPORT=","0")
+
+;WinCLEAR
+
+; --------------------------------------------------------------------------------
+; initialize and start the debugger
+;RESet
+;SYStem.RESet
+SYStem.CPU S32K144
+SYStem.CONFIG.DEBUGPORTTYPE SWD
+IF COMBIPROBE()||UTRACE()
+(
+  SYStem.CONFIG.CONNECTOR MIPI20T
+)
+SYStem.Option DUALPORT ON
+SYStem.MemAccess DAP
+SYStem.JtagClock CTCK 10MHz
+Trace.DISable
+SYStem.Up
+
+tronchip.set.HARDERR off
+tronchip.set.INTERR off
+tronchip.set.BUSERR off
+tronchip.set.STATERR off
+tronchip.set.MMERR off
+tronchip.set.CHKERR off
+;tronchip.set.CORERESET off
+
+; disable BootROM
+GOSUB DisableBootrom
+; disable Watchdog
+;GOSUB DisableWatchdog
+PER.Set.simple AD:0x40052008 %Long 0xFFFF
+PER.Set.simple AD:0x40052000 %Long 0x2520
+
+; --------------------------------------------------------------------------------
+; Flash programming
+
+; prepare flash programming (declarations)
+;DO ~~/demo/arm/flash/s32k.cmm PREPAREONLY
+Flash.reset
+FLASH.Create 1. 0x00000000++(0x80000-0x1) 0x1000 TARGET Quad /CENSORSHIP 0x400++0xf
+FLASH.Create 3. 0x14000000++(0x1000-0x1) 0x1000 TARGET Long
+sys.option.dualport on
+FLASH.TARGET 0x20000000 EAHB:0x20001000 0x1000 ~~/demo/arm/flash/quad/s32k_4k2k.bin /DualPort
+
+; ReProgram Flash
+;FLASH.ERASE ALL
+;Flash.erase off
+;FLASH.Program ALL
+;Data.LOAD.Elf "Debug/S32K1xxAppDev_Safety_Demo.elf"
+;FLASH.Program OFF
+FLASH.ReProgram 0++0x80000
+Data.LOAD.Elf "Debug/S32K1xxAppDev_Safety_Demo.elf"
+FLASH.ReProgram OFF
+
+; --------------------------------------------------------------------------------
+; Reset the target again
+SYStem.Up
+
+; disable BootROM
+GOSUB DisableBootrom
+; disable Watchdog
+;GOSUB DisableWatchdog
+PER.Set.simple AD:0x40052008 %Long 0xFFFF
+PER.Set.simple AD:0x40052000 %Long 0x2520
+
+; --------------------------------------------------------------------------------
+; start program execution
+;Go.direct main
+;WAIT !STATE.RUN()
+
+; --------------------------------------------------------------------------------
+; open some windows
+go main
+d.l
+d.l HardFault_Handler
+
+ENDDO
+
+DisableBootrom:
+(
+  Data.Set SD:0x4007F010 %LE %Long 0x6
+  Data.Set SD:0x4007F014 %LE %Long 0x0
+  RETURN
+)
+
+DisableWatchdog:
+(
+  LOCAL &tmp1 &tmp2
+  &tmp1=Data.Long(ST:0x20000000)
+  &tmp2=Data.Long(ST:0x20000004)
+  Register.SWAP
+  ; The watchdog has a restrictive timing. It has to be configured and unlocked within a peripod
+  ; of 128 cycles. Therefor the unlock sequence need to be done by a small target program.
+  Data.Assemble ST:0x20000000  str  r1,[r0]  ;SD:0x40052004 = 0xD928C520   (Key)
+  Data.Assemble ,              str  r3,[r2]  ;SD:0x40052000 = 0x00002120   (Control register)
+  Data.Assemble ,              str  r5,[r4]  ;SD:0x40052008 = 0x0000FFFF   (Timeout value)
+  Data.Assemble ,              bkpt #0
+  Register.Set PC 0x20000000
+  Register.Set SP 0x20001000
+  Register.Set R0 0x40052004
+  Register.Set R1 0xD928C520
+  Register.Set R2 0x40052000
+  Register.Set R3 0x00002120
+  Register.Set R4 0x40052008
+  Register.Set R5 0x0000FFFF
+  Go.direct
+  WAIT !RUN()
+
+  Data.Set ST:0x20000000 %Long &tmp1
+  Data.Set ST:0x20000004 %Long &tmp2
+  Register.SWAP
+
+  RETURN
+)
+

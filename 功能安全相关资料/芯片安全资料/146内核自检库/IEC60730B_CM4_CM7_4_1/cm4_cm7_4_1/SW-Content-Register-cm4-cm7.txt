@@ -1,0 +1,12 @@
+NXP Software Content Register
+
+Release - IEC60730B Safety Routines CM4,CM7  v4.1
+March 2021
+
+IEC60730B_CM4_CM7_rev_4_1  Author: NXP 
+                           Version 4.1
+                           name: IEC60730/Class B routines for CM4 and CM7
+                           Location: v4_1/
+                           License: LA_OPT_NXP_SOFTWARE_License  - Additional distribution license granted, license in Section 2.3 applies
+                           Type of content: Binary files and source code
+  

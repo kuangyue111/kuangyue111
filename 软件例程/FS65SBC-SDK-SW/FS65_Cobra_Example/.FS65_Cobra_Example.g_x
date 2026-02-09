@@ -1,0 +1,94 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_C_Compiler_Includes</name>
+      <values lines_count="7">
+        <Line>"${S32_SDK_PATH}/platform/drivers/src/clock/MPC5777C"</Line>
+        <Line>"${S32_SDK_PATH}/rtos/osif/"</Line>
+        <Line>"${S32_SDK_PATH}/platform/devices"</Line>
+        <Line>"${S32_SDK_PATH}/platform/devices/common"</Line>
+        <Line>"${S32_SDK_PATH}/platform/devices/MPC5777C/include"</Line>
+        <Line>"${S32_SDK_PATH}/platform/devices/MPC5777C/startup"</Line>
+        <Line>"${S32_SDK_PATH}/platform/drivers/inc"</Line>
+      </values>
+    </option>
+    <option>
+      <name>PE_G_4PEx_ilg_gnuarmeclipse_managedbuild_cross_option_c_compiler_defs</name>
+      <values lines_count="1">
+        <Line>"CPU_MPC5777C_516"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="SDK/platform/drivers/src/edma/edma_irq.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855660" FileType="262144" />
+      <File Name="Sources/main.c" FileDate="2019-01-02, 16:21:28" FileAge="1546442488416" FileType="128" />
+      <File Name="SDK/platform/drivers/inc/clock.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855503" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/pins/siu/pins_siu_driver.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855847" FileType="262144" />
+      <File Name="Generated_Code/pin_mux.h" FileDate="2018-12-11, 12:38:48" FileAge="1544528328541" FileType="45637" CompNumb="13" />
+      <File Name="SDK/platform/drivers/src/interrupt/interrupt_manager_MPC57xx.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855785" FileType="262144" />
+      <File Name="SDK/rtos/osif/osif.h" FileDate="2018-12-10, 11:14:16" FileAge="1544436856175" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/pins/siu/pins_siu_driver.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855847" FileType="262144" />
+      <File Name="Generated_Code/pin_mux.c" FileDate="2018-12-11, 12:38:48" FileAge="1544528328557" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/pit1.h" FileDate="2018-12-10, 17:07:32" FileAge="1544458052227" FileType="45637" CompNumb="9" />
+      <File Name="SDK/platform/devices/callbacks.h" FileDate="2018-12-10, 11:14:14" FileAge="1544436854753" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/eqadc/eqadc_driver.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855706" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/pit/pit_driver.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855878" FileType="262144" />
+      <File Name="SDK/platform/devices/MPC5777C/startup/system_MPC5777C.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855488" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/pit/pit_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855878" FileType="262144" />
+      <File Name="SDK/platform/drivers/inc/pit_driver.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855550" FileType="262144" />
+      <File Name="Generated_Code/pit1.c" FileDate="2018-12-11, 14:00:25" FileAge="1544533225424" FileType="45637" CompNumb="9" />
+      <File Name="SDK/platform/drivers/inc/dspi_driver.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855519" FileType="262144" />
+      <File Name="SDK/platform/drivers/inc/esci_driver.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855519" FileType="262144" />
+      <File Name="SDK/platform/devices/MPC5777C/startup/system_MPC5777C.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855472" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/eqadc/eqadc_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855722" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/pit/pit_hw_access.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855878" FileType="262144" />
+      <File Name="Generated_Code/dspi1.h" FileDate="2018-12-11, 12:21:42" FileAge="1544527302017" FileType="45637" CompNumb="14" />
+      <File Name="SDK/platform/drivers/src/edma/edma_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855660" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/dspi/dspi_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855644" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/eqadc/eqadc_hw_access.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855722" FileType="262144" />
+      <File Name="SDK/platform/devices/MPC5777C/include/MPC5777C.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855253" FileType="262144" />
+      <File Name="Generated_Code/dspi1.c" FileDate="2018-12-10, 17:33:55" FileAge="1544459635360" FileType="45637" CompNumb="14" />
+      <File Name="SDK/platform/drivers/src/edma/edma_hw_access.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855660" FileType="262144" />
+      <File Name="SDK/platform/drivers/inc/interrupt_manager.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855535" FileType="262144" />
+      <File Name="SDK/platform/devices/devassert.h" FileDate="2018-12-10, 11:14:14" FileAge="1544436854753" FileType="262144" />
+      <File Name="SDK/platform/devices/device_registers.h" FileDate="2018-12-10, 11:14:14" FileAge="1544436854753" FileType="262144" />
+      <File Name="SDK/platform/drivers/inc/pins_driver.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855550" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/clock/MPC5777C/cs_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855597" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/esci/esci_driver.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855738" FileType="262144" />
+      <File Name="SDK/platform/devices/MPC5777C/include/MPC5777C_features.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855253" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/dspi/dspi_driver.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855644" FileType="262144" />
+      <File Name="Generated_Code/dmaController1.h" FileDate="2018-12-10, 16:57:20" FileAge="1544457440254" FileType="45637" CompNumb="16" />
+      <File Name="Generated_Code/dmaController1.c" FileDate="2018-12-10, 16:57:20" FileAge="1544457440238" FileType="45637" CompNumb="16" />
+      <File Name="Documentation/FS65_Cobra_Example.txt" FileDate="2018-12-13, 10:33:05" FileAge="1544693585652" FileType="3072" />
+      <File Name="SDK/platform/devices/common/s32_core_e200.h" FileDate="2018-12-10, 11:14:14" FileAge="1544436854753" FileType="262144" />
+      <File Name="Generated_Code/eqadc1.h" FileDate="2018-12-13, 10:33:05" FileAge="1544693585449" FileType="45637" CompNumb="20" />
+      <File Name="SDK/rtos/osif/osif_baremetal.c" FileDate="2018-12-10, 11:14:16" FileAge="1544436856175" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/pins/siu/siu_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855847" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/clock/MPC5777C/siu_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855597" FileType="262144" />
+      <File Name="Generated_Code/eqadc1.c" FileDate="2019-01-02, 17:43:08" FileAge="1546447388457" FileType="45637" CompNumb="20" />
+      <File Name="SDK/platform/drivers/src/pins/siu/siu_hw_access.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855847" FileType="262144" />
+      <File Name="SDK/platform/devices/status.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855488" FileType="262144" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2018-12-13, 10:33:05" FileAge="1544693585495" FileType="45637" CompNumb="8" />
+      <File Name="SDK/platform/devices/startup.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855488" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/esci/esci_irq.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855738" FileType="262144" />
+      <File Name="Generated_Code/esci1.h" FileDate="2018-12-11, 12:38:48" FileAge="1544528328494" FileType="45637" CompNumb="19" />
+      <File Name="SDK/platform/drivers/src/clock/MPC5777C/cmu_hw_access.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855597" FileType="262144" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2018-12-10, 16:57:20" FileAge="1544457440129" FileType="45637" CompNumb="8" />
+      <File Name="SDK/platform/devices/startup.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855488" FileType="262144" />
+      <File Name="SDK/platform/drivers/inc/edma_driver.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855519" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/esci/esci_irq.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855738" FileType="262144" />
+      <File Name="Generated_Code/esci1.c" FileDate="2018-12-11, 13:45:38" FileAge="1544532338333" FileType="45637" CompNumb="19" />
+      <File Name="SDK/platform/drivers/inc/clock_manager.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855503" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/clock/MPC5777C/clock_MPC5777C.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855581" FileType="262144" />
+      <File Name="Generated_Code/clockMan1.h" FileDate="2018-12-10, 16:57:20" FileAge="1544457440379" FileType="45637" CompNumb="12" />
+      <File Name="Documentation/FS65_Cobra_Example_Settings.xml" FileDate="2018-12-13, 10:33:05" FileAge="1544693585636" FileType="3072" />
+      <File Name="SDK/platform/drivers/src/edma/edma_irq.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855660" FileType="262144" />
+      <File Name="SDK/platform/drivers/inc/eqadc_driver.h" FileDate="2018-12-10, 11:14:15" FileAge="1544436855519" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/edma/edma_driver.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855660" FileType="262144" />
+      <File Name="SDK/platform/drivers/src/clock/MPC5777C/clock_MPC5777C.c" FileDate="2018-12-10, 11:14:15" FileAge="1544436855581" FileType="262144" />
+      <File Name="Generated_Code/clockMan1.c" FileDate="2018-12-11, 12:38:48" FileAge="1544528328526" FileType="45637" CompNumb="12" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>19</CodeGenReference>
+</CodeGenerationInfo>
